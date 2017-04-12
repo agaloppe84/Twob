@@ -10,6 +10,10 @@
   padding-bottom: 5em;
 }
 
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
 // Backgrounds
 .bg-black {
   background: #4a4a4a;
