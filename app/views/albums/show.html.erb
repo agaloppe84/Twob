@@ -1,0 +1,62 @@
+
+<div class="album-fullpage">
+
+    <div class="album-name">
+
+      <%= @album.name %>
+      <div class="photos-count">
+        <%= @album.photos.count %><%= " photos " %>&nbsp;
+
+        <% if @album.photos.count == 10 %>
+          <div>(maximum)</div>
+        <% end %>
+
+      </div>
+
+
+    </div>
+
+    <% @album.photos.each do |photo| %>
+
+      <div class="album-show-photo" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path photo.path %>);">
+
+        <div class="photo-name-and-desc">
+
+          <div class="file-type">
+            <%= photo.resource_type %>
+            <%= "  " %>
+            <%= photo.format %>
+          </div>
+
+          <div class="file-size">
+            <%= photo.width %>
+            <%= " X " %>
+            <%= photo.height %>
+          </div>
+
+          <% if photo.width > 1500 and photo.height > 800 %>
+            <div class="hd-image">HD</div>
+            <% else %>
+            <div class="non-hd-image">!! too small !!</div>
+          <% end %>
+
+        </div>
+
+      </div>
+
+
+
+    <% end %>
+
+
+
+
+      <% if user_signed_in? %>
+        <%= link_to dashboard_path do %>
+          <div class="dashboard-return-button"><%= "Retour au dashboard" %></div>
+        <% end %>
+      <% end %>
+
+
+
+</div>

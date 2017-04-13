@@ -1,0 +1,315 @@
+<div role="tabpanel" class="tab-pane active" id="<%= category.id %>">
+
+
+
+        <!--*********** TOP HEADER START ***********-->
+        <div class="v2-fullpage-item-01-header">
+           <div class="header-hard-dashboard" style="opacity: 0.4;">Catégorie</div>
+           <div style="margin-left: 8px;margin-right: 8px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+           <div class="header-hard-dashboard"><%= composed_plurname(category.name) %></div>
+        </div>
+        <!--*********** TOP HEADER END ***********-->
+
+
+
+
+
+        <!--*********** COMPILATED PRODUCTS CONTAINER START ***********-->
+        <div class="dashv2-infos-compilated-alt">
+          <div class="dashv2-infos-compilated-item">
+            <div class="v2-big-number"><%= category.products.count %></div>
+            <div class="dashv2-infos-compilated-item-label">Produits</div>
+          </div>
+          <%= link_to "#productNewModal", class: "", data: { toggle: "modal", typeid: "#{category.id}" } do %>
+
+                  <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                    <div class="icon-list-add padding-on-small-icon"></div>
+                    <div class="v5-text-on-button-hover">
+                      <div class="">new produit</div>
+                      <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+                    </div>
+                  </div>
+
+
+          <% end %>
+
+        </div>
+        <!--*********** COMPILATED PRODUCTS CONTAINER END ***********-->
+
+
+
+
+
+        <!--*********** EACH TYPE PRODUCTS CONTAINER START ***********-->
+        <div class="dashboardv2-left-menu">
+          <ul class="nav nav-pills nav-stacked">
+            <% category.products.each_with_index do |product, index| %>
+
+
+                <% if index == 0 %>
+            <li role="presentation" class="other-active-to-remove">
+              <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true" style="color: #2AC88E;"></i></div>
+              <div class="index-on-navtabs" style="color: #2AC88E;"><%= "#{index + 1}" %></div>
+              <a href="#<%= "#{product.id}" + "produit" + "#{category.id}" %>" data-toggle="tab"><%= product.title %></a>
+              <div class="v2-link-on-active">
+                <%= link_to "#productEditModal", class: "v3-link", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+                    <div class="text-on-edit-hover">
+                      <div>modifier</div>
+                      <div class="tooltip-crud-two"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="icon-check-circle newicon-size"></div>
+                <% end %>
+                <%= link_to "#productShowModal", class: "v3-link", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+                     <div class="text-on-edit-hover">
+                      <div>voir</div>
+                      <div class="tooltip-crud-two"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="icon-information-black newicon-size"></div>
+                <% end %>
+                <%= link_to category_product_path(category, product), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer ce produit ?" } do %>
+                    <div class="text-on-destroy-hover">
+                      <div>effacer</div>
+                      <div class="tooltip-crud"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="icon-cancel-circle newicon-size-two"></div>
+                <% end %>
+              </div>
+            </li>
+
+        <% else %>
+            <li role="presentation" class="other-active-to-remove">
+              <div class="menu-icon-show"><i class="fa fa-circle" aria-hidden="true" style="color: #2AC88E;"></i></div>
+              <div class="index-on-navtabs" style="color: #2AC88E;"><%= "#{index + 1}" %></div>
+              <a href="#<%= "#{product.id}" + "produit" + "#{category.id}" %>" data-toggle="tab"><%= product.title %></a>
+              <div class="v2-link-on-active">
+                <%= link_to "#productEditModal", class: "v3-link", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+                    <div class="text-on-edit-hover">
+                      <div>modifier</div>
+                      <div class="tooltip-crud-two"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="icon-check-circle newicon-size"></div>
+                <% end %>
+                <%= link_to "#productShowModal", class: "v3-link", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+                     <div class="text-on-edit-hover">
+                      <div>voir</div>
+                      <div class="tooltip-crud-two"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="icon-information-black newicon-size"></div>
+                <% end %>
+                <%= link_to category_product_path(category, product), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer ce produit ?" } do %>
+                     <div class="text-on-destroy-hover">
+                      <div>effacer</div>
+                      <div class="tooltip-crud"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="icon-cancel-circle newicon-size-two"></div>
+                <% end %>
+              </div>
+            </li>
+        <% end %>
+
+            <% end %>
+          </ul>
+        </div>
+        <!--*********** EACH TYPE PRODUCTS CONTAINER END ***********-->
+
+
+
+        <!--*********** COMPILATED PROMOS CONTAINER START ***********-->
+        <div class="dashv2-infos-compilated-alt" style="border-top: 1px solid rgba(100,100,100,0.2);">
+
+                <div class="dashv2-infos-compilated-item">
+                  <div class="v2-big-number"><%= category.promos.count %></div>
+                  <% if category.promos.count <= 1 %>
+                    <div class="dashv2-infos-compilated-item-label">Promo</div>
+                  <% else %>
+                    <div class="dashv2-infos-compilated-item-label">Promos</div>
+                  <% end %>
+                </div>
+
+
+
+                <%= link_to "#promoNewModal", class: "", data: { toggle: "modal", id: "#{category.id}" } do %>
+
+                  <div class="v4-info-new-button">
+                    <div class="icon-list-add padding-on-small-icon"></div>
+                    <div class="v5-text-on-button-hover">
+                      <div class="">new promo</div>
+                      <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+                    </div>
+                  </div>
+
+                <% end %>
+
+        </div>
+        <!--*********** COMPILATED PROMOS CONTAINER END ***********-->
+
+
+
+
+          <!--*********** EACH TYPE PROMOS CONTAINER START ***********-->
+            <div class="v3-prod-infos-alt">
+
+              <% if category.promos.any? %>
+
+                <div class="infos-volets">
+                    <% category.promos.each_with_index do |promo, index| %>
+
+                      <div class="infos-item-boob">
+
+
+
+                       <% if promo.current? %>
+                          <div class="v5-type-with-active-promo">
+                            <div class="active-promo-green-dot-text icon-size-on-index"><div class="icon-pulse padding-on-small-icon"></div></div>
+                          </div>
+                        <% else %>
+                          <div class="v5-type-with-active-promo">
+                             <div class="active-promo-green-dot-text icon-size-on-index-2"><div class="icon-pulse padding-on-small-icon"></div></div>
+                          </div>
+                        <% end %>
+
+                        <% if promo.current? %>
+                          <div class="active-promo-verysmall-index" style="color: #2AC88E;"><%= index + 1 %></div>
+                        <% else %>
+                          <div class="active-promo-verysmall-index"><%= index + 1 %></div>
+                        <% end %>
+
+                        <div class="infos-big-boob"><%= truncate( promo.title.capitalize, length: 18, omission: '...' ) %></div>
+
+
+                        <div class="infos-small-boob"></div>
+
+                        <div class="v2-link-on-active-infos">
+                          <%= link_to "#promoEditModal", class: "v3-link", data: { toggle: "modal", id: "#{promo.id}", typeid: "#{promo.category.id}" } do %>
+                            <div class="text-on-edit-hover">
+                              <div>modifier</div>
+                              <div class="tooltip-crud-two"><i class="fa fa-caret-down" aria-hidden="true" style="font-size: 20px;"></i></div>
+                            </div>
+                            <div class="icon-android-done newicon-size"></div>
+                          <% end %>
+                          <%= link_to category_promo_path(category, promo), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer cette promo ?" } do %>
+                              <div class="text-on-destroy-hover">
+                                <div>effacer</div>
+                                <div class="tooltip-crud"><i class="fa fa-caret-down" aria-hidden="true" style="font-size: 20px;"></i></div>
+                              </div>
+                              <div class="icon-android-close newicon-size-two"></div>
+                          <% end %>
+                        </div>
+
+                      </div>
+
+                    <% end %>
+                </div>
+
+              <% else %>
+                <div class="v4-no-promo-div">
+                  <div class="v5-big-text">0 promo</div>
+                  <div class="dash-flexbox-display">
+                    <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">cliquez sur </div>
+                    <div class="icon-list-add"></div>
+                  </div>
+                </div>
+              <% end %>
+
+            </div>
+            <!--*********** EACH TYPE PROMOS CONTAINER END ***********-->
+
+
+
+
+            <!--*********** ALBUMS HEADER START ***********-->
+
+
+              <div class="dashv2-infos-compilated-alt" style="border-top: 1px solid rgba(100,100,100,0.2);">
+
+                <div class="dashv2-infos-compilated-item">
+                  <% if category.albums.any? %>
+                    <div class="camera-icon" style="color: #2AC88E;"><div class="icon-aperture"></div></div>
+                  <% else %>
+                    <div class="camera-icon" style="color: #FA4659;"><div class="icon-aperture"></div></div>
+                  <% end %>
+                  <div class="dashv2-infos-compilated-item-label">Album</div>
+                </div>
+
+
+                <% if category.albums.any? %>
+
+                  <%= link_to "#albumEditModal", class: "", data: { toggle: "modal", albumid: "#{category.albums.last.id}", typeid: "#{category.id}" } do %>
+                    <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                      <div class="icon-list-add padding-on-small-icon"></div>
+                      <div class="v5-text-on-button-hover">
+                        <div class="">edit album</div>
+                        <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                <% else %>
+
+                  <%= link_to new_album_path, class: "", data: { confirm: "Créer un album pour cette catégorie ?" } do %>
+                    <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                      <div class="icon-list-add padding-on-small-icon"></div>
+                      <div class="v5-text-on-button-hover">
+                        <div class="">new album</div>
+                        <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                <% end %>
+              </div>
+
+            <!--*********** ALBUMS HEADER END ***********-->
+
+
+      <!--*********** ALBUMS CONTAINER START ***********-->
+
+
+          <% if category.albums.any? %>
+
+
+            <!--*********** SI ALBUM PRESENT ***********-->
+            <div class="v3-dash-powers-container-start">
+
+                <% category.albums.last.photos.each do |photo| %>
+                    <div class="v3-power-item-cont-big">
+
+                      <div class="v3-powers-text-on-hover-bottom" style="color: <%= category.color %>;">
+                        <div class="file-type">
+                          <%= photo.resource_type %>
+                          <%= "  " %>
+                          <%= photo.format %>
+                        </div>
+                        <div class="file-size">
+                          <%= photo.width %>
+                          <%= " X " %>
+                          <%= photo.height %>
+                        </div>
+
+                      </div>
+
+                      <div class="v3-power-item-big" style="background-image: url(<%= cl_image_path photo.path %>);"></div>
+                    </div>
+                <% end %>
+
+            </div>
+        <!--*********** SI ALBUM PRESENT ***********-->
+
+
+          <% else %>
+
+            <div class="v3-prod-infos-alt">
+              <div class="v4-no-promo-div">
+                  <div class="v5-big-text">Pas d'album</div>
+                  <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">Cliquez sur + pour créer un album !!</div>
+              </div>
+            </div>
+
+          <% end %>
+
+
+
+        <!--*********** ALBUMS CONTAINER END ***********-->
+
+
+    </div>

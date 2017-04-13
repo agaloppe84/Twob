@@ -1,0 +1,125 @@
+
+<div class="banner-product-page-show" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= if @product.photos.any? then cl_image_path @product.photos.last.path end %>);">
+
+
+
+  <div class="banner-product-show-description">
+    <div class="show-description-item"><%= @product.title %></div>
+    <div class="info-icon" style="background-image: url(<%= if @product.brand == nil then "" else  cl_image_path @product.brand.logo.path end %>);"></div>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class="infos-fullpage">
+
+    <div class="infos-product-title">
+
+        <div class="product-title-container">
+          <div class="pro-header-top">Produit</div>
+          <div class="pro-title-top-name"><%= @product.title %></div>
+        </div>
+
+        <div class="product-title-container">
+          <div class="pro-header-top">Type</div>
+          <div class="pro-title-top"><%= @product.type.name %></div>
+        </div>
+
+        <div class="product-title-container">
+          <div class="pro-header-top">Marque</div>
+          <div class="pro-title-top"><%= @product.brand.name %></div>
+        </div>
+
+        <div class="product-title-container">
+          <div class="pro-header-top">Infos</div>
+          <div class="pro-title-top"><%= @product.infos.count %></div>
+        </div>
+
+        <div class="product-title-container">
+          <%= link_to dashboard_path do %>
+            <i class="fa fa-code-fork" aria-hidden="true"></i>
+          <% end %>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="infos-product-title-infos">
+
+        <div class="product-title-container-short">
+          <div class="pro-infos-big-header">Infos</div>
+        </div>
+
+        <div class="product-title-container-button">
+          <%= link_to new_product_info_path(@product), class: "", data: { confirm: "Etes-vous sûr de vouloir créer une info pour ce produit ?" } do %>
+            <i class="fa fa-plus" aria-hidden="true"></i>
+
+          <% end %>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <% @product.infos.each do |info| %>
+
+
+
+      <div class="info-item">
+
+        <div class="info-icon" style="background-image: url(<%= cl_image_path info.icon.path %>);"></div>
+
+        <div class="info-title-color"><%= info.title %>&nbsp;</div>
+
+        <div class="info-title-color-content"><%= info.content %>&nbsp;</div>
+
+
+        <div class="info-links-container">
+
+
+          <%= link_to product_info_path(@product,info), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette info ?" } do %>
+              <div class="info-delete-button">
+                <i class="fa fa-times" aria-hidden="true"></i>
+              </div>
+          <% end %>
+
+          <%= link_to edit_product_info_path(@product,info), class: "", data: { confirm: "Etes-vous sûr de vouloir modifier cette info ?" } do %>
+              <div class="info-edit-button">
+                <i class="fa fa-sliders" aria-hidden="true"></i>
+              </div>
+          <% end %>
+
+        </div>
+
+
+
+      </div>
+
+    <% end %>
+
+
+</div>

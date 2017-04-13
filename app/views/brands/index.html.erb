@@ -1,0 +1,10 @@
+<% @brands.each do |brand| %>
+
+  <h4><%= brand.name %></h4>
+
+  <% brand.products.each do |product| %>
+    <%= product.title %>
+    <%= product.type.name %>
+  <% end %>
+
+<% end %>

@@ -1,0 +1,27 @@
+<%= simple_form_for (@category) do |f| %>
+
+<div class="modal-header-custom">
+  <div class="header-hard-dashboard" style="opacity: 0.9;font-size: 15px;font-family: 'Circular-Book';">Créer une catégorie</div>
+  <button class="close" data-dismiss="modal"><div class="icon-android-close"></div></button>
+</div>
+
+
+<div class="modal-body-custom">
+  <div class="edit-product-container">
+    <div class="label-on-modal-dashboard">Nom</div>
+    <%= f.input :name, label: false %>
+
+    <div class="input-container">
+      <div class="label-on-modal-dashboard">Couleur</div>
+      <%= f.input :color, label: false %>
+    </div>
+  </div>
+  <%= render "color_picker" %>
+</div>
+
+<div class="modal-footer-custom">
+  <%= f.submit "Créer une catégorie", :class => 'submit-button-on-modal' %>
+</div>
+
+<% end %>
+

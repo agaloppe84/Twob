@@ -1,0 +1,25 @@
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= if @promo.photos.any? then cl_image_path @promo.photos.last.path end %>);">
+  <div class="card-category"><i class="fa fa-tags" aria-hidden="true"></i>
+ <%= @promo.category.name %></div>
+  <div class="card-description">
+    <h2><%= @promo.title %></h2>
+    <p><%= @promo.description %></p>
+  </div>
+  <div class="item-brand-show"><%= image_tag "luxa.svg" %></div>
+  <a class="card-link" href="#" ></a>
+</div>
+
+
+
+
+<% if user_signed_in? %>
+
+  <div class="product-card-left">
+    <%= link_to dashboard_path do %>
+      <div class="modif-button"><%= "Retour au dashboard" %></div>
+    <% end %>
+  </div>
+
+<% end %>
+
+

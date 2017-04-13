@@ -1,0 +1,525 @@
+.picker {
+  display: none;
+  width: 70%;
+  height: 200px;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.color-container {
+  &-01 {
+  }
+  &-02 {
+  }
+  &-03 {
+  }
+  &-04 {
+  }
+  &-05 {
+  }
+  &-06 {
+  }
+  &-07 {
+  }
+  &-08 {
+  }
+  &-09 {
+  }
+  &-10 {
+  }
+  width: 100%;
+  height: 70%;
+  display: none;
+}
+
+.cc-flex {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid lightgrey;
+}
+
+
+
+.color1 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #2E94B9;
+}
+
+.color2 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #FD5959;
+}
+
+.color3 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #53354A;
+}
+
+.color4 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #FABC41;
+}
+
+
+.current-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  position: absolute;
+  right: 40px;
+  top: 0px;
+  background-color: grey;
+}
+
+.input-container {
+  position: relative;
+  width: 200px;
+  height: 40px;
+}
+
+
+
+$color-sub-01: #DE494B;
+$color-sub-02: #ED603A;
+$color-sub-03: #EC9144;
+$color-sub-04: #DEC04F;
+$color-sub-05: #B7C04C;
+$color-sub-06: #AAD255;
+$color-sub-07: #2AC88E;
+$color-sub-08: #18B3AA;
+$color-sub-09: #19C7D5;
+
+
+
+$cs01-light-00: lighten($color-sub-01,0%);
+$cs01-light-10: lighten($color-sub-01,10%);
+$cs01-light-20: lighten($color-sub-01,20%);
+$cs01-light-30: lighten($color-sub-01,30%);
+
+$cs02-light-00: lighten($color-sub-02,0%);
+$cs02-light-10: lighten($color-sub-02,10%);
+$cs02-light-20: lighten($color-sub-02,20%);
+$cs02-light-30: lighten($color-sub-02,30%);
+
+$cs03-light-00: lighten($color-sub-03,0%);
+$cs03-light-10: lighten($color-sub-03,10%);
+$cs03-light-20: lighten($color-sub-03,20%);
+$cs03-light-30: lighten($color-sub-03,30%);
+
+$cs04-light-00: lighten($color-sub-04,0%);
+$cs04-light-10: lighten($color-sub-04,10%);
+$cs04-light-20: lighten($color-sub-04,20%);
+$cs04-light-30: lighten($color-sub-04,30%);
+
+$cs05-light-00: lighten($color-sub-05,0%);
+$cs05-light-10: lighten($color-sub-05,10%);
+$cs05-light-20: lighten($color-sub-05,20%);
+$cs05-light-30: lighten($color-sub-05,30%);
+
+$cs06-light-00: lighten($color-sub-06,0%);
+$cs06-light-10: lighten($color-sub-06,10%);
+$cs06-light-20: lighten($color-sub-06,20%);
+$cs06-light-30: lighten($color-sub-06,30%);
+
+$cs07-light-00: lighten($color-sub-07,0%);
+$cs07-light-10: lighten($color-sub-07,10%);
+$cs07-light-20: lighten($color-sub-07,20%);
+$cs07-light-30: lighten($color-sub-07,30%);
+
+$cs08-light-00: lighten($color-sub-08,0%);
+$cs08-light-10: lighten($color-sub-08,10%);
+$cs08-light-20: lighten($color-sub-08,20%);
+$cs08-light-30: lighten($color-sub-08,30%);
+
+$cs09-light-00: lighten($color-sub-09,0%);
+$cs09-light-10: lighten($color-sub-09,10%);
+$cs09-light-20: lighten($color-sub-09,20%);
+$cs09-light-30: lighten($color-sub-09,30%);
+
+
+
+
+
+
+
+
+
+.sub-color {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sc01-light {
+  &-00 {
+    background-color: $cs01-light-00;
+  }
+  &-10 {
+    background-color: $cs01-light-10;
+  }
+  &-20 {
+    background-color: $cs01-light-20;
+  }
+  &-30 {
+    background-color: $cs01-light-30;
+  }
+}
+
+
+.sc02-light {
+  &-00 {
+    background-color: $cs02-light-00;
+  }
+  &-10 {
+    background-color: $cs02-light-10;
+  }
+  &-20 {
+    background-color: $cs02-light-20;
+  }
+  &-30 {
+    background-color: $cs02-light-30;
+  }
+}
+
+
+.sc03-light {
+  &-00 {
+    background-color: $cs03-light-00;
+  }
+  &-10 {
+    background-color: $cs03-light-10;
+  }
+  &-20 {
+    background-color: $cs03-light-20;
+  }
+  &-30 {
+    background-color: $cs03-light-30;
+  }
+}
+
+
+.sc04-light {
+  &-00 {
+    background-color: $cs04-light-00;
+  }
+  &-10 {
+    background-color: $cs04-light-10;
+  }
+  &-20 {
+    background-color: $cs04-light-20;
+  }
+  &-30 {
+    background-color: $cs04-light-30;
+  }
+}
+
+
+.sc05-light {
+  &-00 {
+    background-color: $cs05-light-00;
+  }
+  &-10 {
+    background-color: $cs05-light-10;
+  }
+  &-20 {
+    background-color: $cs05-light-20;
+  }
+  &-30 {
+    background-color: $cs05-light-30;
+  }
+}
+
+.sc06-light {
+  &-00 {
+    background-color: $cs06-light-00;
+  }
+  &-10 {
+    background-color: $cs06-light-10;
+  }
+  &-20 {
+    background-color: $cs06-light-20;
+  }
+  &-30 {
+    background-color: $cs06-light-30;
+  }
+}
+
+.sc07-light {
+  &-00 {
+    background-color: $cs07-light-00;
+  }
+  &-10 {
+    background-color: $cs07-light-10;
+  }
+  &-20 {
+    background-color: $cs07-light-20;
+  }
+  &-30 {
+    background-color: $cs07-light-30;
+  }
+}
+
+.sc08-light {
+  &-00 {
+    background-color: $cs08-light-00;
+  }
+  &-10 {
+    background-color: $cs08-light-10;
+  }
+  &-20 {
+    background-color: $cs08-light-20;
+  }
+  &-30 {
+    background-color: $cs08-light-30;
+  }
+}
+
+.sc09-light {
+  &-00 {
+    background-color: $cs09-light-00;
+  }
+  &-10 {
+    background-color: $cs09-light-10;
+  }
+  &-20 {
+    background-color: $cs09-light-20;
+  }
+  &-30 {
+    background-color: $cs09-light-30;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.color-link {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  &-01 {
+    background-color: $color-sub-01;
+  }
+  &-02 {
+    background-color: $color-sub-02;
+  }
+  &-03 {
+    background-color: $color-sub-03;
+  }
+  &-04 {
+    background-color: $color-sub-04;
+  }
+  &-05 {
+    background-color: $color-sub-05;
+  }
+  &-06 {
+    background-color: $color-sub-06;
+  }
+  &-07 {
+    background-color: $color-sub-07;
+  }
+  &-08 {
+    background-color: $color-sub-08;
+  }
+  &-09 {
+    background-color: $color-sub-09;
+  }
+}
+
+
+.random-color-link {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  background-color: white;
+  border: 1px solid grey;
+}
+
+
+
+
+
+
+
+
+
+.active {
+  display: block;
+}
+
+.random-color {
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 50%;
+  &-02 {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 50%;
+  }
+  &-03 {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 50%;
+  }
+  &-04 {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 50%;
+  }
+}
+
+.random-color-edit {
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 50%;
+  &-02 {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 50%;
+  }
+  &-03 {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 50%;
+  }
+  &-04 {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    border-radius: 50%;
+  }
+}
+
+.random-trigger {
+  position: absolute;
+  width: 30%;
+  font-size: 12px;
+  font-family: "Circular-Book";
+  border-top: 1px solid lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  bottom: 0;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  cursor: pointer;
+}
+
+.random-trigger-edit {
+  position: absolute;
+  width: 30%;
+  font-size: 12px;
+  font-family: "Circular-Book";
+  border-top: 1px solid lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  bottom: 0;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  cursor: pointer;
+}
+
+.random-collection {
+   position: relative;
+}
+
+.bigdiv {
+  width: 100%;
+  height: 500px;
+  transition: 0.4s ease;
+}
+
+#trigger {
+  height: 30px;
+  font-size: 13px;
+  font-family: "Circular-Book";
+  padding-left: 20px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+}
+
+
+.color-label {
+  font-size: 14px;
+  font-family: "Circular-Book";
+  margin-bottom: 7px;
+}
+
+#type_color.form-control {
+  background-color: transparent;
+  border-radius: 3px;
+}
+

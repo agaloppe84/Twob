@@ -4,12 +4,61 @@
 
 .alert {
   margin: 0;
-  text-align: center;
-  color: white;
+  color: rgba(0,0,0,0.6);
+  padding: 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 .alert-info {
-  background: $green;
+  background: $red;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  border: none;
+  color: white;
 }
 .alert-warning {
-  background: $red;
+  background: white;
+  border: none;
+  font-family: "Circular-Book";
+  border-bottom: 1px solid lightgrey;
+  color: rgba(0,0,0,0.8);
+  font-size: 13px;
+}
+
+.alert-icon {
+  font-size: 18px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.alert-title {
+  font-family: "Circular-Medium";
+  color: #E03E36;
+  font-size: 13px;
+  line-height: 1.8;
+  padding-right: 30px;
+}
+
+.alert-text {
+  font-family: "Circular-Book";
+  color: rgba(0,0,0,0.8);
+  font-size: 13px;
+  line-height: 1.8;
+  margin-right: auto;
+}
+
+.alert-title-warning {
+  font-family: "Circular-Medium";
+  color: #E03E36;
+  font-size: 13px;
+  line-height: 1.8;
+  padding-right: 5px;
+  margin-left: auto;
+}
+
+.alert-locked {
 }

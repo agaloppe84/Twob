@@ -1,0 +1,140 @@
+
+<div class="fullpage-show">
+
+
+  <div class="type-index-v2-header">
+    <div class="leftblock-content-show">
+      <ul class="nav nav-pills">
+      <% @categories.each do |category| %>
+        <% if category == @categories.first %>
+            <li role="presentation" class="active">
+              <div class="menu-index-active"></div>
+              <a href="#<%= category.id %>" data-toggle="tab"><%= composed_plurname(category.name) %></a>
+            </li>
+        <% else %>
+            <li role="presentation">
+              <div class="menu-index-active"></div>
+              <a href="#<%= category.id %>" data-toggle="tab"><%= composed_plurname(category.name) %></a>
+            </li>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="fullpage-rightblock">
+    <div class="tab-content">
+      <% @categories.each do |category| %>
+      <% if category == @categories.first %>
+
+    <div role="tabpanel" class="tab-pane fade in active" id="<%= category.id %>">
+
+        <% if category.albums.any? %>
+          <div class="banner-on-index" style="background-image: url(<%=  cl_image_path category.albums.last.photos.sample.path if category.albums.last.photos.any? %>);">
+              <div class="banner-on-index-content-v2">
+                <%= composed_plurname(category.name) %>
+              </div>
+          </div>
+        <% end %>
+
+
+
+
+      <div class="index-new-container">
+        <% category.products.each do |product| %>
+            <div class="card">
+
+              <div class="card-bottom">
+                <div class="card-bottom-item">
+                  <div class="button-two"><%= product.title %></div>
+                </div>
+                <%= link_to "#productShowModal", class: "v3-link", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+                    <div class="icon-information-black newicon-size"></div>
+                <% end %>
+              </div>
+
+              <div class="card-top image-center" style="background-image: url(<%= cl_image_path product.photos.last.path  %>);">
+                <div class="infos-on-hover">
+                  <div class="infos-volets">
+                    <% product.infos.first(5).each do |info| %>
+                      <div class="infos-item-boob">
+                        <div class="infos-big-boob"><%= info.title %>&nbsp;</div>
+                        <div class="infos-small-boob"><%= info.content %>&nbsp;</div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+
+
+
+            </div>
+
+          <% end %>
+        </div>
+    </div>
+
+  <% else %>
+
+    <div role="tabpanel" class="tab-pane fade" id="<%= category.id %>">
+
+         <% if category.albums.any? %>
+          <div class="banner-on-index" style="background-image: url(<%= cl_image_path category.albums.last.photos.sample.path if category.albums.last.photos.any?  %>);background-color: <%= category.color %>">
+              <div class="banner-on-index-content"></div>
+          </div>
+          <% end %>
+
+
+
+        <div class="index-new-container">
+        <% category.products.each do |product| %>
+            <div class="card">
+
+             <!--  <div class="absolute-over-icon">
+                <div class="icon-ttr-test"></div>
+              </div> -->
+
+              <div class="card-bottom">
+                <div class="card-bottom-item">
+                  <div class="button-two"><%= product.title %></div>
+                </div>
+                <%= link_to "#productShowModal", class: "v3-link", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+                    <div class="icon-information-black newicon-size"></div>
+                <% end %>
+              </div>
+
+              <div class="card-top image-center" style="background-image: url(<%= cl_image_path product.photos.last.path  %>);">
+                <div class="infos-on-hover">
+                  <div class="infos-volets">
+                    <% product.infos.first(5).each do |info| %>
+                      <div class="infos-item-boob">
+                        <div class="infos-big-boob"><%= info.title %>&nbsp;</div>
+                        <div class="infos-small-boob"><%= info.content %>&nbsp;</div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+</div>
+
+
+<div class="modal" id="productShowModal">
+  <div class="modal-content-custom">
+  </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,91 @@
+<!--**************************** FULLPAGE START ****************************-->
+<div class="dashboardv2-fullpage">
+
+
+<!--************************************ DEBUT DU BLOC DE GAUCHE ************************************-->
+  <%= render 'pages/dashboard_partials/leftblock', categories: @categories %>
+<!--************************************ FIN DU BLOC DE GAUCHE ************************************-->
+
+
+
+<!--************************************ DEBUT DU BLOC DU MILIEU ************************************-->
+  <div class="v2-fullpage-item-02">
+    <div class="fullpage-rightblock">
+    <div class="tab-content">
+
+      <% @categories.each_with_index do |category, index| %>
+
+
+          <% if index == 0 %>
+
+          <!--****************************** CONTENU SI PREMIER TAB DES TYPES ******************************-->
+            <%= render 'pages/dashboard_partials/first_tab_type', category: category %>
+          <!--**************************** CONTENU SI PREMIER TAB DES TYPES END ****************************-->
+
+          <% else %>
+
+          <!--**************************** CONTENU DES AUTRES TABS DES TYPES START ****************************-->
+            <%= render 'pages/dashboard_partials/other_tab_type', category: category %>
+          <!--**************************** CONTENU DES AUTRES TABS DES TYPES END ****************************-->
+
+          <% end %>
+
+      <% end %>
+
+
+    </div>
+    </div>
+  </div>
+<!--************************************ FIN DU BLOC DU MILIEU ************************************-->
+
+
+
+<!--************************************ DEBUT DU BLOC DE DROITE ************************************-->
+  <div class="v2-fullpage-item-03">
+    <div class="tab-content">
+
+      <% @categories.each do |category| %>
+        <% category.products.each_with_index do |product, index| %>
+
+          <% if index == 0 %>
+
+            <!--****************************** CONTENU SI PREMIER TAB DES PRODUCTS ******************************-->
+            <%= render 'pages/dashboard_partials/first_tab_product', category: category, product: product %>
+            <!--****************************** CONTENU SI PREMIER TAB DES PRODUCTS ******************************-->
+
+          <% else %>
+
+            <!--****************************** CONTENU SI AUTRE TAB DES PRODUCTS ******************************-->
+            <%= render 'pages/dashboard_partials/other_tab_product', category: category, product: product %>
+            <!--****************************** CONTENU SI AUTRE TAB DES PRODUCTS ******************************-->
+
+          <% end %>
+
+        <% end %>
+      <% end %>
+
+    </div>
+  </div>
+
+<!--************************************ FIN DU BLOC DE DROITE ************************************-->
+
+
+
+
+</div>
+<!--**************************** FULLPAGE END ****************************-->
+
+
+
+
+
+<!--**************************** BOTTOM CONTAINER START ****************************-->
+  <%= render 'pages/dashboard_partials/bottom_dashboard' %>
+<!--**************************** BOTTOM CONTAINER END ****************************-->
+
+
+
+<!--**************************** AJAXIFIED MODALS FOR CONTROLLERS ACTIONS START ****************************-->
+  <%= render 'pages/dashboard_partials/ajax_modals' %>
+<!--**************************** AJAXIFIED MODALS FOR CONTROLLERS ACTIONS END ****************************-->
+

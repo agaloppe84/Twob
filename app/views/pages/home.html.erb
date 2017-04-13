@@ -1,2 +1,124 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<%= render 'shared/fixed_navbar'  %>
+
+
+
+
+
+<div class="carousel slide carousel-fade" data-ride="carousel">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <% @random_album.each_with_index do |photo, index| %>
+          <% if index == 0 %>
+            <div class="item active" style="background-image: linear-gradient(90deg, rgba(255,255,255,0.1)30%, rgba(0,0,0,0.1)), url(<%= cl_image_path photo.path %>);">
+            </div>
+          <% else %>
+            <div class="item" style="background-image: linear-gradient(90deg, rgba(255,255,255,0.1)30%, rgba(0,0,0,0.1)), url(<%= cl_image_path photo.path %>);">
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div class="home-content-container-transparent hcct-color">
+
+  <div class="home-content-item-left">
+    <div class="header-on-home-2">l'enseigne</div>
+  </div>
+
+  <div class="home-content-item-right">
+    <div class="home-content-text-color-2">
+      Les artisans du store dans le Rhône, c'est plus de 25 ans d'expérience à votre service. Venez nous rendre visite dans notre espace "découverte" afin de connaître notre large gamme de stores, fermetures et de protections contre le soleil. Nous effectuons la fourniture et la pose de stores extérieurs et intérieurs, moustiquaires, volets roulants, portes de garages. Un technicien se déplace à domicile sur rendez-vous gratuitement et sans engagement et peut ainsi vous aider dans votre choix.
+    </div>
+  </div>
+
+  <div class="home-each-links">
+    <div class="partners-link">fournisseurs</div>
+    <div class="partners-link">services</div>
+  </div>
+
+</div>
+
+
+<div class="home-content-container-transparent hcct-color">
+
+  <div class="home-content-item-left">
+    <div class="header-on-home-2">la boutique</div>
+  </div>
+
+  <div class="home-content-item-right">
+    <div class="home-content-text-color-2">
+      Depuis le 1er juin 2014 la Boutique du store de l’Arbresle (installée depuis 2007) change de nom commercial et devient les artisans du store. Nos équipes et nos garanties restent les mêmes, seul le nom change. Animée par cette même volonté d'efficacité, aujourd'hui comme dans le passé, l'équipe des artisans du store met sa connaissance du marché, son savoir-faire au service de votre bien-être et de votre tranquillité. Les artisans du store vous apportent le conseil adéquat à votre projet.
+    </div>
+  </div>
+
+  <div class="home-each-links">
+    <div class="partners-link">produits</div>
+    <div class="partners-link">promos</div>
+    <div class="partners-link">devis</div>
+  </div>
+
+</div>
+
+
+<div class="home-content-container-transparent hcct-color">
+
+  <div class="home-content-item-left">
+    <div class="header-on-home-2">les horaires</div>
+  </div>
+
+  <div class="home-content-item-right">
+    <div class="home-content-text-color-2">
+      Nous vous accueillons du lundi au vendredi de 9h à 12h et de 14h à 18h30 et le samedi de 9h à 12h .
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="home-small-container">
+
+  <%= link_to categories_path do %>
+    <div class="flex-one">
+      <%= image_tag("rect01.svg", size: "24x24", alt: "Devis") %>
+      <div class="home-small-container-item">
+        <div class="home-small-header-title"><%= "Produits" %></div>
+      </div>
+    </div>
+  <% end %>
+
+  <%= link_to category_promo_path(@last_promo.category, @last_promo) do %>
+    <div class="flex-one">
+      <%= image_tag("rect02.svg", size: "24x24", alt: "Devis") %>
+      <div class="home-small-container-item">
+        <div class="home-small-header-title"><%= "Promos" %></div>
+      </div>
+    </div>
+  <% end %>
+
+
+  <%= link_to photos_path do %>
+    <div class="flex-one">
+      <%= image_tag("rect03.svg", size: "24x24", alt: "Devis") %>
+      <div class="home-small-container-item">
+        <div class="home-small-header-title"><%= "Photos" %></div>
+      </div>
+    </div>
+  <% end %>
+
+</div>
+
+

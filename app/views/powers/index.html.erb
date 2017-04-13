@@ -1,0 +1,226 @@
+<div class="infos-fullpage">
+
+    <div class="infos-product-title">
+
+        <div class="product-title-container">
+          <div class="pro-header-top">Produit</div>
+          <div class="pro-title-top-name"><%= @product.title %></div>
+        </div>
+
+        <div class="product-title-container">
+          <div class="pro-header-top">Type</div>
+          <div class="pro-title-top"><%= @product.category.name %></div>
+        </div>
+
+        <div class="product-title-container">
+          <div class="pro-header-top">Marque</div>
+          <div class="pro-title-top"><%= @product.brand.name %></div>
+        </div>
+
+        <div class="product-title-container">
+          <div class="pro-header-top">Infos</div>
+          <div class="pro-title-top"><%= @product.infos.count %></div>
+        </div>
+
+        <div class="product-title-container">
+          <%= link_to dashboard_path do %>
+            <i class="fa fa-code-fork" aria-hidden="true"></i>
+          <% end %>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="infos-product-title-infos">
+
+        <div class="product-title-container-short">
+          <div class="pro-infos-big-header">Pouvoirs</div>
+        </div>
+
+
+          <% if @product.power.present? %>
+
+            <div class="product-title-container-button">
+              <%= link_to edit_product_power_path(@product,@product.power), class: "", data: { confirm: "Modifier ce pouvoir ?" } do %>
+                <i class="fa fa-cog" aria-hidden="true"></i>
+
+              <% end %>
+            </div>
+
+          <% else %>
+
+            <div class="product-title-container-button">
+              <%= link_to new_product_power_path(@product), class: "", data: { confirm: "Créer un pouvoir pour ce produit ?" } do %>
+                <i class="fa fa-plus" aria-hidden="true"></i>
+
+              <% end %>
+            </div>
+
+          <% end %>
+
+
+
+
+    </div>
+
+
+
+
+
+
+<% if @product.infos.any? %>
+
+    <% @product.infos.each do |info| %>
+
+
+
+      <div class="info-item">
+
+        <div class="info-icon" style="background-image: url(<%= cl_image_path info.icon.path %>);"></div>
+
+        <div class="info-title-color"><%= info.title %>&nbsp;</div>
+
+        <div class="info-title-color-content"><%= info.content %>&nbsp;</div>
+
+
+        <div class="info-links-container">
+
+
+          <%= link_to product_info_path(@product,info), method: :delete, data: { confirm: "Etes-vous sûr de vouloir supprimer cette info ?" } do %>
+              <div class="info-delete-button">
+                <i class="fa fa-times" aria-hidden="true"></i>
+              </div>
+          <% end %>
+
+          <%= link_to edit_product_info_path(@product,info), class: "", data: { confirm: "Etes-vous sûr de vouloir modifier cette info ?" } do %>
+              <div class="info-edit-button">
+                <i class="fa fa-sliders" aria-hidden="true"></i>
+              </div>
+          <% end %>
+
+        </div>
+
+
+
+      </div>
+
+    <% end %>
+
+    <% else %>
+
+      <div class="no-present-infos">Ce store n'a pas d'infos</div>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% if @product.power.present? %>
+
+
+  <div class="flex-col-powers">
+
+    <%= @product.power.id  %>
+
+    <% if @product.power.sun == false %>
+    <% else %>
+      <div class="power-boolean">Protection contre le soleil</div>
+    <% end %>
+
+    <% if @product.power.rain == false %>
+    <% else %>
+      <div class="power-boolean">Protection contre la pluie</div>
+    <% end %>
+
+    <% if @product.power.wind == false %>
+    <% else %>
+      <div class="power-boolean">Protection contre le vent</div>
+    <% end %>
+
+    <% if @product.power.cold == false %>
+    <% else %>
+      <div class="power-boolean">Protection contre le froid</div>
+    <% end %>
+
+    <% if @product.power.hot == false %>
+    <% else %>
+      <div class="power-boolean">Protection contre la chaleur</div>
+    <% end %>
+
+    <% if @product.power.humidity == false %>
+    <% else %>
+      <div class="power-boolean">Protection contre l'humidité</div>
+    <% end %>
+
+    <% if @product.power.energysaver == false %>
+    <% else %>
+      <div class="power-boolean">Economie d'energie</div>
+    <% end %>
+
+    <% if @product.power.taxsaver == false %>
+    <% else %>
+      <div class="power-boolean">Crédit d'impot</div>
+    <% end %>
+
+    <% if @product.power.insects == false %>
+    <% else %>
+      <div class="power-boolean">Protection contre les insectes</div>
+    <% end %>
+
+    <% if @product.power.security == false %>
+    <% else %>
+      <div class="power-boolean">Protection contre le vol</div>
+    <% end %>
+
+    <% if @product.power.inside == false %>
+    <% else %>
+      <div class="power-boolean">Produit d'intérieur</div>
+    <% end %>
+
+    <% if @product.power.outside == false %>
+    <% else %>
+      <div class="power-boolean">Produit d'extérieur</div>
+    <% end %>
+
+    <% if @product.power.certification == false %>
+    <% else %>
+      <div class="power-boolean">Certification</div>
+    <% end %>
+
+  </div>
+
+  <% else %>
+
+    <div class="no-present-power">Ce store n'a pas de pouvoir</div>
+
+<% end %>
+
+
+
+
+
+
+
+</div>

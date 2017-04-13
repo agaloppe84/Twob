@@ -1,0 +1,8 @@
+<% @sql_test[:sorted_year].each do |month, count| %>
+  <div class="god-container">
+    <div class="text-dyngraph"><%= t(month).chars.first %></div>
+    <div class="month" data-height="<%= count %>%">
+      <div class="number" data-count="<%= count %>"></div>
+    </div>
+  </div>
+<% end %>

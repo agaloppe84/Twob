@@ -1,0 +1,753 @@
+.product-card {
+  height: 250px;
+  width: 35%;
+  display: flex;
+  margin-bottom: 120px;
+  transition: 0.4s ease;
+}
+
+
+
+.product-card-left {
+  height: 100%;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  background-color: white;
+  padding-right: 25px;
+}
+
+.product-card-left-alt {
+  height: 100%;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  background-color: white;
+  padding-right: 25px;
+}
+
+.product-card-right {
+  height: 100%;
+  width: 200px;
+  background-size: cover !important;
+  background-position: center center;
+}
+
+.product-card-middle {
+  height: 100%;
+  flex: 4;
+}
+
+.product-card-middle-two {
+  height: 100%;
+  flex: 4;
+  background-color: red;
+}
+
+.product-card-left-item {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+
+
+.item-title {
+  font-family: "Circular-Medium";
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.item-title-small {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.item-description {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  opacity: 0.7;
+  padding-left: 20px;
+}
+
+.item-link {
+  font-family: "Circular-Book";
+  font-size: 13px;
+  text-decoration: none;
+  color: white;
+  min-height: 100%;
+  background-color: #03D6D2;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-right: 20px;
+}
+
+.item-link a {
+  font-family: "Circular-Book";
+  font-size: 13px;
+  text-decoration: none;
+  color: white;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card-left-item-button:hover a {
+  color: white;
+}
+
+.item-description-head {
+  font-family: "Circular-Book";
+  font-size: 12px;
+  opacity: 0.5;
+  padding-left: 20px;
+}
+
+.item-type-name {
+  font-family: "Circular-Medium";
+  font-size: 13px;
+  opacity: 0.4;
+}
+
+
+
+
+
+
+
+.card {
+  height: 250px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center center;
+  color: white;
+  position: relative;
+}
+.card-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.card-category {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  font-size: 10px;
+  text-shadow: none;
+  font-family: "Circular-Book";
+  font-size: 12px;
+  font-weight: 200;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background-color: rgba(255,255,255,0.2);
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+}
+.card-description h2 {
+  text-shadow: none;
+  font-family: "Circular-Medium";
+  font-size: 20px;
+}
+.card-description p {
+  font-size: 14px;
+  text-shadow: none;
+  font-family: "Circular-Book";
+  }
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index:2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover{
+  opacity: 0.1;
+}
+
+.modif-button {
+  text-shadow: none;
+  font-family: "Circular-Book";
+  font-size: 12px;
+  font-weight: 200;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background-color: rgba(255,25,25,0.6);
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: 0.5s ease;
+}
+
+.modif-button:hover {
+  background-color: rgba(255,25,25,0.8);
+  color: white;
+  text-decoration: none !important;
+  transition: 0.5s ease;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+
+
+
+
+
+.product-card-left-item-button-edit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #F4576D;
+  transition: 0.5s ease;
+  opacity: 0.9;
+}
+
+.product-card-left-item-button-edit:hover {
+  background-color: #F4576D;
+  opacity: 1;
+}
+
+
+.product-card-left-item-button-edit:hover a {
+  color: white;
+}
+
+.item-link-edit a {
+  font-family: "Circular-Book";
+  font-size: 13px;
+  text-decoration: none;
+  color: white;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-link-edit {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  opacity: 0.8;
+  text-decoration: none;
+  color: white;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+.product-card-left-item-button-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #FF7533;
+  transition: 0.5s ease;
+  opacity: 0.8;
+}
+
+.product-card-left-item-button-info:hover {
+  background-color: #FF7533;
+  opacity: 1;
+}
+
+
+.product-card-left-item-button-info:hover a {
+  color: white;
+}
+
+.item-link-info a {
+  font-family: "Circular-Book";
+  font-size: 13px;
+  text-decoration: none;
+  color: white;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-link-info {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  opacity: 0.8;
+  text-decoration: none;
+  color: white;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+
+.item-brand {
+  position: absolute;
+  top: 7px;
+  right: 50px;
+  width: 20px;
+}
+
+.item-brand img {
+  width: 50px;
+}
+
+
+.item-brand-show {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  opacity: 0.6;
+  color: #364F6B;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.item-brand-show img {
+  width: 80px;
+}
+
+
+
+// .product-card-dashboard {
+//   display: flex;
+//   justify-content: left;
+//   align-items: center;
+//   width: 100%;
+//   height: 50px;
+//   position: relative;
+// }
+
+
+.product-card-left-dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width: 100%;
+}
+
+
+.dash-item {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+}
+
+
+.album-show-photo {
+  background-position: center center;
+  background-size: cover !important;
+  width: 300px;
+  height: 150px;
+  border-radius: 3px;
+  margin: 20px;
+  position: relative;
+  margin-bottom: 35px;
+  transition: 0.4s ease;
+}
+
+
+.album-show-photo:hover {
+}
+
+
+
+.album-fullpage {
+  margin-left: 20%;
+  margin-right: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+.album-name {
+  width: 640px;
+  font-family: "Circular-Book";
+  font-size: 15px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.photos-count {
+  font-family: "Circular-Book";
+  font-size: 12px;
+  opacity: 0.5;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.photo-name-and-desc {
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  font-family: "Circular-Medium";
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.file-type {
+  margin-right: 14px;
+}
+
+.file-size {
+  font-family: "Circular-Book";
+  font-size: 12px;
+  margin-right: 14px;
+  opacity: 0.6;
+}
+
+.hd-image {
+  font-family: "Circular-Black";
+  font-size: 11px;
+  color: blue;
+  opacity: 0.6;
+}
+
+
+.non-hd-image {
+  font-family: "Circular-Black";
+  font-size: 11px;
+  color: red;
+  opacity: 0.7;
+}
+
+
+.dashboard-return-button {
+  font-family: "Circular-Book";
+  font-size: 12px;
+  border: 1px solid grey;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-decoration: none;
+  color: rgba(0,0,0,0.6);
+  border-radius: 3px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  background-color: transparent;
+}
+
+.dashboard-return-button:hover {
+  font-family: "Circular-Book";
+  font-size: 12px;
+  border: 1px solid grey;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-decoration: none;
+  color: rgba(0,0,0,0.9);
+  border-radius: 3px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.fullpage-leftblock-show .leftblock-content-show .nav-stacked li a {
+  display: none;
+  transition: 0.1s ease;
+}
+
+
+
+
+.fullpage-leftblock-show:hover .leftblock-content-show .nav-stacked li a {
+  display: inline;
+  transition: 0.1s ease;
+}
+
+
+
+
+
+
+
+
+.fullpage-leftblock-show .leftblock-content-show .nav-stacked li  {
+  margin-bottom: 28px;
+  transition: 0.1s ease;
+}
+
+
+
+
+.fullpage-leftblock-show:hover .leftblock-content-show .nav-stacked li  {
+  margin-bottom: 0;
+  transition: 0.1s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.leftblock-content-show .nav li.active a {
+  background-color: transparent;
+  opacity: 1;
+  color: rgba(30,30,40,1);
+  font-family: "Circular-Bold";
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+.leftblock-content-show .nav li.active:hover a {
+  background-color: transparent;
+  color: rgba(30,30,40,1);
+  opacity: 1;
+  font-family: "Circular-Bold";
+}
+
+
+
+
+.leftblock-content-show .nav li {
+  background-color: transparent;
+  color: rgba(30,30,40,1);
+  opacity: 1;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+.leftblock-content-show .nav li a {
+  background-color: transparent;
+  color: rgba(30,30,40,1);
+  opacity: 0.6;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+.leftblock-content-show .nav li:hover {
+  background-color: transparent;
+  opacity: 1;
+  color: rgba(30,30,40,1);
+  font-family: "Circular-Book";
+  font-size: 13px;
+  transition: 0.3s ease;
+}
+
+.leftblock-content-show .nav li:hover a {
+  background-color: transparent;
+  opacity: 1;
+  color: rgba(30,30,40,1);
+  font-family: "Circular-Book";
+  font-size: 13px;
+  transition: 0.5s ease;
+}
+
+
+.leftblock-content-show .nav li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.leftblock-content-show .nav li:hover i {
+  transition: 0.5s ease;
+  opacity: 1;
+}
+
+.leftblock-content-show .nav li.active i {
+  transition: 0.5s ease;
+  opacity: 1;
+}
+
+.leftblock-content-show .nav li i {
+  transition: 0.5s ease;
+  opacity: 0.2;
+  font-size: 14px;
+}
+
+
+.leftblock-content-show .nav li:hover .product-count {
+  color: lightgrey;
+  transition: 0.5s ease;
+  opacity: 1;
+  font-family: "Open Sans";
+  font-weight: 200;
+}
+
+.leftblock-content-show .nav li.active .product-count {
+  color: lightgrey;
+  transition: 0.5s ease;
+  opacity: 1;
+  font-family: "Open Sans";
+  font-weight: 200;
+}
+
+.leftblock-content-show .nav li .product-count {
+  color: lightgrey;
+  transition: 0.5s ease;
+  opacity: 0.4;
+  font-size: 12px;
+  transition: 0.8s ease;
+  font-family: "Open Sans";
+  font-weight: 200;
+  width: 30px;
+  text-align: right;
+}
+
+
+.leftblock-content-show .nav-stacked {
+  padding-left: 30px;
+}
+
+
+
+
+
+
+.fullpage-show {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+.menu-icon-show {
+  width: 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.product-card-left-item-new {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  position: relative;
+}
+
+.product-card-left-item-new-big {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+  position: relative;
+  border: none !important;
+}
+
+.product-card-left-item-new-big-alt {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 35px;
+  position: relative;
+  border: none !important;
+}
+
+.product-card-left-item-new-two {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  position: relative;
+}
+
+
+.image-center {
+  background-size: cover !important;
+  background-position: center center;
+}
+
+
+
+
+
+

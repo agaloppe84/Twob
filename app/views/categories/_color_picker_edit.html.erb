@@ -1,0 +1,523 @@
+
+
+<div class="picker">
+
+  <div class="header">
+    <div class="color-link color-link-01"></div>
+    <div class="color-link color-link-02"></div>
+    <div class="color-link color-link-03"></div>
+    <div class="color-link color-link-04"></div>
+    <div class="color-link color-link-05"></div>
+    <div class="color-link color-link-06"></div>
+    <div class="color-link color-link-07"></div>
+    <div class="color-link color-link-08"></div>
+    <div class="color-link color-link-09"></div>
+    <div class="random-color-link"></div>
+  </div>
+
+
+  <div class="color-container color-container-01 active">
+    <div class="cc-flex">
+      <div class="sub-color sc01-light-00"></div>
+      <div class="sub-color sc01-light-10"></div>
+      <div class="sub-color sc01-light-20"></div>
+      <div class="sub-color sc01-light-30"></div>
+    </div>
+  </div>
+
+  <div class="color-container color-container-02">
+    <div class="cc-flex">
+      <div class="sub-color sc02-light-00"></div>
+      <div class="sub-color sc02-light-10"></div>
+      <div class="sub-color sc02-light-20"></div>
+      <div class="sub-color sc02-light-30"></div>
+    </div>
+  </div>
+
+  <div class="color-container color-container-03">
+    <div class="cc-flex">
+      <div class="sub-color sc03-light-00"></div>
+      <div class="sub-color sc03-light-10"></div>
+      <div class="sub-color sc03-light-20"></div>
+      <div class="sub-color sc03-light-30"></div>
+    </div>
+  </div>
+
+  <div class="color-container color-container-04">
+    <div class="cc-flex">
+      <div class="sub-color sc04-light-00"></div>
+      <div class="sub-color sc04-light-10"></div>
+      <div class="sub-color sc04-light-20"></div>
+      <div class="sub-color sc04-light-30"></div>
+    </div>
+  </div>
+
+  <div class="color-container color-container-05">
+    <div class="cc-flex">
+      <div class="sub-color sc05-light-00"></div>
+      <div class="sub-color sc05-light-10"></div>
+      <div class="sub-color sc05-light-20"></div>
+      <div class="sub-color sc05-light-30"></div>
+    </div>
+  </div>
+
+  <div class="color-container color-container-06">
+    <div class="cc-flex">
+      <div class="sub-color sc06-light-00"></div>
+      <div class="sub-color sc06-light-10"></div>
+      <div class="sub-color sc06-light-20"></div>
+      <div class="sub-color sc06-light-30"></div>
+    </div>
+  </div>
+
+  <div class="color-container color-container-07">
+    <div class="cc-flex">
+      <div class="sub-color sc07-light-00"></div>
+      <div class="sub-color sc07-light-10"></div>
+      <div class="sub-color sc07-light-20"></div>
+      <div class="sub-color sc07-light-30"></div>
+    </div>
+  </div>
+
+  <div class="color-container color-container-08">
+    <div class="cc-flex">
+      <div class="sub-color sc08-light-00"></div>
+      <div class="sub-color sc08-light-10"></div>
+      <div class="sub-color sc08-light-20"></div>
+      <div class="sub-color sc08-light-30"></div>
+    </div>
+  </div>
+
+  <div class="color-container color-container-09">
+    <div class="cc-flex">
+      <div class="sub-color sc09-light-00"></div>
+      <div class="sub-color sc09-light-10"></div>
+      <div class="sub-color sc09-light-20"></div>
+      <div class="sub-color sc09-light-30"></div>
+    </div>
+  </div>
+
+  <div class="color-container color-container-10">
+    <div class="cc-flex random-collection">
+      <div class="random-trigger-edit">Random color</div>
+      <div class="random-color-edit"></div>
+    </div>
+  </div>
+
+
+
+</div>
+
+<script>
+
+  $( ".category_color" ).click(function() {
+    $( ".picker" ).toggle();
+  });
+
+
+
+$( ".current-color" ).click(function() {
+  $( ".picker" ).toggle();
+});
+
+
+
+
+
+$( ".sc01-light-00" ).click(function() {
+    var data = $( ".sc01-light-00" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc01-light-10" ).click(function() {
+    var data = $( ".sc01-light-10" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc01-light-20" ).click(function() {
+    var data = $( ".sc01-light-20" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc01-light-30" ).click(function() {
+    var data = $( ".sc01-light-30" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+
+
+
+
+$( ".sc02-light-00" ).click(function() {
+    var data = $( ".sc02-light-00" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc02-light-10" ).click(function() {
+    var data = $( ".sc02-light-10" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc02-light-20" ).click(function() {
+    var data = $( ".sc02-light-20" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc02-light-30" ).click(function() {
+    var data = $( ".sc02-light-30" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+
+
+
+
+$( ".sc03-light-00" ).click(function() {
+    var data = $( ".sc03-light-00" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc03-light-10" ).click(function() {
+    var data = $( ".sc03-light-10" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc03-light-20" ).click(function() {
+    var data = $( ".sc03-light-20" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc03-light-30" ).click(function() {
+    var data = $( ".sc03-light-30" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+
+
+
+
+
+
+
+$( ".sc04-light-00" ).click(function() {
+    var data = $( ".sc04-light-00" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc04-light-10" ).click(function() {
+    var data = $( ".sc04-light-10" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc04-light-20" ).click(function() {
+    var data = $( ".sc04-light-20" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc04-light-30" ).click(function() {
+    var data = $( ".sc04-light-30" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+
+
+
+
+$( ".sc05-light-00" ).click(function() {
+    var data = $( ".sc05-light-00" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc05-light-10" ).click(function() {
+    var data = $( ".sc05-light-10" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc05-light-20" ).click(function() {
+    var data = $( ".sc05-light-20" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc05-light-30" ).click(function() {
+    var data = $( ".sc05-light-30" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+
+
+$( ".sc06-light-00" ).click(function() {
+    var data = $( ".sc06-light-00" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc06-light-10" ).click(function() {
+    var data = $( ".sc06-light-10" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc06-light-20" ).click(function() {
+    var data = $( ".sc06-light-20" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc06-light-30" ).click(function() {
+    var data = $( ".sc06-light-30" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+
+
+$( ".sc07-light-00" ).click(function() {
+    var data = $( ".sc07-light-00" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc07-light-10" ).click(function() {
+    var data = $( ".sc07-light-10" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc07-light-20" ).click(function() {
+    var data = $( ".sc07-light-20" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc07-light-30" ).click(function() {
+    var data = $( ".sc07-light-30" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+
+
+
+$( ".sc08-light-00" ).click(function() {
+    var data = $( ".sc08-light-00" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc08-light-10" ).click(function() {
+    var data = $( ".sc08-light-10" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc08-light-20" ).click(function() {
+    var data = $( ".sc08-light-20" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc08-light-30" ).click(function() {
+    var data = $( ".sc08-light-30" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+
+
+$( ".sc09-light-00" ).click(function() {
+    var data = $( ".sc09-light-00" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc09-light-10" ).click(function() {
+    var data = $( ".sc09-light-10" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc09-light-20" ).click(function() {
+    var data = $( ".sc09-light-20" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+$( ".sc09-light-30" ).click(function() {
+    var data = $( ".sc09-light-30" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+
+
+
+
+$( ".random-color-edit" ).click(function() {
+    var data = $( ".random-color-edit" ).css( "background-color" );
+    $('.category_color input').val(data);
+    $( '.input-container .current-color' ).css( "background-color", data );
+    $( '.bigdiv' ).css( "background-color", data );
+    $( '.category_color input' ).css( "background-color", data );
+    $( '.category_color input' ).css( "border", "none" );
+});
+
+
+
+$( ".color-link-01" ).click(function() {
+    $('.color-container').not(".color-container-01").removeClass("active");
+    $('.color-container-01').addClass("active");
+});
+
+$( ".color-link-02" ).click(function() {
+    $('.color-container').not(".color-container-02").removeClass("active");
+    $('.color-container-02').addClass("active");
+});
+
+$( ".color-link-03" ).click(function() {
+    $('.color-container').not(".color-container-03").removeClass("active");
+    $('.color-container-03').addClass("active");
+});
+
+$( ".color-link-04" ).click(function() {
+    $('.color-container').not(".color-container-04").removeClass("active");
+    $('.color-container-04').addClass("active");
+});
+
+$( ".color-link-05" ).click(function() {
+    $('.color-container').not(".color-container-05").removeClass("active");
+    $('.color-container-05').addClass("active");
+});
+
+$( ".color-link-06" ).click(function() {
+    $('.color-container').not(".color-container-06").removeClass("active");
+    $('.color-container-06').addClass("active");
+});
+
+$( ".color-link-07" ).click(function() {
+    $('.color-container').not(".color-container-07").removeClass("active");
+    $('.color-container-07').addClass("active");
+});
+
+$( ".color-link-08" ).click(function() {
+    $('.color-container').not(".color-container-08").removeClass("active");
+    $('.color-container-08').addClass("active");
+});
+
+$( ".color-link-09" ).click(function() {
+    $('.color-container').not(".color-container-09").removeClass("active");
+    $('.color-container-09').addClass("active");
+});
+
+$( ".random-color-link" ).click(function() {
+    $('.color-container').not(".color-container-10").removeClass("active");
+    $('.color-container-10').addClass("active");
+});
+
+
+
+
+$( ".random-trigger-edit" ).click(function() {
+    var test = "#2AC88E";
+    var rRgb = Math.floor(Math.random() * 210) + 50;
+    var gRgb = Math.floor(Math.random() * 210) + 50;
+    var bRgb = Math.floor(Math.random() * 210) + 50;
+    var result = "rgb" + "(" + rRgb + "," + gRgb + "," + bRgb + ")";
+    $( '.random-color-edit' ).css( "background-color", result );
+});
+
+
+</script>
+
+

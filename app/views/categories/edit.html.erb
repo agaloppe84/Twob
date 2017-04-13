@@ -1,0 +1,29 @@
+<%= simple_form_for (@category) do |f| %>
+
+<div class="modal-header-custom">
+  <div class="header-hard-dashboard" style="opacity: 0.8;font-size: 15px;font-family: 'Circular-Book';color: <%= "#{@category.color}" %>;">Modifier</div>
+   <div class="between-things" style="font-size: 15px;font-family: 'Circular-Book';color: <%= "#{@category.color}" %>;padding: 0 10px 0 10px;"> > </div>
+  <div class="header-hard-dashboard" style="opacity: 0.9;font-size: 15px;font-family: 'Circular-Book';"><%= @category.name %></div>
+  <button class="close" data-dismiss="modal">×</button>
+</div>
+
+
+<div class="modal-body-custom">
+  <div class="edit-product-container">
+    <div class="label-on-modal-dashboard">Nom</div>
+    <%= f.input :name, label: false %>
+
+    <div class="input-container">
+      <div class="label-on-modal-dashboard">Couleur</div>
+      <%= f.input :color, label: false %>
+    </div>
+
+  </div>
+  <%= render "color_picker_edit" %>
+</div>
+
+<div class="modal-footer-custom">
+  <%= f.submit "Modifier", :class => 'submit-button-on-modal' %>
+</div>
+
+<% end %>

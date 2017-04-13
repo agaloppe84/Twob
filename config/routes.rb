@@ -13,14 +13,21 @@ Rails.application.routes.draw do
   get 'pathfilter', to: 'pages#pathfilter'
   get 'analytics', to: 'pages#analytics'
 
-  resources :categories
-  resources :albums
-  resources :promos, only: [:index, :new, :create, :edit, :update]
+
+
   resources :quotations, only: [:index, :new, :create, :edit, :update]
-  resources :products
-  resources :infos
-  resources :powers
-  resources :brands
+  resources :promos, only: [:index]
+
+
+  resources :categories do
+    resources :albums
+    resources :promos, only: [:new, :create, :edit, :update]
+    resources :products do
+      resources :infos
+      resources :powers
+      resources :brands
+    end
+  end
 
   mount Attachinary::Engine => "/attachinary"
 end

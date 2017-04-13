@@ -1,0 +1,193 @@
+<ul class="nav nav-pills nav-stacked">
+
+      <% @types.each do |type| %>
+        <% if type == @types.first %>
+            <li role="presentation" class="active">
+              <div class="menu-icon-show" style="color: <%= type.color %>;"><i class="fa fa-circle" aria-hidden="true"></i></div>
+              <a href="#<% type.name %>" data-toggle="tab"><%= type.name.pluralize %></a>
+            </li>
+        <% else %>
+            <li role="presentation">
+              <div class="menu-icon-show" style="color: <%= type.color %>;"><i class="fa fa-circle" aria-hidden="true"></i></div>
+              <a href="#<% type.name %>" data-toggle="tab"><%= type.name.pluralize %></a>
+            </li>
+        <% end %>
+      <% end %>
+
+ </ul>
+
+
+<% @types.each do |type| %>
+
+  <% if type == @types.first %>
+
+    <div role="tabpanel" class="tab-pane active" id="<% type.name %>">
+
+        <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%=  cl_image_path type.albums.last.photos.sample.path  %>);">
+
+            <div class="banner-on-index-content"></div>
+
+        </div>
+
+        <div class="navtab-big-title">
+            <div class="big-icon-index-top color-one"><i class="fa fa-circle" aria-hidden="true"></i></div>
+            <div class="big-title"><%= "Volets roulants" %></div>
+            <div class="blind-count color-one-text"><%= type.products.count %> produits</div>
+            <% if type.promos.any? %>
+              <div class="blind-count">Promo en cours</div>
+              <div class="blind-count"><%= "Jusqu'au #{type.promos.last.end}" %></div>
+            <% end %>
+        </div>
+
+        <% type.products.each do |product| %>
+
+            <div class="product-card">
+
+              <div class="product-card-left-alt">
+
+                  <!-- <div class="product-card-left-item-new item-title">
+                    <div class="header-for-card">Produit</div>
+                  </div> -->
+
+                  <div class="flex-inline">
+
+                      <div class="flex-column">
+                          <div class="item-title">
+                            <%= product.title %>
+                          </div>
+
+                           <div class="item-title-small">
+                            <%= product.description %>
+                          </div>
+                      </div>
+
+                      <div class="flex-brand-icon">
+                          <div class="info-icon" style="background-image: url(<%= cl_image_path product.brand.logo.path %>);"></div>
+                      </div>
+
+                  </div>
+
+                  <div class="infos-volets">
+                    <% product.infos.first(4).each do |info| %>
+
+                      <div class="infos-item-boob">
+                        <div class="infos-icon-boob" style="background-image: url(<%= cl_image_path info.icon.path %>);"></div>
+
+                        <div class="infos-big-boob"><%= info.title %>&nbsp;</div>
+
+                        <div class="infos-small-boob"><%= info.content %>&nbsp;</div>
+                      </div>
+
+                    <% end %>
+                  </div>
+
+
+                  <div class="product-card-left-item-button">
+                    <div class="item-link"><%= link_to "détails", product_path(product) %></div>
+                    <div class="item-link"><%= link_to "devis", devis_path %></div>
+                    <div class="item-link"><%= link_to "pdf", devis_path %></div>
+                  </div>
+
+              </div>
+
+
+
+
+
+              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= cl_image_path product.photos.last.path  %>);">
+              </div>
+
+            </div>
+
+          <% end %>
+
+    </div>
+
+  <% else %>
+
+    <div role="tabpanel" class="tab-pane" id="<% type.name %>">
+
+        <div class="banner-on-index" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%=  cl_image_path type.albums.last.photos.sample.path  %>);">
+
+            <div class="banner-on-index-content"></div>
+
+        </div>
+
+        <div class="navtab-big-title">
+            <div class="big-icon-index-top color-one"><i class="fa fa-circle" aria-hidden="true"></i></div>
+            <div class="big-title"><%= "Volets roulants" %></div>
+            <div class="blind-count color-one-text"><%= type.products.count %> produits</div>
+            <% if type.promos.any? %>
+              <div class="blind-count">Promo en cours</div>
+              <div class="blind-count"><%= "Jusqu'au #{type.promos.last.end}" %></div>
+            <% end %>
+        </div>
+
+        <% type.products.each do |product| %>
+
+            <div class="product-card">
+
+              <div class="product-card-left-alt">
+
+                  <!-- <div class="product-card-left-item-new item-title">
+                    <div class="header-for-card">Produit</div>
+                  </div> -->
+
+                  <div class="flex-inline">
+
+                      <div class="flex-column">
+                          <div class="item-title">
+                            <%= product.title %>
+                          </div>
+
+                           <div class="item-title-small">
+                            <%= product.description %>
+                          </div>
+                      </div>
+
+                      <div class="flex-brand-icon">
+                          <div class="info-icon" style="background-image: url(<%= cl_image_path product.brand.logo.path %>);"></div>
+                      </div>
+
+                  </div>
+
+                  <div class="infos-volets">
+                    <% product.infos.first(4).each do |info| %>
+
+                      <div class="infos-item-boob">
+                        <div class="infos-icon-boob" style="background-image: url(<%= cl_image_path info.icon.path %>);"></div>
+
+                        <div class="infos-big-boob"><%= info.title %>&nbsp;</div>
+
+                        <div class="infos-small-boob"><%= info.content %>&nbsp;</div>
+                      </div>
+
+                    <% end %>
+                  </div>
+
+
+                  <div class="product-card-left-item-button">
+                    <div class="item-link"><%= link_to "détails", product_path(product) %></div>
+                    <div class="item-link"><%= link_to "devis", devis_path %></div>
+                    <div class="item-link"><%= link_to "pdf", devis_path %></div>
+                  </div>
+
+              </div>
+
+
+
+
+
+              <div class="product-card-right" style="background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)), url(<%= cl_image_path product.photos.last.path  %>);">
+              </div>
+
+            </div>
+
+          <% end %>
+
+    </div>
+
+  <% end %>
+
+<% end %>
+

@@ -1,0 +1,76 @@
+
+<script>
+  $('.font-cont-tastic-v2').children().click(function() {
+    $( ".dynamic-font-append-v2" ).empty();
+    var iconName = $(this).attr('class');
+    var unchecked = $(".fontastic-container-v2 .font-cont-tastic-v2 div").not(iconName);
+    $(unchecked).parent().css( "background-color", "white" );
+    $(unchecked).css( "color", "grey" );
+    var tempoAppend = $(this).clone();
+    $(".dynamic-font-append-v2").append(tempoAppend);
+    $(".dynamic-font-append-text").text(iconName);
+    $(".info_icon input").val(iconName);
+    $(this).parent().css( "background-color", "#2AC88E" );
+    $(this).css( "color", "white" );
+  });
+
+</script>
+
+<%= simple_form_for [@product.category, @product, @info] do |f| %>
+
+
+  <script>
+    var infoRubyName = "<%= "#{@info.icon}" %>";
+    var tempoicon = $(".fontastic-container-v2 .<%= "#{@info.icon}" %>").clone();
+    $(".dynamic-font-append-v2").append(tempoicon);
+    $(".dynamic-font-append-text").text(infoRubyName);
+  </script>
+
+
+
+<div class="modal-header-custom">
+    <div class="header-hard-dashboard" style="opacity: 0.8;">Modifier l'info</div>
+    <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+    <div class="header-hard-dashboard" style="opacity: 0.4;"><%= @info.title %></div>
+    <button class="close" data-dismiss="modal">×</button>
+</div>
+
+
+
+
+
+
+<div class="modal-body-custom">
+  <div class="edit-product-container">
+    <div class="label-on-modal-dashboard">Nom de l'info</div>
+    <%= f.input :title, label: false %>
+
+    <div class="label-on-modal-dashboard">Contenu</div>
+    <%= f.input :content, label: false %>
+
+    <div class="label-on-modal-dashboard">Icone</div>
+    <%= f.input :icon, label: false, as: :hidden %>
+
+    <div class="dynamic-font-append-v2"></div>
+    <div class="dynamic-font-append-text"></div>
+
+    <div class="fontastic-container-v2">
+      <% font_icon_dynamic.each do |icon| %>
+        <div class="font-cont-tastic-v2">
+          <div class="<%= icon %>" style="font-size: 20px;"></div>
+        </div>
+      <% end %>
+    </div>
+
+
+
+  </div>
+</div>
+
+<div class="modal-footer-custom">
+  <%= f.submit "Modifier #{@info.title}", :class => 'submit-button-on-modal' %>
+</div>
+
+<% end %>
+
+

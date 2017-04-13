@@ -1,0 +1,294 @@
+<%= simple_form_for [@product.category, @product, @power] do |f| %>
+
+<div class="modal-header-custom">
+  <div class="header-hard-dashboard" style="opacity: 0.8;">Modifier les pouvoirs pour le produit</div>
+  <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+  <div class="header-hard-dashboard" style="opacity: 0.4;"><%= @product.title %></div>
+  <button class="close" data-dismiss="modal">×</button>
+</div>
+
+<div class="modal-body-custom checkbox-padding">
+
+
+
+        <div class="form-group boolean optional power_wind">
+          <div class="checkbox">
+            <input type="hidden" name="power[wind]" value="0">
+            <div class="can-toggle demo-rebrand-2">
+              <% if @power.wind? %>
+                <input id="power_wind" type="checkbox" name="power[wind]" value"1" checked="checked">
+              <% else %>
+                <input id="power_wind" type="checkbox" name="power[wind]" value"1">
+              <% end %>
+              <label for="power_wind">
+                <div class="can-toggle__switch"></div>
+                <div class="can-toggle__label-text">Protection contre le vent</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="form-group boolean optional power_cold">
+          <div class="checkbox">
+            <input type="hidden" name="power[cold]" value="0">
+            <div class="can-toggle demo-rebrand-2">
+              <% if @power.cold? %>
+                <input id="power_cold" type="checkbox" name="power[cold]" value"1" checked="checked">
+              <% else %>
+                <input id="power_cold" type="checkbox" name="power[cold]" value"1">
+              <% end %>
+              <label for="power_cold">
+                <div class="can-toggle__switch"></div>
+                <div class="can-toggle__label-text">Protection contre le froid</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-group boolean optional power_hot">
+          <div class="checkbox">
+            <input type="hidden" name="power[hot]" value="0">
+            <div class="can-toggle demo-rebrand-2">
+              <% if @power.hot? %>
+                <input id="power_hot" type="checkbox" name="power[hot]" value"1" checked="checked">
+              <% else %>
+                <input id="power_hot" type="checkbox" name="power[hot]" value"1">
+              <% end %>
+              <label for="power_hot">
+                <div class="can-toggle__switch"></div>
+                <div class="can-toggle__label-text">Protection contre la chaleur</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-group boolean optional power_humidity">
+          <div class="checkbox">
+            <input type="hidden" name="power[humidity]" value="0">
+            <div class="can-toggle demo-rebrand-2">
+              <% if @power.humidity? %>
+                <input id="power_humidity" type="checkbox" name="power[humidity]" value"1" checked="checked">
+              <% else %>
+                <input id="power_humidity" type="checkbox" name="power[humidity]" value"1">
+              <% end %>
+              <label for="power_humidity">
+                <div class="can-toggle__switch"></div>
+                <div class="can-toggle__label-text">Protection contre l'humidité</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-group boolean optional power_energysaver">
+          <div class="checkbox">
+            <input type="hidden" name="power[energysaver]" value="0">
+            <div class="can-toggle demo-rebrand-2">
+              <% if @power.energysaver? %>
+                <input id="power_energysaver" type="checkbox" name="power[energysaver]" value"1" checked="checked">
+              <% else %>
+                <input id="power_energysaver" type="checkbox" name="power[energysaver]" value"1">
+              <% end %>
+              <label for="power_energysaver">
+                <div class="can-toggle__switch"></div>
+                <div class="can-toggle__label-text">Economie d'energie</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-group boolean optional power_taxsaver">
+          <div class="checkbox">
+            <input type="hidden" name="power[taxsaver]" value="0">
+            <div class="can-toggle demo-rebrand-2">
+              <% if @power.taxsaver? %>
+                <input id="power_taxsaver" type="checkbox" name="power[taxsaver]" value"1" checked="checked">
+              <% else %>
+                <input id="power_taxsaver" type="checkbox" name="power[taxsaver]" value"1">
+              <% end %>
+              <label for="power_taxsaver">
+                <div class="can-toggle__switch"></div>
+                <div class="can-toggle__label-text">Crédit d'impot</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-group boolean optional power_insects">
+          <div class="checkbox">
+            <input type="hidden" name="power[insects]" value="0">
+            <div class="can-toggle demo-rebrand-2">
+              <% if @power.insects? %>
+                <input id="power_insects" type="checkbox" name="power[insects]" value"1" checked="checked">
+              <% else %>
+                <input id="power_insects" type="checkbox" name="power[insects]" value"1">
+              <% end %>
+              <label for="power_insects">
+                <div class="can-toggle__switch"></div>
+                <div class="can-toggle__label-text">Protection contre les insectes</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-group boolean optional power_security">
+          <div class="checkbox">
+            <input type="hidden" name="power[security]" value="0">
+            <div class="can-toggle demo-rebrand-2">
+              <% if @power.security? %>
+                <input id="power_security" type="checkbox" name="power[security]" value"1" checked="checked">
+              <% else %>
+                <input id="power_security" type="checkbox" name="power[security]" value"1">
+              <% end %>
+              <label for="power_security">
+                <div class="can-toggle__switch"></div>
+                <div class="can-toggle__label-text">Protection contre le vol</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-group boolean optional power_sun">
+          <div class="checkbox">
+            <input type="hidden" name="power[sun]" value="0">
+            <div class="can-toggle demo-rebrand-2">
+              <% if @power.sun? %>
+                <input id="power_sun" type="checkbox" name="power[sun]" value"1" checked="checked">
+              <% else %>
+                <input id="power_sun" type="checkbox" name="power[sun]" value"1">
+              <% end %>
+              <label for="power_sun">
+                <div class="can-toggle__switch"></div>
+                <div class="can-toggle__label-text">Protection contre le soleil</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-group boolean optional power_rain">
+          <div class="checkbox">
+            <input type="hidden" name="power[rain]" value="0">
+            <div class="can-toggle demo-rebrand-2">
+              <% if @power.rain? %>
+                <input id="power_rain" type="checkbox" name="power[rain]" value"1" checked="checked">
+              <% else %>
+                <input id="power_rain" type="checkbox" name="power[rain]" value"1">
+              <% end %>
+              <label for="power_rain">
+                <div class="can-toggle__switch"></div>
+                <div class="can-toggle__label-text">Protection contre la pluie</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-group boolean optional power_inside">
+          <div class="checkbox">
+            <input type="hidden" name="power[inside]" value="0">
+            <div class="can-toggle demo-rebrand-2">
+              <% if @power.inside? %>
+                <input id="power_inside" type="checkbox" name="power[inside]" value"1" checked="checked">
+              <% else %>
+                <input id="power_inside" type="checkbox" name="power[inside]" value"1">
+              <% end %>
+              <label for="power_inside">
+                <div class="can-toggle__switch"></div>
+                <div class="can-toggle__label-text">Produit d'intérieur</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-group boolean optional power_outside">
+          <div class="checkbox">
+            <input type="hidden" name="power[outside]" value="0">
+            <div class="can-toggle demo-rebrand-2">
+              <% if @power.outside? %>
+                <input id="power_outside" type="checkbox" name="power[outside]" value"1" checked="checked">
+              <% else %>
+                <input id="power_outside" type="checkbox" name="power[outside]" value"1">
+              <% end %>
+              <label for="power_outside">
+                <div class="can-toggle__switch"></div>
+                <div class="can-toggle__label-text">Produit d'extérieur</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="form-group boolean optional power_certification">
+          <div class="checkbox">
+            <input type="hidden" name="power[certification]" value="0">
+            <div class="can-toggle demo-rebrand-2">
+              <% if @power.certification? %>
+                <input id="power_certification" type="checkbox" name="power[certification]" value"1" checked="checked">
+              <% else %>
+                <input id="power_certification" type="checkbox" name="power[certification]" value"1">
+              <% end %>
+              <label for="power_certification">
+                <div class="can-toggle__switch"></div>
+                <div class="can-toggle__label-text">Certification</div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+
+</div>
+
+<div class="modal-footer-custom">
+  <%= f.submit "Modifier les pouvoirs pour #{@product.title}", :class => 'submit-button-on-modal' %>
+</div>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

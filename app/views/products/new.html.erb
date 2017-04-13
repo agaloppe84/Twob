@@ -1,0 +1,51 @@
+
+<script>
+
+  $(document).ready(function() {
+    $('.attachinary-input').attachinary();
+  });
+
+
+  $( "#attach-substitution" ).click(function() {
+    $( "input#product_photos" ).click();
+  });
+
+
+</script>
+
+<%= simple_form_for [@category, @product] do |f| %>
+
+<div class="modal-header-custom">
+  <div class="header-hard-dashboard" style="opacity: 0.8;"><%= "Créer un produit pour la catégorie" %></div>
+  <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+  <div class="header-hard-dashboard" style="opacity: 0.4;"><%= "#{@category.name}" %></div>
+  <button class="close" data-dismiss="modal">×</button>
+</div>
+
+<div class="modal-body-custom">
+  <div class="edit-product-container">
+    <div class="label-on-modal-dashboard">Nom du produit</div>
+    <%= f.input :title, label: false %>
+
+    <div class="label-on-modal-dashboard">Description</div>
+    <%= f.input :description, label: false %>
+
+    <div class="label-on-modal-dashboard">Photos ( Maximum: 4 )</div>
+    <div id="attach-substitution">Télécharger</div>
+    <%= f.input :photos, label: false, as: :attachinary %>
+  </div>
+</div>
+
+<div class="modal-footer-custom">
+  <%= f.submit "Créer un produit", :class => 'submit-button-on-modal' %>
+</div>
+
+<% end %>
+
+
+
+
+
+
+
+

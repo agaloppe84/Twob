@@ -1,0 +1,86 @@
+
+<script>
+
+  $(document).ready(function() {
+    $('.attachinary-input').attachinary();
+  });
+
+
+  $( "#attach-substitution" ).click(function() {
+    $( "input#promo_photos" ).click();
+  });
+
+
+</script>
+
+ <%= simple_form_for [@category, @promo] do |f| %>
+
+ <div class="modal-header-custom">
+  <div class="header-hard-dashboard" style="opacity: 0.8;">Créer une promo pour la catégorie</div>
+  <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+  <div class="header-hard-dashboard" style="opacity: 0.4;"><%= @category.name %></div>
+  <button class="close" data-dismiss="modal">×</button>
+</div>
+
+
+<div class="modal-body-custom">
+  <div class="edit-product-container">
+
+      <div class="label-on-modal-dashboard">Titre de la promo</div>
+      <%= f.input :title, label: false %>
+      <div class="label-on-modal-dashboard">Description</div>
+      <%= f.input :description, label: false %>
+
+
+        <div class="form-inline-date-column">
+          <div class="label-on-modal-dashboard">Début</div>
+          <%= f.input :start, as: :date, label: false, start_year: Date.today.year, discard_day: true, order: [:month, :year] %>
+        </div>
+
+        <div class="form-inline-date-column">
+          <div class="label-on-modal-dashboard">Fin</div>
+          <%= f.input :end, as: :date, label: false, start_year: Date.today.year, discard_day: true, order: [:month, :year] %>
+        </div>
+
+
+      <div class="label-on-modal-dashboard">Statut</div>
+       <div class="checkbox-inline-form border-on-checkbox">
+        <div class="form-group boolean optional promo_current" style="margin-top: -10px;">
+          <div class="checkbox">
+            <input type="hidden" name="promo[current]" value="0">
+            <div class="can-toggle demo-rebrand-2">
+              <input id="promo_current" type="checkbox" name="promo[current]" value"1">
+              <label for="promo_current">
+                <div class="can-toggle__switch"></div>
+                <div class="can-toggle__label-text">Promo active</div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="label-on-modal-dashboard">
+        <div>Photos</div>
+        <div class="small-photos-indicator">( Maximum: 4 )</div>
+      </div>
+      <div id="attach-substitution">Télécharger</div>
+      <%= f.input :photos, as: :attachinary, label: false %>
+
+    </div>
+</div>
+
+<div class="modal-footer-custom">
+   <%= f.submit "Créer une promo", :class => 'submit-button-on-modal' %>
+</div>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+

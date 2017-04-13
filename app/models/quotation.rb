@@ -1,6 +1,6 @@
 class Quotation < ApplicationRecord
   validates :email, presence: { message: "email requis" }
-  validates :name, presence: { message: "nom requis" }
+  validates :lastname, presence: { message: "nom requis" }
   validates :firstname, presence: { message: "prénom requis" }
   validates :city, presence: { message: "ville requise" }
   validates :phone, presence: { message: "téléphone requis" }
@@ -48,7 +48,7 @@ class Quotation < ApplicationRecord
     @month_and_category_string_keys = {}
     @year_in_string = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
     @year_in_integer = (1..12)
-    @typesname = Type.all.map { |type| type.name.capitalize }
+    @typesname = Category.all.map { |category| category.name.capitalize }
 
     @queries[:group_by_month_and_category] = classname.capitalize.constantize.where('extract(year  from created_at) = ?', year).group(param).group('extract(month  from created_at)').count
     @queries[:group_by_month] = classname.capitalize.constantize.where('extract(year  from created_at) = ?', year).group('extract(month  from created_at)').count

@@ -1,0 +1,80 @@
+<div class="navigation-v2-fixed">
+
+  <div class="logo-absolute-nav">
+   <%= image_tag("ttr-test.svg", size: "22x22", alt: "Logo") %>
+   <!--  <div class="logo-in-text">les</div>
+    <div class="logo-in-text-bold">artisans</div>
+    <div class="logo-in-text">du</div>
+    <div class="logo-in-text-bold">store</div> -->
+  </div>
+
+
+  <div class="nav-small-top-link">
+      <%= link_to root_path do %>
+
+        <% if current_page?(root_path) %>
+          <div class="nav-small-link-design" style="color: #E67E22;">Accueil</div>
+        <% else %>
+          <div class="nav-small-link-design">Accueil</div>
+        <% end %>
+
+      <% end %>
+  </div>
+
+
+
+  <div class="nav-small-top-link">
+      <%= link_to categories_path do %>
+
+        <% if current_page?(categories_path) %>
+          <div class="nav-small-link-design" style="color: #E67E22;">Produits</div>
+        <% else %>
+          <div class="nav-small-link-design">Produits</div>
+        <% end %>
+
+      <% end %>
+  </div>
+
+  <div class="nav-small-top-link">
+      <%= link_to promos_path do %>
+
+        <% if current_page?(promos_path) %>
+          <div class="nav-small-link-design" style="color: #E67E22;">Promos</div>
+        <% else %>
+          <div class="nav-small-link-design">Promos</div>
+        <% end %>
+
+      <% end %>
+  </div>
+
+
+  <div class="nav-small-top-link">
+      <%= link_to new_quotation_path do %>
+
+        <% if current_page?(new_quotation_path) %>
+          <div class="nav-small-link-design" style="color: #E67E22;">Devis</div>
+        <% else %>
+          <div class="nav-small-link-design">Devis</div>
+        <% end %>
+
+      <% end %>
+  </div>
+
+
+  <% if user_signed_in? %>
+    <div class="nstl-absolute">
+
+      <div class="nav-small-top-link">
+        <%= link_to pathfilter_path do %>
+          <div class="nav-small-link-design">Admin</div>
+        <% end %>
+      </div>
+
+      <div class="nav-small-top-link">
+        <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "admin-button-destroy" %>
+      </div>
+
+    </div>
+  <% end %>
+
+</div>

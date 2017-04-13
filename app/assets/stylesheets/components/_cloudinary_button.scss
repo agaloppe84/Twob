@@ -1,0 +1,126 @@
+
+input#product_photos {
+  display: none;
+}
+
+input#brand_logo {
+  display: none;
+}
+
+input#album_photos {
+  display: none;
+}
+
+input#promo_photos {
+  display: none;
+}
+
+
+
+#attach-substitution {
+  color: $red;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid $red;
+  border-radius: 3px;
+  width: 90px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    background-color: $red;
+    color: white;
+  }
+}
+
+#attach-substitution-edit {
+  color: $red;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid $red;
+  border-radius: 3px;
+  width: 90px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    background-color: $red;
+    color: white;
+  }
+}
+
+.attach-substitution {
+  color: $red;
+  font-family: "Circular-Book";
+  font-size: 13px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border: 1px solid $red;
+  border-radius: 3px;
+  width: 90px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  &:hover {
+    background-color: $red;
+    color: white;
+  }
+}
+
+.attachinary_container ul {
+  margin-left: 0;
+  padding-left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+.attachinary_container {
+  padding: 25px;
+  margin-top: 10px;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+}
+
+.attachinary_container ul li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.attachinary_container ul li a {
+  font-size: 13px;
+  font-family: "Circular-Medium";
+  &:hover {
+    color: $red;
+  }
+}
+
+.attachinary_container ul li img {
+  border: 1px solid lightgrey;
+  width: 55px;
+  height: 55px;
+}
+
+ul {
+  list-style-type: none;
+}

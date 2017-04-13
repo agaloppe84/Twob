@@ -1,0 +1,54 @@
+.dyngraph-container {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  padding-left: 5%;
+  margin-top: 50px;
+}
+
+.god-container {
+  width: 14px;
+  height: 100%;
+  background-color: rgba(235,235,240,0.9);
+  position: relative;
+  margin-right: 22px;
+  overflow: visible;
+}
+
+
+
+.month {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #F56262;
+  font-family: "Circular-Medium";
+  font-size: 11px;
+  overflow: visible;
+  color: rgba(55,55,65,0.9);
+  padding-bottom: 15px;
+  opacity: 0.8;
+}
+
+
+.text-dyngraph {
+  bottom: -40px;
+  position: absolute;
+  width: 80px;
+  left: -35px;
+  display: flex;
+  justify-content: center;
+  font-family: "Circular-Medium";
+  font-size: 12px;
+  padding-left: 2px;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.current-num {
+}

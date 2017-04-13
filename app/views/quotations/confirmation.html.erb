@@ -1,0 +1,9 @@
+<div class="confirmation-fullpage">
+  <div class="conf-fullpage-item">
+    <div class="conf-text"><%= "Merci #{@quotation.firstname.capitalize} #{@quotation.lastname}" %></div>
+    <div class="conf-text-small"><%= "Un email de confirmation a été envoyé à" %></div>
+    <div class="conf-text-email"><%= "#{@quotation.email}" %></div>
+    <div class="icon-paper-airplane animated fadeIn bigsize"></div>
+    <div class="conf-abs-container"><%= link_to "Revenir au menu", root_path, class: "confirm-button" %></div>
+  </div>
+</div>

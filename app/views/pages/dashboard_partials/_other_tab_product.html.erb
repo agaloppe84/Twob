@@ -1,0 +1,393 @@
+  <div role="tabpanel" class="tab-pane tab-to-reset" id="<%= "#{product.id}" + "produit" + "#{category.id}" %>">
+
+              <div class="v2-fullpage-item-01-header">
+                 <div class="header-hard-dashboard" style="opacity: 0.4;"><%= composed_plurname(category.name) %></div>
+                 <div style="margin-left: 8px;margin-right: 8px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+                 <div class="header-hard-dashboard"><%= product.title %></div>
+              </div>
+
+              <div class="dashv2-infos-compilated-alt">
+
+                <div class="dashv2-infos-compilated-item">
+                  <div class="v2-big-number"><%= product.infos.count %></div>
+                  <% if product.infos.count == 1 %>
+                    <div class="dashv2-infos-compilated-item-label">Info</div>
+                  <% else %>
+                    <div class="dashv2-infos-compilated-item-label">Infos</div>
+                  <% end %>
+                </div>
+
+                <%= link_to "#infoNewModal", class: "", data: { toggle: "modal", typeid: "#{product.category.id}", productid: "#{product.id}" } do %>
+
+                  <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                    <div class="icon-list-add padding-on-small-icon"></div>
+                    <div class="v5-text-on-button-hover">
+                      <div class="">new info</div>
+                      <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+                    </div>
+                  </div>
+
+                <% end %>
+
+              </div>
+
+
+
+
+
+            <% if product.infos.any? %>
+              <div class="v3-prod-infos">
+                <div class="infos-volets">
+                    <% product.infos.each do |info| %>
+
+                      <div class="infos-item-boob" style="padding-left: 37px;">
+                        <div class="infos-icon-boob <%= info.icon %>"></div>
+
+                        <div class="infos-big-boob"><%= info.title %>&nbsp;</div>
+
+                        <div class="infos-small-boob"><%= info.content %>&nbsp;</div>
+
+                        <div class="v2-link-on-active-infos">
+                          <%= link_to "#infoEditModal", class: "", data: { toggle: "modal", infoid: "#{info.id}", typeid: "#{info.product.category.id}", productid: "#{info.product.id}" } do %>
+                              <div class="text-on-edit-hover" style="color: <%= category.color %>;">Modifier</div>
+                              <i class="fa fa-pencil" aria-hidden="true" style="color: <%= category.color %>;"></i>
+                          <% end %>
+                          <%= link_to category_product_info_path(category, product, info), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer ce produit ?" } do %>
+                              <div class="text-on-destroy-hover" style="color: <%= category.color %>;">Supprimer</div>
+                              <i class="fa fa-times" aria-hidden="true" style="color: <%= category.color %>;"></i>
+                          <% end %>
+                        </div>
+
+                      </div>
+
+                    <% end %>
+                  </div>
+              </div>
+
+              <% else %>
+
+              <div class="v3-prod-infos-alt" style="border-bottom: 1px solid rgba(155,155,155,0.3);">
+                <div class="v4-no-promo-div">
+                  <div class="v5-big-text">0 info</div>
+                  <div class="dash-flexbox-display">
+                    <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">cliquez sur </div>
+                    <div class="icon-list-add"></div>
+                  </div>
+                </div>
+              </div>
+
+            <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <div class="dashv2-infos-compilated-alt">
+
+                <div class="dashv2-infos-compilated-item">
+                  <div class="v2-big-number"><%= product.brands.count %></div>
+                  <% if product.brands.count == 1 %>
+                    <div class="dashv2-infos-compilated-item-label">Marque</div>
+                  <% else %>
+                    <div class="dashv2-infos-compilated-item-label">Marques</div>
+                  <% end %>
+                </div>
+
+                <%= link_to "#brandNewModal", class: "", data: { toggle: "modal", typeid: "#{product.category.id}", productid: "#{product.id}" } do %>
+
+                  <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                    <div class="icon-list-add padding-on-small-icon"></div>
+                    <div class="v5-text-on-button-hover">
+                      <div class="">new marque</div>
+                      <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+                    </div>
+                  </div>
+
+                <% end %>
+
+              </div>
+
+
+
+            <% if product.brands.any? %>
+
+              <div class="v3-prod-infos">
+
+                <div class="infos-volets">
+                    <% product.brands.each do |brand| %>
+
+                      <div class="infos-item-boob">
+                        <div class="infos-icon-boob" style="background-image: url(<%= cl_image_path brand.logo.path %>);"></div>
+
+                        <div class="infos-big-boob"><%= brand.name %>&nbsp;</div>
+
+
+                        <div class="v2-link-on-active-infos">
+                          <%= link_to "#brandEditModal", class: "", data: { toggle: "modal", brandid: "#{brand.id}", typeid: "#{brand.product.category.id}", productid: "#{brand.product.id}" } do %>
+                              <div class="text-on-edit-hover" style="color: <%= category.color %>;">Modifier</div>
+                              <i class="fa fa-pencil" aria-hidden="true" style="color: <%= category.color %>;"></i>
+                          <% end %>
+                          <%= link_to category_product_brand_path(category, product, brand), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer cette marque ?" } do %>
+                              <div class="text-on-destroy-hover" style="color: <%= category.color %>;">Supprimer</div>
+                              <i class="fa fa-times" aria-hidden="true" style="color: <%= category.color %>;"></i>
+                          <% end %>
+                        </div>
+
+                      </div>
+
+                    <% end %>
+                  </div>
+              </div>
+
+            <% else %>
+
+              <div class="v3-prod-infos-alt" style="border-bottom: 1px solid rgba(155,155,155,0.3);">
+                <div class="v4-no-promo-div">
+                  <div class="v5-big-text">0 marque</div>
+                  <div class="dash-flexbox-display">
+                    <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">cliquez sur </div>
+                    <div class="icon-list-add"></div>
+                  </div>
+                </div>
+              </div>
+
+            <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <div class="dashv2-infos-compilated-alt">
+
+                <div class="dashv2-infos-compilated-item">
+                  <% if product.powers.any? %>
+                    <div class="camera-icon" style="color: #2AC88E;"><div class="icon-zap"></div></div>
+                  <% else %>
+                   <div class="camera-icon" style="color: #FA4659;"><div class="icon-zap"></div></div>
+                  <% end %>
+                  <div class="dashv2-infos-compilated-item-label">Powers</div>
+
+                </div>
+
+
+                <% if product.powers.any? %>
+
+                  <%= link_to "#powerEditModal", class: "", data: { toggle: "modal", powerid: "#{product.powers.last.id}", typeid: "#{product.category.id}", productid: "#{product.id}" } do %>
+
+                    <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                      <div class="icon-list-add padding-on-small-icon"></div>
+                      <div class="v5-text-on-button-hover">
+                        <div class="">edit powers</div>
+                        <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+                      </div>
+                    </div>
+
+                  <% end %>
+
+                <% else %>
+
+                  <%= link_to "#powerNewModal", class: "", data: { toggle: "modal", typeid: "#{product.category.id}", productid: "#{product.id}" } do %>
+
+                    <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                      <div class="icon-list-add padding-on-small-icon"></div>
+                      <div class="v5-text-on-button-hover">
+                        <div class="">new powers</div>
+                        <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+                      </div>
+                    </div>
+
+                  <% end %>
+
+                <% end %>
+              </div>
+
+
+
+
+               <% if product.powers.any? %>
+
+                <div class="v3-prod-infos-v12">
+
+
+                  <% if product.powers.last.sun == false %>
+                  <% else %>
+                    <div class="v3-power-item-cont">
+                      <div class="icon-button-container">
+                        <div class="icon-sun pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Soleil</div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                  <% if product.powers.last.rain == false %>
+                  <% else %>
+                    <div class="v3-power-item-cont">
+                      <div class="icon-button-container">
+                        <div class="icon-rain-2 pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Pluie</div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                  <% if product.powers.last.wind == false %>
+                  <% else %>
+                    <div class="v3-power-item-cont">
+                      <div class="icon-button-container">
+                        <div class="icon-wind pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Vent</div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                  <% if product.powers.last.cold == false %>
+                  <% else %>
+                    <div class="v3-power-item-cont">
+                      <div class="icon-button-container">
+                        <div class="icon-thermometer pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Froid</div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                  <% if product.powers.last.hot == false %>
+                  <% else %>
+                    <div class="v3-power-item-cont">
+                      <div class="icon-button-container">
+                        <div class="icon-thermometer pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Chaleur</div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                  <% if product.powers.last.humidity == false %>
+                  <% else %>
+                    <div class="v3-power-item-cont">
+                     <div class="icon-button-container">
+                        <div class="icon-droplet pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Humidité</div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                  <% if product.powers.last.energysaver == false %>
+                  <% else %>
+                    <div class="v3-power-item-cont">
+                      <div class="icon-button-container">
+                        <div class="icon-battery pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Energie</div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                  <% if product.powers.last.taxsaver == false %>
+                  <% else %>
+                    <div class="v3-power-item-cont">
+                     <div class="icon-button-container">
+                        <div class="icon-euro pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Impot</div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                  <% if product.powers.last.insects == false %>
+                  <% else %>
+                    <div class="v3-power-item-cont">
+                      <div class="icon-button-container">
+                        <div class="icon-bug-1 pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Insectes</div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                  <% if product.powers.last.security == false %>
+                  <% else %>
+                    <div class="v3-power-item-cont">
+                     <div class="icon-button-container">
+                        <div class="icon-lock-alt pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Sécurité</div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                  <% if product.powers.last.inside == false %>
+                  <% else %>
+                    <div class="v3-power-item-cont">
+                      <div class="icon-button-container">
+                        <div class="icon-sun pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Intérieur</div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                  <% if product.powers.last.outside == false %>
+                  <% else %>
+                    <div class="v3-power-item-cont">
+                      <div class="icon-button-container">
+                        <div class="icon-sun pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Exterieur</div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                  <% if product.powers.last.certification == false %>
+                  <% else %>
+                    <div class="v3-power-item-cont">
+                      <div class="icon-button-container">
+                        <div class="icon-clipboard pad-on-icons" style="font-size: 24px;"></div>
+                        <div class="v3-powers-text-on-hover-v2">Certif</div>
+                      </div>
+                    </div>
+                  <% end %>
+
+                </div>
+
+                <% else %>
+
+                  <div class="v3-prod-infos-alt">
+                    <div class="v4-no-promo-div">
+                      <div class="v5-big-text">0 pouvoir</div>
+                      <div class="dash-flexbox-display">
+                        <div class="v4-no-promo-div-small-text" style="color: rgba(25,25,25,0.8);">cliquez sur </div>
+                        <div class="icon-list-add"></div>
+                      </div>
+                    </div>
+                  </div>
+
+              <% end %>
+
+            </div>

@@ -1,0 +1,290 @@
+div.mc-field-group label {
+  font-size: 14px;
+  color: rgba(55,55,55,0.9);
+  font-family: "Circular-Medium";
+}
+
+div.mc-field-group strong {
+  font-size: 14px;
+  color: rgba(55,55,55,0.9);
+  font-family: "Circular-Medium";
+}
+
+#mc-embedded-subscribe-form {
+  margin-bottom: 50px;
+}
+
+div.mc-field-group {
+  margin-bottom: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+div.mc-field-group input {
+  border-radius: 0px;
+  border: none;
+}
+
+
+div.mc-field-group ul li label {
+  margin-left: 10px;
+}
+
+#mc_embed_signup input {
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 0px !important;
+  border-top: none !important;
+  border-color: lightgrey !important;
+  max-width: 280px;
+  font-family: "Circular-Book";
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+#mc_embed_signup input:focus {
+  outline: none;
+  background-color: transparent !important;
+}
+
+
+
+
+div.mc-field-group select {
+  max-width: 280px;
+  border-radius: 0px !important;
+  border-color: lightgrey !important;
+  height: 37px;
+  border-radius: none !important;
+  background-color: transparent;
+  font-family: "Circular-Book";
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+div.mc-field-group select:focus {
+  outline: none;
+}
+
+
+// #mc_embed_signup_scroll {
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+//   padding-left: 20%;
+//   padding-right: 20%;
+// }
+
+
+#mc_embed_signup .mc-field-group {
+  max-width: 280px;
+}
+
+input.button {
+  margin: none !important;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+#mc_embed_signup .button {
+  margin: 0px 0px 0px 20px !important;
+  font-size: 13px !important;
+  height: 48px !important;
+  width: 160px !important;
+  border-radius: 2px !important;
+  background-color: transparent !important;
+  border: 1px solid rgba(55,55,55,0.8) !important;
+  color: rgba(5,5,5,0.8) !important;
+  opacity: 0.6 !important;
+  font-family: "Circular-Black" !important;
+  align-self: center !important;
+}
+
+#mc_embed_signup .button:hover {
+  opacity: 0.9 !important;
+  font-family: "Circular-Black" !important;
+}
+
+
+
+
+
+
+.mailchimp-form-flex-one {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-bottom: 42px;
+  margin-top: 25px;
+}
+
+#mce-success-response {
+  font-family: "Circular-Book";
+  font-size: 15px;
+  opacity: 0.7;
+}
+
+
+#mc_embed_signup div#mce-responses {
+  padding: 0px 0px 0px 20px !important;
+  margin: 0 0 0 0 !important;
+  width: 100% !important;
+}
+
+
+#mc_embed_signup div.response {
+  margin: 0 0 0 0 !important;
+  padding: 0 0 0 0 !important;
+  width: 100% !important;
+}
+
+
+#mc_embed_signup #mc-embedded-subscribe-form div.mce_inline_error {
+  font-family: "Circular-Medium";
+  font-size: 11px !important;
+  opacity: 0.7;
+  position: absolute;
+  border-top: none !important;
+}
+
+#mc_embed_signup #mc-embedded-subscribe-form input.mce_inline_error {
+  border: 1px solid lightgrey !important;
+}
+
+
+
+#mc_embed_signup .mc-field-group select {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  border-right: none;
+  border-top: none;
+  border-left: none;
+}
+
+.select-icon-absolute {
+  position: absolute;
+  bottom: 14px;
+  right: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+
+#mc_embed_signup form {
+  padding: 0 0 0 0 !important;
+  margin-top: 160px;
+}
+
+
+#mc_embed_signup .mc-field-group {
+  padding-bottom: 0 !important;
+}
+
+
+
+.mailchimp-page-container {
+  display: flex;
+  align-items: stretch;
+}
+
+
+.mailchimp-left-container {
+  min-width: 400px;
+  max-width: 400px;
+  background-color: #DFEBED;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 40px;
+}
+
+#mc_embed_signup {
+  width: 100% !important;
+  min-height: 100vh;
+}
+
+
+.mailchimp-left-text {
+  font-family: "Circular-Book";
+  font-weight: 100;
+  color: rgba(5,5,5,0.7);
+  font-size: 18px;
+}
+
+.mailchimp-left-text-color {
+  font-family: "Circular-Book" !important;
+  font-weight: 100;
+  color: #5ACFD6;
+  font-size: 14px;
+}
+
+
+.mailchimp-left-image {
+  margin-bottom: 4px;
+  margin-right: 18px;
+}
+
+.mailchimp-left-image-column {
+  margin-bottom: 15px;
+  margin-right: 0px;
+}
+
+
+
+.mailchimp-left-text-light {
+  font-family: "Circular-Book";
+  font-weight: 100;
+  color: rgba(15,15,15,0.7);
+  font-size: 15px;
+}
+
+.mailchimp-left-text-light-call {
+  font-family: "Circular-Book";
+  font-weight: 100;
+  color: rgba(15,15,15,0.4);
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+
+.mc-left-container-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.mc-left-container-flex-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+
+.mc-left-container-flex-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-direction: column;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+

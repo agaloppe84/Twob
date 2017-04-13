@@ -7,8 +7,14 @@ class PagesController < ApplicationController
     @promos = Promo.all
     @albums = Album.all
     @last_promo = Promo.where(current: true).last
-    @types = Category.all
-    @random_album = @albums.all.map { |album| album.photos.sample(2) }
+    @categories = Category.all
+
+    @random_album = []
+    @albums.each do |album|
+      @random_album += album.photos.sample(2)
+    end
+    @random_album
+
   end
 
   def services
@@ -29,7 +35,7 @@ class PagesController < ApplicationController
     @albums = Album.all
     @infos = Info.all
     @promos = Promo.all
-    @types = Category.all
+    @categories = Category.all
     @brands = Brand.all
     @photos = @albums.all.map { |album| album.photos.count }
   end
@@ -48,7 +54,7 @@ class PagesController < ApplicationController
 
 
   def analytics
-    @sql_test = Quotation.sql_query(2017, "quotation", :blindttype)
+    @sql_test = Quotation.sql_query(2017, "quotation", :blindtype)
     @types_full_names = Category.all.map { |category| category.name.capitalize }
     @full_years = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
   end

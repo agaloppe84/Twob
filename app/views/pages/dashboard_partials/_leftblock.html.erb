@@ -1,0 +1,89 @@
+ <div class="v2-fullpage-item-01">
+
+    <div class="fullpage-overflow">
+
+
+    <div class="v2-fullpage-item-01-header">
+      <div class="header-hard-dashboard">Catégories</div>
+    </div>
+
+
+    <div class="dashv2-infos-compilated">
+      <div class="dashv2-infos-compilated-item">
+        <div class="v2-big-number"><%= @categories.count %></div>
+        <div class="dashv2-infos-compilated-item-label">Catégories</div>
+      </div>
+
+
+
+      <%= link_to "#typeNewModal", class: "", data: { toggle: "modal" } do %>
+                  <div class="v4-info-new-button" style="color: rgba(55,55,55,0.7);">
+                    <div class="icon-list-add padding-on-small-icon"></div>
+                    <div class="v5-text-on-button-hover">
+                      <div class="">new catégorie</div>
+                      <div class="tooltip-crud-three"><i class="fa fa-caret-right" aria-hidden="true"></i></div>
+                    </div>
+                  </div>
+      <% end %>
+
+    </div>
+
+
+    <div class="dashboardv2-left-menu">
+      <ul class="nav nav-pills nav-stacked">
+      <% @categories.each_with_index do |category,index| %>
+        <% if index == 0 %>
+            <li role="presentation" class="active">
+              <div class="menu-icon-show" style="color: #2AC88E;"><i class="fa fa-circle" aria-hidden="true"></i></div>
+              <div class="index-on-navtabs" style="color: #2AC88E;"><%= "#{index + 1}" %></div>
+              <a href="#<%= category.id %>" data-toggle="tab" class="reset-active-on-tab"><%= composed_plurname(category.name) %></a>
+              <div class="v2-link-on-active" style="justify-content: flex-end;">
+                <%= link_to "#typeEditModal", class: "v3-link", data: { toggle: "modal", id: "#{category.id}" } do %>
+                    <div class="text-on-edit-hover">
+                      <div>modifier</div>
+                      <div class="tooltip-crud-two"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="icon-check-circle newicon-size"></div>
+                <% end %>
+                <%= link_to category_path(category), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer cette catégorie ?" } do %>
+                    <div class="text-on-destroy-hover">
+                      <div>effacer</div>
+                      <div class="tooltip-crud"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="icon-cancel-circle newicon-size-two"></div>
+                <% end %>
+              </div>
+            </li>
+        <% else %>
+            <li role="presentation" class="reset-active-on-tab">
+              <div class="menu-icon-show" style="color: #2AC88E;"><i class="fa fa-circle" aria-hidden="true"></i></div>
+              <div class="index-on-navtabs" style="color: #2AC88E;"><%= "#{index + 1}" %></div>
+              <a href="#<%= category.id %>" data-toggle="tab" class="reset-active-on-tab"><%= composed_plurname(category.name) %></a>
+              <div class="v2-link-on-active" style="justify-content: flex-end;">
+                <%= link_to "#typeEditModal", class: "v3-link", data: { toggle: "modal", id: "#{category.id}" } do %>
+                  <div class="text-on-edit-hover">
+                    <div>modifier</div>
+                    <div class="tooltip-crud-two"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                  </div>
+                  <div class="icon-check-circle newicon-size"></div>
+                <% end %>
+                <%= link_to category_path(category), method: :delete, class: "v3-link", data: { confirm: "Etes-vous sûr de vouloir supprimer cette catégorie ?" } do %>
+                     <div class="text-on-destroy-hover">
+                      <div>effacer</div>
+                      <div class="tooltip-crud"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
+                    </div>
+                    <div class="icon-cancel-circle newicon-size-two"></div>
+                <% end %>
+              </div>
+            </li>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
+
+
+
+
+
+        </div>
+  </div>

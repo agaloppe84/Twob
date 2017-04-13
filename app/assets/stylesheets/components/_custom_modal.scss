@@ -1,0 +1,73 @@
+
+.modal-content-custom {
+  width: 70%;
+  left: 15%;
+  height: 70%;
+  top: 15%;
+  position: fixed;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 5000;
+}
+
+.modal-content-custom form {
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  .modal-content-custom {
+    width: 50%;
+    left: 25%;
+  }
+}
+
+
+.modal-header-custom {
+  height: 16%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid lightgrey;
+}
+
+.modal-header-custom .close {
+  top: calc(50% - 10px);
+  right: 25px;
+}
+
+.close {
+  font-size: 20px;
+}
+
+.modal-body-custom {
+  height: 74%;
+  width: 100%;
+  display: flex;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.modal-footer-custom {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-backdrop-custom {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+  z-index: 1000;
+  opacity: 0.5;
+  display: none;
+}

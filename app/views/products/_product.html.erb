@@ -1,0 +1,89 @@
+<div class="form-create-prospect-<%= product.id %> half-modal hidden">
+    <div class="button-close-create">
+        <%= image_tag "crossclosed-mini.svg", size: "18" %>
+        <div class="text-for-close">fermer</div>
+    </div>
+
+
+
+
+
+    <div class="pseudo-modal-fullpage">
+
+      <div class="modal-product-title">
+
+          <div class="product-title-container-show">
+            <div class="product-show-big-title" style="color: <%= product.category.color %>;"><%= product.title %></div>
+          </div>
+
+          <div class="product-title-container">
+            <!-- <div class="pro-header-top">Type</div>
+            <div class="product-show-big-title-alt"><%= product.type.name %></div> -->
+          </div>
+
+          <div class="product-title-container">
+           <!--  <div class="pro-header-top">Marque</div>
+            <div class="product-show-big-title-alt"><%= product.brand.name %></div> -->
+          </div>
+
+
+      </div>
+
+
+
+      <div class="modal-description">
+
+        <div class="modal-description-text"><%= product.description %></div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+    <% product.infos.each do |info| %>
+
+
+
+      <div class="info-item-show">
+
+        <div class="info-icon-show" style="background-image: url(<%= cl_image_path info.icon.path %>);"></div>
+
+        <div class="info-title-color-show"><%= info.title %>&nbsp;</div>
+
+        <div class="info-title-color-content-show"><%= info.content %>&nbsp;</div>
+
+      </div>
+
+    <% end %>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<% content_for :afterjstwo do %>
+<script>
+
+  $(document).ready(function() {
+        $('.button-close-create').click(function() {
+          $(".form-create-prospect-<%= product.id %>").addClass('hidden');
+        });
+  });
+
+
+</script>
+<% end %>

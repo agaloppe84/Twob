@@ -1,0 +1,966 @@
+.product-index-type-header {
+  font-size: 14px;
+  font-family: "Roboto";
+  font-weight: 700;
+  margin-left: 15px;
+  opacity: 0.8;
+}
+
+
+.big-icon-index-top {
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+
+.big-icon-index-top i {
+  font-size: 10px;
+}
+
+.big-title {
+  font-family: "Circular-Book";
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(15,15,15,0.7);
+}
+
+.color-one i {
+  color: #5ACFD6;
+  opacity: 0.7;
+}
+
+.color-two i {
+  color: #F23A3A;
+  opacity: 0.7;
+}
+
+.color-three i {
+  color: #FF7C38;
+  opacity: 0.7;
+}
+
+.color-four i {
+  color: #B80D57;
+  opacity: 0.7;
+}
+
+.color-five i {
+  color: #A2EF44;
+  opacity: 0.7;
+}
+
+.color-six i {
+  color: #C70039;
+  opacity: 0.7;
+}
+
+.color-seven i {
+  color: #FFD00C;
+  opacity: 0.7;
+}
+
+
+
+.product-card-left-item-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 420px;
+  height: 40px;
+  transition: 0.5s ease;
+  opacity: 0.8;
+  border-radius: 3px;
+}
+
+.product-card-left-item-button:hover {
+  opacity: 1;
+}
+
+
+
+.color-one-text {
+  color: #5ACFD6;
+  opacity: 0.8;
+}
+
+.color-two-text {
+  color: #F23A3A;
+  opacity: 0.8;
+}
+
+.color-three-text {
+  color: #FF7C38;
+  opacity: 0.8;
+}
+
+.color-four-text {
+  color: #B80D57;
+  opacity: 0.8;
+}
+
+.color-five-text {
+  color: #A2EF44;
+  opacity: 0.8;
+}
+
+.color-six-text {
+  color: #C70039;
+  opacity: 0.8;
+}
+
+.color-seven-text {
+  color: #FFD00C;
+  opacity: 0.8;
+}
+
+
+
+
+
+.color-one-bg {
+  background-color: #5ACFD6;
+  opacity: 0.8;
+}
+
+.color-two-bg {
+  background-color: #F23A3A;
+  opacity: 0.8;
+}
+
+.color-three-bg {
+  background-color: #FF7C38;
+  opacity: 0.8;
+}
+
+.color-four-bg {
+  background-color: #B80D57;
+  opacity: 0.8;
+}
+
+.color-five-bg {
+  background-color: #A2EF44;
+  opacity: 0.8;
+}
+
+.color-six-bg {
+  background-color: #C70039;
+  opacity: 0.8;
+}
+
+.color-seven-bg {
+  background-color: #FFD00C;
+  opacity: 0.8;
+}
+
+
+
+
+
+
+.banner-on-index-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-on-index-content-duo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.banner-on-index {
+  height: 300px;
+  margin-top: 60px;
+  width: 100%;
+  background-size: cover !important;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.banner-on-index-text {
+  font-family: "Circular-Book";
+  font-size: 17px;
+  color: rgba(255,255,255,1);
+}
+
+.banner-on-index-button {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  color: rgba(255,255,255,1);
+  height: 100%;
+  padding-top: 5px;
+  margin-left: 10px;
+}
+
+
+.banner-on-index-absolute {
+  position: absolute;
+  width: 25%;
+  bottom: 0;
+  left: 13%;
+  height: 100%;
+  background-color: rgba(5,5,5,0.5);
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  flex-direction: column;
+  padding-right: 25px;
+  padding-left: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.absolute-big-text {
+  font-family: "Circular-Book";
+  font-size: 17px;
+  color: rgba(255,255,255,1);
+}
+
+.leftblock-title-product-index {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+
+.fullpage-leftblock-show {
+  min-width: 90px;
+  max-width: 90px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s ease;
+  border-right: 1px solid lightgrey;
+  border-top: none;
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  &:hover {
+    min-width: 240px;
+    max-width: 240px;
+  }
+}
+
+.leftblock-text-show {
+  opacity: 1;
+  font-family: "Circular-Book" !important;
+  font-size: 15px;
+  color: rgba(5,5,5,0.7);
+}
+
+.header-for-card {
+  opacity: 1;
+  font-family: "Circular-Book" !important;
+  font-size: 12px;
+  color: rgba(5,5,5,0.7);
+}
+
+
+.empty-box {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+}
+
+.flex-inline {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+}
+
+.flex-column {
+  display: flex;
+  align-items: left;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  flex: 8;
+}
+
+.flex-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex: 4;
+}
+
+.infos-volets {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ambassador {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF !important;
+    color: #656565;
+    padding-bottom: 120px;
+
+  .button-more {
+    color: #696969;
+    background-color: #FFF;
+    font-size: 12px;
+    padding: 2px 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 2px;
+    border: 1px solid #656565;
+
+    &:hover {
+      font-weight: 700;
+    }
+  }
+
+  h2 {
+    margin-top: 60px;
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  &.false {
+    text-align: center;
+    align-items: center;
+
+    .picture-container {
+      width: 100%;
+      height: 100px;
+      background-color: #F8F8F8;
+
+      img {
+        position: relative;
+        height: 100%;
+        top: 6.5vh;
+      }
+
+      svg {
+        position: relative;
+        padding: 5px;
+        height: 80px;
+        width: 80px;
+        top: 8.5vh;
+        background-color: #fff;
+        border-radius: 50%;
+      }
+    }
+
+    p {
+      padding: 0 40px;
+    }
+
+    .content-text {
+      max-width: 450px;
+    }
+
+    p.content-text {
+      line-height: 1.5em;
+      font-size: 12px;
+      line-height: 1.5em;
+    }
+
+    p.testimonial {
+      opacity: 0.6;
+      font-style : italic;
+      font-weight: 200;
+    }
+  }
+
+  &.true {
+
+    .header-ambassador {
+      display: flex;
+      position: relative;
+      margin-bottom: 20px;
+      align-items: center;
+      width: 100%;
+      height: 120px;
+      background-color: #F8F8F8;
+    }
+
+    .picture-container {
+      margin-left: 40px;
+
+      img {
+        height: 80px;
+      }
+
+      svg {
+        height: 80px;
+        width: 80px;
+        padding-top: 5px;
+        background-color: #fff;
+        border-radius: 50%;
+      }
+    }
+
+    p {
+      padding-right: 20px
+    }
+
+    .user-status {
+      margin-left: 40px;
+
+      p {
+        margin: 0;
+        line-height: 1em;
+      }
+    }
+
+    .pitch {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+      margin-left: 40px;
+
+      .pitch-text {
+        width: 50%;
+
+        h4 {
+          margin-bottom: 2px;
+          font-size: 11px;
+          font-weight: 400;
+          font-style: italic;
+          color: #dcdcdc;
+        }
+
+        ul {
+          list-style: none;
+
+          li {
+            margin-top: 30px;
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      .pitch-video {
+        width: 45%;
+      }
+
+      @media (max-width: 767px) {
+        flex-direction: column;
+        margin-top: 60px;
+
+        .pitch-text {
+          width: 100%;
+          order: 2;
+        }
+
+        .pitch-video {
+          width: 90%;
+          order: 1;
+        }
+      }
+    }
+
+    .tools {
+      margin-left: 40px;
+
+      ul {
+        list-style: none;
+
+        li {
+          margin-top: 30px;
+          margin-right: 30px;
+          float: left;
+          max-width: 100px;
+        }
+
+        li:first-child {
+          margin-left: 0;
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      p {
+        text-transform: uppercase;
+        font-size: 10px;
+        line-height: 12px;
+        color: #dcdcdc;
+        padding: 0;
+        padding-top: 7px
+      }
+
+      .button-link-square {
+        display: flex;
+        height: 100px;
+        width: 100px;
+        align-items: center;
+        justify-content: center;
+        background-color: #00DBC1;
+        border-radius: 2px;
+        border-width: 0;
+        box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+
+        &:hover {
+          background-color: #00A18E;
+        }
+
+        svg {
+          max-width: 30px;
+          max-height: 30px;
+        }
+      }
+    }
+  }
+}
+
+
+.label-info, .titre-info {
+  text-transform: uppercase;
+  background-color: #00DBC1;
+  padding: 0 7px;
+  color: #FFF;
+  font-size: 10px;
+  line-height: 1.9em;
+  font-weight: 500;
+  border-radius: 2px;
+}
+
+.titre-info {
+  position: absolute;
+  padding: 0 10px;
+  font-size: 12px;
+  top: 20px;
+  left: 20px;
+}
+
+.button-link {
+  background-color: #E1E1E1;
+  padding: 10px 25px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 25px;
+  border: 0;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+
+  &:hover {
+    color: #656565;
+  }
+}
+
+.button-link.form {
+  background-color: #00DBC1;
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-100%);
+
+  &:hover {
+    background-color: #00A18E;
+  }
+
+  @media (max-width: 767px) {
+    left: 50%;
+    top: 100%;
+    width: 75%;
+    transform: translateX(-50%);
+  }
+}
+
+.half-modal {
+  width: 50%;
+  right: 0;
+  overflow-x: hidden;
+  position: fixed;
+  height: 100%;
+  top: 0px;
+  background-color: white;
+  overflow-y: hidden;
+  z-index: 1;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.4);
+}
+
+.product-modal-button:hover {
+  cursor: pointer;
+}
+
+.button-close-create {
+  position: fixed;
+  height: 35px;
+  width: 35px;
+  top: 35px;
+  right: 35px;
+  z-index: 1;
+  opacity: 0.5;
+  transition: 0.4s ease;
+  &:hover {
+    cursor: pointer;
+    opacity: 1;
+  }
+}
+
+.text-for-close {
+  opacity: 0;
+  transition: 0.4s ease;
+  color: rgba(55,55,55,0.9);
+  position: fixed;
+  font-size: 13px;
+  top: 15px;
+  right: 42px;
+  z-index: 1;
+  font-family: "Circular-Book";
+}
+
+
+.button-close-create:hover .text-for-close {
+  opacity: 1;
+}
+
+.flex-inline-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-left: 160px;
+  padding-bottom: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+.card {
+  height: 300px;
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  margin-right: 5%;
+  margin-bottom: 40px;
+  position: relative;
+  box-shadow: 0 15px 20px 0px rgba(50,50,93,0.1), 0 5px 20px rgba(0,0,0,0.07);
+  border-radius: 4px;
+  padding: 20px;
+  background-color: white;
+  overflow: hidden;
+}
+
+.card-top {
+  width: 100%;
+  height: 85%;
+  background-color: lightgrey;
+  position: relative;
+  border-radius: 2px;
+}
+
+.absolute-over-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 25px;
+  color: $red;
+  text-shadow: none;
+}
+
+.card-bottom {
+  width: 100%;
+  height: 15%;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.card-bottom-item {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.card-bottom-item-two {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+.card-bottom-item-three {
+  height: 15%;
+  width: 100%;
+  background-color: rgba(255,255,255,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  font-family: "Circular-Book";
+  background-color: rgba(255,255,255,0.9);
+  font-size: 13px;
+  text-shadow: none;
+}
+
+.button-two {
+  font-family: "Circular-Bold";
+  color: rgba(55,55,55,0.9);
+  font-size: 15px;
+  text-shadow: none;
+  letter-spacing: -0.2px;
+}
+
+.brand-name-on-index {
+  font-family: "Circular-Book";
+  color: rgba(55,55,55,0.7);
+  font-size: 13px;
+  text-shadow: none;
+  letter-spacing: -0.4px;
+  margin-left: 12px;
+}
+
+.infos-on-hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,1);
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.4s ease;
+  padding-right: 40px;
+  padding-left: 40px;
+}
+
+.card:hover .infos-on-hover {
+  opacity: 1;
+  border-top: 1px solid rgba(155,155,155,0.2);
+  border-bottom: 1px solid rgba(155,155,155,0.2);
+}
+
+.infos-on-hover-text {
+  color: rgba(0,0,0,0.7);
+  font-family: "Circular-Book";
+  text-shadow: none;
+  margin-bottom: 20px;
+  font-size: 16px;
+  letter-spacing: -0.6px;
+}
+
+.infos-on-hover-description {
+  color: rgba(0,0,0,0.7);
+  font-family: "Circular-Book";
+  text-shadow: none;
+  margin-bottom: 25px;
+  font-size: 13px;
+}
+
+.abs-description {
+  position: absolute;
+  font-size: 11px;
+  color: rgba(55,55,55,0.5);
+  bottom: 2px;
+  z-index: 1;
+  left: 21px;
+  text-shadow: none;
+  font-family: "Circular-Book";
+}
+
+.pseudo-modal-fullpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-top: 80px;
+  max-height: 100%;
+  min-height: 100%;
+}
+
+.modal-description {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(155,155,155,0.1);
+  margin-bottom: 35px;
+}
+
+.modal-description-text {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  color: rgba(55,55,55,0.9);
+}
+
+
+.modal-product-title {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.type-index-v2-header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: fixed;
+  z-index: 5000;
+  background-color: white;
+}
+
+
+.menu-index-active {
+  position: absolute;
+  width: calc(100% - 16px);
+  height: 12px;
+  bottom: -5px;
+  display: none;
+  transition: 0.4s ease;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.menu-index-active-v2 {
+  width: 16px;
+  height: 16px;
+  transition: 0.4s ease;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-right: 10px;
+}
+
+.menu-index-active-v3 {
+  width: 32px;
+  height: 32px;
+  transition: 0.4s ease;
+  color: white;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.4;
+}
+
+
+.leftblock-content-show .nav li.active .menu-index-active {
+  display: block;
+  transition: 0.4s ease;
+}
+
+
+.big-title-v2 {
+  font-family: "Circular-Bold";
+  font-size: 15px;
+  letter-spacing: -0.3px;
+  color: rgba(55,55,55,0.9);
+}
+
+.index-new-container {
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 20%;
+  padding-right: 15%;
+  background-color: rgba(245,245,255,0.3);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.description-body {
+  width: 100%;
+  height: 25%;
+  padding-left: 22px;
+  padding-right: 22px;
+  font-family: "Circular-Book";
+  font-size: 12px;
+  text-shadow: none;
+  color: rgba(55,55,55,0.8);
+}
+
+.banner-on-index-content-v2 {
+  font-family: "Circular-Bold";
+  font-size: 24px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.leftblock-content-show .nav > li > a {
+  padding: 0;
+  margin-right: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<script>
+
+  $(document).ready(function() {
+    $('.attachinary-input').attachinary();
+  });
+
+  $( "#attach-substitution" ).click(function() {
+    $( "input#brand_logo" ).click();
+  });
+
+</script>
+
+<%= simple_form_for [@product.category, @product, @brand] do |f| %>
+
+<div class="modal-header-custom">
+  <div class="header-hard-dashboard" style="opacity: 0.8;">Créer une marque pour le produit</div>
+  <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+  <div class="header-hard-dashboard" style="opacity: 0.4;"><%= @product.title %></div>
+  <button class="close" data-dismiss="modal">×</button>
+</div>
+
+
+
+
+<div class="modal-body-custom">
+    <div class="edit-product-container">
+
+      <div class="label-on-modal-dashboard">Nom de la marque</div>
+      <%= f.input :name, label: false %>
+
+      <div class="label-on-modal-dashboard">Logo</div>
+      <div id="attach-substitution">Télécharger</div>
+      <%= f.input :logo, as: :attachinary, label: false %>
+
+    </div>
+</div>
+
+<div class="modal-footer-custom">
+   <%= f.submit "Créer une marque pour #{@product.title}", :class => 'submit-button-on-modal' %>
+</div>
+
+<% end %>

@@ -1,0 +1,46 @@
+
+<script>
+
+  $(document).ready(function() {
+    $('.attachinary-input').attachinary();
+  });
+
+
+  $( ".attach-substitution" ).click(function() {
+    $( "input#album_photos" ).click();
+  });
+
+</script>
+
+<%= simple_form_for [@category, @album] do |f| %>
+
+  <div class="modal-header-custom">
+    <div class="header-hard-dashboard" style="opacity: 0.8;"><%= "Créer un album pour la catégorie" %></div>
+    <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
+    <div class="header-hard-dashboard" style="opacity: 0.4;"><%= "#{@category.name}" %></div>
+    <button class="close" data-dismiss="modal">×</button>
+  </div>
+
+  <div class="modal-body-custom">
+
+    <div class="edit-product-container">
+      <div class="label-on-modal-dashboard">Nom de l'album</div>
+      <%= f.input :name, label: false %>
+
+      <div class="label-on-modal-dashboard">Photos</div>
+      <div class="attach-substitution">Télécharger</div>
+      <%= f.input :photos, as: :attachinary, label: false %>
+    </div>
+
+  </div>
+
+  <div class="modal-footer-custom">
+    <%= f.submit "Créer un album", :class => 'submit-button-on-modal' %>
+  </div>
+
+<% end %>
+
+
+
+
+

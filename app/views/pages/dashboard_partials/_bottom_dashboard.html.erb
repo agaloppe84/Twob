@@ -1,0 +1,69 @@
+<div class="dashboardv2-fullpage-bottom">
+
+    <div class="dashboardv2-fullpage-bottom-item-2">
+        <div class="v6-bottom-left-dash">
+
+            <div class="v7-flexbox-column">
+              <div class="header-hard-dashboard">Dashboard</div>
+
+              <div class="v7-flexbox-inline">
+                <div class="dashboard-user-email-dot"><i class="fa fa-circle" aria-hidden="true"></i></div>
+                <div class="dashboard-user-email"><%= current_user.email %></div>
+              </div>
+            </div>
+
+            <!-- <div class="all-active-promo">
+              <div class="all-active-promo-header">
+                <div class="all-active-promo-header-text">Promos actives</div>
+              </div>
+              <div class="all-active-promo-content">
+                <% @promos.where( "current = true" ).each do |current_promo| %>
+                  <div class="all-active-promo-header-text-v2"><%= truncate(current_promo.title, length: 15, omission: "...") %></div>
+                <% end %>
+              </div>
+            </div> -->
+
+        </div>
+    </div>
+
+
+
+    <div class="dashboardv2-fullpage-bottom-item-55">
+        <div class="v6-bottom-middle-dash">
+
+            <div class="dashv2-infos-compilated-item">
+              <div class="v2-big-number"><%= @categories.count %></div>
+              <div class="dashv2-infos-compilated-item-label">Catégories</div>
+            </div>
+
+            <div class="dashv2-infos-compilated-item">
+              <div class="v2-big-number"><%= @products.count %></div>
+              <div class="dashv2-infos-compilated-item-label">Produits</div>
+            </div>
+
+            <div class="dashv2-infos-compilated-item">
+              <div class="v2-big-number"><%= @promos.count %></div>
+              <div class="dashv2-infos-compilated-item-label">Promos</div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <div class="dashboardv2-fullpage-bottom-item-1">
+      <div class="v6-bottom-right-dash">
+
+          <%= render 'shared/flashes' %>
+
+          <%= link_to destroy_user_session_path, method: :delete, data: { confirm: "Etes-vous sûr de vouloir vous déconnecter?" } do %>
+              <div class="dashboard-user-signout">
+                <div class="text-on-signout-hover">Déconnexion</div>
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+              </div>
+          <% end %>
+      </div>
+    </div>
+
+
+</div>

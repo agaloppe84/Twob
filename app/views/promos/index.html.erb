@@ -1,0 +1,25 @@
+<%= render 'shared/fixed_navbar'  %>
+
+<div class="quota-layout-header">
+  <div class="quota-layout-header-text">Promotions en cours</div>
+  <div class="quota-layout-header-text-thin"><%= "#{@active_promos.count} promos" %></div>
+</div>
+
+<div class="promo-index-fullpage">
+  <% @active_promos.each do |promo| %>
+    <div class="promo-index-photo" style="background-image: url(<%= if promo.photos.any? then cl_image_path promo.photos.last.path end %>);">
+      <div class="promo-index-text-display">
+        <div class="promo-index-text-bold"><%= promo.title.capitalize %></div>
+        <div class="promo-index-text-thin promo-start"><%= "Début : #{l(promo.start, format: '%d %B %Y')}" %></div>
+        <div class="promo-index-text-thin promo-end"><%= "Fin : #{l(promo.end, format: '%d %B %Y')}" %></div>
+      </div>
+      <div class="promo-index-description">
+        <div class="promo-index-description-text"><%= promo.description %></div>
+      </div>
+      <div class="promo-index-reduction">
+        <div class="promo-index-reduction-text">REDUCTION</div>
+        <div class="promo-index-reduction-big-number">- 30%</div>
+      </div>
+    </div>
+  <% end %>
+</div>

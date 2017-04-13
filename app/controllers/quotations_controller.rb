@@ -19,7 +19,7 @@ class QuotationsController < ApplicationController
     @quotation = Quotation.new(quotation_params)
     if @quotation.save
       # QuotationMailer.success(@quotation).deliver_now
-      redirect_to confirmation_path(name: @quotation.name, firstname: @quotation.firstname, email: @quotation.email)
+      redirect_to controller: 'quotations', action: 'confirmation', id: @quotation.id
     else
       render :new
     end
@@ -54,7 +54,7 @@ class QuotationsController < ApplicationController
   end
 
   def quotation_params
-    params.require(:quotation).permit(:email, :name, :firstname, :city, :phone, :zipcode, :blindtype, :message, :address, :treated)
+    params.require(:quotation).permit(:email, :lastname, :firstname, :city, :phone, :zipcode, :blindtype, :message, :address, :treated)
   end
 
   def set_category_name
