@@ -1,5 +1,5 @@
 class QuotationsController < ApplicationController
-  before_action :set_quotation, only: [:edit, :update, :destroy, :confirmation]
+  before_action :set_quotation, only: [:edit, :update, :destroy, :confirmation, :show]
   skip_before_action :authenticate_user!, only: [:new, :create, :confirmation]
   before_action :set_category_name, only: [:new, :create]
 

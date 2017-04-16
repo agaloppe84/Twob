@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :quotations, only: [:index, :new, :create, :edit, :update]
+  resources :quotations, only: [:index, :new, :create, :edit, :update, :show]
   resources :promos, only: [:index]
 
 

@@ -1,10 +1,10 @@
 <%= simple_form_for (@category) do |f| %>
 
 <div class="modal-header-custom">
-  <div class="header-hard-dashboard" style="opacity: 0.8;font-size: 15px;font-family: 'Circular-Book';color: <%= "#{@category.color}" %>;">Modifier</div>
-   <div class="between-things" style="font-size: 15px;font-family: 'Circular-Book';color: <%= "#{@category.color}" %>;padding: 0 10px 0 10px;"> > </div>
-  <div class="header-hard-dashboard" style="opacity: 0.9;font-size: 15px;font-family: 'Circular-Book';"><%= @category.name %></div>
-  <button class="close" data-dismiss="modal">×</button>
+  <div class="header-hard-dashboard" style="opacity: 0.8;font-size: 15px;font-family: 'Circular-Book';">Modifier</div>
+   <div class="between-things" style="font-size: 15px;font-family: 'Circular-Book';padding: 0 10px 0 10px;"> > </div>
+  <div class="header-hard-dashboard" style="opacity: 0.9;font-size: 15px;font-family: 'Circular-Book';color: <%= "#{@category.color}" %>;"><%= composed_plurname(@category.name) %></div>
+  <button class="close" data-dismiss="modal"><div class="icon-android-close"></div></button>
 </div>
 
 

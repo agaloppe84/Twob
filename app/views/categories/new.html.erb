@@ -25,3 +25,10 @@
 
 <% end %>
 
+<script>
+  $( ".category_name input" ).blur(function() {
+    if($(this).val() == ''){
+      console.log("empty");
+    }
+  });
+</script>

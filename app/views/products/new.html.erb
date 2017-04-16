@@ -16,10 +16,10 @@
 <%= simple_form_for [@category, @product] do |f| %>
 
 <div class="modal-header-custom">
-  <div class="header-hard-dashboard" style="opacity: 0.8;"><%= "Créer un produit pour la catégorie" %></div>
-  <div style="margin-left: 8px;margin-right: 8px;padding-top: 4px;"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
-  <div class="header-hard-dashboard" style="opacity: 0.4;"><%= "#{@category.name}" %></div>
-  <button class="close" data-dismiss="modal">×</button>
+  <div class="header-hard-dashboard" style="opacity: 0.8;font-size: 15px;font-family: 'Circular-Book';"><%= "Créer un produit pour" %></div>
+   <div class="between-things" style="font-size: 15px;font-family: 'Circular-Book';padding: 0 10px 0 10px;"> > </div>
+  <div class="header-hard-dashboard" style="opacity: 0.9;color: <%= "#{@category.color}" %>;font-size: 15px;font-family: 'Circular-Book';"><%= composed_plurname(@category.name) %></div>
+  <button class="close" data-dismiss="modal"><div class="icon-android-close"></div></button>
 </div>
 
 <div class="modal-body-custom">
@@ -37,7 +37,8 @@
 </div>
 
 <div class="modal-footer-custom">
-  <%= f.submit "Créer un produit", :class => 'submit-button-on-modal' %>
+  <%= f.submit "Valider", :class => 'submit-button-on-modal-two' %>
+  <button data-dismiss="modal"><div class="submit-button-on-modal-three">Annuler</div></button>
 </div>
 
 <% end %>

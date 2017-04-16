@@ -1,2 +1,3 @@
 module QuotationsHelper
+
 end

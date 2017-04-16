@@ -10,7 +10,7 @@ class CreateQuotations < ActiveRecord::Migration[5.0]
       t.string :blindtype
       t.text :message
       t.string :address
-      t.boolean :treated
+      t.boolean :treated, default: false
 
       t.timestamps
     end

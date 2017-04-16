@@ -427,35 +427,6 @@ body {
 }
 
 
-.submit-button-on-modal {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-bottom-left-radius: 2px;
-  border-bottom-right-radius: 2px;
-  font-size: 13px;
-  z-index: 2000;
-  color: white;
-  background-color: #424242;
-  border-top: 1px solid rgba(66,66,66,0.4);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  opacity: 1;
-  transition: 0.3s ease;
-  font-family: "Circular-Bold";
-  outline: none;
-  &:hover {
-    opacity: 1;
-    color: white;
-    background-color: #424242;
-    outline: none;
-    font-family: "Circular-Bold";
-  }
-  &:visited {
-    outline: none;
-  }
-}
 
 
 .container-without-button {

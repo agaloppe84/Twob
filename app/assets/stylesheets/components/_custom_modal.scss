@@ -5,7 +5,7 @@
   height: 70%;
   top: 15%;
   position: fixed;
-  border-radius: 4px;
+  border-radius: 2px;
   overflow: hidden;
   z-index: 5000;
 }
@@ -23,7 +23,7 @@
 
 
 .modal-header-custom {
-  height: 16%;
+  height: 13%;
   width: 100%;
   display: flex;
   position: relative;
@@ -43,7 +43,7 @@
 }
 
 .modal-body-custom {
-  height: 74%;
+  height: 77%;
   width: 100%;
   display: flex;
   background-color: white;
@@ -60,6 +60,7 @@
   display: flex;
   position: relative;
   overflow: hidden;
+  background-color: white;
 }
 
 .modal-backdrop-custom {

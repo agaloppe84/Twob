@@ -35,7 +35,7 @@ class PagesController < ApplicationController
     @albums = Album.all
     @infos = Info.all
     @promos = Promo.all
-    @categories = Category.all
+    @categories = Category.all.order(:id)
     @brands = Brand.all
     @photos = @albums.all.map { |album| album.photos.count }
   end

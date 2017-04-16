@@ -114,9 +114,9 @@ ActiveRecord::Schema.define(version: 20170412172447) do
     t.string   "blindtype"
     t.text     "message"
     t.string   "address"
-    t.boolean  "treated"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "treated",    default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|
