@@ -16,11 +16,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: -30px;
-  background-color: lightgrey;
+  bottom: -25px;
   left: -10px;
   font-family: "Circular-Medium";
-  font-size: 12px;
+  font-size: 11px;
+  opacity: 0.7;
 }
 
 .indicator-02 {
@@ -30,11 +30,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: -30px;
-  background-color: lightgrey;
+  bottom: -25px;
   left: calc(25% + -10px);
   font-family: "Circular-Medium";
-  font-size: 12px;
+  font-size: 11px;
+  opacity: 0.7;
 }
 
 .indicator-03 {
@@ -44,11 +44,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: -30px;
-  background-color: lightgrey;
+  bottom: -25px;
   left: calc(50% + -10px);
   font-family: "Circular-Medium";
-  font-size: 12px;
+  font-size: 11px;
+  opacity: 0.7;
 }
 
 .indicator-04 {
@@ -58,11 +58,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: -30px;
-  background-color: lightgrey;
+  bottom: -25px;
   left: calc(75% + -10px);
   font-family: "Circular-Medium";
-  font-size: 12px;
+  font-size: 11px;
+  opacity: 0.7;
 }
 
 .indicator-05 {
@@ -72,11 +72,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: -30px;
-  background-color: lightgrey;
+  bottom: -25px;
   left: calc(100% + -10px);
   font-family: "Circular-Medium";
-  font-size: 12px;
+  font-size: 11px;
+  opacity: 0.7;
 }
 
 .dynamic-line {
@@ -103,12 +103,12 @@
 .small-line-01 {
   position: absolute;
   width: 18px;
-  height: 10px;
-  border-left: 2px solid lightgrey;
+  height: 6px;
+  border-left: 1px solid lightgrey;
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: -10px;
+  bottom: -6px;
   background-color: transparent;
   font-family: "Circular-Medium";
   font-size: 12px;
@@ -117,12 +117,12 @@
 .small-line-02 {
   position: absolute;
   width: 18px;
-  height: 10px;
-  border-left: 2px solid lightgrey;
+  height: 6px;
+  border-left: 1px solid lightgrey;
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: -10px;
+  bottom: -6px;
   background-color: transparent;
   font-family: "Circular-Medium";
   font-size: 12px;
@@ -132,12 +132,12 @@
 .small-line-03 {
   position: absolute;
   width: 18px;
-  height: 10px;
-  border-left: 2px solid lightgrey;
+  height: 6px;
+  border-left: 1px solid lightgrey;
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: -10px;
+  bottom: -6px;
   background-color: transparent;
   font-family: "Circular-Medium";
   font-size: 12px;
@@ -147,12 +147,12 @@
 .small-line-04 {
   position: absolute;
   width: 18px;
-  height: 10px;
-  border-left: 2px solid lightgrey;
+  height: 6px;
+  border-left: 1px solid lightgrey;
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: -10px;
+  bottom: -6px;
   background-color: transparent;
   font-family: "Circular-Medium";
   font-size: 12px;
@@ -162,12 +162,12 @@
 .small-line-05 {
   position: absolute;
   width: 18px;
-  height: 10px;
-  border-left: 2px solid lightgrey;
+  height: 6px;
+  border-left: 1px solid lightgrey;
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: -10px;
+  bottom: -6px;
   background-color: transparent;
   font-family: "Circular-Medium";
   font-size: 12px;

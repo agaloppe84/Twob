@@ -1,0 +1,25 @@
+
+
+
+<div class="modal-header-custom" style="height: 16%;">
+    <div class="product-type-in-color" style="opacity: 0.9;font-size: 15px;font-family: 'Circular-Book';">
+      <%= "Devis n°" %>
+    </div>
+    <div class="header-hard-dashboard" style="opacity: 0.9;font-size: 15px;font-family: 'Circular-Book';">
+      <%= "#{@quotation.id}" %>
+    </div>
+    <button class="close" data-dismiss="modal"><div class="icon-android-close"></div></button>
+</div>
+
+<div class="modal-body-custom" style="height: 84%;padding-top: 0;padding-bottom: 0;">
+  <%= @quotation.email %>
+  <%= @quotation.lastname %>
+  <%= @quotation.firstname %>
+  <%= @quotation.city %>
+  <%= @quotation.phone %>
+  <%= @quotation.zipcode %>
+  <%= @quotation.blindtype %>
+  <%= @quotation.message %>
+  <%= @quotation.address %>
+  <%= @quotation.treated %>
+</div>

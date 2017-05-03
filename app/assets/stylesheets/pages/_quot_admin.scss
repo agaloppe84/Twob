@@ -1,0 +1,82 @@
+.quot-admin-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid lightgrey;
+  display: flex;
+  align-items: center;
+}
+
+.quot-admin-header-text {
+  font-family: "Circular-Medium";
+  font-size: 18px;
+}
+
+.qad-left {
+  flex: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: red;
+}
+
+.qad-middle {
+  flex: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.qad-right {
+  flex: 5;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-color: yellow;
+}
+
+.quot-admin-all-container {
+  width: 100%;
+  height: 100%;
+  padding-top: 80px;
+  display: none;
+}
+
+.quot-admin-untreated-container {
+  width: 100%;
+  height: 100%;
+  margin-top: 80px;
+}
+
+.qad-untreated-button {
+  font-family: "Circular-Medium";
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.qad-all-button {
+  font-family: "Circular-Book";
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.activelink {
+  font-family: "Circular-Bold";
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+

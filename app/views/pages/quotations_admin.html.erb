@@ -1,4 +1,31 @@
-<% @quotations.reverse.each do |quotation| %>
+
+
+
+
+
+
+<div class="quot-admin-header">
+  <div class="qad-left">
+    <div class="quot-admin-header-text">Demandes de devis</div>
+  </div>
+  <div class="qad-middle">
+    <div class="qad-untreated-button activelink"><%= "Untreated (#{@non_treated_quotas.count})" %></div>
+    <div class="qad-all-button"><%= "All (#{@quotations.count})" %></div>
+  </div>
+  <div class="qad-right">
+
+  </div>
+</div>
+
+
+
+<div class="quot-admin-all-container">
+
+  <% @quotations.reverse.each do |quotation| %>
+
+  <%= link_to "#quotationShowModal", class: "v3-link", data: { toggle: "modal", quotationid: "#{quotation.id}" } do %>
+    <div class="icon-information-black newicon-size"></div>
+  <% end %>
 
   <div class="small-bar">
     <div class="indicator-01">0h</div>
@@ -23,3 +50,69 @@
   </div>
 
 <% end %>
+
+</div>
+
+
+
+<div class="quot-admin-untreated-container">
+
+  <% @non_treated_quotas.reverse.each do |quotation| %>
+
+  <%= link_to "#quotationShowModal", class: "v3-link", data: { toggle: "modal", quotationid: "#{quotation.id}" } do %>
+    <div class="icon-information-black newicon-size"></div>
+  <% end %>
+
+  <div class="small-bar">
+    <div class="indicator-01">0h</div>
+    <div class="indicator-02">12h</div>
+    <div class="indicator-03">24h</div>
+    <div class="indicator-04">36h</div>
+    <div class="indicator-05">48h</div>
+
+    <div class="small-line-01"></div>
+    <div class="small-line-02"></div>
+    <div class="small-line-03"></div>
+    <div class="small-line-04"></div>
+    <div class="small-line-05"></div>
+
+    <div class="dynamic-line" data-width="<%= hour_to_percent(date_in_hour(quotation.created_at)) %>%" data-color="<%= color_function_percent(hour_to_percent(date_in_hour(quotation.created_at))) %>">
+      <div class="dynamic-absolute-number">
+        <div><%= test_with_minute(quotation.created_at) %></div>
+        <div>^</div>
+      </div>
+    </div>
+
+  </div>
+
+<% end %>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal" id="quotationShowModal">
+  <div class="modal-content-custom">
+  </div>
+</div>

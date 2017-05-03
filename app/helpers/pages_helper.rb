@@ -19,8 +19,10 @@ module PagesHelper
 
     if @hours.to_i < 1
       return @full = "#{@minutes} min"
+    elsif @hours.to_i > 48
+      return @full = "#{@hours.to_i} hr"
     else
-      return @full = "#{@hours.to_i} hr #{@minutes} min"
+      return @full = "#{@hours.to_i} h #{@minutes} m"
     end
   end
 
@@ -33,6 +35,8 @@ module PagesHelper
       @color = '#FC993C'
     elsif percent.to_i > 75 and percent.to_i <= 100
       @color = '#F05941'
+    elsif percent.to_i > 100
+      @color = '#FF4545'
     end
     return @color
   end
