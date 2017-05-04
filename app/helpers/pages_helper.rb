@@ -41,4 +41,22 @@ module PagesHelper
     return @color
   end
 
+  def color_for_treated(status)
+    if status == true
+      @color = '#33CCCC'
+    else
+      @color = '#FF4545'
+    end
+    return @color
+  end
+
+  def text_for_treated(status)
+    if status == true
+      @text = "Traité"
+    else
+      @text = "Non traité"
+    end
+    return @text
+  end
+
 end

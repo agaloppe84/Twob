@@ -20,7 +20,18 @@
 </div>
 
 
-
+<% if @current_promos.empty? %>
+<% else %>
+  <div class="home-current-promo">
+    <div class="hcp-title">Promotions en cours</div>
+    <% @current_promos.each do |promo| %>
+      <div class="hcp-block">
+        <div class="hcp-block-number">-30%</div>
+        <div class="hcp-block-category"><%= composed_plurname(promo.category.name) %></div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
 
 
 
@@ -100,7 +111,7 @@
     </div>
   <% end %>
 
-  <%= link_to category_promo_path(@last_promo.category, @last_promo) do %>
+  <%= link_to category_promo_path(@current_promos.last.category, @current_promos.last) do %>
     <div class="flex-one">
       <%= image_tag("rect02.svg", size: "24x24", alt: "Devis") %>
       <div class="home-small-container-item">

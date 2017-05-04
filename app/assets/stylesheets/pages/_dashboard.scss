@@ -1253,7 +1253,7 @@
   border: 1px solid lightgrey;
   border-radius: 4px;
   width: 100%;
-  height: 70px;
+  height: 60px;
 }
 
 .v3-prod-infos {
@@ -1270,7 +1270,18 @@
   padding-left: calc(40px + 2%);
   padding-right: 40px;
   padding-bottom: 60px;
-  border-bottom: 1px solid rgba(100,100,100,0.2);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.v3-prod-infos-v14 {
+  position: relative;
+  padding-top: 5px;
+  padding-left: 10%;
+  padding-right: 40px;
+  padding-bottom: 60px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -2053,11 +2064,11 @@
 
 
 .quota-button {
-  font-family: "Circular-Bold";
+  font-family: "Circular-Medium";
   font-size: 13px;
   background-color: white;
   color: $red;
-  border: 2px solid $red;
+  border: 1px solid $red;
   border-radius: 3px;
   padding-left: 10px;
   padding-right: 10px;
@@ -2065,7 +2076,6 @@
   padding-bottom: 4px;
   transition: 0.3s ease;
   min-width: 70px;
-  margin: 5px;
   &:hover {
     color: white;
     background-color: $red;

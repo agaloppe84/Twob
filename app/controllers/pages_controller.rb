@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     @products = Product.all
     @promos = Promo.all
     @albums = Album.all
-    @last_promo = Promo.where(current: true).last
+    @current_promos = Promo.where(current: true)
     @categories = Category.all
 
     @random_album = []
@@ -47,6 +47,8 @@ class PagesController < ApplicationController
   def quotations_admin
     @quotations = Quotation.all.order(:id)
     @non_treated_quotas = @quotations.where(treated: false)
+    @treated_quotas = @quotations.where(treated: true)
+    @all_emails = (Quotation.all.map { |quot| quot.email }).uniq!
   end
 
   def pathfilter

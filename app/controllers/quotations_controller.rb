@@ -31,7 +31,7 @@ class QuotationsController < ApplicationController
 
   def update
     if @quotation.update(quotation_params)
-      redirect_to dashboard_quotations_path, notice: "Le devis #{@quotation.id} à été mis à jour"
+      redirect_to quotations_admin_path
     else
       render :new
     end

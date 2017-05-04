@@ -10,6 +10,7 @@
   </div>
   <div class="qad-middle">
     <div class="qad-untreated-button activelink"><%= "Untreated (#{@non_treated_quotas.count})" %></div>
+    <div class="qad-treated-button"><%= "Treated (#{@treated_quotas.count})" %></div>
     <div class="qad-all-button"><%= "All (#{@quotations.count})" %></div>
   </div>
   <div class="qad-right">
@@ -21,35 +22,29 @@
 
 <div class="quot-admin-all-container">
 
-  <% @quotations.reverse.each do |quotation| %>
-
-  <%= link_to "#quotationShowModal", class: "v3-link", data: { toggle: "modal", quotationid: "#{quotation.id}" } do %>
-    <div class="icon-information-black newicon-size"></div>
-  <% end %>
-
-  <div class="small-bar">
-    <div class="indicator-01">0h</div>
-    <div class="indicator-02">12h</div>
-    <div class="indicator-03">24h</div>
-    <div class="indicator-04">36h</div>
-    <div class="indicator-05">48h</div>
-
-    <div class="small-line-01"></div>
-    <div class="small-line-02"></div>
-    <div class="small-line-03"></div>
-    <div class="small-line-04"></div>
-    <div class="small-line-05"></div>
-
-    <div class="dynamic-line" data-width="<%= hour_to_percent(date_in_hour(quotation.created_at)) %>%" data-color="<%= color_function_percent(hour_to_percent(date_in_hour(quotation.created_at))) %>">
-      <div class="dynamic-absolute-number">
-        <div><%= test_with_minute(quotation.created_at) %></div>
-        <div>^</div>
-      </div>
-    </div>
-
+  <div class="qad-informations-header">
+    <div class="qad-item-01">Id</div>
+    <div class="qad-item-02">Nom</div>
+    <div class="qad-item-03">Ville</div>
+    <div class="qad-item-04">Posté</div>
+    <div class="qad-item-05">Tél</div>
+    <div class="qad-item-06">Email</div>
+    <div class="qad-item-07">Status</div>
   </div>
 
-<% end %>
+  <% @quotations.reverse.each do |quotation| %>
+    <%= link_to "#quotationShowModal", class: "qad-line-link", data: { toggle: "modal", quotationid: "#{quotation.id}" } do %>
+      <div class="qad-item-line">
+        <div class="qad-item-01" style="font-family: 'Circular-Black';"><%= quotation.id %></div>
+        <div class="qad-item-02"><%= quotation.lastname.capitalize %></div>
+        <div class="qad-item-03" style="font-family: 'Circular-Bold';"><%= quotation.city.capitalize %></div>
+        <div class="qad-item-04"><%= test_with_minute(quotation.created_at) %></div>
+        <div class="qad-item-05"><%= quotation.phone %></div>
+        <div class="qad-item-06"><%= quotation.email %></div>
+        <div class="qad-item-07" style="color: <%= color_for_treated(quotation.treated) %>;"><%= text_for_treated(quotation.treated) %></div>
+      </div>
+    <% end %>
+  <% end %>
 
 </div>
 
@@ -57,33 +52,63 @@
 
 <div class="quot-admin-untreated-container">
 
+  <div class="qad-informations-header">
+    <div class="qad-item-01">Id</div>
+    <div class="qad-item-02">Nom</div>
+    <div class="qad-item-03">Ville</div>
+    <div class="qad-item-04">Posté</div>
+    <div class="qad-item-05">Tél</div>
+    <div class="qad-item-06">Email</div>
+    <div class="qad-item-07">Status</div>
+  </div>
+
   <% @non_treated_quotas.reverse.each do |quotation| %>
 
-  <%= link_to "#quotationShowModal", class: "v3-link", data: { toggle: "modal", quotationid: "#{quotation.id}" } do %>
-    <div class="icon-information-black newicon-size"></div>
+  <%= link_to "#quotationShowModal", class: "qad-line-link", data: { toggle: "modal", quotationid: "#{quotation.id}" } do %>
+    <div class="qad-item-line">
+      <div class="qad-item-01" style="font-family: 'Circular-Black';"><%= quotation.id %></div>
+      <div class="qad-item-02"><%= quotation.lastname.capitalize %></div>
+      <div class="qad-item-03" style="font-family: 'Circular-Bold';"><%= quotation.city.capitalize %></div>
+      <div class="qad-item-04"><%= test_with_minute(quotation.created_at) %></div>
+      <div class="qad-item-05"><%= quotation.phone %></div>
+      <div class="qad-item-06"><%= quotation.email %></div>
+      <div class="qad-item-07" style="color: <%= color_for_treated(quotation.treated) %>;"><%= text_for_treated(quotation.treated) %></div>
+    </div>
   <% end %>
 
-  <div class="small-bar">
-    <div class="indicator-01">0h</div>
-    <div class="indicator-02">12h</div>
-    <div class="indicator-03">24h</div>
-    <div class="indicator-04">36h</div>
-    <div class="indicator-05">48h</div>
 
-    <div class="small-line-01"></div>
-    <div class="small-line-02"></div>
-    <div class="small-line-03"></div>
-    <div class="small-line-04"></div>
-    <div class="small-line-05"></div>
+<% end %>
 
-    <div class="dynamic-line" data-width="<%= hour_to_percent(date_in_hour(quotation.created_at)) %>%" data-color="<%= color_function_percent(hour_to_percent(date_in_hour(quotation.created_at))) %>">
-      <div class="dynamic-absolute-number">
-        <div><%= test_with_minute(quotation.created_at) %></div>
-        <div>^</div>
-      </div>
-    </div>
+</div>
 
+
+
+<div class="quot-admin-treated-container">
+
+  <div class="qad-informations-header">
+    <div class="qad-item-01">Id</div>
+    <div class="qad-item-02">Nom</div>
+    <div class="qad-item-03">Ville</div>
+    <div class="qad-item-04">Posté</div>
+    <div class="qad-item-05">Tél</div>
+    <div class="qad-item-06">Email</div>
+    <div class="qad-item-07">Status</div>
   </div>
+
+  <% @treated_quotas.reverse.each do |quotation| %>
+
+  <%= link_to "#quotationShowModal", class: "qad-line-link", data: { toggle: "modal", quotationid: "#{quotation.id}" } do %>
+    <div class="qad-item-line">
+      <div class="qad-item-01" style="font-family: 'Circular-Black';"><%= quotation.id %></div>
+      <div class="qad-item-02"><%= quotation.lastname.capitalize %></div>
+      <div class="qad-item-03" style="font-family: 'Circular-Bold';"><%= quotation.city.capitalize %></div>
+      <div class="qad-item-04"><%= test_with_minute(quotation.created_at) %></div>
+      <div class="qad-item-05"><%= quotation.phone %></div>
+      <div class="qad-item-06"><%= quotation.email %></div>
+      <div class="qad-item-07" style="color: <%= color_for_treated(quotation.treated) %>;"><%= text_for_treated(quotation.treated) %></div>
+    </div>
+  <% end %>
+
 
 <% end %>
 

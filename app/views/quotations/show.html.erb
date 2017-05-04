@@ -1,25 +1,115 @@
+<script>
 
+  $('.dynamic-line').each(function() {
+    var dynamicWidth = $(this).attr('data-width');
+    var dynamicColor = $(this).attr('data-color');
+    if (parseInt(dynamicWidth) > 100) {
+      $(this).css( "width", "100%" );
+    } else {
+      $(this).css( "width", dynamicWidth );
+    }
+    $(this).css( "background-color", dynamicColor );
+  });
+
+
+
+  $( ".quota-button" ).each(function() {
+    $( this ).click(function() {
+      $(".quota-dynamic-v2 .form-group :checkbox")[0].checked = true;
+    });
+  });
+
+
+
+</script>
 
 
 <div class="modal-header-custom" style="height: 16%;">
-    <div class="product-type-in-color" style="opacity: 0.9;font-size: 15px;font-family: 'Circular-Book';">
+    <div class="product-type-in-color" style="opacity: 0.9;font-size: 15px;font-family: 'Circular-Bold';">
       <%= "Devis n°" %>
     </div>
-    <div class="header-hard-dashboard" style="opacity: 0.9;font-size: 15px;font-family: 'Circular-Book';">
+    <div class="header-hard-dashboard" style="opacity: 0.9;font-size: 15px;font-family: 'Circular-Black';">
       <%= "#{@quotation.id}" %>
     </div>
     <button class="close" data-dismiss="modal"><div class="icon-android-close"></div></button>
 </div>
 
 <div class="modal-body-custom" style="height: 84%;padding-top: 0;padding-bottom: 0;">
-  <%= @quotation.email %>
-  <%= @quotation.lastname %>
-  <%= @quotation.firstname %>
-  <%= @quotation.city %>
-  <%= @quotation.phone %>
-  <%= @quotation.zipcode %>
-  <%= @quotation.blindtype %>
-  <%= @quotation.message %>
-  <%= @quotation.address %>
-  <%= @quotation.treated %>
+
+  <div class="small-bar">
+    <div class="indicator-01">0h</div>
+    <div class="indicator-02">12h</div>
+    <div class="indicator-03">24h</div>
+    <div class="indicator-04">36h</div>
+    <div class="indicator-05">48h</div>
+
+    <div class="small-line-01"></div>
+    <div class="small-line-02"></div>
+    <div class="small-line-03"></div>
+    <div class="small-line-04"></div>
+    <div class="small-line-05"></div>
+
+    <div class="dynamic-line" data-width="<%= hour_to_percent(date_in_hour(@quotation.created_at)) %>%" data-color="<%= color_function_percent(hour_to_percent(date_in_hour(@quotation.created_at))) %>">
+      <div class="dynamic-absolute-number">
+        <div><%= test_with_minute(@quotation.created_at) %></div>
+        <div style="font-size: 18px;">|</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="qad-item-line-show-column">
+    <div class="qad-item-line-show-title-v2">Email</div>
+    <div class="qad-item-line-show-item"><%= @quotation.email %></div>
+  </div>
+
+  <div class="qad-item-line-show-column">
+    <div class="qad-item-line-show-title-v2">Nom</div>
+    <div class="qad-item-line-show-item"><%= fullname(@quotation.lastname, @quotation.firstname) %></div>
+  </div>
+
+  <div class="qad-item-line-show-column">
+    <div class="qad-item-line-show-title-v2">Adresse</div>
+    <div class="qad-item-line-show-item"><%= full_address(@quotation.city, @quotation.zipcode, @quotation.address) %></div>
+  </div>
+
+  <div class="qad-item-line-show-column">
+    <div class="qad-item-line-show-title-v2">Tél</div>
+    <div class="qad-item-line-show-item"><%= @quotation.phone %></div>
+  </div>
+
+  <div class="qad-item-line-show-column">
+    <div class="qad-item-line-show-title-v2">Produit</div>
+    <div class="qad-item-line-show-item"><%= @quotation.blindtype %></div>
+  </div>
+
+  <div class="qad-item-line-show-column">
+    <div class="qad-item-line-show-title-v2">Status</div>
+    <div class="qad-item-line-show-item" style="color: <%= color_for_treated(@quotation.treated) %>;"><%= text_for_treated(@quotation.treated) %></div>
+  </div>
+
+
+
+
+    <% if @quotation.treated? %>
+    <% else %>
+    <div class="qad-item-line-show-column">
+      <div class="qad-item-line-show-title-v2">Demande traitée</div>
+        <%= simple_form_for (@quotation) do |f| %>
+          <div class="quota-dynamic-v2 hidden-quota-checkbox"><%= f.input :treated %></div>
+          <%= f.submit "Done", class: "quota-button" %>
+        <% end %>
+    </div>
+    <% end %>
+
+
+
+  <div class="qad-item-line-show-column">
+    <div class="qad-item-line-show-title-v2">Message</div>
+    <div class="qad-item-line-show-item" style="margin-bottom: 20px;"><%= @quotation.message %></div>
+  </div>
+
+
+
+
 </div>

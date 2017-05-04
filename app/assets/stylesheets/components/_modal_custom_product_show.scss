@@ -4,14 +4,14 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border-bottom: 1px solid lightgrey;
+  padding-left: 10%;
+  padding-top: 6px;
 }
 
 .modal-custom-product-headers-text {
-  font-size: 15px;
-  font-family: "Circular-Book";
-  padding-left: 10%;
-  color: rgba(55,55,63,0.8);
+  font-size: 13px;
+  font-family: "Circular-Bold";
+  color: $red;
 }
 
 .modal-custom-product-photo {
@@ -27,7 +27,6 @@
 
 .modal-custom-product-infos {
   position: relative;
-  padding-top: 35px;
   padding-bottom: 35px;
   padding-left: 10%;
 }
@@ -37,5 +36,42 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: 40px;
+  height: 23px;
 }
+
+
+.icon-show-adjust {
+  color: $red;
+  font-size: 11px;
+  padding-top: 2px;
+  margin-right: 7px;
+}
+
+
+.icon-show-adjust-v2 {
+  color: rgba(30,30,30,0.9);
+  font-size: 6px;
+  padding-top: 4px;
+  margin-right: 7px;
+}
+
+.infos-big-boob-v13 {
+  font-size: 13px;
+  font-family: "Circular-Bold";
+}
+
+.infos-small-boob-v13 {
+  font-size: 13px;
+  font-family: "Circular-Book";
+  margin-left: 6px;
+  color: rgba(30,30,40,0.8);
+}
+
+
+
+
+
+
+
+
+

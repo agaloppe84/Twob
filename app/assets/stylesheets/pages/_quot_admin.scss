@@ -6,11 +6,13 @@
   border-bottom: 1px solid lightgrey;
   display: flex;
   align-items: center;
+  background-color: white;
+  z-index: 500;
 }
 
 .quot-admin-header-text {
   font-family: "Circular-Medium";
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .qad-left {
@@ -19,7 +21,6 @@
   align-items: center;
   justify-content: center;
   height: 100%;
-  background-color: red;
 }
 
 .qad-middle {
@@ -28,6 +29,8 @@
   align-items: center;
   justify-content: space-around;
   height: 100%;
+  border-left: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
 }
 
 .qad-right {
@@ -35,44 +38,183 @@
   display: flex;
   align-items: center;
   height: 100%;
-  background-color: yellow;
 }
 
 .quot-admin-all-container {
   width: 100%;
   height: 100%;
-  padding-top: 80px;
+  margin-top: 150px;
   display: none;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.quot-admin-treated-container {
+  width: 100%;
+  height: 100%;
+  margin-top: 150px;
+  display: none;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .quot-admin-untreated-container {
   width: 100%;
   height: 100%;
   margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .qad-untreated-button {
-  font-family: "Circular-Medium";
-  font-size: 14px;
+  font-family: "Circular-Book";
+  font-size: 13px;
   cursor: pointer;
-  opacity: 0.7;
+  opacity: 0.5;
+  padding: 8px 14px 8px 14px;
+  border-radius: 2px;
+  transition: 0.4s ease;
+  color: $red;
 }
+
+.qad-treated-button {
+  font-family: "Circular-Book";
+  font-size: 13px;
+  cursor: pointer;
+  opacity: 0.5;
+  padding: 8px 14px 8px 14px;
+  border-radius: 2px;
+  transition: 0.4s ease;
+  color: $green;
+}
+
 .qad-all-button {
   font-family: "Circular-Book";
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
-  opacity: 0.7;
+  opacity: 0.5;
+  padding: 8px 14px 8px 14px;
+  border-radius: 2px;
+  transition: 0.4s ease;
 }
 
 .activelink {
-  font-family: "Circular-Bold";
+  font-family: "Circular-Medium";
   opacity: 1;
+  transition: 0.4s ease;
 }
 
+.qad-informations-header {
+  display: flex;
+  width: 100%;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  margin-top: 70px;
+  border-bottom: 1px solid lightgrey;
+  font-size: 9px;
+}
 
+.qad-item-line {
+  display: flex;
+  width: 100%;
+  padding-bottom: 25px;
+  padding-top: 25px;
+  border-bottom: 1px solid lightgrey;
+  font-size: 13px;
+}
 
+.qad-item-01 {
+  flex: 1;
+  font-family: "Circular-Book";
+}
 
+.qad-item-02 {
+  flex: 2;
+  font-family: "Circular-Book";
+}
 
+.qad-item-03 {
+  flex: 3;
+  font-family: "Circular-Book";
+}
+
+.qad-item-04 {
+  flex: 2;
+  font-family: "Circular-Book";
+}
+
+.qad-item-05 {
+  flex: 2;
+  font-family: "Circular-Book";
+}
+
+.qad-item-06 {
+  flex: 3;
+  font-family: "Circular-Book";
+}
+
+.qad-item-07 {
+  flex: 2;
+  font-family: "Circular-Book";
+}
+
+.qad-line-link {
+  opacity: 1;
+  color: rgba(55,55,55,1);
+  font-size: 13px;
+  &:hover {
+    color: $red;
+  }
+  &:visited {
+    color: rgba(55,55,55,1);
+  }
+  &:focus {
+    color: rgba(55,55,55,1);
+  }
+}
+
+.qad-item-line-show {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15%;
+  padding-right: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.qad-item-line-show-column {
+  width: 100%;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 15%;
+  padding-right: 15%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.qad-item-line-show-title {
+  font-family: "Circular-Bold";
+  font-size: 14px;
+  width: 70px;
+}
+
+.qad-item-line-show-title-v2 {
+  font-family: "Circular-Black";
+  font-size: 13px;
+}
+
+.qad-item-line-show-item {
+  font-family: "Circular-Book";
+  font-size: 14px;
+}
 
 
 
