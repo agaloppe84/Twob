@@ -26,6 +26,20 @@ module PagesHelper
     end
   end
 
+  def response_time_in_hours(created_date, updated_date)
+    @response = (updated_date - created_date)/60/60
+    @response_integer = @response.round(1).to_i
+  end
+
+  def color_for_response_time(response_time)
+    if response_time > 48
+      @color = '#FF4545'
+    else
+      @color = '#33CCCC'
+    end
+    return @color
+  end
+
   def color_function_percent(percent)
     if percent.to_i >= 0 and percent.to_i <= 25
       @color = '#33CCCC'

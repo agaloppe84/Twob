@@ -92,6 +92,10 @@
 
 
     <% if @quotation.treated? %>
+      <div class="qad-item-line-show-column">
+        <div class="qad-item-line-show-title-v2">Temps de réponse</div>
+        <div class="qad-item-line-show-item" style="color: <%= color_for_response_time(response_time_in_hours(@quotation.created_at, @quotation.updated_at)) %>"><%= "#{response_time_in_hours(@quotation.created_at, @quotation.updated_at)} Heures" %></div>
+      </div>
     <% else %>
     <div class="qad-item-line-show-column">
       <div class="qad-item-line-show-title-v2">Demande traitée</div>
