@@ -1,0 +1,46 @@
+.dropdown-menu {
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  box-shadow: none;
+  right: -13px;
+  left: auto;
+  width: 171px;
+  background-color: white;
+  border-radius: 2px;
+  border: 1px solid lightgrey;
+  padding-top: 15px;
+  padding-bottom: 11px;
+  margin-top: 28px;
+}
+
+.dropdown-menu > li > a {
+  font-size: 13px;
+  font-family: "Circular-Medium";
+}
+
+.caret-custom {
+  position: relative;
+  top: -23px;
+  right: -140px;
+}
+
+.caret-custom:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 8px solid lightgrey;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+
+.caret-custom:after {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  border-bottom: 7px solid white;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+}

@@ -29,7 +29,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 145px;
+  width: 210px;
 }
 
 .logo-in-text {
@@ -42,3 +42,33 @@
   font-size: 18px;
   color: $orange;
 }
+
+.nav-small-link-design {
+  font-family: "Circular-Bold";
+  font-size: 13px;
+  color: rgba(30,30,40,0.8);
+}
+
+.navbar-icon-adjust {
+  font-size: 17px;
+  padding-top: 4px;
+  color: rgba(30,30,40,0.8);
+  transition: 0.3s ease;
+  &:hover {
+    color: $red;
+  }
+}
+
+.navbar-signout {
+  color: $red;
+}
+
+
+
+
+
+
+
+
+
+

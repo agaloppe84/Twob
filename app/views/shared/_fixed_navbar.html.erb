@@ -13,7 +13,7 @@
       <%= link_to root_path do %>
 
         <% if current_page?(root_path) %>
-          <div class="nav-small-link-design" style="color: #E67E22;">Accueil</div>
+          <div class="nav-small-link-design" style="color: #EE5F5B;">Accueil</div>
         <% else %>
           <div class="nav-small-link-design">Accueil</div>
         <% end %>
@@ -27,7 +27,7 @@
       <%= link_to categories_path do %>
 
         <% if current_page?(categories_path) %>
-          <div class="nav-small-link-design" style="color: #E67E22;">Produits</div>
+          <div class="nav-small-link-design" style="color: #EE5F5B;">Produits</div>
         <% else %>
           <div class="nav-small-link-design">Produits</div>
         <% end %>
@@ -39,7 +39,7 @@
       <%= link_to promos_path do %>
 
         <% if current_page?(promos_path) %>
-          <div class="nav-small-link-design" style="color: #E67E22;">Promos</div>
+          <div class="nav-small-link-design" style="color: #EE5F5B;">Promos</div>
         <% else %>
           <div class="nav-small-link-design">Promos</div>
         <% end %>
@@ -52,7 +52,7 @@
       <%= link_to new_quotation_path do %>
 
         <% if current_page?(new_quotation_path) %>
-          <div class="nav-small-link-design" style="color: #E67E22;">Devis</div>
+          <div class="nav-small-link-design" style="color: #EE5F5B;">Devis</div>
         <% else %>
           <div class="nav-small-link-design">Devis</div>
         <% end %>
@@ -65,13 +65,34 @@
     <div class="nstl-absolute">
 
       <div class="nav-small-top-link">
-        <%= link_to pathfilter_path do %>
-          <div class="nav-small-link-design">Admin</div>
-        <% end %>
+        <div class="nav-small-link-design"><%= current_user.email %></div>
       </div>
 
       <div class="nav-small-top-link">
-        <%= link_to "Déconnexion", destroy_user_session_path, method: :delete, class: "admin-button-destroy" %>
+        <div class="dropdown">
+          <%= link_to "", id: "custom-dropdown", data: { toggle: "dropdown" }, class: "dropdown-toggle" do %>
+            <div class="icon-params navbar-icon-adjust"></div>
+          <% end %>
+
+          <ul class="dropdown-menu" aria-labelledby="custom-dropdown">
+            <div class="caret-custom"></div>
+            <li><%= link_to "dashboard", dashboard_path %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "gestion devis", quotations_admin_path %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "analytics", analytics_path %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <div class="nav-small-top-link">
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <div class="icon-lock-2 navbar-icon-adjust navbar-signout"></div>
+        <% end %>
       </div>
 
     </div>

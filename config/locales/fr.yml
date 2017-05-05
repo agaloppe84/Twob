@@ -24,4 +24,9 @@ fr:
       - :day
       - :month
       - :year
+  devise:
+    sessions:
+      signed_in: "Connexion réussie"
+    failure:
+      already_authenticated: "Vous êtes déja connecté"
 
