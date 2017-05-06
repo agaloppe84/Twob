@@ -14,7 +14,36 @@
     <div class="qad-all-button"><%= "All (#{@quotations.count})" %></div>
   </div>
   <div class="qad-right">
+    <% if user_signed_in? %>
+    <div class="nstl-absolute" style="width: 150px;">
 
+      <div class="nav-small-top-link">
+        <div class="nav-small-link-design"><%= current_user.email %></div>
+      </div>
+
+      <div class="nav-small-top-link">
+        <div class="dropdown">
+          <%= link_to "", id: "custom-dropdown", data: { toggle: "dropdown" }, class: "dropdown-toggle" do %>
+            <div class="icon-params navbar-icon-adjust"></div>
+          <% end %>
+
+          <ul class="dropdown-menu" aria-labelledby="custom-dropdown">
+            <div class="caret-custom"></div>
+            <li><%= link_to "dashboard", dashboard_path %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "gestion devis", quotations_admin_path %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "analytics", analytics_path %></li>
+            <li role="separator" class="divider"></li>
+            <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+    </div>
+  <% end %>
   </div>
 </div>
 
