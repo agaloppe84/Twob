@@ -3,10 +3,14 @@
   width: 70%;
   background-color: rgba(200,200,200,0.6);
   position: relative;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 50px;
-  margin-bottom: 40px;
+}
+
+.small-bar-container {
+  min-height: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 

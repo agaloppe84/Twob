@@ -36,26 +36,28 @@
 
 <div class="modal-body-custom" style="height: 84%;padding-top: 0;padding-bottom: 0;">
 
-  <div class="small-bar">
-    <div class="indicator-01">0h</div>
-    <div class="indicator-02">12h</div>
-    <div class="indicator-03">24h</div>
-    <div class="indicator-04">36h</div>
-    <div class="indicator-05">48h</div>
+  <div class="small-bar-container">
+    <div class="small-bar">
+      <div class="indicator-01">0h</div>
+      <div class="indicator-02">12h</div>
+      <div class="indicator-03">24h</div>
+      <div class="indicator-04">36h</div>
+      <div class="indicator-05">48h</div>
 
-    <div class="small-line-01"></div>
-    <div class="small-line-02"></div>
-    <div class="small-line-03"></div>
-    <div class="small-line-04"></div>
-    <div class="small-line-05"></div>
+      <div class="small-line-01"></div>
+      <div class="small-line-02"></div>
+      <div class="small-line-03"></div>
+      <div class="small-line-04"></div>
+      <div class="small-line-05"></div>
 
-    <div class="dynamic-line" data-width="<%= hour_to_percent(date_in_hour(@quotation.created_at)) %>%" data-color="<%= color_function_percent(hour_to_percent(date_in_hour(@quotation.created_at))) %>">
-      <div class="dynamic-absolute-number">
-        <div><%= test_with_minute(@quotation.created_at) %></div>
-        <div style="font-size: 18px;">|</div>
+      <div class="dynamic-line" data-width="<%= hour_to_percent(date_in_hour(@quotation.created_at)) %>%" data-color="<%= color_function_percent(hour_to_percent(date_in_hour(@quotation.created_at))) %>">
+        <div class="dynamic-absolute-number">
+          <div><%= test_with_minute(@quotation.created_at) %></div>
+          <div style="font-size: 18px;">|</div>
+        </div>
       </div>
-    </div>
 
+    </div>
   </div>
 
   <div class="qad-item-line-show-column">
