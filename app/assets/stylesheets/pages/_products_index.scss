@@ -862,7 +862,7 @@
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   position: fixed;
   z-index: 5000;
   background-color: white;
@@ -871,17 +871,17 @@
 
 .menu-index-active {
   position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   background-color: $red;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 0px;
-  right: -22px;
-  font-size: 12px;
+  bottom: 1px;
+  right: -19px;
+  font-size: 11px;
   opacity: 0;
   transition: 0.4s ease;
   background-size: contain;
@@ -972,7 +972,11 @@
   width: 80%;
 }
 
-
+@media (max-width: 1024px) {
+  .leftblock-content-show {
+    width: 100%;
+  }
+}
 
 
 
