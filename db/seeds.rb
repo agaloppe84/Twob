@@ -6,6 +6,7 @@ Power.destroy_all
 Promo.destroy_all
 Product.destroy_all
 Quotation.destroy_all
+User.destroy_all
 
 
 
