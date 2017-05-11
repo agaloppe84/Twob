@@ -56,9 +56,9 @@ class PagesController < ApplicationController
 
 
   def analytics
-    @sql_test = Quotation.sql_query(2017, "quotation", :blindtype)
     @types_full_names = Category.all.map { |category| category.name.capitalize }
-    @full_years = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"]
+    @sql_test = sql_query(2017, "quotation", :blindtype, @types_full_names)
+    @full_years = year_in_string
   end
 
 end
