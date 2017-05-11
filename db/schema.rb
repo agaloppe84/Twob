@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170511093256) do
+ActiveRecord::Schema.define(version: 20170511223744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,6 +102,7 @@ ActiveRecord::Schema.define(version: 20170511093256) do
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "discount"
     t.index ["category_id"], name: "index_promos_on_category_id", using: :btree
   end
 
@@ -118,6 +119,14 @@ ActiveRecord::Schema.define(version: 20170511093256) do
     t.boolean  "treated",    default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.integer  "value"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_scores_on_product_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -143,4 +152,5 @@ ActiveRecord::Schema.define(version: 20170511093256) do
   add_foreign_key "powers", "products"
   add_foreign_key "products", "categories"
   add_foreign_key "promos", "categories"
+  add_foreign_key "scores", "products"
 end

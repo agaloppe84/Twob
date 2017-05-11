@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'scores/new'
+
+  get 'scores/create'
+
   devise_for :users
   root to: 'pages#home'
 
@@ -18,6 +22,7 @@ Rails.application.routes.draw do
   resources :quotations, only: [:index, :new, :create, :edit, :update, :show]
   resources :promos, only: [:index]
 
+  resources :scores, only: [:new, :create]
 
   resources :categories do
     resources :albums

@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+    @tab = params[:anchor]
   end
 
   def show

@@ -7,4 +7,5 @@ class Product < ApplicationRecord
   has_many :infos, dependent: :destroy
   has_many :powers, dependent: :destroy
   has_many :brands, dependent: :destroy
+  has_many :scores, dependent: :destroy
 end

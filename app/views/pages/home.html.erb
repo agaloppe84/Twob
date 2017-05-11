@@ -26,7 +26,7 @@
     <div class="hcp-title">Promotions en cours</div>
     <% @current_promos.each do |promo| %>
       <div class="hcp-block">
-        <div class="hcp-block-number">-30%</div>
+        <div class="hcp-block-number"><%= "-#{promo.discount}" %></div>
         <div class="hcp-block-category"><%= composed_plurname(promo.category.name) %></div>
       </div>
     <% end %>

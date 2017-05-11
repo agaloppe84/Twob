@@ -106,19 +106,25 @@
               <div class="custom-card-bottom">
                 <div class="ccb-left">
                   <%= link_to "#productShowModal", class: "custom-card-bottom-left-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div>Détails</div>
+                    <div class="icon-info"></div>
                   <% end %>
                 </div>
 
                 <div class="ccb-middle">
                   <%= link_to "#productShowModal", class: "custom-card-bottom-middle-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div>Devis gratuit</div>
+                    <div class="icon-clipboard"></div>
                   <% end %>
                 </div>
 
                 <div class="ccb-right">
                   <%= link_to "#productShowModal", class: "custom-card-bottom-right-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div>Photos</div>
+                    <div class="icon-images"></div>
+                  <% end %>
+                </div>
+
+                <div class="ccb-right">
+                  <% if product.scores.any? %>
+                    <%= ((product.scores.map { |score| score.value }).reduce(:+)) / product.scores.count  %>
                   <% end %>
                 </div>
 
@@ -209,19 +215,25 @@
               <div class="custom-card-bottom">
                 <div class="ccb-left">
                   <%= link_to "#productShowModal", class: "custom-card-bottom-left-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div>Détails</div>
+                    <div class="icon-info"></div>
                   <% end %>
                 </div>
 
                 <div class="ccb-middle">
                   <%= link_to "#productShowModal", class: "custom-card-bottom-middle-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div>Devis gratuit</div>
+                    <div class="icon-clipboard"></div>
                   <% end %>
                 </div>
 
                 <div class="ccb-right">
                   <%= link_to "#productShowModal", class: "custom-card-bottom-right-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div>Photos</div>
+                    <div class="icon-images"></div>
+                  <% end %>
+                </div>
+
+                <div class="ccb-right">
+                  <% if product.scores.any? %>
+                    <%= ((product.scores.map { |score| score.value }).reduce(:+)) / product.scores.count  %>
                   <% end %>
                 </div>
 

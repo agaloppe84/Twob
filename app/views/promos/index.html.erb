@@ -18,7 +18,10 @@
       </div>
       <div class="promo-index-reduction">
         <div class="promo-index-reduction-text">REDUCTION</div>
-        <div class="promo-index-reduction-big-number">- 30%</div>
+        <div class="promo-index-reduction-big-number"><%= "-#{promo.discount}" %></div>
+        <%= link_to categories_path(anchor: "#{promo.category.id}") do %>
+          <div>good Tab ?</div>
+        <% end %>
       </div>
     </div>
   <% end %>

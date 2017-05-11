@@ -7,6 +7,7 @@ Promo.destroy_all
 Product.destroy_all
 Quotation.destroy_all
 User.destroy_all
+Score.destroy_all
 
 
 
@@ -290,6 +291,20 @@ puts "Création des stores - END"
 
 
 
+
+
+
+puts "Création des Scores ....."
+@all_products = Product.all
+
+@all_products.each do |product|
+  @random_number = rand((1..10))
+  5.times do
+    Score.create!(value: @random_number, product: product)
+    puts "score created !!!"
+  end
+end
+puts "Création des scores ..... Done !!!"
 
 
 

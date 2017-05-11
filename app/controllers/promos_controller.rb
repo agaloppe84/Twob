@@ -26,6 +26,7 @@ class PromosController < ApplicationController
   end
 
   def edit
+    @discounts = ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%"]
     render layout: false
   end
 
@@ -52,6 +53,6 @@ class PromosController < ApplicationController
   end
 
   def promo_params
-    params.require(:promo).permit(:title, :description, :start, :current, :end, :category_id, photos: [])
+    params.require(:promo).permit(:title, :description, :start, :current, :end, :discount, :category_id, photos: [])
   end
 end
