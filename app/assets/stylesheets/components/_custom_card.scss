@@ -1,0 +1,212 @@
+.custom-card {
+  height: 370px;
+  width: 100%;
+  background-color: white;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.custom-card-top {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 25px;
+  position: relative;
+}
+
+.cct-title {
+  font-family: "Circular-Bold";
+  font-size: 15px;
+  color: rgba(30,30,40,0.8);
+}
+
+.custom-card-middle {
+  width: 100%;
+  height: 72%;
+  display: flex;
+  border-top: 1px solid rgba(205,205,215,0.3);
+  border-bottom: 1px solid rgba(205,205,215,0.3);
+}
+
+.ccm-left {
+  width: 65%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.ccm-right {
+  width: 35%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.custom-card-bottom {
+  width: 100%;
+  height: 13%;
+  display: flex;
+}
+
+.ccb-left {
+  height: 100%;
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ccb-middle {
+  height: 100%;
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ccb-right {
+  height: 100%;
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+.custom-card-bottom-left-btn {
+  padding: 8px 17px 8px 17px;
+  border-radius: 2px;
+  transition: 0.3s ease;
+  font-family: "Circular-Medium";
+  font-size: 13px;
+  color: $red;
+  &:hover {
+    color: white;
+    background-color: $red;
+  }
+  &:visited {
+    color: $red;
+  }
+}
+
+.custom-card-bottom-middle-btn {
+  padding: 8px 17px 8px 17px;
+  border-radius: 2px;
+  transition: 0.3s ease;
+  font-family: "Circular-Medium";
+  font-size: 13px;
+  color: $red;
+  &:hover {
+    color: white;
+    background-color: $red;
+  }
+  &:visited {
+    color: $red;
+  }
+}
+
+.custom-card-bottom-right-btn {
+  padding: 8px 17px 8px 17px;
+  border-radius: 2px;
+  transition: 0.3s ease;
+  font-family: "Circular-Medium";
+  font-size: 13px;
+  color: $red;
+  &:hover {
+    color: white;
+    background-color: $red;
+  }
+  &:visited {
+    color: $red;
+  }
+}
+
+
+.product-guarantee-circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-size: 15px;
+  font-family: "Circular-Black";
+  color: white;
+  background-color: #33CCCC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cct-guarantee {
+  width: 125px;
+  position: absolute;
+  right: 30px;
+  margin-left: 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.product-guarantee-text {
+  font-size: 13px;
+  font-family: "Circular-Medium";
+  color: #33CCCC;
+}
+
+
+.cct-powers {
+  width: 125px;
+  margin-left: 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 4px;
+  opacity: 0.75;
+}
+
+.cct-icon {
+  margin-right: 10px;
+}
+
+.ccm-info-container {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 25px;
+}
+
+.ccm-info-title {
+  font-size: 13px;
+  font-family: "Circular-Black";
+  color: rgba(30,30,40,0.8);
+  margin-right: 8px;
+}
+
+.ccm-info-content {
+  font-size: 13px;
+  font-family: "Circular-Book";
+  color: rgba(30,30,40,0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

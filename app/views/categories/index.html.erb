@@ -43,28 +43,66 @@
 
       <div class="index-new-container">
         <% category.products.each do |product| %>
-            <div class="card">
+            <div class="custom-card">
 
-              <div class="card-bottom">
-                <div class="card-bottom-item">
-                  <div class="button-two"><%= product.title %></div>
-                  <%= link_to "#productShowModal", class: "v3-link", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div class="icon-information-black newicon-size"></div>
+              <div class="custom-card-top">
+                  <div class="cct-title"><%= product.title %></div>
+
+                   <% if product.powers.any? %>
+                     <div class="cct-powers">
+                      <div class="<%= power_true(product.powers.last.wind) %> <%= power_icon( product.powers.last.wind, 'wind') %>"></div>
+                      <div class="<%= power_true(product.powers.last.sun) %> <%= power_icon( product.powers.last.sun, 'sun') %>"></div>
+                      <div class="<%= power_true(product.powers.last.rain) %> <%= power_icon( product.powers.last.rain, 'rain-2') %>"></div>
+                      <div class="<%= power_true(product.powers.last.energysaver) %> <%= power_icon( product.powers.last.energysaver, 'battery') %>"></div>
+                      <div class="<%= power_true(product.powers.last.insects) %> <%= power_icon( product.powers.last.insects, 'bug-1') %>"></div>
+                      <div class="<%= power_true(product.powers.last.security) %> <%= power_icon( product.powers.last.security, 'lock-alt') %>"></div>
+                    </div>
+                  <% else %>
                   <% end %>
-                </div>
+
+
+                  <div class="cct-guarantee">
+                    <div class="product-guarantee-text">Garantie</div>
+                    <div class="product-guarantee-circle"><%= category.guarantee %></div>
+                    <div class="product-guarantee-text">ans</div>
+                  </div>
+
               </div>
 
-              <div class="card-top image-center" style="background-image: url(<%= cl_image_path product.photos.last.path  %>);">
-                <div class="infos-on-hover">
-                  <div class="infos-volets">
-                    <% product.infos.first(5).each do |info| %>
-                      <div class="infos-item-boob">
-                        <div class="infos-big-boob"><%= info.title %>&nbsp;</div>
-                        <div class="infos-small-boob"><%= info.content %>&nbsp;</div>
-                      </div>
-                    <% end %>
-                  </div>
+              <div class="custom-card-middle">
+
+                <div class="ccm-left">
+                  <% product.infos.each do |info| %>
+                    <div class="ccm-info-container">
+                      <div class="ccm-info-title"><%= info.title %></div>
+                      <div class="ccm-info-content"><%= info.content %></div>
+                    </div>
+                  <% end %>
                 </div>
+
+                <div class="ccm-right" style="background-image: url(<%= cl_image_path product.photos.last.path  %>);"></div>
+              </div>
+
+              <div class="custom-card-bottom">
+                <div class="ccb-left">
+                  <%= link_to "#productShowModal", class: "custom-card-bottom-left-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+                    <div>Détails</div>
+                  <% end %>
+                </div>
+
+                <div class="ccb-middle">
+                  <%= link_to "#productShowModal", class: "custom-card-bottom-middle-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+                    <div>Devis gratuit</div>
+                  <% end %>
+                </div>
+
+                <div class="ccb-right">
+                  <%= link_to "#productShowModal", class: "custom-card-bottom-right-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+                    <div>Photos</div>
+                  <% end %>
+                </div>
+
+
               </div>
 
 
@@ -80,7 +118,7 @@
     <div role="tabpanel" class="tab-pane" id="<%= category.id %>">
 
          <% if category.albums.any? %>
-          <div class="banner-on-index" style="background-image: url(<%= cl_image_path category.albums.last.photos.sample.path if category.albums.last.photos.any?  %>);background-color: <%= category.color %>">
+          <div class="banner-on-index" style="background-image: url(<%= cl_image_path category.albums.last.photos.sample.path if category.albums.last.photos.any?  %>);">
               <div class="banner-on-index-content"></div>
           </div>
           <% end %>
@@ -89,36 +127,72 @@
 
         <div class="index-new-container">
         <% category.products.each do |product| %>
-            <div class="card">
+             <div class="custom-card">
 
-             <!--  <div class="absolute-over-icon">
-                <div class="icon-ttr-test"></div>
-              </div> -->
+              <div class="custom-card-top">
+                  <div class="cct-title"><%= product.title %></div>
 
-              <div class="card-bottom">
-                <div class="card-bottom-item">
-                  <div class="button-two"><%= product.title %></div>
-                  <%= link_to "#productShowModal", class: "v3-link", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div class="icon-information-black newicon-size"></div>
+                  <% if product.powers.any? %>
+                      <div class="cct-powers">
+                      <div class="<%= power_true(product.powers.last.wind) %> <%= power_icon( product.powers.last.wind, 'wind') %>"></div>
+                      <div class="<%= power_true(product.powers.last.sun) %> <%= power_icon( product.powers.last.sun, 'sun-weather') %>"></div>
+                      <div class="<%= power_true(product.powers.last.rain) %> <%= power_icon( product.powers.last.rain, 'droplet') %>"></div>
+                      <div class="<%= power_true(product.powers.last.energysaver) %> <%= power_icon( product.powers.last.energysaver, 'plug') %>"></div>
+                      <div class="<%= power_true(product.powers.last.insects) %> <%= power_icon( product.powers.last.insects, 'bug-1') %>"></div>
+                      <div class="<%= power_true(product.powers.last.security) %> <%= power_icon( product.powers.last.security, 'lock-alt') %>"></div>
+                    </div>
+                  <% else %>
+                  <% end %>
+
+
+                  <div class="cct-guarantee">
+                    <div class="product-guarantee-text">Garantie</div>
+                    <div class="product-guarantee-circle"><%= category.guarantee %></div>
+                    <div class="product-guarantee-text">ans</div>
+                  </div>
+
+              </div>
+
+              <div class="custom-card-middle">
+
+                <div class="ccm-left">
+                  <% product.infos.each do |info| %>
+                    <div class="ccm-info-container">
+                      <div class="ccm-info-title"><%= info.title %></div>
+                      <div class="ccm-info-content"><%= info.content %></div>
+                    </div>
                   <% end %>
                 </div>
+
+                <div class="ccm-right" style="background-image: url(<%= cl_image_path product.photos.last.path  %>);"></div>
               </div>
 
-              <div class="card-top image-center" style="background-image: url(<%= cl_image_path product.photos.last.path  %>);">
-                <div class="infos-on-hover">
-                  <div class="infos-volets">
-                    <% product.infos.first(5).each do |info| %>
-                      <div class="infos-item-boob">
-                        <div class="infos-big-boob"><%= info.title %>&nbsp;</div>
-                        <div class="infos-small-boob"><%= info.content %>&nbsp;</div>
-                      </div>
-                    <% end %>
-                  </div>
+              <div class="custom-card-bottom">
+                <div class="ccb-left">
+                  <%= link_to "#productShowModal", class: "custom-card-bottom-left-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+                    <div>Détails</div>
+                  <% end %>
                 </div>
+
+                <div class="ccb-middle">
+                  <%= link_to "#productShowModal", class: "custom-card-bottom-middle-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+                    <div>Devis gratuit</div>
+                  <% end %>
+                </div>
+
+                <div class="ccb-right">
+                  <%= link_to "#productShowModal", class: "custom-card-bottom-right-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+                    <div>Photos</div>
+                  <% end %>
+                </div>
+
+
               </div>
+
 
 
             </div>
+
 
 
         <% end %>

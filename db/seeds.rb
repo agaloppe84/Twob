@@ -5,6 +5,7 @@ Info.destroy_all
 Power.destroy_all
 Promo.destroy_all
 Product.destroy_all
+Quotation.destroy_all
 
 
 
@@ -56,13 +57,13 @@ puts "Création des types de stores - START"
 # ------------------------- Création des types de stores ------------------------- #
 
 
-    moustiquaire =      Category.create!(name: 'moustiquaire', color:'#007CB9')
-    porte_de_garage =   Category.create!(name: 'porte de garage', color:'#007CB9')
-    store_interieur =   Category.create!(name: 'store interieur', color:'#007CB9')
-    store_exterieur =   Category.create!(name: 'store exterieur', color:'#007CB9')
-    menuiserie =        Category.create!(name: 'menuiserie', color:'#007CB9')
-    pergola =           Category.create!(name: 'pergola', color:'#007CB9')
-    volet_roulant =     Category.create!(name: 'volet roulant', color:'#007CB9')
+    moustiquaire =      Category.create!(name: 'moustiquaire', color:'#007CB9', guarantee: 3)
+    porte_de_garage =   Category.create!(name: 'porte de garage', color:'#007CB9', guarantee: 2)
+    store_interieur =   Category.create!(name: 'store interieur', color:'#007CB9', guarantee: 5)
+    store_exterieur =   Category.create!(name: 'store exterieur', color:'#007CB9', guarantee: 5)
+    menuiserie =        Category.create!(name: 'menuiserie', color:'#007CB9', guarantee: 8)
+    pergola =           Category.create!(name: 'pergola', color:'#007CB9', guarantee: 10)
+    volet_roulant =     Category.create!(name: 'volet roulant', color:'#007CB9', guarantee: 1)
 
 
 # ------------------------- Création des types de stores ------------------------- #
@@ -297,9 +298,26 @@ puts "Création des infos - START"
 # ------------------------- INFOS - Moustiquaires ------------------------- #
 
 
-    Info.create!(title: 'info', content: 'info-test', product: mousty01 , icon: 'icon-fold')
-    Info.create!(title: 'info', content: 'info-test', product: mousty02 , icon: 'icon-fold')
-    Info.create!(title: 'info', content: 'info-test', product: mousty03 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty01 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty01 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty01 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty01 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty01 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty01 , icon: 'icon-fold')
+
+    Info.create!(title: 'titre', content: 'valeur', product: mousty02 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty02 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty02 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty02 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty02 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty02 , icon: 'icon-fold')
+
+    Info.create!(title: 'titre', content: 'valeur', product: mousty03 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty03 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty03 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty03 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty03 , icon: 'icon-fold')
+    Info.create!(title: 'titre', content: 'valeur', product: mousty03 , icon: 'icon-fold')
 
 
 # ------------------------- INFOS - Moustiquaires ------------------------- #
@@ -361,6 +379,10 @@ puts "Création des infos - START"
 
 
     Info.create!(title: 'info', content: 'info-test', product: pergo01 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: pergo01 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: pergo01 , icon: 'icon-fold')
+    Info.create!(title: 'info', content: 'info-test', product: pergo01 , icon: 'icon-fold')
+
     Info.create!(title: 'info', content: 'info-test', product: pergo02 , icon: 'icon-fold')
 
 

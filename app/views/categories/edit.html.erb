@@ -13,10 +13,15 @@
     <div class="label-on-modal-dashboard">Nom</div>
     <%= f.input :name, label: false %>
 
+    <div class="label-on-modal-dashboard">Garantie</div>
+    <%= f.input :guarantee, collection: (1..10), label: false %>
+
+
     <div class="input-container">
       <div class="label-on-modal-dashboard">Couleur</div>
       <%= f.input :color, label: false %>
     </div>
+
 
   </div>
   <%= render "color_picker_edit" %>
