@@ -22,6 +22,14 @@
   font-family: "Circular-Bold";
   font-size: 15px;
   color: rgba(30,30,40,0.8);
+  position: relative;
+}
+
+.cct-copyright {
+  position: absolute;
+  top: -1px;
+  right: -13px;
+  font-size: 10px;
 }
 
 .custom-card-middle {

@@ -46,7 +46,11 @@
             <div class="custom-card">
 
               <div class="custom-card-top">
-                  <div class="cct-title"><%= product.title %></div>
+
+                  <div class="cct-title">
+                    <%= product.title %>
+                    <div class="cct-copyright">®</div>
+                  </div>
 
                    <% if product.powers.any? %>
                      <div class="cct-powers">
@@ -146,7 +150,10 @@
              <div class="custom-card">
 
               <div class="custom-card-top">
-                  <div class="cct-title"><%= product.title %></div>
+                  <div class="cct-title">
+                    <%= product.title %>
+                    <div class="cct-copyright">®</div>
+                  </div>
 
                   <% if product.powers.any? %>
                       <div class="cct-powers">
