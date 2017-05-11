@@ -33,7 +33,7 @@
 }
 
 .ccm-left {
-  width: 65%;
+  width: 60%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@
 }
 
 .ccm-right {
-  width: 35%;
+  width: 40%;
   height: 100%;
   background-repeat: no-repeat;
   background-position: center center;
@@ -56,7 +56,6 @@
 
 .ccb-left {
   height: 100%;
-  flex: 3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,7 +63,6 @@
 
 .ccb-middle {
   height: 100%;
-  flex: 3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,7 +70,6 @@
 
 .ccb-right {
   height: 100%;
-  flex: 3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,6 +80,7 @@
 
 .custom-card-bottom-left-btn {
   padding: 8px 17px 8px 17px;
+  margin-left: 8px;
   border-radius: 2px;
   transition: 0.3s ease;
   font-family: "Circular-Medium";
@@ -131,22 +129,21 @@
 
 
 .product-guarantee-circle {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
+  width: 50px;
+  height: 100%;
   font-size: 15px;
   font-family: "Circular-Black";
-  color: white;
-  background-color: #33CCCC;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  position: relative;
+  opacity: 1;
 }
 
 .cct-guarantee {
-  width: 125px;
   position: absolute;
-  right: 30px;
+  right: 5px;
   margin-left: 10px;
   height: 100%;
   display: flex;
@@ -157,7 +154,7 @@
 .product-guarantee-text {
   font-size: 13px;
   font-family: "Circular-Medium";
-  color: #33CCCC;
+  color: $orange;
 }
 
 
@@ -199,14 +196,42 @@
 }
 
 
+.cct-small-text {
+  font-size: 10px;
+  font-family: "Circular-Book";
+  margin-top: -5px;
+}
 
+.cct-icon-size {
+  font-size: 18px;
+  padding-top: 3px;
+}
 
+.cct-tooltip {
+  opacity: 0;
+  position: absolute;
+  bottom: -30px;
+  left: -68%;
+  width: 120px;
+  height: 30px;
+  font-size: 11px;
+  background-color: white;
+  color: rgba(30,30,40,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid rgba(205,205,215,0.3);
+}
 
+.product-guarantee-circle:hover .cct-tooltip {
+  opacity: 1;
+  transition: 0.3s ease;
+}
 
-
-
-
-
-
+.product-guarantee-circle:hover {
+  color: $red;
+  transition: 0.4s ease;
+}
 
 

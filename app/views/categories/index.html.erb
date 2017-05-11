@@ -62,9 +62,25 @@
 
 
                   <div class="cct-guarantee">
-                    <div class="product-guarantee-text">Garantie</div>
-                    <div class="product-guarantee-circle"><%= category.guarantee %></div>
-                    <div class="product-guarantee-text">ans</div>
+
+                    <% if category.promos.any? %>
+                      <div class="product-guarantee-circle">
+                        <div class="icon-alert cct-icon-size" style="color: #FCCF4D;"></div>
+                        <div class="cct-tooltip">promo en cours</div>
+                      </div>
+                    <% end %>
+
+                    <div class="product-guarantee-circle">
+                      <div><%= category.guarantee %></div>
+                      <div class="cct-small-text">ans</div>
+                      <div class="cct-tooltip">garantie</div>
+                    </div>
+
+                     <div class="product-guarantee-circle">
+                      <div class="icon-measure cct-icon-size"></div>
+                      <div class="cct-tooltip">sur mesure</div>
+                    </div>
+
                   </div>
 
               </div>
@@ -146,9 +162,25 @@
 
 
                   <div class="cct-guarantee">
-                    <div class="product-guarantee-text">Garantie</div>
-                    <div class="product-guarantee-circle"><%= category.guarantee %></div>
-                    <div class="product-guarantee-text">ans</div>
+
+                    <% if category.promos.any? %>
+                      <div class="product-guarantee-circle">
+                        <div class="icon-alert cct-icon-size" style="color: #FCCF4D;"></div>
+                        <div class="cct-tooltip">promo en cours</div>
+                      </div>
+                    <% end %>
+
+                    <div class="product-guarantee-circle">
+                      <div><%= category.guarantee %></div>
+                      <div class="cct-small-text">ans</div>
+                      <div class="cct-tooltip">garantie</div>
+                    </div>
+
+                     <div class="product-guarantee-circle">
+                      <div class="icon-measure cct-icon-size"></div>
+                      <div class="cct-tooltip">sur mesure</div>
+                    </div>
+
                   </div>
 
               </div>
