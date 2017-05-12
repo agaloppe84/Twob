@@ -1,0 +1,115 @@
+.custom-footer {
+  width: 100%;
+  height: 80px;
+  background-color: rgba(30,30,33,0.95);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+
+.cf-left {
+  flex: 3;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cf-middle {
+  flex: 3;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cf-right {
+  flex: 3;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cf-middle-brand-name {
+  font-family: "Circular-Black";
+  font-size: 13px;
+  color: rgba(110,110,113,0.9);
+}
+
+.cf-left-email {
+  width: 50%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cf-left-adress {
+  width: 50%;
+  margin-left: 25%;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cf-left-email-text {
+  font-family: "Circular-Medium";
+  font-size: 14px;
+  color: white;
+}
+
+.cf-left-creator-text {
+  font-family: "Circular-Medium";
+  font-size: 12px;
+  color: white;
+}
+
+.extra-bold {
+  font-family: "Circular-Black";
+}
+
+.extra-thin {
+  font-family: "Circular-Book";
+}
+
+.footer-heart {
+  margin-right: 5px;
+  margin-left: 5px;
+  font-size: 11px;
+  color: $red;
+  padding-top: 3px;
+}
+
+.footer-opacity {
+  opacity: 0.7;
+}
+
+.smaller {
+  font-size: 12px;
+}
+
+.footer-angel {
+  font-size: 13px;
+  color: white;
+  margin-right: 6px;
+  padding-top: 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

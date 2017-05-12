@@ -48,7 +48,33 @@
               <div class="custom-card-top">
 
                   <div class="cct-absolute-services-container">
-                    <div class="cct-asc-relative"></div>
+                    <div class="cct-asc-relative">
+                      <div class="icon-caret-down cct-asc-caret"></div>
+
+                      <% if category.promos.any? %>
+                        <div class="cct-asc-rel-item">
+                            <div class="product-guarantee-circle">
+                              <div class="icon-alert cct-icon-size" style="color: #FCCF4D;font-size: 30px;padding-top: 9px;"></div>
+                            </div>
+                          <div class="cct-asc-bigtext">Promo en cours</div>
+                        </div>
+                      <% end %>
+
+                      <div class="cct-asc-rel-item">
+                        <div class="product-guarantee-circle" style="width: 27px;">
+                          <div style="font-size: 23px;"><%= category.guarantee %></div>
+                        </div>
+                        <div class="cct-asc-bigtext">ans de garantie</div>
+                      </div>
+
+                      <div class="cct-asc-rel-item">
+                        <div class="product-guarantee-circle">
+                          <div class="icon-measure cct-icon-size" style="font-size: 21px;"></div>
+                        </div>
+                        <div class="cct-asc-bigtext">Sur mesure</div>
+                      </div>
+
+                    </div>
                   </div>
 
                   <div class="cct-title">
@@ -173,8 +199,34 @@
 
               <div class="custom-card-top">
 
-                  <div class="cct-absolute-services-container">
-                    <div class="cct-asc-relative"></div>
+                   <div class="cct-absolute-services-container">
+                    <div class="cct-asc-relative">
+                      <div class="icon-caret-down cct-asc-caret"></div>
+
+                      <% if category.promos.any? %>
+                        <div class="cct-asc-rel-item">
+                            <div class="product-guarantee-circle">
+                              <div class="icon-alert cct-icon-size" style="color: #FCCF4D;font-size: 30px;padding-top: 9px;"></div>
+                            </div>
+                          <div class="cct-asc-bigtext">Promo en cours</div>
+                        </div>
+                      <% end %>
+
+                      <div class="cct-asc-rel-item">
+                        <div class="product-guarantee-circle" style="width: 27px;">
+                          <div style="font-size: 23px;"><%= category.guarantee %></div>
+                        </div>
+                        <div class="cct-asc-bigtext">ans de garantie</div>
+                      </div>
+
+                      <div class="cct-asc-rel-item">
+                        <div class="product-guarantee-circle">
+                          <div class="icon-measure cct-icon-size" style="font-size: 21px;"></div>
+                        </div>
+                        <div class="cct-asc-bigtext">Sur mesure</div>
+                      </div>
+
+                    </div>
                   </div>
 
                   <div class="cct-title">
@@ -291,6 +343,6 @@
 </div>
 
 
-
+<%= render 'shared/custom_footer' %>
 
 

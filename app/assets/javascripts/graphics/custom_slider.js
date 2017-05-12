@@ -35,12 +35,12 @@ $('.custom-card').each(function() {
   $(currentScore).css( "width", scoreWidth );
   $(currentScore).css( "background-color", scoreColor );
   $(currentLink).click(function() {
-    $(currentForm).toggle();
+    $(currentForm).toggle('fast');
     $(currentProduct).toggleClass('dynamic-bottom-margin');
     $(this).toggleClass('red-score-btn');
   });
   $(currentServices).click(function() {
-    $(currentServicesContainer).toggle('slow');
+    $(currentServicesContainer).slideToggle('fast');
     $(currentProduct).toggleClass('dynamic-top-margin');
   });
   $(currentSubmitButton).click(function() {

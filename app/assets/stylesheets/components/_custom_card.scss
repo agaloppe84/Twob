@@ -40,6 +40,16 @@
   align-items: center;
 }
 
+.cct-asc-rel-item {
+  flex: 4;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
 
 
 
@@ -306,6 +316,35 @@
   color: rgba(30,30,40,0.8);
   padding-bottom: 2px;
 }
+
+.cct-asc-caret {
+  position: absolute;
+  font-size: 28px;
+  color: white;
+  bottom: -27px;
+  transition: 0.3s ease;
+}
+
+.cct-asc-bigtext {
+  font-size: 16px;
+  font-family: "Circular-Medium";
+  color: rgba(30,30,40,0.8);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
