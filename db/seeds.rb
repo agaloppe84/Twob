@@ -298,8 +298,8 @@ puts "Création des Scores ....."
 @all_products = Product.all
 
 @all_products.each do |product|
-  @random_number = rand((1..10))
   5.times do
+    @random_number = rand((1..10))
     Score.create!(value: @random_number, product: product)
     puts "score created !!!"
   end

@@ -5,6 +5,7 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     @tab = params[:anchor]
+    @score = Score.new
   end
 
   def show

@@ -1,0 +1,18 @@
+.average-score-graph {
+  border-radius: 12px;
+  width: 100px;
+  height: 10px;
+  background-color: rgba(205,205,215,0.7);
+  margin-right: 8px;
+  position: relative;
+}
+
+.average-dyn-data {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  background-color: $red;
+  opacity: 0.8;
+}

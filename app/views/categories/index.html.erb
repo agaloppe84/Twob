@@ -122,11 +122,21 @@
                   <% end %>
                 </div>
 
-                <div class="ccb-right">
+
+
+                <div class="custom-card-bottom-right-absolute">
+                  <div class="average-score-graph">
+                    <div class="average-dyn-data" data-width="<%= (average_score(product.scores) * 10).to_i %>%" data-color="<%= score_color(average_score(product.scores)) %>"></div>
+                  </div>
                   <% if product.scores.any? %>
-                    <%= ((product.scores.map { |score| score.value }).reduce(:+)) / product.scores.count  %>
+                   <div class="score-text"><%= average_score(product.scores)  %></div>
                   <% end %>
+                  <div class="score-form-trigger">
+                    <div class="icon-heart" style="padding-top: 2px;"></div>
+                  </div>
                 </div>
+                <%= render 'scores/form', category: category, product: product, score: @score %>
+
 
 
               </div>
@@ -231,11 +241,19 @@
                   <% end %>
                 </div>
 
-                <div class="ccb-right">
+
+                <div class="custom-card-bottom-right-absolute">
+                  <div class="average-score-graph">
+                    <div class="average-dyn-data" data-width="<%= (average_score(product.scores) * 10).to_i %>%" data-color="<%= score_color(average_score(product.scores)) %>"></div>
+                  </div>
                   <% if product.scores.any? %>
-                    <%= ((product.scores.map { |score| score.value }).reduce(:+)) / product.scores.count  %>
+                   <div class="score-text"><%= average_score(product.scores)  %></div>
                   <% end %>
+                  <div class="score-form-trigger">
+                    <div class="icon-heart" style="padding-top: 2px;"></div>
+                  </div>
                 </div>
+                <%= render 'scores/form', category: category, product: product, score: @score %>
 
 
               </div>

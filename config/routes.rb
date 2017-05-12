@@ -22,12 +22,13 @@ Rails.application.routes.draw do
   resources :quotations, only: [:index, :new, :create, :edit, :update, :show]
   resources :promos, only: [:index]
 
-  resources :scores, only: [:new, :create]
+
 
   resources :categories do
     resources :albums
     resources :promos, only: [:new, :create, :edit, :update]
     resources :products do
+      resources :scores, only: [:new, :create]
       resources :infos
       resources :powers
       resources :brands

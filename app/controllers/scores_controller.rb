@@ -1,5 +1,7 @@
 class ScoresController < ApplicationController
-  before_action :find_product, only: [ :new, :create ]
+  before_action :find_product, only: [ :create ]
+  skip_before_action :authenticate_user!, only: [:create]
+
   def new
     @score = Score.new
   end
@@ -9,7 +11,7 @@ class ScoresController < ApplicationController
     if @score.save
       redirect_to categories_path
     else
-      render :new
+      render 'categories/index'
     end
   end
 

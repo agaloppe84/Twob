@@ -1,0 +1,100 @@
+.score-form-container {
+  width: 180px;
+  height: 140px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 4px;
+  background-color: white;
+  border: 1px solid rgba(205,205,215,0.3);
+  position: relative;
+}
+
+.score-form-absolute {
+  position: absolute;
+  right: 0;
+  bottom: -150px;
+  z-index: 400;
+  display: none;
+}
+
+.score-form-trigger {
+  font-family: "Circular-Medium";
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 25px;
+  margin-left: 6px;
+  margin-right: 10px;
+}
+
+.score-text {
+  font-family: "Circular-Black";
+  font-size: 14px;
+  margin-right: 25px;
+}
+
+
+
+
+
+.caret-custom-v2 {
+  position: relative;
+  top: -23px;
+  right: -53px;
+}
+
+.caret-custom-v2:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 8px solid rgba(205,205,215,0.3);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+}
+
+.caret-custom-v2:after {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  border-bottom: 7px solid white;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+}
+
+
+
+
+form#new_score {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.score_value {
+  width: 100%;
+  height: 30px;
+  margin: 0;
+}
+
+.score-form-button {
+  width: 100%;
+  height: 40px;
+  font-family: "Circular-Medium";
+  font-size: 13px;
+  border: none;
+  background-color: $red;
+  color: white;
+  border-radius: 3px;
+}
+
+.red-score-btn {
+  color: $red;
+  transition: 0.3s ease;
+}
