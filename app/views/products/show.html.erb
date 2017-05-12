@@ -1,7 +1,20 @@
 <div class="modal-header-custom" style="height: 12%;justify-content: flex-start;padding-left: 10%;">
-    <div class="header-hard-dashboard" style="opacity: 0.9;font-size: 15px;font-family: 'Circular-Bold';">
-      <%= "#{@product.title}" %>
+    <div class="cct-title">
+      <%= @product.title %>
+      <div class="cct-copyright">®</div>
     </div>
+
+    <% if @product.powers.any? %>
+      <div class="cct-powers">
+        <div class="<%= power_true(@product.powers.last.wind) %> <%= power_icon( @product.powers.last.wind, 'wind') %>"></div>
+        <div class="<%= power_true(@product.powers.last.sun) %> <%= power_icon( @product.powers.last.sun, 'sun-weather') %>"></div>
+        <div class="<%= power_true(@product.powers.last.rain) %> <%= power_icon( @product.powers.last.rain, 'droplet') %>"></div>
+        <div class="<%= power_true(@product.powers.last.energysaver) %> <%= power_icon( @product.powers.last.energysaver, 'plug') %>"></div>
+        <div class="<%= power_true(@product.powers.last.insects) %> <%= power_icon( @product.powers.last.insects, 'bug-1') %>"></div>
+        <div class="<%= power_true(@product.powers.last.security) %> <%= power_icon( @product.powers.last.security, 'lock-alt') %>"></div>
+      </div>
+    <% else %>
+    <% end %>
     <button class="close" data-dismiss="modal"><div class="icon-android-close"></div></button>
 </div>
 
@@ -11,7 +24,6 @@
   <div class="modal-body-custom-container">
 
       <div class="modal-custom-product-headers">
-        <div class="icon-pulse icon-show-adjust"></div>
         <div class="modal-custom-product-headers-text">Caractéristiques</div>
       </div>
 
@@ -20,10 +32,9 @@
           <div class="infos-volets">
             <% @product.infos.each do |info| %>
 
-              <div class="modal-custom-product-infos-item">
-                <div class="icon-circle icon-show-adjust-v2"></div>
-                <div class="infos-big-boob-v13"><%= info.title %>&nbsp;:</div>
-                <div class="infos-small-boob-v13"><%= info.content %>&nbsp;</div>
+              <div class="ccm-info-container" style="padding-left: 0;">
+                <div class="ccm-info-title"><%= info.title %></div>
+                <div class="ccm-info-content"><%= info.content %></div>
               </div>
 
             <% end %>

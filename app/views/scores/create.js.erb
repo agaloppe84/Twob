@@ -1,2 +1,3 @@
 $('#score-graph-<%= @product.id %>').html("<div class='average-dyn-data' style='background-color: <%= score_color(average_score(@product.scores)) %>;width: <%= (average_score(@product.scores) * 10).to_i %>%;' data-width='<%= (average_score(@product.scores) * 10).to_i %>%' data-color='<%= score_color(average_score(@product.scores)) %>'></div>");
 $('#score-text-<%= @product.id %>').html("<div class='score-text'><%= average_score(@product.scores) %></div>");
+$('#score-count-<%= @product.id %>').html("<div class='score-count-number'><%= @product.scores.count %> avis</div>");

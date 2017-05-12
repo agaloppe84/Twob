@@ -47,6 +47,10 @@
 
               <div class="custom-card-top">
 
+                  <div class="cct-absolute-services-container">
+                    <div class="cct-asc-relative"></div>
+                  </div>
+
                   <div class="cct-title">
                     <%= product.title %>
                     <div class="cct-copyright">®</div>
@@ -55,9 +59,9 @@
                    <% if product.powers.any? %>
                      <div class="cct-powers">
                       <div class="<%= power_true(product.powers.last.wind) %> <%= power_icon( product.powers.last.wind, 'wind') %>"></div>
-                      <div class="<%= power_true(product.powers.last.sun) %> <%= power_icon( product.powers.last.sun, 'sun') %>"></div>
-                      <div class="<%= power_true(product.powers.last.rain) %> <%= power_icon( product.powers.last.rain, 'rain-2') %>"></div>
-                      <div class="<%= power_true(product.powers.last.energysaver) %> <%= power_icon( product.powers.last.energysaver, 'battery') %>"></div>
+                      <div class="<%= power_true(product.powers.last.sun) %> <%= power_icon( product.powers.last.sun, 'sun-weather') %>"></div>
+                      <div class="<%= power_true(product.powers.last.rain) %> <%= power_icon( product.powers.last.rain, 'droplet') %>"></div>
+                      <div class="<%= power_true(product.powers.last.energysaver) %> <%= power_icon( product.powers.last.energysaver, 'plug') %>"></div>
                       <div class="<%= power_true(product.powers.last.insects) %> <%= power_icon( product.powers.last.insects, 'bug-1') %>"></div>
                       <div class="<%= power_true(product.powers.last.security) %> <%= power_icon( product.powers.last.security, 'lock-alt') %>"></div>
                     </div>
@@ -70,19 +74,16 @@
                     <% if category.promos.any? %>
                       <div class="product-guarantee-circle">
                         <div class="icon-alert cct-icon-size" style="color: #FCCF4D;"></div>
-                        <div class="cct-tooltip">promo en cours</div>
                       </div>
                     <% end %>
 
                     <div class="product-guarantee-circle">
                       <div><%= category.guarantee %></div>
                       <div class="cct-small-text">ans</div>
-                      <div class="cct-tooltip">garantie</div>
                     </div>
 
                      <div class="product-guarantee-circle">
                       <div class="icon-measure cct-icon-size"></div>
-                      <div class="cct-tooltip">sur mesure</div>
                     </div>
 
                   </div>
@@ -106,25 +107,30 @@
               <div class="custom-card-bottom">
                 <div class="ccb-left">
                   <%= link_to "#productShowModal", class: "custom-card-bottom-left-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div class="icon-info"></div>
+                    <div class="icon-eye"></div>
                   <% end %>
                 </div>
 
                 <div class="ccb-middle">
                   <%= link_to "#productShowModal", class: "custom-card-bottom-middle-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div class="icon-clipboard"></div>
+                    <div class="icon-pen"></div>
                   <% end %>
                 </div>
 
                 <div class="ccb-right">
                   <%= link_to "#productShowModal", class: "custom-card-bottom-right-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div class="icon-images"></div>
+                    <div class="icon-camera"></div>
                   <% end %>
                 </div>
 
 
 
                 <div class="custom-card-bottom-right-absolute">
+
+                  <div id="score-count-<%= product.id %>">
+                    <div class="score-count-number"><%= product.scores.count %> avis</div>
+                  </div>
+
                   <div class="average-score-graph" id="score-graph-<%= product.id %>">
                     <div class="average-dyn-data" style="background-color: <%= score_color(average_score(product.scores)) %>;width: <%= (average_score(product.scores) * 10).to_i %>%;" data-width="<%= (average_score(product.scores) * 10).to_i %>%" data-color="<%= score_color(average_score(product.scores)) %>"></div>
                   </div>
@@ -166,6 +172,11 @@
              <div class="custom-card">
 
               <div class="custom-card-top">
+
+                  <div class="cct-absolute-services-container">
+                    <div class="cct-asc-relative"></div>
+                  </div>
+
                   <div class="cct-title">
                     <%= product.title %>
                     <div class="cct-copyright">®</div>
@@ -189,19 +200,16 @@
                     <% if category.promos.any? %>
                       <div class="product-guarantee-circle">
                         <div class="icon-alert cct-icon-size" style="color: #FCCF4D;"></div>
-                        <div class="cct-tooltip">promo en cours</div>
                       </div>
                     <% end %>
 
                     <div class="product-guarantee-circle">
                       <div><%= category.guarantee %></div>
                       <div class="cct-small-text">ans</div>
-                      <div class="cct-tooltip">garantie</div>
                     </div>
 
                      <div class="product-guarantee-circle">
                       <div class="icon-measure cct-icon-size"></div>
-                      <div class="cct-tooltip">sur mesure</div>
                     </div>
 
                   </div>
@@ -225,24 +233,29 @@
               <div class="custom-card-bottom">
                 <div class="ccb-left">
                   <%= link_to "#productShowModal", class: "custom-card-bottom-left-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div class="icon-info"></div>
+                    <div class="icon-eye"></div>
                   <% end %>
                 </div>
 
                 <div class="ccb-middle">
                   <%= link_to "#productShowModal", class: "custom-card-bottom-middle-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div class="icon-clipboard"></div>
+                    <div class="icon-pen"></div>
                   <% end %>
                 </div>
 
                 <div class="ccb-right">
                   <%= link_to "#productShowModal", class: "custom-card-bottom-right-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div class="icon-images"></div>
+                    <div class="icon-camera"></div>
                   <% end %>
                 </div>
 
 
                <div class="custom-card-bottom-right-absolute">
+
+                  <div id="score-count-<%= product.id %>">
+                    <div class="score-count-number"><%= product.scores.count %> avis</div>
+                  </div>
+
                   <div class="average-score-graph" id="score-graph-<%= product.id %>">
                     <div class="average-dyn-data" style="background-color: <%= score_color(average_score(product.scores)) %>;width: <%= (average_score(product.scores) * 10).to_i %>%;" data-width="<%= (average_score(product.scores) * 10).to_i %>%" data-color="<%= score_color(average_score(product.scores)) %>"></div>
                   </div>

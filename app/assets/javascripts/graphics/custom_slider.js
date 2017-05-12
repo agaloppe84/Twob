@@ -25,6 +25,8 @@ rangeSlider();
 $('.custom-card').each(function() {
   var currentProduct = $(this);
   var currentLink = $(this).find('.score-form-trigger');
+  var currentServices = $(this).find('.cct-guarantee');
+  var currentServicesContainer = $(this).find('.cct-absolute-services-container');
   var currentForm = $(this).find('.score-form-absolute');
   var currentSubmitButton = $(currentForm).find('.score-form-button');
   var currentScore = $(this).find('.average-dyn-data');
@@ -36,6 +38,10 @@ $('.custom-card').each(function() {
     $(currentForm).toggle();
     $(currentProduct).toggleClass('dynamic-bottom-margin');
     $(this).toggleClass('red-score-btn');
+  });
+  $(currentServices).click(function() {
+    $(currentServicesContainer).toggle('slow');
+    $(currentProduct).toggleClass('dynamic-top-margin');
   });
   $(currentSubmitButton).click(function() {
     $(currentForm).toggle();
