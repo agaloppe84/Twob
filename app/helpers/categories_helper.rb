@@ -23,8 +23,12 @@ module CategoriesHelper
   end
 
   def average_score(collection)
-    value = ((collection.map { |score| score.value.to_f }).reduce(:+)) / collection.count
-    value.round(1)
+    if collection.empty?
+      value = 0.0
+    else
+      value = ((collection.map { |score| score.value.to_f }).reduce(:+)) / collection.count
+      value.round(1)
+    end
   end
 
   def score_color(score)
