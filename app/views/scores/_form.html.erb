@@ -3,12 +3,12 @@
 
     <div class="caret-custom-v2"></div>
 
-    <%= simple_form_for([ category, product, score ]) do |form| %>
+    <%= simple_form_for([ category, product, score ], remote: true) do |form| %>
 
 
       <div class="range-slider">
         <input class="range-slider__range" type="range" value="1" min="1" max="10" step="1" name="score[value]" id="score_value">
-        <span class="range-slider__value">0</span>
+        <span class="range-slider__value">1</span>
       </div>
 
 

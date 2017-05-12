@@ -9,9 +9,15 @@ class ScoresController < ApplicationController
   def create
     @score = @product.scores.build(score_params)
     if @score.save
-      redirect_to categories_path
+      respond_to do |format|
+        format.html { redirect_to categories_path }
+        format.js  # <-- will render `app/views/scores/create.js.erb`
+      end
     else
-      render 'categories/index'
+      respond_to do |format|
+        format.html { render 'categories/index' }
+        format.js  # <-- idem
+      end
     end
   end
 

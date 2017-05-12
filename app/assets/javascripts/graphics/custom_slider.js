@@ -26,6 +26,7 @@ $('.custom-card').each(function() {
   var currentProduct = $(this);
   var currentLink = $(this).find('.score-form-trigger');
   var currentForm = $(this).find('.score-form-absolute');
+  var currentSubmitButton = $(currentForm).find('.score-form-button');
   var currentScore = $(this).find('.average-dyn-data');
   var scoreWidth = $(currentScore).attr('data-width');
   var scoreColor = $(currentScore).attr('data-color');
@@ -35,5 +36,10 @@ $('.custom-card').each(function() {
     $(currentForm).toggle();
     $(currentProduct).toggleClass('dynamic-bottom-margin');
     $(this).toggleClass('red-score-btn');
+  });
+  $(currentSubmitButton).click(function() {
+    $(currentForm).toggle();
+    $(currentProduct).toggleClass('dynamic-bottom-margin');
+    $(currentLink).toggleClass('red-score-btn');
   });
 });
