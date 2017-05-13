@@ -7,6 +7,7 @@
   flex-direction: column;
   margin-bottom: 60px;
   transition: 0.3s ease;
+  position: relative;
 }
 
 .custom-card-top {
@@ -30,6 +31,17 @@
   display: none;
 }
 
+.cct-absolute-quotation-container {
+  width: 100%;
+  height: 280px;
+  background-color: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 390px;
+  left: 0;
+  display: none;
+}
+
 .cct-asc-relative {
   width: 100%;
   height: 100%;
@@ -38,6 +50,44 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cct-asc-relative-column {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.cct-asc-rel-col-header {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.cct-asc-rel-col-footer {
+  width: 100%;
+  height: 80%;
+  display: flex;
+}
+
+.cct-asc-rel-col-footer-01 {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cct-asc-rel-col-footer-02 {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  padding-left: 16px;
 }
 
 .cct-asc-rel-item {
@@ -304,6 +354,11 @@
   margin-bottom: 180px;
 }
 
+.dynamic-bottom-margin-big {
+  transition: 0.3s ease;
+  margin-bottom: 360px;
+}
+
 .dynamic-top-margin {
   transition: 0.3s ease;
   margin-top: 180px;
@@ -322,6 +377,72 @@
   font-size: 28px;
   color: white;
   bottom: -27px;
+  left: 48%;
+  transition: 0.3s ease;
+}
+
+.quotation_blindtype select #quotation_blintype {
+  width: 200px;
+}
+
+.cct-asc-relative-column #new_quotation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 0;
+  padding-bottom: 25px;
+}
+
+.cct-asc-relative-column #new_quotation .form-control {
+  height: 100%;
+  margin-bottom: 0;
+}
+
+.cct-asc-relative-column #new_quotation .form-group.text.required.quotation_message {
+  margin-bottom: 0px;
+  width: 100%;
+}
+
+
+
+.cct-asc-relative-column #new_quotation textarea.form-control {
+  height: 100%;
+  padding-top: 5px;
+}
+
+.ajax-form-flex {
+  display: flex;
+  width: 100%;
+  flex: 4;
+  margin-bottom: 8px;
+  justify-content: space-between;
+}
+
+.ajax-form-flex .form-group {
+  margin-bottom: 0;
+}
+
+
+
+.cct-asc-relative-column #new_quotation .form-control:nth-last-child(2) {
+  border: 0px solid white;
+}
+
+.ajax-form-flex-column {
+  display: flex;
+  width: 80%;
+  height: 100%;
+}
+
+.cct-asc-caret-up {
+  position: absolute;
+  font-size: 28px;
+  color: white;
+  top: -21px;
+  left: 48%;
   transition: 0.3s ease;
 }
 
@@ -331,9 +452,29 @@
   color: rgba(30,30,40,0.8);
 }
 
+.ajax-quotation-btn {
+  flex: 3;
+  background-color: rgba(30,30,33,0.9);
+  color: white;
+  font-family: "Circular-Medium";
+  font-size: 13px;
+  border: none !important;
+  border-radius: 4px;
+  margin-top: 8px;
+}
 
+.ajax-quot-form-head-title {
+  font-family: "Circular-Bold";
+  font-size: 15px;
+  opacity: 0.9;
+}
 
-
+.ajax-quot-form-head-icon {
+  font-size: 24px;
+  padding-top: 4px;
+  margin-right: 5px;
+  opacity: 0.9;
+}
 
 
 

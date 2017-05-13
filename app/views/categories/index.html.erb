@@ -47,6 +47,14 @@
 
               <div class="custom-card-top">
 
+                <div class="cct-absolute-quotation-container">
+                  <div class="cct-asc-relative-column">
+                    <div class="icon-caret-up cct-asc-caret-up"></div>
+                    <%= render 'quotations/form', quotation: @quotation, category: category %>
+                  </div>
+                </div>
+
+
                   <div class="cct-absolute-services-container">
                     <div class="cct-asc-relative">
                       <div class="icon-caret-down cct-asc-caret"></div>
@@ -138,9 +146,9 @@
                 </div>
 
                 <div class="ccb-middle">
-                  <%= link_to "#productShowModal", class: "custom-card-bottom-middle-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+                  <div class="ajax-dyna-quotation" id="ajax-quotation-<%= product.id %>">
                     <div class="icon-pen"></div>
-                  <% end %>
+                  </div>
                 </div>
 
                 <div class="ccb-right">
@@ -290,9 +298,9 @@
                 </div>
 
                 <div class="ccb-middle">
-                  <%= link_to "#productShowModal", class: "custom-card-bottom-middle-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+                  <div class="ajax-dyna-quotation" id="ajax-quotation-<%= product.id %>">
                     <div class="icon-pen"></div>
-                  <% end %>
+                  </div>
                 </div>
 
                 <div class="ccb-right">

@@ -6,6 +6,8 @@ class CategoriesController < ApplicationController
     @categories = Category.all
     @tab = params[:anchor]
     @score = Score.new
+    @quotation = Quotation.new
+    @category_names = Category.all.map { |category| category.name.capitalize }
   end
 
   def show
