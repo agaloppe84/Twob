@@ -1,36 +1,75 @@
 <%= simple_form_for (quotation) do |f| %>
 
 <div class="cct-asc-rel-col-header">
-  <div class="icon-document-text ajax-quot-form-head-icon"></div>
-  <div class="ajax-quot-form-head-title">Demande de devis</div>
+  <div class="ajax-quot-form-head-title">Devis gratuit</div>
+  <div class="ajax-quot-form-head-title-small">chiffrez vos travaux</div>
 </div>
 
   <div class="cct-asc-rel-col-footer">
 
     <div class="cct-asc-rel-col-footer-01">
+
       <div class="ajax-form-flex">
-        <%= f.input :email, label: false, placeholder: 'email' %>
-        <%= f.input :phone, label: false, placeholder: 'téléphone' %>
-      </div>
-      <div class="ajax-form-flex">
-        <%= f.input :lastname, label: false, placeholder: 'nom' %>
-        <%= f.input :firstname, label: false, placeholder: 'prénom' %>
-      </div>
-      <div class="ajax-form-flex">
-        <%= f.input :city, label: false, placeholder: 'ville' %>
-        <%= f.input :zipcode, label: false, placeholder: 'code postal' %>
-      </div>
-      <div class="ajax-form-flex">
-        <%= f.input :address, label: false, placeholder: 'adresse'%>
-        <%= f.input :blindtype, collection: @category_names, label: false, selected: category.name %>
+        <div class="ajax-form-flex-item-left">
+          <div class="ajax-form-flex-icon"><div class="icon-mail"></div></div>
+          <%= f.input :email, label: false, placeholder: 'email' %>
+        </div>
+        <div class="ajax-form-flex-item-right">
+          <div class="ajax-form-flex-icon"><div class="icon-phone"></div></div>
+          <%= f.input :phone, label: false, placeholder: 'téléphone' %>
+        </div>
       </div>
 
-      <%= f.submit "devis gratuit", :class => 'ajax-quotation-btn' %>
+      <div class="ajax-form-flex">
+        <div class="ajax-form-flex-item-left">
+          <div class="ajax-form-flex-icon"><div class="icon-user"></div></div>
+          <%= f.input :lastname, label: false, placeholder: 'nom' %>
+        </div>
+        <div class="ajax-form-flex-item-right">
+          <div class="ajax-form-flex-icon"><div class="icon-user"></div></div>
+          <%= f.input :firstname, label: false, placeholder: 'prénom' %>
+        </div>
+      </div>
+
+      <div class="ajax-form-flex">
+        <div class="ajax-form-flex-item-left">
+          <div class="ajax-form-flex-icon"><div class="icon-target"></div></div>
+          <%= f.input :city, label: false, placeholder: 'ville' %>
+        </div>
+        <div class="ajax-form-flex-item-right">
+          <div class="ajax-form-flex-icon"><div class="icon-target"></div></div>
+          <%= f.input :zipcode, label: false, placeholder: 'code postal' %>
+        </div>
+      </div>
+
+      <div class="ajax-form-flex">
+        <div class="ajax-form-flex-item-left">
+          <div class="ajax-form-flex-icon"><div class="icon-target"></div></div>
+          <%= f.input :address, label: false, placeholder: 'adresse'%>
+        </div>
+        <div class="ajax-form-flex-item-right">
+          <div class="ajax-form-flex-icon"><div class="icon-flag"></div></div>
+          <%= f.input :blindtype, collection: @category_names, label: false, selected: category.name %>
+        </div>
+      </div>
 
     </div>
 
     <div class="cct-asc-rel-col-footer-02">
       <%= f.input :message, label: false, placeholder: 'message' %>
+    </div>
+
+  </div>
+
+  <div class="cct-real-footer">
+    <%= f.submit "valider", :class => 'ajax-quotation-btn' %>
+    <div class="ajax-quotation-btn-close-trigger">Annuler</div>
+
+    <div class="afad-container">
+      <div class="ajax-form-alternate-demand"><div class="ajax-form-flex-icon"><div class="icon-phone"></div></div></div>
+      <div class="ajax-form-alternate-demand-phone">04 74 01 05 11</div>
+      <div class="ajax-form-alternate-demand"><div class="ajax-form-flex-icon"><div class="icon-mail"></div></div></div>
+      <div class="ajax-form-alternate-demand-phone">ads.pascale.orange.fr</div>
     </div>
 
   </div>

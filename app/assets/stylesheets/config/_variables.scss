@@ -41,6 +41,12 @@ $header-font: "Raleway", "Helvetica", "sans-serif";
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Circular-Light';
+  src: font-url('Brown-Light.eot?#iefix') format('embedded-opentype'),  font-url('Brown-Light.woff') format('woff'), font-url('Brown-Light.ttf')  format('truetype'), font-url('Brown-Light.svg#Brown-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 // Local fonts (uncomment following lines)
 // @font-face {
