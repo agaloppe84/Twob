@@ -113,11 +113,14 @@
   <div class="qad-item-line-show-column">
     <div class="qad-item-line-show-title-v2">Message</div>
     <div class="qad-item-line-show-item" style="margin-bottom: 20px;"><%= @quotation.message %></div>
+
+    <div class="google-map-size" style="background-image: url(<%= "https://maps.googleapis.com/maps/api/staticmap?center=#{@quotation.city}&zoom=13&size=822x622&scale=2&sensor=false&maptype=roadmap&markers=color:orange|#{@quotation.city}&key=AIzaSyDY66ZkeHY-xq7DbECOAHFG7UUwmjFMqZg" %>);">
+    </div>
+
   </div>
 
 
-  <div class="google-map-size" style="background-image: url(<%= "https://maps.googleapis.com/maps/api/staticmap?center=#{@quotation.city}&zoom=13&size=622x422&scale=2&sensor=false&maptype=roadmap&markers=color:orange|#{@quotation.city}&key=AIzaSyDY66ZkeHY-xq7DbECOAHFG7UUwmjFMqZg" %>);">
-  </div>
+
 
 
 </div>
