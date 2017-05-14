@@ -1,9 +1,13 @@
 <div class="confirmation-fullpage">
   <div class="conf-fullpage-item">
-    <div class="conf-text"><%= "Merci #{@quotation.firstname.capitalize} #{@quotation.lastname}" %></div>
-    <div class="conf-text-small"><%= "Un email de confirmation a été envoyé à" %></div>
-    <div class="conf-text-email"><%= "#{@quotation.email}" %></div>
-    <div class="icon-paper-airplane animated fadeIn bigsize"></div>
-    <div class="conf-abs-container"><%= link_to "Revenir au menu", root_path, class: "confirm-button" %></div>
+    <div class="conf-text" style="margin-bottom: 10%;"><%= "Merci #{@quotation.firstname.capitalize} #{@quotation.lastname}" %></div>
+    <div class="conf-text-flex">
+      <div class="conf-text-small-v2">Un email de confirmation vous à été envoyé à</div>
+    </div>
+    <div class="conf-text-flex">
+      <div class="conf-text-small-v2"></div>
+      <div class="conf-text-email"><%= "#{@quotation.email}" %></div>
+    </div>
+    <div class="conf-abs-container" style="margin-top: 10%;"><%= link_to "Revenir aux produits", categories_path, class: "confirm-button" %></div>
   </div>
 </div>

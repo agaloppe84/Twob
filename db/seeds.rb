@@ -636,8 +636,8 @@ puts "Création des promos - START"
 # ------------------------- Création des types de stores ------------------------- #
 
 
-    Promo.create!(title: 'moustiquaire', description: "promo-test", start: Date.today + 2.months, end: Date.today + 3.months, category: moustiquaire, current: true, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
-    Promo.create!(title: 'moustiquaire', description: "promo-test", start: Date.today + 3.months, end: Date.today + 4.months, category: pergola, current: true, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Promo.create!(title: 'moustiquaire', discount: '20%', description: "promo-test", start: Date.today + 2.months, end: Date.today + 3.months, category: moustiquaire, current: true, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
+    Promo.create!(title: 'pergola', discount: '30%', description: "promo-test", start: Date.today + 3.months, end: Date.today + 4.months, category: pergola, current: true, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
 
 
 # ------------------------- Création des types de stores ------------------------- #
