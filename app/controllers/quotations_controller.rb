@@ -55,7 +55,7 @@ class QuotationsController < ApplicationController
   end
 
   def quotation_params
-    params.require(:quotation).permit(:email, :lastname, :firstname, :city, :phone, :zipcode, :blindtype, :message, :address, :treated)
+    params.require(:quotation).permit(:email, :lastname, :firstname, :city, :phone, :zipcode, :blindtype, :message, :address, :treated, :product_name)
   end
 
   def set_category_name

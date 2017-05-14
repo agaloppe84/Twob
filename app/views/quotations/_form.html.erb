@@ -1,8 +1,26 @@
 <%= simple_form_for (quotation) do |f| %>
 
 <div class="cct-asc-rel-col-header">
+
   <div class="ajax-quot-form-head-title">Devis gratuit</div>
-  <div class="ajax-quot-form-head-title-small">chiffrez vos travaux</div>
+
+  <div class="ajax-quot-full-product-container">
+    <div class="aqfp-item-01">
+      <div class="icon-android-time aqfp-icon"></div>
+      <div class="aqfp-text"><%= "réponse sous 48h" %></div>
+    </div>
+    <div class="aqfp-item-01">
+      <div class="icon-label aqfp-icon"></div>
+      <div class="aqfp-text"><%= "#{(composed_plurname(category.name)).downcase}" %></div>
+    </div>
+    <div class="aqfp-item-02">
+      <div class="icon-script aqfp-icon"></div>
+      <div class="aqfp-text"><%= "#{product.title.downcase}" %></div>
+    </div>
+  </div>
+
+
+
 </div>
 
   <div class="cct-asc-rel-col-footer">
@@ -43,16 +61,13 @@
       </div>
 
       <div class="ajax-form-flex">
-        <div class="ajax-form-flex-item-left">
+        <div class="ajax-form-flex-item-left" style="width: 100%;border: none;">
           <div class="ajax-form-flex-icon"><div class="icon-target"></div></div>
           <%= f.input :address, label: false, placeholder: 'adresse'%>
         </div>
-        <div class="ajax-form-flex-item-right">
-          <div class="ajax-form-flex-icon"><div class="icon-flag"></div></div>
-          <%= f.input :blindtype, collection: @category_names, label: false, selected: category.name %>
-        </div>
       </div>
-
+        <%= f.input :blindtype, collection: @category_names, label: false, input_html: { value: category.name.capitalize }, as: :hidden %>
+        <%= f.input :product_name, input_html: { value: product.title }, as: :hidden %>
     </div>
 
     <div class="cct-asc-rel-col-footer-02">

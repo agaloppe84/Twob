@@ -22,6 +22,7 @@ $('.custom-card').each(function() {
   $(currentServices).click(function() {
     $(currentServicesContainer).slideToggle('fast');
     $(currentProduct).toggleClass('dynamic-top-margin');
+    $(this).toggleClass('red-score-btn');
   });
   $(currentQuotationLink).click(function() {
     $(currentQuotationContainer).toggle("slide",{direction:'up'},"fast");

@@ -81,9 +81,21 @@
   </div>
 
   <div class="qad-item-line-show-column">
-    <div class="qad-item-line-show-title-v2">Produit</div>
+    <div class="qad-item-line-show-title-v2">Catégorie</div>
     <div class="qad-item-line-show-item"><%= @quotation.blindtype %></div>
   </div>
+
+
+<% if @quotation.product_name == nil %>
+<% else %>
+   <div class="qad-item-line-show-column">
+    <div class="qad-item-line-show-title-v2">Produit</div>
+    <div class="qad-item-line-show-item"><%= @quotation.product_name %></div>
+  </div>
+<% end %>
+
+
+
 
   <div class="qad-item-line-show-column">
     <div class="qad-item-line-show-title-v2">Status</div>

@@ -50,7 +50,7 @@
                 <div class="cct-absolute-quotation-container">
                   <div class="cct-asc-relative-column">
                     <div class="icon-caret-up cct-asc-caret-up"></div>
-                    <%= render 'quotations/form', quotation: @quotation, category: category %>
+                    <%= render 'quotations/form', quotation: @quotation, category: product.category, product: product %>
                   </div>
                 </div>
 
@@ -60,26 +60,34 @@
                       <div class="icon-caret-down cct-asc-caret"></div>
 
                       <% if category.promos.any? %>
-                        <div class="cct-asc-rel-item">
-                            <div class="product-guarantee-circle">
-                              <div class="icon-alert cct-icon-size" style="color: #FCCF4D;font-size: 30px;padding-top: 9px;"></div>
-                            </div>
-                          <div class="cct-asc-bigtext">Promo en cours</div>
+                      <div class="cct-asc-rel-item">
+                        <div class="product-guarantee-circle">
+                          <div class="icon-banknote cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
                         </div>
+                        <div class="cct-asc-bigtext">promo en cours</div>
+                      </div>
                       <% end %>
 
+
                       <div class="cct-asc-rel-item">
-                        <div class="product-guarantee-circle" style="width: 27px;">
-                          <div style="font-size: 23px;"><%= category.guarantee %></div>
+                        <div class="product-guarantee-circle">
+                          <div class="icon-lock-locker-streamline cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
                         </div>
-                        <div class="cct-asc-bigtext">ans de garantie</div>
+                        <div class="cct-asc-bigtext"><%= "#{category.guarantee} ans de garantie" %></div>
                       </div>
 
                       <div class="cct-asc-rel-item">
                         <div class="product-guarantee-circle">
-                          <div class="icon-measure cct-icon-size" style="font-size: 21px;"></div>
+                          <div class="icon-settings-streamline-2 cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
                         </div>
-                        <div class="cct-asc-bigtext">Sur mesure</div>
+                        <div class="cct-asc-bigtext">pose et fournitures</div>
+                      </div>
+
+                      <div class="cct-asc-rel-item">
+                        <div class="product-guarantee-circle">
+                          <div class="icon-design-pencil-rule-streamline cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
+                        </div>
+                        <div class="cct-asc-bigtext">dimensions sur mesure</div>
                       </div>
 
                     </div>
@@ -107,17 +115,16 @@
 
                     <% if category.promos.any? %>
                       <div class="product-guarantee-circle">
-                        <div class="icon-alert cct-icon-size" style="color: #FCCF4D;"></div>
+                        <div class="icon-banknote cct-icon-size"></div>
                       </div>
                     <% end %>
 
                     <div class="product-guarantee-circle">
-                      <div><%= category.guarantee %></div>
-                      <div class="cct-small-text">ans</div>
+                      <div class="icon-lock-locker-streamline cct-icon-size"></div>
                     </div>
 
                      <div class="product-guarantee-circle">
-                      <div class="icon-measure cct-icon-size"></div>
+                      <div class="icon-design-pencil-rule-streamline cct-icon-size"></div>
                     </div>
 
                   </div>
@@ -207,31 +214,46 @@
 
               <div class="custom-card-top">
 
+                <div class="cct-absolute-quotation-container">
+                  <div class="cct-asc-relative-column">
+                    <div class="icon-caret-up cct-asc-caret-up"></div>
+                    <%= render 'quotations/form', quotation: @quotation, category: product.category, product: product %>
+                  </div>
+                </div>
+
                    <div class="cct-absolute-services-container">
                     <div class="cct-asc-relative">
                       <div class="icon-caret-down cct-asc-caret"></div>
 
-                      <% if category.promos.any? %>
-                        <div class="cct-asc-rel-item">
-                            <div class="product-guarantee-circle">
-                              <div class="icon-alert cct-icon-size" style="color: #FCCF4D;font-size: 30px;padding-top: 9px;"></div>
-                            </div>
-                          <div class="cct-asc-bigtext">Promo en cours</div>
+                     <% if category.promos.any? %>
+                      <div class="cct-asc-rel-item">
+                        <div class="product-guarantee-circle">
+                          <div class="icon-banknote cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
                         </div>
+                        <div class="cct-asc-bigtext">promo en cours</div>
+                      </div>
                       <% end %>
 
+
                       <div class="cct-asc-rel-item">
-                        <div class="product-guarantee-circle" style="width: 27px;">
-                          <div style="font-size: 23px;"><%= category.guarantee %></div>
+                        <div class="product-guarantee-circle">
+                          <div class="icon-lock-locker-streamline cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
                         </div>
-                        <div class="cct-asc-bigtext">ans de garantie</div>
+                        <div class="cct-asc-bigtext"><%= "#{category.guarantee} ans de garantie" %></div>
                       </div>
 
                       <div class="cct-asc-rel-item">
                         <div class="product-guarantee-circle">
-                          <div class="icon-measure cct-icon-size" style="font-size: 21px;"></div>
+                          <div class="icon-settings-streamline-2 cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
                         </div>
-                        <div class="cct-asc-bigtext">Sur mesure</div>
+                        <div class="cct-asc-bigtext">pose et fournitures</div>
+                      </div>
+
+                      <div class="cct-asc-rel-item">
+                        <div class="product-guarantee-circle">
+                          <div class="icon-design-pencil-rule-streamline cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
+                        </div>
+                        <div class="cct-asc-bigtext">dimensions sur mesure</div>
                       </div>
 
                     </div>
@@ -255,21 +277,20 @@
                   <% end %>
 
 
-                  <div class="cct-guarantee">
+                   <div class="cct-guarantee">
 
                     <% if category.promos.any? %>
                       <div class="product-guarantee-circle">
-                        <div class="icon-alert cct-icon-size" style="color: #FCCF4D;"></div>
+                        <div class="icon-banknote cct-icon-size"></div>
                       </div>
                     <% end %>
 
                     <div class="product-guarantee-circle">
-                      <div><%= category.guarantee %></div>
-                      <div class="cct-small-text">ans</div>
+                      <div class="icon-lock-locker-streamline cct-icon-size"></div>
                     </div>
 
                      <div class="product-guarantee-circle">
-                      <div class="icon-measure cct-icon-size"></div>
+                      <div class="icon-design-pencil-rule-streamline cct-icon-size"></div>
                     </div>
 
                   </div>

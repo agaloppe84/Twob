@@ -22,7 +22,7 @@
 
 .cct-absolute-services-container {
   width: 100%;
-  height: 120px;
+  height: 69px;
   background-color: white;
   border-radius: 5px;
   position: absolute;
@@ -48,7 +48,7 @@
   border-radius: 5px;
   background-color: white;
   display: flex;
-  justify-content: center;
+  padding-left: 25px;
   align-items: center;
 }
 
@@ -67,7 +67,7 @@
   height: 20%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
 .cct-asc-rel-col-footer {
@@ -98,11 +98,11 @@
 }
 
 .cct-asc-rel-item {
-  flex: 4;
   display: flex;
   height: 100%;
   justify-content: center;
   align-items: center;
+  padding-right: 20px;
 }
 
 
@@ -368,7 +368,7 @@
 
 .dynamic-top-margin {
   transition: 0.3s ease;
-  margin-top: 180px;
+  margin-top: 100px;
 }
 
 .score-count-number {
@@ -384,7 +384,7 @@
   font-size: 28px;
   color: white;
   bottom: -27px;
-  left: 48%;
+  right: 65px;
   transition: 0.3s ease;
 }
 
@@ -481,9 +481,9 @@
 }
 
 .cct-asc-bigtext {
-  font-size: 16px;
-  font-family: "Circular-Medium";
-  color: rgba(30,30,40,0.8);
+  font-size: 13px;
+  font-family: "Circular-Book";
+  color: rgba(30,30,35,0.9);
 }
 
 .ajax-quotation-btn {
@@ -521,11 +521,13 @@
   letter-spacing: -0.5px;
   margin-right: 6px;
   color: $red;
+  display: flex;
+  align-items: center;
 }
 
 .ajax-quot-form-head-title-small {
   font-family: "Circular-Book";
-  font-size: 18px;
+  font-size: 15px;
   opacity: 0.9;
 }
 
@@ -564,6 +566,10 @@
   border-radius: 3px;
 }
 
+.cct-asc-relative-column .form-group.string.required.quotation_address {
+  width: 100%;
+}
+
 
 .ajax-form-alternate-demand {
   font-family: "Circular-Book";
@@ -586,6 +592,53 @@
   margin-left: 14px;
 }
 
+.span-response {
+  font-family: "Circular-Book";
+  font-size: 13px;
+  margin-left: 10px;
+}
+
+.ajax-dyna-quotation:hover {
+  color: $red;
+}
+
+.ajax-dyna-quotation {
+  transition: 0.3s ease;
+}
+
+
+.ajax-quot-full-product-container {
+  height: 50%;
+  border-radius: 4px;
+  display: flex;
+}
+
+.aqfp-item-01 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.aqfp-item-02 {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.aqfp-icon {
+  margin-right: 8px;
+  margin-left: 14px;
+  color: rgba(50,50,55,0.7);
+  padding-top: 5px;
+  font-size: 16px;
+}
+
+.aqfp-text {
+  font-family: "Circular-Book";
+  font-size: 13px;
+  color: rgba(50,50,55,0.8);
+  margin-right: 14px;
+}
 
 
 
