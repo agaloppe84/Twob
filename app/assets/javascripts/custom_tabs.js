@@ -24,3 +24,8 @@ $( ".qad-treated-button" ).click(function() {
   $( ".quot-admin-untreated-container" ).hide();
   $( ".quot-admin-treated-container" ).show();
 });
+
+$('#dgl-true-link').click(function() {
+    $('.type-index-v2-header').toggle();
+    $(this).toggleClass('dynamic-green-link');
+});

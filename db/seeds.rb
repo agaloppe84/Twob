@@ -65,7 +65,7 @@ puts "Création des types de stores - START"
     store_exterieur =   Category.create!(name: 'store exterieur', color:'#007CB9', guarantee: 5)
     menuiserie =        Category.create!(name: 'menuiserie', color:'#007CB9', guarantee: 8)
     pergola =           Category.create!(name: 'pergola', color:'#007CB9', guarantee: 10)
-    volet_roulant =     Category.create!(name: 'volet roulant', color:'#007CB9', guarantee: 1)
+    volet_roulant =     Category.create!(name: 'volet roulant', color:'#007CB9', guarantee: 1, has_sub_category: true)
 
 
 # ------------------------- Création des types de stores ------------------------- #
@@ -262,11 +262,11 @@ puts "Création des stores - START"
 
 
 
-        volet01 = Product.create!(title: 'Volet 1', category: volet_roulant , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        volet02 = Product.create!(title: 'Volet 2', category: volet_roulant , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        volet03 = Product.create!(title: 'Volet 3', category: volet_roulant , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        volet04 = Product.create!(title: 'Volet 4', category: volet_roulant , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        volet05 = Product.create!(title: 'Volet 5', category: volet_roulant , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        volet01 = Product.create!(title: 'Volet 1', category: volet_roulant, sub_category: 0, description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        volet02 = Product.create!(title: 'Volet 2', category: volet_roulant, sub_category: 0, description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        volet03 = Product.create!(title: 'Volet 3', category: volet_roulant, sub_category: 1, description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        volet04 = Product.create!(title: 'Volet 4', category: volet_roulant, sub_category: 1, description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+        volet05 = Product.create!(title: 'Volet 5', category: volet_roulant, sub_category: 1, description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
 
 
 

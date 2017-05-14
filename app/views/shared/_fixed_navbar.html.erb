@@ -13,52 +13,66 @@
       <%= link_to root_path do %>
 
         <% if current_page?(root_path) %>
-          <div class="nav-small-link-design" style="color: #EE5F5B;">Accueil</div>
+          <div class="nav-small-link-design" style="color: #EE5F5B;">accueil</div>
         <% else %>
-          <div class="nav-small-link-design">Accueil</div>
+          <div class="nav-small-link-design">accueil</div>
         <% end %>
 
       <% end %>
   </div>
 
-
+  <div class="subcategory-separator"></div>
 
   <div class="nav-small-top-link">
       <%= link_to categories_path do %>
 
         <% if current_page?(categories_path) %>
-          <div class="nav-small-link-design" style="color: #EE5F5B;">Produits</div>
+          <div class="nav-small-link-design" style="color: #EE5F5B;">produits</div>
         <% else %>
-          <div class="nav-small-link-design">Produits</div>
+          <div class="nav-small-link-design">produits</div>
         <% end %>
 
       <% end %>
   </div>
+
+  <div class="subcategory-separator"></div>
 
   <div class="nav-small-top-link">
       <%= link_to promos_path do %>
 
         <% if current_page?(promos_path) %>
-          <div class="nav-small-link-design" style="color: #EE5F5B;">Promos</div>
+          <div class="nav-small-link-design" style="color: #EE5F5B;">promos</div>
         <% else %>
-          <div class="nav-small-link-design">Promos</div>
+          <div class="nav-small-link-design">promos</div>
         <% end %>
 
       <% end %>
   </div>
 
+  <div class="subcategory-separator"></div>
 
   <div class="nav-small-top-link">
       <%= link_to new_quotation_path do %>
 
         <% if current_page?(new_quotation_path) %>
-          <div class="nav-small-link-design" style="color: #EE5F5B;">Devis</div>
+          <div class="nav-small-link-design" style="color: #EE5F5B;">devis</div>
         <% else %>
-          <div class="nav-small-link-design">Devis</div>
+          <div class="nav-small-link-design">devis</div>
         <% end %>
 
       <% end %>
   </div>
+
+  <% if current_page?(categories_path) %>
+    <div class="subcategory-separator"></div>
+
+   <div class="nav-small-top-link">
+      <div class="nav-small-link-design dynamic-green-link" id="dgl-true-link">catégories</div>
+   </div>
+
+  <% end %>
+
+
 
 
   <% if user_signed_in? %>
