@@ -12,12 +12,12 @@ $teal: #1abc9c !default;
 // Range Slider
 $range-width: 100% !default;
 
-$range-handle-color: $shade-10 !default;
-$range-handle-color-hover: $teal !default;
+$range-handle-color: white !default;
+$range-handle-color-hover: white !default;
 $range-handle-size: 20px !default;
 
 $range-track-color: $shade-1 !default;
-$range-track-height: 10px !default;
+$range-track-height: 7px !default;
 
 $range-label-color: $shade-10 !default;
 $range-label-width: 60px !default;
@@ -42,6 +42,7 @@ $range-label-width: 60px !default;
     width: $range-handle-size;
     height: $range-handle-size;
     border-radius: 50%;
+    border: 1px solid rgba(140,140,145,0.9);
     background: $range-handle-color;
     cursor: pointer;
     transition: background .15s ease-in-out;
@@ -79,14 +80,14 @@ $range-label-width: 60px !default;
 .range-slider__value {
   display: inline-block;
   position: relative;
-  width: 30%;
-  color: $red;
-  font-family: "Circular-Bold";
+  width: 80%;
+  color: rgba(50,50,55,0.9);
+  font-family: "Circular-Medium";
   font-size: 16px;
   line-height: 20px;
   text-align: center;
   border-radius: 3px;
-  margin-left: 35%;
+  margin-left: 10%;
   margin-top: 15px;
   margin-bottom: 15px;
 }

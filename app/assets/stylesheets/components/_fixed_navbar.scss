@@ -44,8 +44,9 @@
 }
 
 .nav-small-link-design {
-  font-family: "Circular-Book";
-  font-size: 15px;
+  font-family: "Circular-Medium";
+  letter-spacing: -0.2px;
+  font-size: 14px;
   color: rgba(30,30,40,0.8);
 }
 
@@ -67,6 +68,19 @@
   color: $green;
 }
 
+
+.menu-index-active {
+  position: absolute;
+  width: 100%;
+  border-top: 2px solid $green;
+  bottom: -16px;
+  font-size: 11px;
+  opacity: 0;
+  transition: 0.4s ease;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
 
 
 

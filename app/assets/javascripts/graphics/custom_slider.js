@@ -7,11 +7,11 @@ var rangeSlider = function(){
 
     value.each(function(){
       var value = $(this).prev().attr('value');
-      $(this).html(value + '/10');
+      $(this).html(value + ' sur 10');
     });
 
     range.on('input', function(){
-      $(this).next(value).html(this.value + '/10');
+      $(this).next(value).html(this.value + ' sur 10');
     });
   });
 };

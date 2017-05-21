@@ -9,6 +9,7 @@
       <ul class="nav nav-pills">
       <% @categories.each do |category| %>
         <% if category == @categories.first %>
+            <div class="subcategory-separator"></div>
             <li role="presentation" class="active">
               <div class="menu-index-active"></div>
               <a href="#<%= category.id %>" data-toggle="tab"><%= composed_plurname(category.name) %></a>
@@ -54,21 +55,33 @@
             <div class="subcategory-text">Traditionnel</div>
             <% if category.promos.any? %>
               <div class="subcategory-separator"></div>
-              <div class="icon-banknote cct-icon-size" style="font-size: 17px;padding-top: 5px;margin-right: 12px;"></div>
-              <div class="subcategory-text">Promos</div>
+
+                <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
+                <div class="hcp-block">
+                  <div class="hcp-block-category"><%= "Promotions" %></div>
+                </div>
+                <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
+                <div class="hcp-title">voir les détails</div>
+                <i class="fa fa-caret-right" aria-hidden="true" style="color: #EE5F5B;"></i>
+
             <% end %>
           </div>
         <% else %>
           <div class="subcategory-container">
-            <div class="icon-label cct-icon-size" style="font-size: 17px;padding-top: 3px;margin-right: 12px;"></div>
             <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
-            <div class="subcategory-separator"></div>
-            <div class="icon-script cct-icon-size" style="font-size: 15px;padding-top: 3px;margin-right: 12px;color: #32B796;"></div>
+            <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;"></i>
             <div class="subcategory-product-count"><%= "#{category.products.count} produits" %></div>
             <% if category.promos.any? %>
               <div class="subcategory-separator"></div>
-              <div class="icon-banknote cct-icon-size" style="font-size: 17px;padding-top: 5px;margin-right: 12px;"></div>
-              <div class="subcategory-text">Promos</div>
+
+                <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
+                <div class="hcp-block">
+                  <div class="hcp-block-category"><%= "Promotions" %></div>
+                </div>
+                <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
+                <div class="hcp-title">voir les détails</div>
+                <i class="fa fa-caret-right" aria-hidden="true" style="color: #EE5F5B;"></i>
+
             <% end %>
           </div>
         <% end %>
@@ -96,7 +109,7 @@
 
                       <% if category.promos.any? %>
                       <div class="cct-asc-rel-item">
-                        <div class="product-guarantee-circle">
+                        <div class="product-guarantee-circle new-green-color">
                           <div class="icon-banknote cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
                         </div>
                         <div class="cct-asc-bigtext">promo en cours</div>
@@ -105,7 +118,7 @@
 
                       <% if product.tradi? %>
                         <div class="cct-asc-rel-item">
-                          <div class="product-guarantee-circle">
+                          <div class="product-guarantee-circle new-green-color">
                             <div class="subcategory-custom-icon">T</div>
                           </div>
                           <div class="cct-asc-bigtext">traditionnel</div>
@@ -114,7 +127,7 @@
 
                       <% if product.reno? %>
                         <div class="cct-asc-rel-item">
-                          <div class="product-guarantee-circle">
+                          <div class="product-guarantee-circle new-green-color">
                             <div class="subcategory-custom-icon">R</div>
                           </div>
                           <div class="cct-asc-bigtext">rénovation</div>
@@ -123,21 +136,21 @@
 
 
                       <div class="cct-asc-rel-item">
-                        <div class="product-guarantee-circle">
+                        <div class="product-guarantee-circle new-green-color">
                           <div class="icon-lock-locker-streamline cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
                         </div>
                         <div class="cct-asc-bigtext"><%= "#{category.guarantee} ans de garantie" %></div>
                       </div>
 
                       <div class="cct-asc-rel-item">
-                        <div class="product-guarantee-circle">
+                        <div class="product-guarantee-circle new-green-color">
                           <div class="icon-settings-streamline-2 cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
                         </div>
                         <div class="cct-asc-bigtext">pose et fournitures</div>
                       </div>
 
                       <div class="cct-asc-rel-item">
-                        <div class="product-guarantee-circle">
+                        <div class="product-guarantee-circle new-green-color">
                           <div class="icon-design-pencil-rule-streamline cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
                         </div>
                         <div class="cct-asc-bigtext">dimensions sur mesure</div>
@@ -166,19 +179,9 @@
 
                   <div class="cct-guarantee">
 
-                    <% if category.promos.any? %>
-                      <div class="product-guarantee-circle">
-                        <div class="icon-banknote cct-icon-size"></div>
-                      </div>
-                    <% end %>
 
-                    <div class="product-guarantee-circle">
-                      <div class="icon-lock-locker-streamline cct-icon-size"></div>
-                    </div>
-
-                     <div class="product-guarantee-circle">
-                      <div class="icon-design-pencil-rule-streamline cct-icon-size"></div>
-                    </div>
+                    <i class="fa fa-sliders" aria-hidden="true"></i>
+                    <div class="services-guarantee">services</div>
 
                   </div>
 
@@ -199,23 +202,30 @@
               </div>
 
               <div class="custom-card-bottom">
+
                 <div class="ccb-left">
                   <%= link_to "#productShowModal", class: "custom-card-bottom-left-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div class="icon-eye"></div>
+                    <div>détails</div>
                   <% end %>
                 </div>
+
+                <div class="separator-v2"></div>
 
                 <div class="ccb-middle">
                   <div class="ajax-dyna-quotation" id="ajax-quotation-<%= product.id %>">
-                    <div class="icon-pen"></div>
+                    <div>devis gratuit</div>
                   </div>
                 </div>
 
+                <div class="separator-v2"></div>
+
                 <div class="ccb-right">
                   <%= link_to "#productShowModal", class: "custom-card-bottom-right-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div class="icon-camera"></div>
+                    <div>photos</div>
                   <% end %>
                 </div>
+
+                <div class="separator-v2"></div>
 
 
 
@@ -231,9 +241,14 @@
 
                   <div id="score-text-<%= product.id %>"><div class="score-text"><%= average_score(product.scores) %></div></div>
 
-                  <div class="score-form-trigger">
-                    <div class="icon-heart" style="padding-top: 2px;"></div>
+                  <div class="separator-v2"></div>
+
+                  <div class="score-form-trigger" style="display: flex;">
+                    <div class="real-score-button">noter ce produit</div>
+                    <i class="fa fa-bar-chart" aria-hidden="true" style="margin-left: 7px;padding-top: 4px;font-size: 12px;"></i>
                   </div>
+
+
                 </div>
                 <%= render 'scores/form', category: category, product: product, score: @score %>
 
@@ -262,34 +277,42 @@
 
         <% if category.has_sub_category? %>
           <div class="subcategory-container">
-            <div class="icon-label cct-icon-size" style="font-size: 17px;padding-top: 3px;margin-right: 12px;"></div>
             <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
-            <div class="subcategory-separator"></div>
-            <div class="icon-script cct-icon-size" style="font-size: 15px;padding-top: 3px;margin-right: 12px;color: #32B796;"></div>
+            <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;"></i>
             <div class="subcategory-product-count"><%= "#{category.products.count} produits" %></div>
             <div class="subcategory-separator"></div>
-            <div class="subcategory-custom-icon">R</div>
             <div class="subcategory-text">Rénovation</div>
             <div class="subcategory-separator"></div>
-            <div class="subcategory-custom-icon">T</div>
             <div class="subcategory-text">Traditionnel</div>
             <% if category.promos.any? %>
               <div class="subcategory-separator"></div>
-              <div class="icon-banknote cct-icon-size" style="font-size: 17px;padding-top: 5px;margin-right: 12px;"></div>
-              <div class="subcategory-text">Promos</div>
+
+                <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
+                <div class="hcp-block">
+                  <div class="hcp-block-category"><%= "Promotions" %></div>
+                </div>
+                <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
+                <div class="hcp-title">voir les détails</div>
+                <i class="fa fa-caret-right" aria-hidden="true" style="color: #EE5F5B;"></i>
+
             <% end %>
           </div>
         <% else %>
           <div class="subcategory-container">
-            <div class="icon-label cct-icon-size" style="font-size: 17px;padding-top: 3px;margin-right: 12px;"></div>
             <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
-            <div class="subcategory-separator"></div>
-            <div class="icon-script cct-icon-size" style="font-size: 15px;padding-top: 3px;margin-right: 12px;color: #32B796;"></div>
+            <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;"></i>
             <div class="subcategory-product-count"><%= "#{category.products.count} produits" %></div>
             <% if category.promos.any? %>
               <div class="subcategory-separator"></div>
-              <div class="icon-banknote cct-icon-size" style="font-size: 17px;padding-top: 5px;margin-right: 12px;"></div>
-              <div class="subcategory-text">Promos</div>
+
+                <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
+                <div class="hcp-block">
+                  <div class="hcp-block-category"><%= "Promotions" %></div>
+                </div>
+                <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
+                <div class="hcp-title">voir les détails</div>
+                <i class="fa fa-caret-right" aria-hidden="true" style="color: #EE5F5B;"></i>
+
             <% end %>
           </div>
         <% end %>

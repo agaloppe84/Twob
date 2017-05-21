@@ -1,9 +1,10 @@
 .average-score-graph {
-  border-radius: 12px;
-  width: 100px;
-  height: 10px;
+  border-radius: 2px;
+  width: 70px;
+  height: 7px;
   background-color: rgba(205,205,215,0.7);
-  margin-right: 8px;
+  margin-right: 14px;
+  margin-left: 14px;
   position: relative;
 }
 
@@ -16,4 +17,11 @@
   background-color: $red;
   opacity: 0.8;
   transition: 0.4s ease;
+}
+
+.score-count-number {
+  font-size: 14px;
+  font-family: "Circular-Book";
+  color: rgba(30,30,40,0.8);
+  padding-bottom: 2px;
 }

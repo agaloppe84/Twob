@@ -538,51 +538,59 @@ a {
 
 .home-current-promo {
   width: 100%;
-  height: 45px;
+  height: 50px;
   display: flex;
   align-items: center;
-  background-color: rgba(30,30,35,1);
-  padding-left: 22%;
-  padding-right: 22%;
+  border-bottom: 1px solid rgba(150,150,155,0.3);
+  justify-content: center;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 .hcp-title {
-  font-size: 15px;
-  font-family: "Circular-Bold";
+  font-size: 14px;
+  font-family: "Circular-Book";
   color: $red;
-  margin-right: 50px;
+  margin-right: 7px;
 }
 
 .icon-adjust {
-  font-size: 20px;
-  color: white;
+  font-size: 14px;
+  color: rgba(40,40,45,0.9);
   padding-top: 5px;
 }
 
 
 .hcp-block {
   height: 100%;
-  width: 180px;
+  padding-left: 10px;
+  padding-right: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .hcp-block-number {
-  font-size: 19px;
-  font-family: "Circular-Black";
+  font-size: 14px;
+  font-family: "Circular-Medium";
   color: $red;
   margin-right: 8px;
-  padding-bottom: 2px;
 }
 
 .hcp-block-category {
-  font-size: 13px;
-  font-family: "Circular-Bold";
-  color: white;
+  font-size: 14px;
+  font-family: "Circular-Book";
+  color: rgba(40,40,45,0.7);
+  letter-spacing: -0.2px;
 }
 
-
+.hcp-block-end-date {
+  font-size: 14px;
+  font-family: "Circular-Medium";
+  color: rgba(40,40,45,0.8);
+  margin-right: 15px;
+  letter-spacing: -0.2px;
+}
 
 
 

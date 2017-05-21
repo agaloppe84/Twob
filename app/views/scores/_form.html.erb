@@ -12,7 +12,20 @@
       </div>
 
 
-      <%= form.submit 'évaluer', class: 'score-form-button' %>
+      <div class="exclusive-display-flex">
+
+        <%= form.button :button, class: "score-form-button" do %>
+          <div class="sfbi-circle-green"><i class="icon-android-done score-form-big-icon-v3"></i></div>
+          <div class="imp-green-button">Valider</div>
+        <% end %>
+
+        <div class="score-form-button">
+          <div class="sfbi-circle"><i class="icon-android-close score-form-big-icon-v3"></i></div>
+          <div class="imp-red-button">Annuler</div>
+        </div>
+
+      </div>
+
     <% end %>
   </div>
 </div>

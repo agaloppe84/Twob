@@ -4,12 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border-bottom: 1px solid rgba(140,140,145,0.3);
   padding-left: 20%;
 }
 
 .subcategory-text {
-  font-size: 15px;
+  font-size: 14px;
   font-family: "Circular-Book";
   opacity: 0.8;
 }
@@ -23,16 +22,15 @@
 }
 
 .subcategory-big-title {
-  font-size: 15px;
-  font-family: "Circular-Bold";
-  opacity: 0.9;
+  font-size: 14px;
+  font-family: "Circular-Medium";
+  opacity: 0.82;
 }
 
 .subcategory-product-count {
-  font-size: 15px;
+  font-size: 14px;
   font-family: "Circular-Book";
-  opacity: 0.8;
-  color: $green;
+  opacity: 0.6;
 }
 
 .subcategory-custom-icon {

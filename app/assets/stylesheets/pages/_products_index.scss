@@ -869,18 +869,6 @@
 }
 
 
-.menu-index-active {
-  position: absolute;
-  width: 100%;
-  border-top: 2px solid $green;
-  bottom: -15px;
-  font-size: 11px;
-  opacity: 0;
-  transition: 0.4s ease;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
 
 .menu-index-active-v2 {
   width: 16px;
@@ -962,7 +950,7 @@
 }
 
 .leftblock-content-show {
-  width: 80%;
+  width: 100%;
 }
 
 @media (max-width: 1024px) {

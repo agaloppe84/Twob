@@ -80,6 +80,7 @@
   width: 100%;
   height: 20%;
   display: flex;
+  align-items: center;
   padding-top: 17px;
 }
 
@@ -111,10 +112,11 @@
 
 
 .cct-title {
-  font-family: "Circular-Bold";
-  font-size: 15px;
+  font-family: "Circular-Medium";
+  font-size: 16px;
   color: rgba(30,30,40,0.8);
   position: relative;
+  letter-spacing: -0.2px;
 }
 
 .cct-copyright {
@@ -126,7 +128,7 @@
 
 .custom-card-middle {
   width: 100%;
-  height: 75%;
+  height: 73%;
   display: flex;
   border-top: 1px solid rgba(205,205,215,0.3);
   border-bottom: 1px solid rgba(205,205,215,0.3);
@@ -150,14 +152,14 @@
 
 .custom-card-bottom {
   width: 100%;
-  height: 10%;
+  height: 12%;
   display: flex;
   position: relative;
 }
 
 .custom-card-bottom-right-absolute {
   position: absolute;
-  right: 10px;
+  right: 14px;
   height: 100%;
   display: flex;
   align-items: center;
@@ -195,11 +197,10 @@
   align-items: center;
   justify-content: center;
   border-bottom-left-radius: 2px;
-  color: #334956;
+  color: rgba(40,40,45,0.9);
   transition: 0.3s ease;
-  font-family: "Circular-Medium";
-  font-size: 19px;
-  padding-top: 3px;
+  font-family: "Circular-Book";
+  font-size: 14px;
   margin-left: 12px;
   &:hover {
     color: $red;
@@ -233,11 +234,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #334956;
+  color: rgba(40,40,45,0.9);
   transition: 0.3s ease;
-  font-family: "Circular-Medium";
-  font-size: 19px;
-  padding-top: 3px;
+  font-family: "Circular-Book";
+  font-size: 14px;
   &:hover {
     color: $red;
   }
@@ -371,13 +371,7 @@
   margin-top: 100px;
 }
 
-.score-count-number {
-  margin-right: 12px;
-  font-size: 12px;
-  font-family: "Circular-Bold";
-  color: rgba(30,30,40,0.8);
-  padding-bottom: 2px;
-}
+
 
 .cct-asc-caret {
   position: absolute;
@@ -481,9 +475,10 @@
 }
 
 .cct-asc-bigtext {
-  font-size: 13px;
-  font-family: "Circular-Book";
-  color: rgba(30,30,35,0.9);
+  font-size: 14px;
+  font-family: "Circular-Medium";
+  color: rgba(30,30,35,0.75);
+  letter-spacing: -0.2px;
 }
 
 .ajax-quotation-btn {
@@ -588,7 +583,6 @@
   display: flex;
   height: 100%;
   align-items: center;
-  padding-top: 10px;
   margin-left: 14px;
 }
 
@@ -604,6 +598,9 @@
 
 .ajax-dyna-quotation {
   transition: 0.3s ease;
+  font-family: "Circular-Book";
+  font-size: 14px;
+  cursor: pointer;
 }
 
 
@@ -638,6 +635,30 @@
   font-size: 13px;
   color: rgba(50,50,55,0.8);
   margin-right: 14px;
+}
+
+.real-score-button {
+  font-family: "Circular-Medium";
+  font-size: 14px;
+  letter-spacing: -0.2px;
+}
+
+.separator-v2 {
+  height: 100%;
+  border-left: 1px solid rgba(200,200,205,0.3);
+  margin-left: 14px;
+  margin-right: 14px;
+}
+
+.new-green-color {
+  color: $green2;
+}
+
+.services-guarantee {
+  font-family: "Circular-Medium";
+  font-size: 14px;
+  margin-right: 14px;
+   margin-left: 7px;
 }
 
 
