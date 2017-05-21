@@ -1,0 +1,58 @@
+<div class="cct-absolute-services-container" id="services-<%= product.id %>">
+    <div class="cct-asc-relative">
+
+        <div class="icon-caret-down cct-asc-caret"></div>
+
+        <% if category.promos.any? %>
+            <div class="cct-asc-rel-item">
+                <div class="product-guarantee-circle new-green-color">
+                  <div class="icon-banknote cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
+                </div>
+                <div class="cct-asc-bigtext">promo en cours</div>
+            </div>
+        <% end %>
+
+        <% if product.tradi? %>
+            <div class="cct-asc-rel-item">
+                <div class="product-guarantee-circle new-green-color">
+                  <div class="subcategory-custom-icon">T</div>
+                </div>
+                <div class="cct-asc-bigtext">traditionnel</div>
+            </div>
+        <% end %>
+
+        <% if product.reno? %>
+            <div class="cct-asc-rel-item">
+                <div class="product-guarantee-circle new-green-color">
+                  <div class="subcategory-custom-icon">R</div>
+                </div>
+                <div class="cct-asc-bigtext">rénovation</div>
+            </div>
+        <% end %>
+
+
+        <div class="cct-asc-rel-item">
+            <div class="product-guarantee-circle new-green-color">
+              <div class="icon-lock-locker-streamline cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
+            </div>
+            <div class="cct-asc-bigtext"><%= "#{category.guarantee} ans de garantie" %></div>
+        </div>
+
+        <div class="cct-asc-rel-item">
+            <div class="product-guarantee-circle new-green-color">
+              <div class="icon-settings-streamline-2 cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
+            </div>
+            <div class="cct-asc-bigtext">pose et fournitures</div>
+        </div>
+
+        <div class="cct-asc-rel-item">
+            <div class="product-guarantee-circle new-green-color">
+              <div class="icon-design-pencil-rule-streamline cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
+            </div>
+            <div class="cct-asc-bigtext">dimensions sur mesure</div>
+        </div>
+
+    </div>
+</div>
+
+

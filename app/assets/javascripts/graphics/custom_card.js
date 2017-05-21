@@ -12,7 +12,7 @@ $('.cct-guarantee').click(function() {
   var productId = $(this).data("id");
   var currentServices = $('#services-' + productId );
   var currentCard = $('#custom-card-' + productId );
-  $(currentServices).toggle("slide",{direction:'down'},"fast");
+  $(currentServices).toggle();
   $(currentCard).toggleClass('dynamic-top-margin');
   $(this).toggleClass('red-score-btn');
 });

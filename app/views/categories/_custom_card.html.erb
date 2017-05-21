@@ -1,0 +1,107 @@
+<div class="custom-card" id="custom-card-<%= product.id %>">
+
+  <div class="custom-card-top">
+
+    <div class="cct-absolute-quotation-container" id="form-steps-<%= product.id %>">
+      <div class="cct-asc-relative-column">
+        <div class="icon-caret-up cct-asc-caret-up"></div>
+        <%= render 'quotations/form_with_steps', quotation: @quotation, category: product.category, product: product %>
+      </div>
+    </div>
+
+    <%= render "product_services", quotation: @quotation, category: product.category, product: product %>
+
+    <div class="cct-title">
+      <%= product.title %>
+      <div class="cct-copyright">®</div>
+    </div>
+
+    <% if product.powers.any? %>
+      <div class="cct-powers">
+        <div class="<%= power_true(product.powers.last.wind) %> <%= power_icon( product.powers.last.wind, 'wind') %>"></div>
+        <div class="<%= power_true(product.powers.last.sun) %> <%= power_icon( product.powers.last.sun, 'sun-weather') %>"></div>
+        <div class="<%= power_true(product.powers.last.rain) %> <%= power_icon( product.powers.last.rain, 'droplet') %>"></div>
+        <div class="<%= power_true(product.powers.last.energysaver) %> <%= power_icon( product.powers.last.energysaver, 'plug') %>"></div>
+        <div class="<%= power_true(product.powers.last.insects) %> <%= power_icon( product.powers.last.insects, 'bug-1') %>"></div>
+        <div class="<%= power_true(product.powers.last.security) %> <%= power_icon( product.powers.last.security, 'lock-alt') %>"></div>
+      </div>
+    <% end %>
+
+    <div class="cct-guarantee" data-id="<%= product.id %>">
+      <div class="services-guarantee">services</div>
+      <i class="fa fa-sliders" aria-hidden="true" style="margin-right: 12px;font-size: 12px;"></i>
+    </div>
+
+  </div>
+
+
+
+  <div class="custom-card-middle">
+    <div class="ccm-left">
+      <% product.infos.each do |info| %>
+        <div class="ccm-info-container">
+          <div class="ccm-info-title"><%= info.title %></div>
+          <div class="ccm-info-content"><%= info.content %></div>
+        </div>
+      <% end %>
+    </div>
+    <div class="ccm-right" style="background-image: url(<%= cl_image_path product.photos.last.path  %>);"></div>
+  </div>
+
+
+
+  <div class="custom-card-bottom">
+
+    <%= render 'scores/form', category: category, product: product, score: @score %>
+
+    <div class="ccb-left">
+      <%= link_to "#productShowModal", class: "custom-card-bottom-left-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+        <div>détails</div>
+      <% end %>
+    </div>
+
+    <div class="separator-v2"></div>
+
+    <div class="ccb-middle">
+      <div class="ajax-dyna-quotation" id="form-steps-trigger-<%= product.id %>" data-id="<%= product.id %>">
+        <div>devis gratuit</div>
+      </div>
+    </div>
+
+    <div class="separator-v2"></div>
+
+    <div class="ccb-right">
+      <%= link_to "#productShowModal", class: "custom-card-bottom-right-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
+        <div>photos</div>
+      <% end %>
+    </div>
+
+    <div class="separator-v2"></div>
+
+
+    <div class="custom-card-bottom-right-absolute">
+      <div id="score-count-<%= product.id %>">
+        <div class="score-count-number"><%= product.scores.count %> avis</div>
+      </div>
+
+      <div class="average-score-graph" id="score-graph-<%= product.id %>">
+        <div class="average-dyn-data" style="background-color: <%= score_color(average_score(product.scores)) %>;width: <%= (average_score(product.scores) * 10).to_i %>%;" data-width="<%= (average_score(product.scores) * 10).to_i %>%" data-color="<%= score_color(average_score(product.scores)) %>"></div>
+      </div>
+
+      <div id="score-text-<%= product.id %>"><div class="score-text"><%= average_score(product.scores) %></div></div>
+
+      <div class="separator-v2"></div>
+
+      <div class="score-form-trigger" id="score-form-trigger-<%= product.id %>" data-id="<%= product.id %>" style="display: flex;">
+        <div class="real-score-button">noter ce produit</div>
+        <i class="fa fa-bar-chart" aria-hidden="true" style="margin-left: 7px;padding-top: 4px;font-size: 12px;"></i>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+

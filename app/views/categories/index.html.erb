@@ -4,493 +4,54 @@
 <div class="fullpage-show">
 
 
-  <div class="type-index-v2-header">
-    <div class="leftblock-content-show">
-      <ul class="nav nav-pills">
-      <% @categories.each do |category| %>
-        <% if category == @categories.first %>
-            <div class="subcategory-separator"></div>
-            <li role="presentation" class="active">
-              <div class="menu-index-active"></div>
-              <a href="#<%= category.id %>" data-toggle="tab"><%= composed_plurname(category.name) %></a>
-            </li>
-            <div class="subcategory-separator"></div>
-        <% else %>
-            <li role="presentation">
-              <div class="menu-index-active"></div>
-              <a href="#<%= category.id %>" data-toggle="tab"><%= composed_plurname(category.name) %></a>
-            </li>
-            <div class="subcategory-separator"></div>
-        <% end %>
-      <% end %>
-      </ul>
-    </div>
-  </div>
+  <%= render "navigator" %>
 
 
   <div class="fullpage-rightblock">
     <div class="tab-content">
+
       <% @categories.each do |category| %>
-      <% if category == @categories.first %>
+        <% if category == @categories.first %>
 
-    <div role="tabpanel" class="tab-pane active" id="<%= category.id %>">
+        <div role="tabpanel" class="tab-pane active" id="<%= category.id %>">
 
-        <% if category.albums.any? %>
-          <div class="banner-on-index" style="background-image: url(<%=  cl_image_path category.albums.last.photos.sample.path if category.albums.last.photos.any? %>);">
-              <div class="banner-on-index-content-v2">
-              </div>
-          </div>
-        <% end %>
-
-        <% if category.has_sub_category? %>
-          <div class="subcategory-container">
-            <div class="icon-label cct-icon-size" style="font-size: 17px;padding-top: 3px;margin-right: 12px;"></div>
-            <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
-            <div class="subcategory-separator"></div>
-            <div class="icon-script cct-icon-size" style="font-size: 15px;padding-top: 3px;margin-right: 12px;color: #32B796;"></div>
-            <div class="subcategory-product-count"><%= "#{category.products.count} produits" %></div>
-            <div class="subcategory-separator"></div>
-            <div class="subcategory-text">Rénovation</div>
-            <div class="subcategory-separator"></div>
-            <div class="subcategory-text">Traditionnel</div>
-            <% if category.promos.any? %>
-              <div class="subcategory-separator"></div>
-
-                <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
-                <div class="hcp-block">
-                  <div class="hcp-block-category"><%= "Promotions" %></div>
+          <% if category.albums.any? %>
+            <div class="banner-on-index" style="background-image: url(<%=  cl_image_path category.albums.last.photos.sample.path if category.albums.last.photos.any? %>);">
+                <div class="banner-on-index-content-v2">
                 </div>
-                <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
-                <div class="hcp-title">voir les détails</div>
-                <i class="fa fa-caret-right" aria-hidden="true" style="color: #EE5F5B;"></i>
-
-            <% end %>
-          </div>
-        <% else %>
-          <div class="subcategory-container">
-            <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
-            <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;"></i>
-            <div class="subcategory-product-count"><%= "#{category.products.count} produits" %></div>
-            <% if category.promos.any? %>
-              <div class="subcategory-separator"></div>
-
-                <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
-                <div class="hcp-block">
-                  <div class="hcp-block-category"><%= "Promotions" %></div>
-                </div>
-                <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
-                <div class="hcp-title">voir les détails</div>
-                <i class="fa fa-caret-right" aria-hidden="true" style="color: #EE5F5B;"></i>
-
-            <% end %>
-          </div>
-        <% end %>
-
-
-
-
-      <div class="index-new-container">
-        <% category.products.each do |product| %>
-            <div class="custom-card" id="custom-card-<%= product.id %>">
-
-              <div class="custom-card-top">
-
-                <div class="cct-absolute-quotation-container" id="form-steps-<%= product.id %>">
-                  <div class="cct-asc-relative-column">
-                    <div class="icon-caret-up cct-asc-caret-up"></div>
-                    <%= render 'quotations/form_with_steps', quotation: @quotation, category: product.category, product: product %>
-                  </div>
-                </div>
-
-
-                  <div class="cct-absolute-services-container" id="services-<%= product.id %>">
-                    <div class="cct-asc-relative">
-                      <div class="icon-caret-down cct-asc-caret"></div>
-
-                      <% if category.promos.any? %>
-                      <div class="cct-asc-rel-item">
-                        <div class="product-guarantee-circle new-green-color">
-                          <div class="icon-banknote cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
-                        </div>
-                        <div class="cct-asc-bigtext">promo en cours</div>
-                      </div>
-                      <% end %>
-
-                      <% if product.tradi? %>
-                        <div class="cct-asc-rel-item">
-                          <div class="product-guarantee-circle new-green-color">
-                            <div class="subcategory-custom-icon">T</div>
-                          </div>
-                          <div class="cct-asc-bigtext">traditionnel</div>
-                        </div>
-                      <% end %>
-
-                      <% if product.reno? %>
-                        <div class="cct-asc-rel-item">
-                          <div class="product-guarantee-circle new-green-color">
-                            <div class="subcategory-custom-icon">R</div>
-                          </div>
-                          <div class="cct-asc-bigtext">rénovation</div>
-                        </div>
-                      <% end %>
-
-
-                      <div class="cct-asc-rel-item">
-                        <div class="product-guarantee-circle new-green-color">
-                          <div class="icon-lock-locker-streamline cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
-                        </div>
-                        <div class="cct-asc-bigtext"><%= "#{category.guarantee} ans de garantie" %></div>
-                      </div>
-
-                      <div class="cct-asc-rel-item">
-                        <div class="product-guarantee-circle new-green-color">
-                          <div class="icon-settings-streamline-2 cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
-                        </div>
-                        <div class="cct-asc-bigtext">pose et fournitures</div>
-                      </div>
-
-                      <div class="cct-asc-rel-item">
-                        <div class="product-guarantee-circle new-green-color">
-                          <div class="icon-design-pencil-rule-streamline cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
-                        </div>
-                        <div class="cct-asc-bigtext">dimensions sur mesure</div>
-                      </div>
-
-                    </div>
-                  </div>
-
-                  <div class="cct-title">
-                    <%= product.title %>
-                    <div class="cct-copyright">®</div>
-                  </div>
-
-                   <% if product.powers.any? %>
-                     <div class="cct-powers">
-                      <div class="<%= power_true(product.powers.last.wind) %> <%= power_icon( product.powers.last.wind, 'wind') %>"></div>
-                      <div class="<%= power_true(product.powers.last.sun) %> <%= power_icon( product.powers.last.sun, 'sun-weather') %>"></div>
-                      <div class="<%= power_true(product.powers.last.rain) %> <%= power_icon( product.powers.last.rain, 'droplet') %>"></div>
-                      <div class="<%= power_true(product.powers.last.energysaver) %> <%= power_icon( product.powers.last.energysaver, 'plug') %>"></div>
-                      <div class="<%= power_true(product.powers.last.insects) %> <%= power_icon( product.powers.last.insects, 'bug-1') %>"></div>
-                      <div class="<%= power_true(product.powers.last.security) %> <%= power_icon( product.powers.last.security, 'lock-alt') %>"></div>
-                    </div>
-                  <% else %>
-                  <% end %>
-
-
-                  <div class="cct-guarantee" data-id="<%= product.id %>">
-
-
-                    <i class="fa fa-sliders" aria-hidden="true"></i>
-                    <div class="services-guarantee">services</div>
-
-                  </div>
-
-              </div>
-
-              <div class="custom-card-middle">
-
-                <div class="ccm-left">
-                  <% product.infos.each do |info| %>
-                    <div class="ccm-info-container">
-                      <div class="ccm-info-title"><%= info.title %></div>
-                      <div class="ccm-info-content"><%= info.content %></div>
-                    </div>
-                  <% end %>
-                </div>
-
-                <div class="ccm-right" style="background-image: url(<%= cl_image_path product.photos.last.path  %>);"></div>
-              </div>
-
-              <div class="custom-card-bottom">
-
-                <div class="ccb-left">
-                  <%= link_to "#productShowModal", class: "custom-card-bottom-left-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div>détails</div>
-                  <% end %>
-                </div>
-
-                <div class="separator-v2"></div>
-
-                <div class="ccb-middle">
-                  <div class="ajax-dyna-quotation" id="form-steps-trigger-<%= product.id %>" data-id="<%= product.id %>">
-                    <div>devis gratuit</div>
-                  </div>
-                </div>
-
-                <div class="separator-v2"></div>
-
-                <div class="ccb-right">
-                  <%= link_to "#productShowModal", class: "custom-card-bottom-right-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div>photos</div>
-                  <% end %>
-                </div>
-
-                <div class="separator-v2"></div>
-
-
-
-                <div class="custom-card-bottom-right-absolute">
-
-                  <div id="score-count-<%= product.id %>">
-                    <div class="score-count-number"><%= product.scores.count %> avis</div>
-                  </div>
-
-                  <div class="average-score-graph" id="score-graph-<%= product.id %>">
-                    <div class="average-dyn-data" style="background-color: <%= score_color(average_score(product.scores)) %>;width: <%= (average_score(product.scores) * 10).to_i %>%;" data-width="<%= (average_score(product.scores) * 10).to_i %>%" data-color="<%= score_color(average_score(product.scores)) %>"></div>
-                  </div>
-
-                  <div id="score-text-<%= product.id %>"><div class="score-text"><%= average_score(product.scores) %></div></div>
-
-                  <div class="separator-v2"></div>
-
-                  <div class="score-form-trigger" id="score-form-trigger-<%= product.id %>" data-id="<%= product.id %>" style="display: flex;">
-                    <div class="real-score-button">noter ce produit</div>
-                    <i class="fa fa-bar-chart" aria-hidden="true" style="margin-left: 7px;padding-top: 4px;font-size: 12px;"></i>
-                  </div>
-
-
-                </div>
-                <%= render 'scores/form', category: category, product: product, score: @score %>
-
-
-
-              </div>
-
-
-
             </div>
-
           <% end %>
+
+          <%= render "product_header", category: category %>
+
+          <div class="index-new-container">
+            <% category.products.each do |product| %>
+              <%= render "custom_card", product: product, category: category %>
+            <% end %>
+          </div>
+
         </div>
-    </div>
 
-  <% else %>
+        <% else %>
 
-    <div role="tabpanel" class="tab-pane" id="<%= category.id %>">
+        <div role="tabpanel" class="tab-pane" id="<%= category.id %>">
 
-         <% if category.albums.any? %>
-          <div class="banner-on-index" style="background-image: url(<%= cl_image_path category.albums.last.photos.sample.path if category.albums.last.photos.any?  %>);">
+          <% if category.albums.any? %>
+            <div class="banner-on-index" style="background-image: url(<%= cl_image_path category.albums.last.photos.sample.path if category.albums.last.photos.any?  %>);">
               <div class="banner-on-index-content"></div>
-          </div>
+            </div>
           <% end %>
 
+          <%= render "product_header", category: category %>
 
-        <% if category.has_sub_category? %>
-          <div class="subcategory-container">
-            <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
-            <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;"></i>
-            <div class="subcategory-product-count"><%= "#{category.products.count} produits" %></div>
-            <div class="subcategory-separator"></div>
-            <div class="subcategory-text">Rénovation</div>
-            <div class="subcategory-separator"></div>
-            <div class="subcategory-text">Traditionnel</div>
-            <% if category.promos.any? %>
-              <div class="subcategory-separator"></div>
-
-                <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
-                <div class="hcp-block">
-                  <div class="hcp-block-category"><%= "Promotions" %></div>
-                </div>
-                <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
-                <div class="hcp-title">voir les détails</div>
-                <i class="fa fa-caret-right" aria-hidden="true" style="color: #EE5F5B;"></i>
-
+          <div class="index-new-container">
+            <% category.products.each do |product| %>
+              <%= render "custom_card", product: product, category: category %>
             <% end %>
           </div>
-        <% else %>
-          <div class="subcategory-container">
-            <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
-            <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;"></i>
-            <div class="subcategory-product-count"><%= "#{category.products.count} produits" %></div>
-            <% if category.promos.any? %>
-              <div class="subcategory-separator"></div>
 
-                <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
-                <div class="hcp-block">
-                  <div class="hcp-block-category"><%= "Promotions" %></div>
-                </div>
-                <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
-                <div class="hcp-title">voir les détails</div>
-                <i class="fa fa-caret-right" aria-hidden="true" style="color: #EE5F5B;"></i>
+        </div>
 
-            <% end %>
-          </div>
-        <% end %>
-
-
-
-
-        <div class="index-new-container">
-        <% category.products.each do |product| %>
-             <div class="custom-card">
-
-              <div class="custom-card-top">
-
-                <div class="cct-absolute-quotation-container">
-                  <div class="cct-asc-relative-column">
-                    <div class="icon-caret-up cct-asc-caret-up"></div>
-                    <%= render 'quotations/form', quotation: @quotation, category: product.category, product: product %>
-                  </div>
-                </div>
-
-                   <div class="cct-absolute-services-container">
-                    <div class="cct-asc-relative">
-                      <div class="icon-caret-down cct-asc-caret"></div>
-
-                     <% if category.promos.any? %>
-                      <div class="cct-asc-rel-item">
-                        <div class="product-guarantee-circle">
-                          <div class="icon-banknote cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
-                        </div>
-                        <div class="cct-asc-bigtext">promo en cours</div>
-                      </div>
-                      <% end %>
-
-                      <% if product.tradi? %>
-                        <div class="cct-asc-rel-item">
-                          <div class="product-guarantee-circle">
-                            <div class="subcategory-custom-icon" style="margin-right: 0;">T</div>
-                          </div>
-                          <div class="cct-asc-bigtext">traditionnel</div>
-                        </div>
-                      <% end %>
-
-                      <% if product.reno? %>
-                        <div class="cct-asc-rel-item">
-                          <div class="product-guarantee-circle">
-                            <div class="subcategory-custom-icon" style="margin-right: 0;">R</div>
-                          </div>
-                          <div class="cct-asc-bigtext">rénovation</div>
-                        </div>
-                      <% end %>
-
-
-                      <div class="cct-asc-rel-item">
-                        <div class="product-guarantee-circle">
-                          <div class="icon-lock-locker-streamline cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
-                        </div>
-                        <div class="cct-asc-bigtext"><%= "#{category.guarantee} ans de garantie" %></div>
-                      </div>
-
-                      <div class="cct-asc-rel-item">
-                        <div class="product-guarantee-circle">
-                          <div class="icon-settings-streamline-2 cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
-                        </div>
-                        <div class="cct-asc-bigtext">pose et fournitures</div>
-                      </div>
-
-                      <div class="cct-asc-rel-item">
-                        <div class="product-guarantee-circle">
-                          <div class="icon-design-pencil-rule-streamline cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
-                        </div>
-                        <div class="cct-asc-bigtext">dimensions sur mesure</div>
-                      </div>
-
-                    </div>
-                  </div>
-
-                  <div class="cct-title">
-                    <%= product.title %>
-                    <div class="cct-copyright">®</div>
-                  </div>
-
-                  <% if product.powers.any? %>
-                      <div class="cct-powers">
-                      <div class="<%= power_true(product.powers.last.wind) %> <%= power_icon( product.powers.last.wind, 'wind') %>"></div>
-                      <div class="<%= power_true(product.powers.last.sun) %> <%= power_icon( product.powers.last.sun, 'sun-weather') %>"></div>
-                      <div class="<%= power_true(product.powers.last.rain) %> <%= power_icon( product.powers.last.rain, 'droplet') %>"></div>
-                      <div class="<%= power_true(product.powers.last.energysaver) %> <%= power_icon( product.powers.last.energysaver, 'plug') %>"></div>
-                      <div class="<%= power_true(product.powers.last.insects) %> <%= power_icon( product.powers.last.insects, 'bug-1') %>"></div>
-                      <div class="<%= power_true(product.powers.last.security) %> <%= power_icon( product.powers.last.security, 'lock-alt') %>"></div>
-                    </div>
-                  <% else %>
-                  <% end %>
-
-
-                   <div class="cct-guarantee">
-
-                    <% if category.promos.any? %>
-                      <div class="product-guarantee-circle">
-                        <div class="icon-banknote cct-icon-size"></div>
-                      </div>
-                    <% end %>
-
-                    <div class="product-guarantee-circle">
-                      <div class="icon-lock-locker-streamline cct-icon-size"></div>
-                    </div>
-
-                     <div class="product-guarantee-circle">
-                      <div class="icon-design-pencil-rule-streamline cct-icon-size"></div>
-                    </div>
-
-                  </div>
-
-              </div>
-
-              <div class="custom-card-middle">
-
-                <div class="ccm-left">
-                  <% product.infos.each do |info| %>
-                    <div class="ccm-info-container">
-                      <div class="ccm-info-title"><%= info.title %></div>
-                      <div class="ccm-info-content"><%= info.content %></div>
-                    </div>
-                  <% end %>
-                </div>
-
-                <div class="ccm-right" style="background-image: url(<%= cl_image_path product.photos.last.path  %>);"></div>
-              </div>
-
-              <div class="custom-card-bottom">
-                <div class="ccb-left">
-                  <%= link_to "#productShowModal", class: "custom-card-bottom-left-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div class="icon-eye"></div>
-                  <% end %>
-                </div>
-
-                <div class="ccb-middle">
-                  <div class="ajax-dyna-quotation" id="ajax-quotation-<%= product.id %>">
-                    <div class="icon-pen"></div>
-                  </div>
-                </div>
-
-                <div class="ccb-right">
-                  <%= link_to "#productShowModal", class: "custom-card-bottom-right-btn", data: { toggle: "modal", typeid: "#{category.id}", productid: "#{product.id}" } do %>
-                    <div class="icon-camera"></div>
-                  <% end %>
-                </div>
-
-
-               <div class="custom-card-bottom-right-absolute">
-
-                  <div id="score-count-<%= product.id %>">
-                    <div class="score-count-number"><%= product.scores.count %> avis</div>
-                  </div>
-
-                  <div class="average-score-graph" id="score-graph-<%= product.id %>">
-                    <div class="average-dyn-data" style="background-color: <%= score_color(average_score(product.scores)) %>;width: <%= (average_score(product.scores) * 10).to_i %>%;" data-width="<%= (average_score(product.scores) * 10).to_i %>%" data-color="<%= score_color(average_score(product.scores)) %>"></div>
-                  </div>
-
-                  <div id="score-text-<%= product.id %>"><div class="score-text"><%= average_score(product.scores) %></div></div>
-
-                  <div class="score-form-trigger">
-                    <div class="icon-heart" style="padding-top: 2px;"></div>
-                  </div>
-                </div>
-                <%= render 'scores/form', category: category, product: product, score: @score %>
-
-
-              </div>
-
-
-
-            </div>
-
-
-
-        <% end %>
-      </div>
-    </div>
   <% end %>
 <% end %>
 </div>

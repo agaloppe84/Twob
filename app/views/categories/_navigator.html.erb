@@ -1,0 +1,22 @@
+<div class="type-index-v2-header">
+    <div class="leftblock-content-show">
+      <ul class="nav nav-pills">
+      <% @categories.each do |category| %>
+        <% if category == @categories.first %>
+            <div class="subcategory-separator"></div>
+            <li role="presentation" class="active">
+              <div class="menu-index-active"></div>
+              <a href="#<%= category.id %>" data-toggle="tab"><%= composed_plurname(category.name) %></a>
+            </li>
+            <div class="subcategory-separator"></div>
+        <% else %>
+            <li role="presentation">
+              <div class="menu-index-active"></div>
+              <a href="#<%= category.id %>" data-toggle="tab"><%= composed_plurname(category.name) %></a>
+            </li>
+            <div class="subcategory-separator"></div>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
+</div>

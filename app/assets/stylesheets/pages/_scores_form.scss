@@ -1,5 +1,5 @@
 .score-form-container {
-  width: 240px;
+  width: 100%;
   height: 137px;
   padding: 15px;
   display: flex;
@@ -15,7 +15,8 @@
 .score-form-absolute {
   position: absolute;
   right: 0;
-  bottom: -150px;
+  bottom: -156px;
+  width: 32%;
   z-index: 400;
   display: none;
 }
