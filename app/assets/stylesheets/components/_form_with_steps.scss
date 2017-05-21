@@ -1,0 +1,133 @@
+
+.btn-irv {
+  width: 100%;
+  background: #038dab;
+  color: #fff!important;
+  font-weight: bold;
+  padding: 10px 0;
+  transition: all 0.3s;
+  &:hover {
+    background: #02738d;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+}
+
+.btn-irv-default {
+  font-weight: bold;
+  background: #bbb;
+  color: #fff!important;
+
+  &:hover {
+    background: #aaa;
+  }
+}
+
+.wizard {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  .wizard-header {
+    h1 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      small {
+        color: #bbb;
+      }
+    }
+    hr {
+      border-color: #038dab;
+      border-top-width: 2px;
+    }
+    .steps {
+      height: 15px;
+      .wizard-step {
+        background: lightseagreen;
+        width: 11px;
+        height: 11px;
+        display: inline-block;
+        position: relative;
+        margin: 0 45px;
+        opacity: 0.2;
+        border-radius: 50%;
+        transition: all 0.8s;
+        &.active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .wizard-body {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.68, -0.30, 0.37, 0.6);
+    .step {
+      transition: all 0.3s ease-in-out;
+      position: absolute;
+      width: 100%;
+      top: 0;
+      right: -100%;
+      opacity: 0;
+      &.initial {
+        position: relative;
+      }
+      &.off {
+        opacity: 0!important;
+        right: 100%!important;
+      }
+      &.active {
+        right: 0;
+        margin-left: 0;
+        margin-top: 0;
+        opacity: 1;
+        transition: all 0.4s linear;
+        transition-delay: 0.1s;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: flex-start;
+      }
+    }
+  }
+  .wizard-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+// #wizard-subm {
+//   display: none;
+// }
+
+// #wizard-prev {
+//   display: none;
+// }
+.wizard-step-abs-text {
+  position: absolute;
+  top: -24px;
+  left: -35px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.wsat-font {
+  font-family: "Circular-Medium";
+  font-size: 14px;
+  color: lightseagreen;
+}
+
+
+
+
+
+
+
+
+
+
+
+

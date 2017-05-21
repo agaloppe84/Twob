@@ -91,19 +91,19 @@
 
       <div class="index-new-container">
         <% category.products.each do |product| %>
-            <div class="custom-card">
+            <div class="custom-card" id="custom-card-<%= product.id %>">
 
               <div class="custom-card-top">
 
-                <div class="cct-absolute-quotation-container">
+                <div class="cct-absolute-quotation-container" id="form-steps-<%= product.id %>">
                   <div class="cct-asc-relative-column">
                     <div class="icon-caret-up cct-asc-caret-up"></div>
-                    <%= render 'quotations/form', quotation: @quotation, category: product.category, product: product %>
+                    <%= render 'quotations/form_with_steps', quotation: @quotation, category: product.category, product: product %>
                   </div>
                 </div>
 
 
-                  <div class="cct-absolute-services-container">
+                  <div class="cct-absolute-services-container" id="services-<%= product.id %>">
                     <div class="cct-asc-relative">
                       <div class="icon-caret-down cct-asc-caret"></div>
 
@@ -177,7 +177,7 @@
                   <% end %>
 
 
-                  <div class="cct-guarantee">
+                  <div class="cct-guarantee" data-id="<%= product.id %>">
 
 
                     <i class="fa fa-sliders" aria-hidden="true"></i>
@@ -212,7 +212,7 @@
                 <div class="separator-v2"></div>
 
                 <div class="ccb-middle">
-                  <div class="ajax-dyna-quotation" id="ajax-quotation-<%= product.id %>">
+                  <div class="ajax-dyna-quotation" id="form-steps-trigger-<%= product.id %>" data-id="<%= product.id %>">
                     <div>devis gratuit</div>
                   </div>
                 </div>
@@ -243,7 +243,7 @@
 
                   <div class="separator-v2"></div>
 
-                  <div class="score-form-trigger" style="display: flex;">
+                  <div class="score-form-trigger" id="score-form-trigger-<%= product.id %>" data-id="<%= product.id %>" style="display: flex;">
                     <div class="real-score-button">noter ce produit</div>
                     <i class="fa fa-bar-chart" aria-hidden="true" style="margin-left: 7px;padding-top: 4px;font-size: 12px;"></i>
                   </div>

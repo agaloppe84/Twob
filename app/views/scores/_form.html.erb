@@ -1,4 +1,4 @@
-<div class="score-form-absolute">
+<div class="score-form-absolute" id="score-form-<%= product.id %>">
   <div class="score-form-container">
 
     <div class="caret-custom-v2"></div>
@@ -14,12 +14,12 @@
 
       <div class="exclusive-display-flex">
 
-        <%= form.button :button, class: "score-form-button" do %>
+        <%= form.button :button, class: "score-form-validate-button", data: { id: product.id } do %>
           <div class="sfbi-circle-green"><i class="icon-android-done score-form-big-icon-v3"></i></div>
           <div class="imp-green-button">Valider</div>
         <% end %>
 
-        <div class="score-form-button">
+        <div class="score-form-cancel-button" data-id="<%= product.id %>">
           <div class="sfbi-circle"><i class="icon-android-close score-form-big-icon-v3"></i></div>
           <div class="imp-red-button">Annuler</div>
         </div>

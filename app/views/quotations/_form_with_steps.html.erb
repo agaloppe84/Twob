@@ -1,0 +1,115 @@
+<%= simple_form_for (quotation) do |f| %>
+
+<div class="wizard" id="wizard-<%= product.id %>">
+
+<div class="cct-asc-rel-col-header">
+    <div class="hcp-block-end-date"><%= "Devis en ligne" %></div>
+    <div class="hcp-title" style="color: #20b2aa;">réponse sous 48h</div>
+    <i class="fa fa-clock-o" aria-hidden="true" style="color: #20b2aa;"></i>
+</div>
+
+<div class="wiz-header-container">
+
+  <div class="wizard-header" id="wizard-header-<%= product.id %>">
+      <div class="steps text-center">
+        <div class="wizard-step active">
+          <div class="wizard-step-abs-text"><div class="wsat-font">1</div></div>
+        </div>
+        <div class="wizard-step">
+          <div class="wizard-step-abs-text"><div class="wsat-font">2</div></div>
+        </div>
+        <div class="wizard-step">
+          <div class="wizard-step-abs-text"><div class="wsat-font">3</div></div>
+        </div>
+      </div>
+  </div>
+
+</div>
+
+  <div class="cct-asc-rel-col-footer">
+    <div class="wizard-body" id="wizard-body-<%= product.id %>">
+
+      <div class="step initial active">
+
+        <div class="ajax-form-flex">
+          <div class="ajax-form-flex-item-left">
+            <div class="ajax-form-flex-icon"><div class="icon-mail"></div></div>
+            <%= f.input :email, label: false, placeholder: 'email' %>
+          </div>
+          <div class="ajax-form-flex-item-right">
+            <div class="ajax-form-flex-icon"><div class="icon-phone"></div></div>
+            <%= f.input :phone, label: false, placeholder: 'téléphone' %>
+          </div>
+        </div>
+
+        <div class="ajax-form-flex">
+          <div class="ajax-form-flex-item-left">
+            <div class="ajax-form-flex-icon"><div class="icon-user"></div></div>
+            <%= f.input :lastname, label: false, placeholder: 'nom' %>
+          </div>
+          <div class="ajax-form-flex-item-right">
+            <div class="ajax-form-flex-icon"><div class="icon-user"></div></div>
+            <%= f.input :firstname, label: false, placeholder: 'prénom' %>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="step">
+
+        <div class="ajax-form-flex">
+          <div class="ajax-form-flex-item-left">
+            <div class="ajax-form-flex-icon"><div class="icon-target"></div></div>
+            <%= f.input :city, label: false, placeholder: 'ville' %>
+          </div>
+          <div class="ajax-form-flex-item-right">
+            <div class="ajax-form-flex-icon"><div class="icon-target"></div></div>
+            <%= f.input :zipcode, label: false, placeholder: 'code postal' %>
+          </div>
+        </div>
+
+        <div class="ajax-form-flex">
+          <div class="ajax-form-flex-item-left" style="width: 100%;border: none;">
+            <div class="ajax-form-flex-icon"><div class="icon-target"></div></div>
+            <%= f.input :address, label: false, placeholder: 'adresse'%>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="step">
+        <%= f.input :blindtype, collection: @category_names, label: false, input_html: { value: category.name.capitalize }, as: :hidden %>
+        <%= f.input :product_name, input_html: { value: product.title }, as: :hidden %>
+        <%= f.input :message, label: false, placeholder: 'message' %>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="cct-real-footer">
+    <div class="wizard-footer" id="wizard-footer-<%= product.id %>">
+      <div class="exclusive-display-flex">
+
+
+          <div class="score-form-button" id="wizard-prev-<%= product.id %>">
+            <div class="sfbi-circle"><i class="fa fa-arrow-left" style="font-size: 9px;"></i></div>
+            <div class="imp-red-button">précèdent</div>
+          </div>
+
+          <div class="score-form-button" id="wizard-next-<%= product.id %>">
+            <div class="imp-red-button">suivant</div>
+            <div class="sfbi-circle"><i class="fa fa-arrow-right" style="font-size: 9px;"></i></div>
+          </div>
+
+          <%= f.button :button, class: "score-form-button", id: "wizard-subm-#{product.id}" do %>
+            <div class="sfbi-circle-green"><i class="icon-android-done score-form-big-icon-v3"></i></div>
+            <div class="imp-green-button">Valider</div>
+          <% end %>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<% end %>

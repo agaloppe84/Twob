@@ -95,6 +95,36 @@ form#new_score {
   transition: 0.3s ease;
 }
 
+.score-form-validate-button {
+  font-size: 14px;
+  color: rgba(50,50,55,0.8);
+  font-family: "Circular-Book";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: 0px;
+  width: 50%;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.score-form-cancel-button {
+  font-size: 14px;
+  color: rgba(50,50,55,0.8);
+  font-family: "Circular-Book";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: 0px;
+  width: 50%;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
 .red-score-btn {
   color: $green2;
   transition: 0.3s ease;
@@ -107,7 +137,7 @@ form#new_score {
 
 .exclusive-display-flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 40px;
@@ -123,6 +153,7 @@ form#new_score {
   justify-content: center;
   align-items: center;
   margin-right: 7px;
+  margin-left: 7px;
   transition: 0.3s ease;
 }
 
@@ -136,6 +167,7 @@ form#new_score {
   justify-content: center;
   align-items: center;
   margin-right: 7px;
+  margin-left: 7px;
   transition: 0.3s ease;
 }
 
@@ -202,7 +234,50 @@ form#new_score {
 
 
 
+.score-form-validate-button:hover .sfbi-circle {
+  color: $red;
+  border-color: $red;
+}
 
+.score-form-validate-button:hover .sfbi-circle-green {
+  color: $green;
+  border-color: $green;
+}
+
+
+.score-form-validate-button:hover .imp-green-button {
+  color: $green;
+}
+
+.score-form-validate-button:hover .imp-red-button {
+  color: $red;
+}
+
+
+
+
+
+
+
+
+.score-form-cancel-button:hover .sfbi-circle {
+  color: $red;
+  border-color: $red;
+}
+
+.score-form-cancel-button:hover .sfbi-circle-green {
+  color: $green;
+  border-color: $green;
+}
+
+
+.score-form-cancel-button:hover .imp-green-button {
+  color: $green;
+}
+
+.score-form-cancel-button:hover .imp-red-button {
+  color: $red;
+}
 
 
 
