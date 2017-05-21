@@ -3,7 +3,7 @@ $('.ajax-dyna-quotation').click(function() {
   var productId = $(this).data("id");
 
 
-  const checkButtons = (activeStep, stepsCount) => {
+  const checkButtons = function(activeStep, stepsCount) {
     const prevBtn = $("#wizard-prev-" + productId);
     const nextBtn = $("#wizard-next-" + productId);
     const submBtn = $("#wizard-subm-" + productId);
@@ -26,13 +26,13 @@ $('.ajax-dyna-quotation').click(function() {
     }
   };
 
-  const scrollWindow = (activeStepHeight, viewHeight) => {
+  const scrollWindow = function(activeStepHeight, viewHeight) {
     if (viewHeight < activeStepHeight) {
       $(window).scrollTop($(steps[activeStep]).offset().top - viewHeight / 2);
     }
   };
 
-  const setWizardHeight = activeStepHeight => {
+  const setWizardHeight = function(activeStepHeight) {
     $(".wizard-body-" + productId).height(activeStepHeight);
   };
 
@@ -59,7 +59,7 @@ $('.ajax-dyna-quotation').click(function() {
     });
 
 
-    $("#wizard-prev-" + productId).click(() => {
+    $("#wizard-prev-" + productId).click(function() {
 
       $(steps[activeStep]).removeClass("active");
       $(wizardSteps[activeStep]).removeClass("active");
@@ -74,7 +74,7 @@ $('.ajax-dyna-quotation').click(function() {
       checkButtons(activeStep, stepsCount);
     });
 
-    $("#wizard-next-" + productId).click(() => {
+    $("#wizard-next-" + productId).click(function() {
 
       $(steps[activeStep]).removeClass("inital").addClass("off").removeClass("active");
       $(wizardSteps[activeStep]).removeClass("active");
