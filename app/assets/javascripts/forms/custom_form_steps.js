@@ -46,9 +46,9 @@ $('.ajax-dyna-quotation').click(function() {
 
     const viewHeight = $(window).height();
 
-    const activeStep = 0;
+    var activeStep = 0;
 
-    const activeStepHeight = $(steps[activeStep]).height();
+    var activeStepHeight = $(steps[activeStep]).height();
 
     checkButtons(activeStep, stepsCount);
     setWizardHeight(activeStepHeight);
