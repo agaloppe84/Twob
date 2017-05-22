@@ -1,5 +1,6 @@
 <%= render 'shared/fixed_navbar' %>
 
+<div class="card-tooltips-backdrop"></div>
 
 <div class="fullpage-show">
 
@@ -9,6 +10,7 @@
       <ul class="nav nav-pills">
       <% @categories.each do |category| %>
         <% if category == @categories.first %>
+            <div class="subcategory-separator"></div>
             <li role="presentation" class="active">
               <div class="menu-index-active"></div>
               <a href="#<%= category.id %>" data-toggle="tab"><%= composed_plurname(category.name) %></a>
@@ -78,11 +80,11 @@
 
       <div class="index-new-container">
         <% category.products.each do |product| %>
-            <div class="custom-card">
+            <div class="custom-card" id="card-<%= product.id %>">
 
               <div class="custom-card-top">
 
-                <div class="cct-absolute-quotation-container">
+                <div class="cct-absolute-quotation-container" id= "quot-form-<%= product.id %>">
                   <div class="cct-asc-relative-column">
                     <div class="icon-caret-up cct-asc-caret-up"></div>
                     <%= render 'quotations/form', quotation: @quotation, category: product.category, product: product %>
@@ -90,7 +92,7 @@
                 </div>
 
 
-                  <div class="cct-absolute-services-container">
+                  <div class="cct-absolute-services-container" id="services-<%= product.id %>">
                     <div class="cct-asc-relative">
                       <div class="icon-caret-down cct-asc-caret"></div>
 
@@ -164,7 +166,7 @@
                   <% end %>
 
 
-                  <div class="cct-guarantee">
+                  <div class="cct-guarantee" data-id="<%= product.id %>">
 
                     <% if category.promos.any? %>
                       <div class="product-guarantee-circle">
@@ -206,7 +208,7 @@
                 </div>
 
                 <div class="ccb-middle">
-                  <div class="ajax-dyna-quotation" id="ajax-quotation-<%= product.id %>">
+                  <div class="ajax-dyna-quotation" data-id="<%= product.id %>">
                     <div class="icon-pen"></div>
                   </div>
                 </div>
@@ -231,7 +233,7 @@
 
                   <div id="score-text-<%= product.id %>"><div class="score-text"><%= average_score(product.scores) %></div></div>
 
-                  <div class="score-form-trigger">
+                  <div class="score-form-trigger" data-id="<%= product.id %>" id="score-form-trigger-<%= product.id %>">
                     <div class="icon-heart" style="padding-top: 2px;"></div>
                   </div>
                 </div>

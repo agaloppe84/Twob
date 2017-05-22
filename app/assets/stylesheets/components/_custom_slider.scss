@@ -1,7 +1,7 @@
 $shade-10: $red !default;
 $shade-1: #d7dcdf !default;
 $shade-0: #fff !default;
-$teal: #1abc9c !default;
+$teal: white !default;
 
 
 .range-slider {
@@ -42,7 +42,8 @@ $range-label-width: 60px !default;
     width: $range-handle-size;
     height: $range-handle-size;
     border-radius: 50%;
-    background: $range-handle-color;
+    background: white;
+    border: 1px solid rgba(95,95,100,0.6);
     cursor: pointer;
     transition: background .15s ease-in-out;
 
@@ -79,14 +80,14 @@ $range-label-width: 60px !default;
 .range-slider__value {
   display: inline-block;
   position: relative;
-  width: 30%;
-  color: $red;
-  font-family: "Circular-Bold";
+  width: 60%;
+  color: rgba(60,60,65,0.8);
+  font-family: "Circular-Book";
   font-size: 16px;
   line-height: 20px;
   text-align: center;
   border-radius: 3px;
-  margin-left: 35%;
+  margin-left: 20%;
   margin-top: 15px;
   margin-bottom: 15px;
 }

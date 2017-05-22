@@ -1,4 +1,4 @@
-<div class="score-form-absolute">
+<div class="score-form-absolute" id="score-form-<%= product.id %>">
   <div class="score-form-container">
 
     <div class="caret-custom-v2"></div>
@@ -12,7 +12,7 @@
       </div>
 
 
-      <%= form.submit 'évaluer', class: 'score-form-button' %>
+      <%= form.submit 'évaluer', class: 'score-form-button', id: "score-form-submit-#{product.id}", data: {id: product.id} %>
     <% end %>
   </div>
 </div>
