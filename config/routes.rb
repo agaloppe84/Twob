@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   get 'scores/create'
 
   devise_for :users
+
+
+
   root to: 'pages#home'
 
   get 'services', to: 'pages#services'
@@ -16,6 +19,8 @@ Rails.application.routes.draw do
   get 'quotations_admin', to: 'pages#quotations_admin'
   get 'pathfilter', to: 'pages#pathfilter'
   get 'analytics', to: 'pages#analytics'
+
+
 
 
 

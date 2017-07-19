@@ -14,7 +14,6 @@ class PagesController < ApplicationController
       @random_album += album.photos.sample(2)
     end
     @random_album
-
   end
 
   def services

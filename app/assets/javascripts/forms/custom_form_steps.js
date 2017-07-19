@@ -26,38 +26,14 @@ $('.ajax-dyna-quotation').click(function() {
     }
   };
 
-  const scrollWindow = function(activeStepHeight, viewHeight) {
-    if (viewHeight < activeStepHeight) {
-      $(window).scrollTop($(steps[activeStep]).offset().top - viewHeight / 2);
-    }
-  };
-
-  const setWizardHeight = function(activeStepHeight) {
-    $(".wizard-body-" + productId).height(activeStepHeight);
-  };
 
   $(function() {
 
     const wizardSteps = $("#wizard-header-" + productId + " .wizard-step");
-
     const steps = $("#wizard-body-" + productId +  " .step");
-
     const stepsCount = steps.length - 1;
-
-    const viewHeight = $(window).height();
-
     var activeStep = 0;
-
-    var activeStepHeight = $(steps[activeStep]).height();
-
     checkButtons(activeStep, stepsCount);
-    setWizardHeight(activeStepHeight);
-
-
-    $(window).resize(function() {
-      setWizardHeight($(steps[activeStep]).height());
-    });
-
 
     $("#wizard-prev-" + productId).click(function() {
 
@@ -68,26 +44,18 @@ $('.ajax-dyna-quotation').click(function() {
 
       $(steps[activeStep]).removeClass("off").addClass("active");
       $(wizardSteps[activeStep]).addClass("active");
-
-      activeStepHeight = $(steps[activeStep]).height();
-      setWizardHeight(activeStepHeight);
       checkButtons(activeStep, stepsCount);
     });
 
     $("#wizard-next-" + productId).click(function() {
-
       $(steps[activeStep]).removeClass("inital").addClass("off").removeClass("active");
       $(wizardSteps[activeStep]).removeClass("active");
-
       activeStep++;
-
       $(steps[activeStep]).addClass("active");
       $(wizardSteps[activeStep]).addClass("active");
-
-      activeStepHeight = $(steps[activeStep]).height();
-      setWizardHeight(activeStepHeight);
       checkButtons(activeStep, stepsCount);
     });
+
   });
 
 
