@@ -1,21 +1,9 @@
-Category.destroy_all
-Brand.destroy_all
-Album.destroy_all
-Info.destroy_all
-Power.destroy_all
-Promo.destroy_all
-Product.destroy_all
-Quotation.destroy_all
-User.destroy_all
-Score.destroy_all
 
+MODELS = [Category, Brand, Album, Info, Power, Promo, Product, Quotation, User, Score]
 
-
-
-
-
-
-
+MODELS.each do |mod|
+  mod.destroy_all
+end
 
 
 
@@ -23,41 +11,36 @@ puts "--------------------Création du seed - START--------------------"
 
 
 
-
-
-
-puts "Création des users - START"
-
 # ------------------------- Création des users ------------------------- #
 
+  puts "START - Création des users"
 
     user1 = User.create!(email: 'agaloppe@me.com', password: '1234soleil')
     user2 = User.create!(email: 'audric.agalops@gmail.com', password: '1234soleil')
 
+    puts "----------------------------------------------------"
+    puts "USERS"
+    puts " "
+
+    User.all.each_with_index do |user, index|
+      puts "** #{index} **/ Email: #{user.email} / Password: #{user.password}"
+    end
+
+    puts " "
+    puts "Nombre de users : #{User.all.count}"
+    puts "----------------------------------------------------"
+
+  puts "END - Création des users"
 
 # ------------------------- Création des users ------------------------- #
 
 
 
-    puts "----------------------------------------------------"
-    puts "ADMIN-USERS"
-    puts "----------------------------------------------------"
-    puts "** 1 **/ #{user1.email} / Password: #{user1.password}"
-    puts "** 2 **/ #{user2.email} / Password: #{user2.password}"
-    puts "----------------------------------------------------"
 
-
-puts "Création des users - END"
-
-
-
-
-
-
-puts "Création des types de stores - START"
 
 # ------------------------- Création des types de stores ------------------------- #
 
+puts "START - Création des types de stores"
 
     moustiquaire =      Category.create!(name: 'moustiquaire', color:'#007CB9', guarantee: 3)
     porte_de_garage =   Category.create!(name: 'porte de garage', color:'#007CB9', guarantee: 2)
@@ -67,267 +50,204 @@ puts "Création des types de stores - START"
     pergola =           Category.create!(name: 'pergola', color:'#007CB9', guarantee: 10)
     volet_roulant =     Category.create!(name: 'volet roulant', color:'#007CB9', guarantee: 1, has_sub_category: true)
 
+    puts "----------------------------------------------------"
+    puts "CATEGORIES"
+    puts " "
+
+    Category.all.each_with_index do |category, index|
+      puts "** #{index} **/ Nom: #{category.name} / Couleur: #{category.color}"
+    end
+
+    puts " "
+    puts "Nombre de categories : #{Category.all.count}"
+    puts "----------------------------------------------------"
+
+
+puts "END - Création des types de stores"
 
 # ------------------------- Création des types de stores ------------------------- #
 
 
-    puts "----------------------------------------------------"
-    puts "CATEGORIES"
-    puts "----------------------------------------------------"
-    puts "** 1 **/ #{moustiquaire.name} / Couleur: #{moustiquaire.color}"
-    puts "** 2 **/ #{porte_de_garage.name} / Couleur: #{porte_de_garage.color}"
-    puts "** 3 **/ #{store_interieur.name} / Couleur: #{store_interieur.color}"
-    puts "** 4 **/ #{store_exterieur.name} / Couleur: #{store_exterieur.color}"
-    puts "** 5 **/ #{menuiserie.name} / Couleur: #{menuiserie.color}"
-    puts "** 6 **/ #{pergola.name} / Couleur: #{pergola.color}"
-    puts "** 7 **/ #{volet_roulant.name} / Couleur: #{volet_roulant.color}"
-    puts "----------------------------------------------------"
-
-
-puts "Création des types de stores - END"
 
 
 
+# ------------------------- Création des stores ------------------------- #
+
+puts "START - Création des stores"
+
+
+    # ---- Création des moustiquaires ---- #
+
+    mousty01 = Product.create!(title: 'Moustiquaire plissée', category: moustiquaire , description: 'Plisséa est la moustiquaire idéale pour porte et baies vitrées', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    mousty02 = Product.create!(title: 'Moustiquaire enroulable', category: moustiquaire , description: 'Saga est une moustiquaire à enroulement vertical pour les fenêtres ou à enroulement latéral pour les portes', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    mousty03 = Product.create!(title: 'Moustiquaire à battant', category: moustiquaire , description: "Classique , la moustiquaire à battant Altesse se manoeuvre avec légèreté quel que soit le sens d'ouverture choisi", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+
+    # ---- Création des moustiquaires ---- #
 
 
 
+    # ---- Création des portes de garage ---- #
+
+    porto01 = Product.create!(title: 'Sectionnelles', category: porte_de_garage , description: "Confort , design et technicité , decouvrez des modèles répondant à des besoins essentiels de sécurité", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    porto02 = Product.create!(title: 'Traditionnelles', category: porte_de_garage , description: "Une vaste gamme sur mesure , traditionnelles , enroulables ou modernes répondant à tous les projets", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+
+    # ---- Création des portes de garage ---- #
 
 
 
-puts "Création des stores - START"
+    # ---- Création des stores interieurs ---- #
+
+    inte01 = Product.create!(title: 'Stores Silhouette', category: store_interieur , description: "Doux jeux de lumières au gré de vos envies", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    inte02 = Product.create!(title: 'Voiles Facette', category: store_interieur , description: "Tissu doux pour un dosage subtil de la lumière", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    inte03 = Product.create!(title: 'Stores Duette', category: store_interieur , description: "Filtrez la lumière et isolez votre maison toute l'année", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    inte04 = Product.create!(title: 'Stores Plissé', category: store_interieur , description: "Décoratifs et complices de votre maison", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    inte05 = Product.create!(title: 'Stores Textiles', category: store_interieur , description: "Des tissus décoratifs , fabriqués sur mesure", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    inte06 = Product.create!(title: 'Stores Vénitiens', category: store_interieur , description: "Modulez la lumière avec un design classique", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    inte07 = Product.create!(title: 'Stores Vénitiens Bois', category: store_interieur , description: "La chaleur et la beauté de la nature dans votre maison", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    inte08 = Product.create!(title: 'Stores Rouleaux', category: store_interieur , description: "Une touche personnelle pour marquer votre style", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    inte09 = Product.create!(title: 'Stores Rouleaux Twist', category: store_interieur , description: "Variations de lumière pour une multitudes d'ambiances", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    inte10 = Product.create!(title: 'Stores à Bandes Verticales', category: store_interieur , description: "Elégance en toute simplicité pour les larges baies", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+
+    # ---- Création des stores interieurs ---- #
+
+
+
+    # ---- Création des stores exterieurs ---- #
+
+    exte01 = Product.create!(title: 'Stores coffres', category: store_exterieur , description: "Design , robuste , le store coffre peut couvrir une largeur de près de 12m", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    exte02 = Product.create!(title: 'Stores Monoblocs', category: store_exterieur , description: "Armature thermolaquée assurant à la fois résistance et discrétion", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    exte03 = Product.create!(title: 'Stores Loggia', category: store_exterieur , description: "Pour une occultation presque totale de vos fenêtres", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    exte04 = Product.create!(title: 'Stores Bannette', category: store_exterieur , description: "Adaptés aux grandes surfaces vitrées", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    exte05 = Product.create!(title: 'Abris 2 pentes', category: store_exterieur , description: "Profitez de votre jardin en été sans avoir à souffrir du soleil", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+
+    # ---- Création des stores exterieurs ---- #
+
+
+
+    # ---- Création des menuiseries ---- #
+
+    menui01 = Product.create!(title: 'Menui 1', category: menuiserie , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    menui02 = Product.create!(title: 'Menui 2', category: menuiserie , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    menui03 = Product.create!(title: 'Menui 3', category: menuiserie , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    menui04 = Product.create!(title: 'Menui 4', category: menuiserie , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    menui05 = Product.create!(title: 'Menui 5', category: menuiserie , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+
+    # ---- Création des menuiseries ---- #
+
+
+
+    # ---- Création des pergolas ---- #
+
+    pergo01 = Product.create!(title: 'Pergolas toiles', category: pergola , description: "Entrez dans un nouvel univers , où intérieur et extérieur se confondent", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    pergo02 = Product.create!(title: 'Pergolas Bioclimatiques', category: pergola , description: "Profitez d'un espace extérieur protégé", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+
+    # ---- Création des pergolas ---- #
+
+
+
+    # ---- Création des volets roulants ---- #
+
+    volet01 = Product.create!(title: 'Volet 1', category: volet_roulant, sub_category: 0, description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    volet02 = Product.create!(title: 'Volet 2', category: volet_roulant, sub_category: 0, description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    volet03 = Product.create!(title: 'Volet 3', category: volet_roulant, sub_category: 1, description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    volet04 = Product.create!(title: 'Volet 4', category: volet_roulant, sub_category: 1, description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+    volet05 = Product.create!(title: 'Volet 5', category: volet_roulant, sub_category: 1, description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+
+    # ---- Création des volets roulants ---- #
+
+
+
+    # ---- Affichage ---- #
+
+      Category.all.each_with_index do |cat, i1|
+        puts "----------------------------------------------------"
+        puts "#{i1} - #{cat.name.upcase}"
+        puts " "
+        cat.products.each_with_index do |prod, i2|
+          puts "** #{i2} **/ #{prod.title}"
+        end
+        puts " "
+      end
+
+      puts "Nombre de produits : #{Product.all.count}"
+      puts "----------------------------------------------------"
+
+    # ---- Affichage ---- #
+
+
+
+puts "END - Création des stores"
 
 # ------------------------- Création des stores ------------------------- #
 
 
 
 
-    # ---- Création des moustiquaires ---- #
 
 
+# ------------------------- Création des scores ------------------------- #
 
-        mousty01 = Product.create!(title: 'Moustiquaire plissée', category: moustiquaire , description: 'Plisséa est la moustiquaire idéale pour porte et baies vitrées', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        mousty02 = Product.create!(title: 'Moustiquaire enroulable', category: moustiquaire , description: 'Saga est une moustiquaire à enroulement vertical pour les fenêtres ou à enroulement latéral pour les portes', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        mousty03 = Product.create!(title: 'Moustiquaire à battant', category: moustiquaire , description: "Classique , la moustiquaire à battant Altesse se manoeuvre avec légèreté quel que soit le sens d'ouverture choisi", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
+puts "START - Création des Scores"
 
-
-    puts " "
-    puts " "
-    # ---- Création des moustiquaires ---- #
-    puts "----------------------------------------------------"
-    puts "MOUSTIQUAIRES"
-    puts "----------------------------------------------------"
-    puts "** 1 **/ #{mousty01.title}"
-    puts "** 2 **/ #{mousty02.title}"
-    puts "** 3 **/ #{mousty03.title}"
-    puts "----------------------------------------------------"
-
-    puts " "
-    puts " "
-
-
-    # ---- Création des portes de garage ---- #
-
-
-
-        porto01 = Product.create!(title: 'Sectionnelles', category: porte_de_garage , description: "Confort , design et technicité , decouvrez des modèles répondant à des besoins essentiels de sécurité", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        porto02 = Product.create!(title: 'Traditionnelles', category: porte_de_garage , description: "Une vaste gamme sur mesure , traditionnelles , enroulables ou modernes répondant à tous les projets", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-
-
-
-    # ---- Création des portes de garage ---- #
-    puts "----------------------------------------------------"
-    puts "PORTES DE GARAGE"
-    puts "----------------------------------------------------"
-    puts "** 1 **/ #{porto01.title}"
-    puts "** 2 **/ #{porto02.title}"
-    puts "----------------------------------------------------"
-
-    puts " "
-    puts " "
-
-
-
-    # ---- Création des stores interieurs ---- #
-
-
-
-        inte01 = Product.create!(title: 'Stores Silhouette', category: store_interieur , description: "Doux jeux de lumières au gré de vos envies", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte02 = Product.create!(title: 'Voiles Facette', category: store_interieur , description: "Tissu doux pour un dosage subtil de la lumière", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte03 = Product.create!(title: 'Stores Duette', category: store_interieur , description: "Filtrez la lumière et isolez votre maison toute l'année", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte04 = Product.create!(title: 'Stores Plissé', category: store_interieur , description: "Décoratifs et complices de votre maison", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte05 = Product.create!(title: 'Stores Textiles', category: store_interieur , description: "Des tissus décoratifs , fabriqués sur mesure", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte06 = Product.create!(title: 'Stores Vénitiens', category: store_interieur , description: "Modulez la lumière avec un design classique", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte07 = Product.create!(title: 'Stores Vénitiens Bois', category: store_interieur , description: "La chaleur et la beauté de la nature dans votre maison", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte08 = Product.create!(title: 'Stores Rouleaux', category: store_interieur , description: "Une touche personnelle pour marquer votre style", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte09 = Product.create!(title: 'Stores Rouleaux Twist', category: store_interieur , description: "Variations de lumière pour une multitudes d'ambiances", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        inte10 = Product.create!(title: 'Stores à Bandes Verticales', category: store_interieur , description: "Elégance en toute simplicité pour les larges baies", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-
-
-    # ---- Création des stores interieurs ---- #
-    puts "----------------------------------------------------"
-    puts "STORES INTERIEURS"
-    puts "----------------------------------------------------"
-    puts "** 1 **/ #{inte01.title}"
-    puts "** 2 **/ #{inte02.title}"
-    puts "** 3 **/ #{inte03.title}"
-    puts "** 4 **/ #{inte04.title}"
-    puts "** 5 **/ #{inte05.title}"
-    puts "----------------------------------------------------"
-
-    puts " "
-    puts " "
-
-
-
-
-    # ---- Création des stores exterieurs ---- #
-
-
-
-        exte01 = Product.create!(title: 'Stores coffres', category: store_exterieur , description: "Design , robuste , le store coffre peut couvrir une largeur de près de 12m", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        exte02 = Product.create!(title: 'Stores Monoblocs', category: store_exterieur , description: "Armature thermolaquée assurant à la fois résistance et discrétion", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        exte03 = Product.create!(title: 'Stores Loggia', category: store_exterieur , description: "Pour une occultation presque totale de vos fenêtres", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        exte04 = Product.create!(title: 'Stores Bannette', category: store_exterieur , description: "Adaptés aux grandes surfaces vitrées", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        exte05 = Product.create!(title: 'Abris 2 pentes', category: store_exterieur , description: "Profitez de votre jardin en été sans avoir à souffrir du soleil", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-
-
-
-    # ---- Création des stores exterieurs ---- #
-    puts "----------------------------------------------------"
-    puts "STORES EXTERIEURS"
-    puts "----------------------------------------------------"
-    puts "** 1 **/ #{exte01.title}"
-    puts "** 2 **/ #{exte02.title}"
-    puts "** 3 **/ #{exte03.title}"
-    puts "** 4 **/ #{exte04.title}"
-    puts "** 5 **/ #{exte05.title}"
-    puts "----------------------------------------------------"
-
-    puts " "
-    puts " "
-
-
-
-    # ---- Création des menuiseries ---- #
-
-
-
-        menui01 = Product.create!(title: 'Menui 1', category: menuiserie , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        menui02 = Product.create!(title: 'Menui 2', category: menuiserie , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        menui03 = Product.create!(title: 'Menui 3', category: menuiserie , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        menui04 = Product.create!(title: 'Menui 4', category: menuiserie , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        menui05 = Product.create!(title: 'Menui 5', category: menuiserie , description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-
-
-
-    # ---- Création des menuiseries ---- #
-    puts "----------------------------------------------------"
-    puts "MENUISERIES"
-    puts "----------------------------------------------------"
-    puts "** 1 **/ #{menui01.title}"
-    puts "** 2 **/ #{menui02.title}"
-    puts "** 3 **/ #{menui03.title}"
-    puts "** 4 **/ #{menui04.title}"
-    puts "** 5 **/ #{menui05.title}"
-    puts "----------------------------------------------------"
-
-    puts " "
-    puts " "
-
-
-
-    # ---- Création des pergolas ---- #
-
-
-
-        pergo01 = Product.create!(title: 'Pergolas toiles', category: pergola , description: "Entrez dans un nouvel univers , où intérieur et extérieur se confondent", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        pergo02 = Product.create!(title: 'Pergolas Bioclimatiques', category: pergola , description: "Profitez d'un espace extérieur protégé", photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-
-
-
-    # ---- Création des pergolas ---- #
-    puts "----------------------------------------------------"
-    puts "PERGOLAS"
-    puts "----------------------------------------------------"
-    puts "** 1 **/ #{pergo01.title}"
-    puts "** 2 **/ #{pergo02.title}"
-    puts "----------------------------------------------------"
-
-    puts " "
-    puts " "
-
-
-
-    # ---- Création des volets roulants ---- #
-
-
-
-        volet01 = Product.create!(title: 'Volet 1', category: volet_roulant, sub_category: 0, description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        volet02 = Product.create!(title: 'Volet 2', category: volet_roulant, sub_category: 0, description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        volet03 = Product.create!(title: 'Volet 3', category: volet_roulant, sub_category: 1, description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        volet04 = Product.create!(title: 'Volet 4', category: volet_roulant, sub_category: 1, description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-        volet05 = Product.create!(title: 'Volet 5', category: volet_roulant, sub_category: 1, description: 'test', photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1458781059/rkqs4jojhhdptywzampk.jpg"])
-
-
-
-    # ---- Création des volets roulants ---- #
-    puts "----------------------------------------------------"
-    puts "VOLETS ROULANTS"
-    puts "----------------------------------------------------"
-    puts "** 1 **/ #{volet01.title}"
-    puts "** 2 **/ #{volet02.title}"
-    puts "** 3 **/ #{volet03.title}"
-    puts "** 4 **/ #{volet04.title}"
-    puts "** 5 **/ #{volet05.title}"
-    puts "----------------------------------------------------"
-
-    puts " "
-    puts " "
-
-
-# ------------------------- Création des stores ------------------------- #
-
-puts "Création des stores - END"
-
-
-
-
-
-
-puts "Création des Scores ....."
 @all_products = Product.all
 
-@all_products.each do |product|
+@all_products.each_with_index do |product, i|
+  puts "** #{i} ** / #{product.title}"
+  puts "-- #{product.category.name} --"
+  puts "----------------------------------------------"
   5.times do
     @random_number = rand((1..10))
     Score.create!(value: @random_number, product: product)
-    puts "score created !!!"
+    puts "Score : #{@random_number}"
   end
+  puts "----------------------------------------------"
+  puts " "
 end
-puts "Création des scores ..... Done !!!"
+
+puts "END - Création des scores"
+
+# ------------------------- Création des scores ------------------------- #
+
+
+
 
 
 
 
 puts "Création des infos - START"
 
+# --------------------- PARAMS MOUSTIQUAIRES ------------------------------ #
+
+title1 = "Matériau"
+title2 = "Profils"
+title3 = "Cadre"
+
+content1 = "Fils de polyester enrobés de pvc"
+content2 = "Aluminium"
+content3 = "+ de 200 coloris"
+content4 = "Exclusivement en pose tableau"
+content5 = "Faible encombrement"
+content6 = "Livrée avec des poignées et un guide bas"
+
 # ------------------------- INFOS - Moustiquaires ------------------------- #
 
+    # Moustiquaire plissée
+    Info.create!(title: title1, content: content1, product: mousty01 , icon: 'icon-fold')
+    Info.create!(title: title2, content: content2, product: mousty01 , icon: 'icon-fold')
+    Info.create!(title: title3, content: content3, product: mousty01 , icon: 'icon-fold')
+    Info.create!(content: content4, product: mousty01 , icon: 'icon-fold')
+    Info.create!(content: content5, product: mousty01 , icon: 'icon-fold')
+    Info.create!(content: content6, product: mousty01 , icon: 'icon-fold')
 
-    Info.create!(title: 'titre', content: 'valeur', product: mousty01 , icon: 'icon-fold')
-    Info.create!(title: 'titre', content: 'valeur', product: mousty01 , icon: 'icon-fold')
-    Info.create!(title: 'titre', content: 'valeur', product: mousty01 , icon: 'icon-fold')
-    Info.create!(title: 'titre', content: 'valeur', product: mousty01 , icon: 'icon-fold')
-    Info.create!(title: 'titre', content: 'valeur', product: mousty01 , icon: 'icon-fold')
-    Info.create!(title: 'titre', content: 'valeur', product: mousty01 , icon: 'icon-fold')
-
-    Info.create!(title: 'titre', content: 'valeur', product: mousty02 , icon: 'icon-fold')
-    Info.create!(title: 'titre', content: 'valeur', product: mousty02 , icon: 'icon-fold')
+    # Moustiquaire enroulable
+    Info.create!(title: title1, content: content1, product: mousty02 , icon: 'icon-fold')
+    Info.create!(title: title2, content: content2, product: mousty02 , icon: 'icon-fold')
     Info.create!(title: 'titre', content: 'valeur', product: mousty02 , icon: 'icon-fold')
     Info.create!(title: 'titre', content: 'valeur', product: mousty02 , icon: 'icon-fold')
     Info.create!(title: 'titre', content: 'valeur', product: mousty02 , icon: 'icon-fold')
     Info.create!(title: 'titre', content: 'valeur', product: mousty02 , icon: 'icon-fold')
 
+    # Moustiquaire battant
     Info.create!(title: 'titre', content: 'valeur', product: mousty03 , icon: 'icon-fold')
     Info.create!(title: 'titre', content: 'valeur', product: mousty03 , icon: 'icon-fold')
     Info.create!(title: 'titre', content: 'valeur', product: mousty03 , icon: 'icon-fold')
@@ -341,8 +261,10 @@ puts "Création des infos - START"
 
 # ------------------------- INFOS - Portes de garage ------------------------- #
 
-
+    # Sectionnelles
     Info.create!(title: 'info', content: 'info-test', product: porto01 , icon: 'icon-fold')
+
+    # Traditionnelles
     Info.create!(title: 'info', content: 'info-test', product: porto02 , icon: 'icon-fold')
 
 
@@ -351,11 +273,19 @@ puts "Création des infos - START"
 
 # ------------------------- INFOS - Stores intérieurs ------------------------- #
 
-
+    # Silhouette
     Info.create!(title: 'info', content: 'info-test', product: inte01 , icon: 'icon-fold')
+
+    # Facettes
     Info.create!(title: 'info', content: 'info-test', product: inte02 , icon: 'icon-fold')
+
+    # Duettes
     Info.create!(title: 'info', content: 'info-test', product: inte03 , icon: 'icon-fold')
+
+    # Plissée
     Info.create!(title: 'info', content: 'info-test', product: inte04 , icon: 'icon-fold')
+
+    # Textiles
     Info.create!(title: 'info', content: 'info-test', product: inte05 , icon: 'icon-fold')
 
 

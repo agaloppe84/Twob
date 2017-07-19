@@ -567,7 +567,7 @@ a:hover {
 .leftblock-content-show .nav li.active a {
   background-color: transparent;
   opacity: 1;
-  color: $green;
+  color: orange;
   font-family: "Circular-Medium";
   font-size: 13px;
   transition: 0.3s ease;
@@ -575,7 +575,7 @@ a:hover {
 
 .leftblock-content-show .nav li.active:hover a {
   background-color: transparent;
-  color: $green;
+  color: orange;
   opacity: 1;
   font-family: "Circular-Medium";
 }
@@ -585,7 +585,7 @@ a:hover {
 
 .leftblock-content-show .nav li {
   background-color: transparent;
-  color: rgba(30,30,40,0.8);
+  color: rgba(30,30,40,0.6);
   opacity: 1;
   font-family: "Circular-Medium";
   font-size: 13px;
@@ -594,7 +594,7 @@ a:hover {
 
 .leftblock-content-show .nav li a {
   background-color: transparent;
-  color: rgba(30,30,40,0.8);
+  color: rgba(30,30,40,0.6);
   opacity: 1;
   font-family: "Circular-Medium";
   font-size: 13px;
@@ -604,7 +604,7 @@ a:hover {
 .leftblock-content-show .nav li:hover {
   background-color: transparent;
   opacity: 1;
-  color: rgba(30,30,40,0.8);
+  color: rgba(30,30,40,0.9);
   font-family: "Circular-Medium";
   font-size: 13px;
   transition: 0.3s ease;
@@ -613,7 +613,7 @@ a:hover {
 .leftblock-content-show .nav li:hover a {
   background-color: transparent;
   opacity: 1;
-  color: rgba(30,30,40,0.8);
+  color: rgba(30,30,40,0.9);
   font-family: "Circular-Medium";
   font-size: 13px;
   transition: 0.5s ease;

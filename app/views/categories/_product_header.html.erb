@@ -1,9 +1,7 @@
 <% if category.has_sub_category? %>
           <div class="subcategory-container">
-            <div class="icon-label cct-icon-size" style="font-size: 17px;padding-top: 3px;margin-right: 12px;"></div>
             <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
-            <div class="subcategory-separator"></div>
-            <div class="icon-script cct-icon-size" style="font-size: 15px;padding-top: 3px;margin-right: 12px;color: #32B796;"></div>
+             <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;opacity: 0.5;"></i>
             <div class="subcategory-product-count"><%= "#{category.products.count} produits" %></div>
             <div class="subcategory-separator"></div>
             <div class="subcategory-text">Rénovation</div>
@@ -25,7 +23,7 @@
         <% else %>
           <div class="subcategory-container">
             <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
-            <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;"></i>
+            <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;opacity: 0.5;"></i>
             <div class="subcategory-product-count"><%= "#{category.products.count} produits" %></div>
             <% if category.promos.any? %>
               <div class="subcategory-separator"></div>
