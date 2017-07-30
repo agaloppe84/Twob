@@ -1,98 +1,215 @@
-<%= render 'shared/fixed_navbar' %>
 
-<div class="quota-layout-header">
-  <div class="quota-layout-header-text">Devis gratuit</div>
-  <div class="quota-layout-header-text-thin">réponse sous 48h</div>
+<div class="cct-asc-relative-column">
+  <div class="icon-caret-up cct-asc-caret-up"></div>
+
+    <%= simple_form_for [@product.category, @product, @quotation] do |f| %>
+
+    <div class="wizard" id="wizard-<%= @product.id %>">
+
+    <div class="cct-asc-rel-col-header">
+        <div class="hcp-block-end-date"><%= "Devis en ligne" %></div>
+        <div class="hcp-title" style="color: #20b2aa;">réponse sous 48h</div>
+        <i class="fa fa-clock-o" aria-hidden="true" style="color: #20b2aa;"></i>
+    </div>
+
+    <div class="wiz-header-container">
+
+      <div class="wizard-header" id="wizard-header-<%= @product.id %>">
+          <div class="steps text-center">
+            <div id="ws-01" class="wizard-step active">
+              <div class="wizard-step-abs-text"><div class="wsat-font">1</div></div>
+            </div>
+            <div id="ws-02" class="wizard-step">
+              <div class="wizard-step-abs-text"><div class="wsat-font">2</div></div>
+            </div>
+            <div id="ws-03" class="wizard-step">
+              <div class="wizard-step-abs-text"><div class="wsat-font">3</div></div>
+            </div>
+          </div>
+      </div>
+
+    </div>
+
+      <div class="cct-asc-rel-col-footer">
+        <div class="wizard-body" id="wizard-body-<%= @product.id %>">
+
+          <div id="step-1" class="step active">
+
+            <div class="ajax-form-flex">
+              <div class="ajax-form-flex-item-left">
+                <div class="ajax-form-flex-icon"><div class="icon-mail"></div></div>
+                <%= f.input :email, label: false, placeholder: 'email' %>
+              </div>
+              <div class="ajax-form-flex-item-right">
+                <div class="ajax-form-flex-icon"><div class="icon-phone"></div></div>
+                <%= f.input :phone, label: false, placeholder: 'téléphone' %>
+              </div>
+            </div>
+
+            <div class="ajax-form-flex">
+              <div class="ajax-form-flex-item-left">
+                <div class="ajax-form-flex-icon"><div class="icon-user"></div></div>
+                <%= f.input :lastname, label: false, placeholder: 'nom' %>
+              </div>
+              <div class="ajax-form-flex-item-right">
+                <div class="ajax-form-flex-icon"><div class="icon-user"></div></div>
+                <%= f.input :firstname, label: false, placeholder: 'prénom' %>
+              </div>
+            </div>
+
+            <div class="cct-real-footer">
+              <div class="wizard-footer" id="wizard-footer-<%= @product.id %>">
+                <div class="exclusive-display-flex">
+
+
+                    <div class="score-form-button" id="wizard-step1-next">
+                      <div class="imp-red-button">suivant</div>
+                      <div class="sfbi-circle"><i class="fa fa-arrow-right" style="font-size: 9px;"></i></div>
+                    </div>
+
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="step-2" class="step">
+
+            <div class="ajax-form-flex">
+              <div class="ajax-form-flex-item-left">
+                <div class="ajax-form-flex-icon"><div class="icon-target"></div></div>
+                <%= f.input :city, label: false, placeholder: 'ville' %>
+              </div>
+              <div class="ajax-form-flex-item-right">
+                <div class="ajax-form-flex-icon"><div class="icon-target"></div></div>
+                <%= f.input :zipcode, label: false, placeholder: 'code postal' %>
+              </div>
+            </div>
+
+            <div class="ajax-form-flex">
+              <div class="ajax-form-flex-item-left" style="width: 100%;border: none;">
+                <div class="ajax-form-flex-icon"><div class="icon-target"></div></div>
+                <%= f.input :address, label: false, placeholder: 'adresse'%>
+              </div>
+            </div>
+
+            <div class="cct-real-footer">
+              <div class="wizard-footer" id="wizard-footer-<%= @product.id %>">
+                <div class="exclusive-display-flex">
+
+
+                    <div class="score-form-button" id="wizard-step2-prev">
+                      <div class="sfbi-circle"><i class="fa fa-arrow-left" style="font-size: 9px;"></i></div>
+                      <div class="imp-red-button">précèdent</div>
+                    </div>
+
+                    <div class="score-form-button" id="wizard-step2-next">
+                      <div class="imp-red-button">suivant</div>
+                      <div class="sfbi-circle"><i class="fa fa-arrow-right" style="font-size: 9px;"></i></div>
+                    </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div id="step-3" class="step">
+            <%= f.input :blindtype, input_html: { value: @product.category.name.capitalize }, as: :hidden %>
+            <%= f.input :product_name, input_html: { value: @product.title }, as: :hidden %>
+            <%= f.input :message, label: false, placeholder: 'message' %>
+            <div class="cct-real-footer">
+              <div class="wizard-footer" id="wizard-footer-<%= @product.id %>">
+                <div class="exclusive-display-flex">
+
+
+                    <div class="score-form-button" id="wizard-step3-prev">
+                      <div class="sfbi-circle"><i class="fa fa-arrow-left" style="font-size: 9px;"></i></div>
+                      <div class="imp-red-button">précèdent</div>
+                    </div>
+
+                    <%= f.button :button, class: "score-form-button", id: "wizard-subm" do %>
+                      <div class="imp-green-button">Valider</div>
+                      <div class="sfbi-circle-green"><i class="icon-android-done score-form-big-icon-v3"></i></div>
+                    <% end %>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+
+    </div>
+
+    <% end %>
+
+
 </div>
 
+<script>
+
+   var wizardLogic = function() {
+
+        var step1 = $(".wizard-header" + " #ws-01");
+        var step2 = $(".wizard-header" + " #ws-02");
+        var step3 = $(".wizard-header" + " #ws-03");
+
+        var realStep1 = $(".wizard-body" + " #step-1");
+        var realStep2 = $(".wizard-body" + " #step-2");
+        var realStep3 = $(".wizard-body" + " #step-3");
+
+        var step1Next = $("#wizard-step1-next");
+        var step2Next = $("#wizard-step2-next");
+        var step2Prev = $("#wizard-step2-prev");
+        var step3Prev = $("#wizard-step3-prev");
+
+
+          $(step1Next).click(function() {
+            $(realStep1).removeClass("active");
+            $(step1).removeClass("active");
+            $(realStep2).addClass("active");
+            $(step2).addClass("active");
+            console.log("coucou");
+          });
+
+          $(step2Prev).click(function() {
+            $(realStep2).removeClass("active");
+            $(step2).removeClass("active");
+            $(realStep1).addClass("active");
+            $(step1).addClass("active");
+          });
+
+          $(step2Next).click(function() {
+            $(realStep2).removeClass("active");
+            $(step2).removeClass("active");
+            $(realStep3).addClass("active");
+            $(step3).addClass("active");
+          });
+
+          $(step3Prev).click(function() {
+            $(realStep3).removeClass("active");
+            $(step3).removeClass("active");
+            $(realStep2).addClass("active");
+            $(step2).addClass("active");
+          });
+
+    };
+
+wizardLogic();
+
+$('.custom-backdrop').click(function() {
+      $(".cct-absolute-quotation-container").hide("slide",{direction:'up'},"fast");
+      $(".custom-card").removeClass('dynamic-bottom-margin-big');
+      $(this).addClass('hidden');
+});
 
 
 
-<div class="quota-form-fullpage">
-  <%= simple_form_for (@quotation) do |f| %>
+</script>
 
-    <div class="quota-form-layout-one">
-      <div class="quota-form-layout-one-flex ff-flex-top">
-        <div class="quota-form-label quota-email">
-          <i class="fa fa-envelope-o" aria-hidden="true"></i>
-          <div class="small-quota-icon">Email</div>
-        </div>
-        <%= f.input :email, label: false %>
-      </div>
-      <div class="quota-form-layout-one-flex ff-flex-top">
-        <div class="quota-form-label quota-phone">
-          <i class="fa fa-phone" aria-hidden="true"></i>
-          <div class="small-quota-icon">Téléphone</div>
-        </div>
-        <%= f.input :phone, label: false %>
-      </div>
-      <div class="quota-form-layout-one-flex ff-flex-top">
-        <div class="quota-form-label quota-blindttype">
-          <i class="fa fa-product-hunt" aria-hidden="true"></i>
-          <div class="small-quota-icon">Produit</div>
-        </div>
-        <%= f.input :blindtype, collection: @category_names, label: false %>
-      </div>
-    </div>
-
-    <div class="quota-form-layout-one">
-      <div class="quota-form-layout-one-flex">
-        <div class="quota-form-label quota-name">
-          <i class="fa fa-male" aria-hidden="true"></i>
-          <div class="small-quota-icon">Nom</div>
-        </div>
-        <%= f.input :lastname, label: false %>
-      </div>
-      <div class="quota-form-layout-one-flex">
-        <div class="quota-form-label quota-firstname">
-          <i class="fa fa-male" aria-hidden="true"></i>
-          <div class="small-quota-icon">Prénom</div>
-        </div>
-        <%= f.input :firstname, label: false %>
-      </div>
-    </div>
-
-    <div class="quota-form-layout-one">
-      <div class="quota-form-layout-one-flex ff-flex-start">
-        <div class="quota-form-label quota-city">
-          <i class="fa fa-location-arrow" aria-hidden="true"></i>
-          <div class="small-quota-icon">Ville</div>
-        </div>
-        <%= f.input :city, label: false %>
-      </div>
-      <div class="quota-form-layout-one-flex ff-flex-middle">
-        <div class="quota-form-label quota-zipcode">
-          <i class="fa fa-location-arrow" aria-hidden="true"></i>
-          <div class="small-quota-icon">Code postal</div>
-        </div>
-        <%= f.input :zipcode, label: false %>
-      </div>
-      <div class="quota-form-layout-one-flex ff-flex-end">
-        <div class="quota-form-label quota-address">
-          <i class="fa fa-location-arrow" aria-hidden="true"></i>
-          <div class="small-quota-icon">Adresse</div>
-        </div>
-        <%= f.input :address, label: false %>
-      </div>
-    </div>
-
-
-
-
-
-
-
-
-      <div class="quota-form-label quota-message">
-        <i class="fa fa-commenting-o" aria-hidden="true"></i>
-        <div class="small-quota-icon">Message</div>
-      </div>
-      <%= f.input :message, label: false %>
-
-      <%= f.submit "Envoyer", :class => 'submit-button-on-quotation' %>
-
-  <% end %>
-</div>
-
-
-<%= render 'shared/custom_footer' %>

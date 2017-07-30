@@ -12,6 +12,8 @@ gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
+gem 'bullet', group: 'development'
+gem 'rack-mini-profiler'
 
 gem 'sass-rails'
 gem 'jquery-rails'

@@ -5,6 +5,9 @@ MODELS.each do |mod|
   mod.destroy_all
 end
 
+puts "Destroying all model instances"
+puts "Erase models : #{MODELS.count}"
+
 
 
 puts "--------------------Création du seed - START--------------------"
@@ -23,7 +26,7 @@ puts "--------------------Création du seed - START--------------------"
     puts " "
 
     User.all.each_with_index do |user, index|
-      puts "** #{index} **/ Email: #{user.email} / Password: #{user.password}"
+      puts "** #{index + 1} **/ Email: #{user.email} / Password: #{user.password}"
     end
 
     puts " "
@@ -55,7 +58,7 @@ puts "START - Création des types de stores"
     puts " "
 
     Category.all.each_with_index do |category, index|
-      puts "** #{index} **/ Nom: #{category.name} / Couleur: #{category.color}"
+      puts "** #{index + 1} **/ Nom: #{category.name} / Couleur: #{category.color}"
     end
 
     puts " "
@@ -74,7 +77,6 @@ puts "END - Création des types de stores"
 # ------------------------- Création des stores ------------------------- #
 
 puts "START - Création des stores"
-
 
     # ---- Création des moustiquaires ---- #
 
@@ -161,10 +163,10 @@ puts "START - Création des stores"
 
       Category.all.each_with_index do |cat, i1|
         puts "----------------------------------------------------"
-        puts "#{i1} - #{cat.name.upcase}"
+        puts "#{i1 + 1} - #{cat.name.upcase}"
         puts " "
         cat.products.each_with_index do |prod, i2|
-          puts "** #{i2} **/ #{prod.title}"
+          puts "** #{i2 + 1} **/ #{prod.title}"
         end
         puts " "
       end
@@ -173,7 +175,6 @@ puts "START - Création des stores"
       puts "----------------------------------------------------"
 
     # ---- Affichage ---- #
-
 
 
 puts "END - Création des stores"
@@ -192,7 +193,7 @@ puts "START - Création des Scores"
 @all_products = Product.all
 
 @all_products.each_with_index do |product, i|
-  puts "** #{i} ** / #{product.title}"
+  puts "** #{i + 1} ** / #{product.title}"
   puts "-- #{product.category.name} --"
   puts "----------------------------------------------"
   5.times do
@@ -214,9 +215,10 @@ puts "END - Création des scores"
 
 
 
-puts "Création des infos - START"
 
 # --------------------- PARAMS MOUSTIQUAIRES ------------------------------ #
+
+puts "START - Création des infos"
 
 title1 = "Matériau"
 title2 = "Profils"
@@ -288,6 +290,20 @@ content6 = "Livrée avec des poignées et un guide bas"
     # Textiles
     Info.create!(title: 'info', content: 'info-test', product: inte05 , icon: 'icon-fold')
 
+    # Vénitiens
+    Info.create!(title: 'info', content: 'info-test', product: inte06 , icon: 'icon-fold')
+
+    # Vénitiens bois
+    Info.create!(title: 'info', content: 'info-test', product: inte07 , icon: 'icon-fold')
+
+    # Rouleaux
+    Info.create!(title: 'info', content: 'info-test', product: inte08 , icon: 'icon-fold')
+
+    # Rouleaux twist
+    Info.create!(title: 'info', content: 'info-test', product: inte09 , icon: 'icon-fold')
+
+    # Stores a bandes verticales
+    Info.create!(title: 'info', content: 'info-test', product: inte10 , icon: 'icon-fold')
 
 # ------------------------- INFOS - Stores intérieurs ------------------------- #
 
@@ -295,13 +311,11 @@ content6 = "Livrée avec des poignées et un guide bas"
 
 # ------------------------- INFOS - Stores exterieurs ------------------------- #
 
-
     Info.create!(title: 'info', content: 'info-test', product: exte01 , icon: 'icon-fold')
     Info.create!(title: 'info', content: 'info-test', product: exte02 , icon: 'icon-fold')
     Info.create!(title: 'info', content: 'info-test', product: exte03 , icon: 'icon-fold')
     Info.create!(title: 'info', content: 'info-test', product: exte04 , icon: 'icon-fold')
     Info.create!(title: 'info', content: 'info-test', product: exte05 , icon: 'icon-fold')
-
 
 # ------------------------- INFOS - Stores exterieurs ------------------------- #
 
@@ -309,13 +323,11 @@ content6 = "Livrée avec des poignées et un guide bas"
 
 # ------------------------- INFOS - Menuiseries ------------------------- #
 
-
     Info.create!(title: 'info', content: 'info-test', product: menui01 , icon: 'icon-fold')
     Info.create!(title: 'info', content: 'info-test', product: menui02 , icon: 'icon-fold')
     Info.create!(title: 'info', content: 'info-test', product: menui03 , icon: 'icon-fold')
     Info.create!(title: 'info', content: 'info-test', product: menui04 , icon: 'icon-fold')
     Info.create!(title: 'info', content: 'info-test', product: menui05 , icon: 'icon-fold')
-
 
 # ------------------------- INFOS - Menuiseries ------------------------- #
 
@@ -323,14 +335,11 @@ content6 = "Livrée avec des poignées et un guide bas"
 
 # ------------------------- INFOS - Pergolas ------------------------- #
 
-
     Info.create!(title: 'info', content: 'info-test', product: pergo01 , icon: 'icon-fold')
     Info.create!(title: 'info', content: 'info-test', product: pergo01 , icon: 'icon-fold')
     Info.create!(title: 'info', content: 'info-test', product: pergo01 , icon: 'icon-fold')
     Info.create!(title: 'info', content: 'info-test', product: pergo01 , icon: 'icon-fold')
-
     Info.create!(title: 'info', content: 'info-test', product: pergo02 , icon: 'icon-fold')
-
 
 # ------------------------- INFOS - Pergolas ------------------------- #
 
@@ -338,13 +347,11 @@ content6 = "Livrée avec des poignées et un guide bas"
 
 # ------------------------- INFOS - Volets roulants ------------------------- #
 
-
     Info.create!(title: 'info', content: 'info-test', product: volet01 , icon: 'icon-fold')
     Info.create!(title: 'info', content: 'info-test', product: volet02 , icon: 'icon-fold')
     Info.create!(title: 'info', content: 'info-test', product: volet03 , icon: 'icon-fold')
     Info.create!(title: 'info', content: 'info-test', product: volet04 , icon: 'icon-fold')
     Info.create!(title: 'info', content: 'info-test', product: volet05 , icon: 'icon-fold')
-
 
 # ------------------------- INFOS - Volets roulants ------------------------- #
 
@@ -355,27 +362,13 @@ puts "Création des infos - END"
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 puts "Création des pouvoirs - START"
 
 # ------------------------- POUVOIRS - Moustiquaires ------------------------- #
 
-
     pow_mous_01 = Power.create!(product: mousty01 , sun: false, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: false, taxsaver: false, insects: false, security: false, inside: true, outside: false, certification: false)
     pow_mous_02 = Power.create!(product: mousty02 , sun: false, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: false, taxsaver: false, insects: false, security: false, inside: true, outside: false, certification: false)
     pow_mous_03 = Power.create!(product: mousty03 , sun: false, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: false, taxsaver: false, insects: false, security: false, inside: true, outside: false, certification: false)
-
 
 # ------------------------- POUVOIRS - Moustiquaires ------------------------- #
     puts "----------------------------------------------------"
@@ -412,10 +405,8 @@ puts "Création des pouvoirs - START"
 
 # ------------------------- POUVOIRS - Portes de garage ------------------------- #
 
-
     pow_pdg_01 = Power.create!(product: porto01 , sun: false, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: false, outside: false, certification: false)
     pow_pdg_02 = Power.create!(product: porto02 , sun: false, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: false, outside: false, certification: false)
-
 
 # ------------------------- POUVOIRS - Portes de garage ------------------------- #
     puts "----------------------------------------------------"
@@ -443,13 +434,11 @@ puts "Création des pouvoirs - START"
 
 # ------------------------- POUVOIRS - Stores intérieurs ------------------------- #
 
-
     Power.create!(product: inte01 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
     Power.create!(product: inte02 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
     Power.create!(product: inte03 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
     Power.create!(product: inte04 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
     Power.create!(product: inte05 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
-
 
 # ------------------------- POUVOIRS - Stores intérieurs ------------------------- #
 
@@ -457,13 +446,11 @@ puts "Création des pouvoirs - START"
 
 # ------------------------- POUVOIRS - Stores exterieurs ------------------------- #
 
-
     Power.create!(product: exte01 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
     Power.create!(product: exte02 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
     Power.create!(product: exte03 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
     Power.create!(product: exte04 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
     Power.create!(product: exte05 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: false)
-
 
 # ------------------------- POUVOIRS - Stores exterieurs ------------------------- #
 
@@ -471,13 +458,11 @@ puts "Création des pouvoirs - START"
 
 # ------------------------- POUVOIRS - Menuiseries ------------------------- #
 
-
     Power.create!(product: menui01 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: true)
     Power.create!(product: menui02 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: true)
     Power.create!(product: menui03 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: true)
     Power.create!(product: menui04 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: true)
     Power.create!(product: menui05 , sun: true, rain: false, wind: false, cold: true, hot: false, humidity: true, energysaver: true, taxsaver: true, insects: false, security: true, inside: true, outside: false, certification: true)
-
 
 # ------------------------- POUVOIRS - Menuiseries ------------------------- #
 
@@ -538,10 +523,11 @@ puts "Création des pouvoirs - END"
 
 
 
-puts "Création des albums - START"
+
 
 # ------------------------- Création des albums ------------------------- #
 
+puts "START - Création des albums"
 
     Album.create!(name: 'porte de garage', category: porte_de_garage, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
     Album.create!(name: 'store exterieur', category: store_exterieur, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
@@ -551,37 +537,35 @@ puts "Création des albums - START"
     Album.create!(name: 'volet roulant', category: volet_roulant, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
     Album.create!(name: 'moustiquaire', category: moustiquaire, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
 
+puts "END - Création des albums"
 
 # ------------------------- Création des albums ------------------------- #
 
-puts "Création des albums - END"
 
 
 
 
 
 
-puts "Création des promos - START"
+# ------------------------- Création des Promos ------------------------- #
 
-# ------------------------- Création des types de stores ------------------------- #
-
+puts "START - Création des promos"
 
     Promo.create!(title: 'moustiquaire', discount: '20%', description: "promo-test", start: Date.today + 2.months, end: Date.today + 3.months, category: moustiquaire, current: true, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
     Promo.create!(title: 'pergola', discount: '30%', description: "promo-test", start: Date.today + 3.months, end: Date.today + 4.months, category: pergola, current: true, photo_urls:["http://res.cloudinary.com/agaloppe84/image/upload/v1472658802/asbzfjhqc7xyspqoolxn.jpg","http://res.cloudinary.com/agaloppe84/image/upload/v1456127547/sample.jpg"])
 
+puts "END - Création des promos"
 
-# ------------------------- Création des types de stores ------------------------- #
-
-puts "Création des promos - END"
-
+# ------------------------- Création des Promos ------------------------- #
 
 
 
 
-puts "Création des marques - START"
+
 
 # ------------------------- Création des marques ------------------------- #
 
+puts "START - Création des marques"
 
     coublanc =      Brand.create!(name: 'coublanc', product: exte01, logo_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1471805960/v9g44efftzca2auuhelb.jpg')
     luxaflex =      Brand.create!(name: 'luxaflex', product: mousty02, logo_url: 'http://res.cloudinary.com/agaloppe84/image/upload/v1471805960/v9g44efftzca2auuhelb.jpg')

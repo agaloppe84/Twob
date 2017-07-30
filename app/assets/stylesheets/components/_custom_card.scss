@@ -40,6 +40,7 @@
   top: 390px;
   left: 0;
   display: none;
+  z-index: 6000;
 }
 
 .cct-asc-relative {
@@ -139,7 +140,6 @@
   height: 73%;
   display: flex;
   border-top: 1px solid rgba(205,205,215,0.3);
-  border-bottom: 1px solid rgba(205,205,215,0.3);
 }
 
 .ccm-left {
@@ -147,7 +147,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 10px;
+  padding-top: 20px;
+  border-bottom: 1px solid rgba(205,205,215,0.3);
 }
 
 .ccm-right {
@@ -671,7 +672,23 @@
 }
 
 
+.await-ajax-tabs {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: darkgrey;
+  font-size: 13px;
+  font-family: "Circular-Medium";
+  background-color: rgba(205,205,215,0.3);
+}
 
+.ajax-waiting {
+  font-size: 27px;
+  margin-top: 10px;
+}
 
 
 

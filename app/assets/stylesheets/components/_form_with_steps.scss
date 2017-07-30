@@ -65,6 +65,7 @@
       transition: all 0.3s ease-in-out;
       position: absolute;
       width: 100%;
+      height: 100%;
       top: 0;
       right: -100%;
       opacity: 0;
@@ -94,6 +95,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    bottom: -60px;
+    left: 0;
   }
 }
 

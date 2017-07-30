@@ -104,15 +104,15 @@
 
 .home-content-container-transparent {
   display: flex;
-  width: 100%;
+  width: 65%;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding-left: 15%;
-  padding-right: 15%;
   padding-top: 3%;
   padding-bottom: 3%;
   background-color: rgba(35,35,39,1);
+  margin-bottom: 50px;
+  border-radius: 5px;
 }
 
 
@@ -123,30 +123,25 @@
 }
 
 .partners-link {
-  font-family: "Circular-Bold";
-  font-size: 13px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  padding-left: 14px;
-  padding-right: 14px;
-  border: 1px solid $mycolor2;
-  border-radius: 2px;
-  color: white;
-  margin-right: 15px;
-  background-color: $mycolor2;
+  font-family: "Circular-Medium";
+  font-size: 14px;
+  width: 110px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: grey;
   transition: 0.3s ease;
-  &:hover {
-    color: white;
-    background-color: $mycolor2;
-  }
 }
 
 
 .home-each-links {
   display: flex;
-  margin-left: 10%;
-  align-self: flex-start;
-  margin-top: 20px;
+  width: 80%;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
 }
 
 
@@ -178,11 +173,11 @@
 
 .home-content-item-left {
   height: 40px;
-  margin-left: 10%;
-  align-self: flex-start;
   display: flex;
+  margin-bottom: 20px;
   align-items: center;
   justify-content: center;
+  width: 80%;
 }
 
 .home-content-icon {
@@ -219,6 +214,7 @@
   font-weight: 200;
   color: rgba(45,45,55,0.8);
   line-height: 22px;
+  margin-bottom: 20px;
 }
 
 
@@ -592,7 +588,18 @@ a {
   letter-spacing: -0.2px;
 }
 
+.home-content-column {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(205,205,215,0.3);
+  align-items: center;
+  padding-top: 50px;
+}
 
 
-
-
+.separator {
+  border-right: 1px solid grey;
+  height: 25%;
+}

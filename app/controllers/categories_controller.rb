@@ -1,16 +1,20 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:index]
+  before_action :set_category, only: [:edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:show, :index]
+  before_action :categories_names, only: [:new, :create]
+  before_action :set_quotation, only: [:show, :index]
+  before_action :set_score, only: [:show, :index]
 
   def index
-    @categories = Category.all
-    @tab = params[:anchor]
-    @score = Score.new
-    @quotation = Quotation.new
-    @category_names = Category.all.map { |category| category.name.capitalize }
+    @categories = Category.eager_load(:albums, :promos, products: [:infos, :powers, :scores, :photo_files])
+    @only_categories = Category.all
+    @category = @categories.first
   end
 
   def show
+    @categories = Category.eager_load(:albums, :promos, products: [:infos, :powers, :scores, :photo_files])
+    @category = @categories.find(params[:id])
+    render layout: false
   end
 
   def new
@@ -55,6 +59,18 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.require(:category).permit(:name, :color, :guarantee, :has_sub_category)
+  end
+
+  def categories_names
+    @category_names = Category.all.map { |category| category.name.capitalize }
+  end
+
+  def set_quotation
+    @quotation = Quotation.new
+  end
+
+  def set_score
+    @score = Score.new
   end
 
 end

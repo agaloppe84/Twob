@@ -1,3 +1,13 @@
-$('#score-graph-<%= @product.id %>').html("<div class='average-dyn-data' style='background-color: <%= score_color(average_score(@product.scores)) %>;width: <%= (average_score(@product.scores) * 10).to_i %>%;' data-width='<%= (average_score(@product.scores) * 10).to_i %>%' data-color='<%= score_color(average_score(@product.scores)) %>'></div>");
+$('#score-graph-<%= @product.id %>').html("<div class='average-dyn-data' style='background-color: <%= score_color(average_score(@product.scores)) %>;width: <%= (average_score(@product.scores) * 10).to_i %>%;'></div>");
 $('#score-text-<%= @product.id %>').html("<div class='score-text'><%= average_score(@product.scores) %></div>");
 $('#score-count-<%= @product.id %>').html("<div class='score-count-number'><%= @product.scores.count %> avis</div>");
+$('#custom-card-<%= @product.id %>').append("<div class='alert'>Merci !</div>");
+
+$('#score-text-<%= @product.id %>').addClass('animated fadeIn');
+
+$(document).ready (function() {
+  setTimeout(function() {
+    $('.alert').fadeOut('fast');
+    $('#score-text-<%= @product.id %>').removeClass('animated fadeIn');
+  }, 5000);
+});

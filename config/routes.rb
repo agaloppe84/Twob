@@ -12,14 +12,13 @@ Rails.application.routes.draw do
   get 'photos', to: 'pages#photos'
   get 'dashboard', to: 'pages#dashboard'
   get 'promotions', to: 'pages#promotions'
-  get 'confirmation', to: 'quotations#confirmation'
   get 'quotations_admin', to: 'pages#quotations_admin'
   get 'pathfilter', to: 'pages#pathfilter'
   get 'analytics', to: 'pages#analytics'
 
 
 
-  resources :quotations, only: [:index, :new, :create, :edit, :update, :show]
+  resources :quotations, only: [:index, :edit, :update, :show]
   resources :promos, only: [:index]
 
 
@@ -32,6 +31,7 @@ Rails.application.routes.draw do
       resources :infos
       resources :powers
       resources :brands
+      resources :quotations, only: [:new, :create]
     end
   end
 

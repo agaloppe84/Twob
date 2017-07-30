@@ -1,89 +1,94 @@
-<div class="form-create-prospect-<%= product.id %> half-modal hidden">
-    <div class="button-close-create">
-        <%= image_tag "crossclosed-mini.svg", size: "18" %>
-        <div class="text-for-close">fermer</div>
+<div class="custom-card" id="custom-card-<%= product.id %>">
+
+  <div class="custom-card-top">
+    <div class="cct-absolute-quotation-container" id="form-steps-<%= product.id %>"></div>
+
+    <%= render "products/product_services", product: product %>
+
+    <div class="cct-title">
+      <%= product.title %>
+      <div class="cct-copyright">®</div>
     </div>
 
-
-
-
-
-    <div class="pseudo-modal-fullpage">
-
-      <div class="modal-product-title">
-
-          <div class="product-title-container-show">
-            <div class="product-show-big-title" style="color: <%= product.category.color %>;"><%= product.title %></div>
-          </div>
-
-          <div class="product-title-container">
-            <!-- <div class="pro-header-top">Type</div>
-            <div class="product-show-big-title-alt"><%= product.type.name %></div> -->
-          </div>
-
-          <div class="product-title-container">
-           <!--  <div class="pro-header-top">Marque</div>
-            <div class="product-show-big-title-alt"><%= product.brand.name %></div> -->
-          </div>
-
-
+    <% if product.powers.length != 0 %>
+      <div class="cct-powers">
+        <% active_powers(product.powers).each do |tag| %>
+          <%= tag %>
+        <% end %>
       </div>
-
-
-
-      <div class="modal-description">
-
-        <div class="modal-description-text"><%= product.description %></div>
-
-      </div>
-
-
-
-
-
-
-
-
-
-    <% product.infos.each do |info| %>
-
-
-
-      <div class="info-item-show">
-
-        <div class="info-icon-show" style="background-image: url(<%= cl_image_path info.icon.path %>);"></div>
-
-        <div class="info-title-color-show"><%= info.title %>&nbsp;</div>
-
-        <div class="info-title-color-content-show"><%= info.content %>&nbsp;</div>
-
-      </div>
-
     <% end %>
 
+    <div class="cct-guarantee" data-id="<%= product.id %>">
+      <div class="services-guarantee">services</div>
+      <i class="fa fa-sliders" aria-hidden="true" style="margin-right: 12px;font-size: 12px;"></i>
+    </div>
+  </div>
+
+
+  <div class="custom-card-middle">
+    <div class="ccm-left">
+      <% infos_constructor(product.infos, "ccm-info-container", "ccm-info-content").each do |info_tag| %>
+        <%= info_tag %>
+      <% end %>
+    </div>
+    <div class="ccm-right" style="background-image: url(<%= cl_image_path product.photos.last.path  %>);"></div>
+  </div>
+
+
+
+  <div class="custom-card-bottom">
+    <%= render 'scores/form', category: product.category, product: product, score: @score %>
+
+    <div class="ccb-left">
+      <%= link_to "#productShowModal", class: "custom-card-bottom-left-btn", data: { toggle: "modal", typeid: "#{product.category.id}", productid: "#{product.id}" } do %>
+        <div>détails</div>
+      <% end %>
+    </div>
+
+    <div class="separator-v2"></div>
+
+    <div class="ccb-middle">
+      <div class="ajax-dyna-quotation" id="form-steps-trigger-<%= product.id %>" data-id="<%= product.id %>" data-typeid="<%= product.category.id %>">
+        <div>devis gratuit</div>
+      </div>
+    </div>
+
+    <div class="separator-v2"></div>
+
+    <div class="ccb-right">
+      <%= link_to "#productShowModal", class: "custom-card-bottom-right-btn", data: { toggle: "modal", typeid: "#{product.category.id}", productid: "#{product.id}" } do %>
+        <div>photos</div>
+      <% end %>
+    </div>
+
+    <div class="separator-v2"></div>
+
+
+
+      <div class="custom-card-bottom-right-absolute">
+        <div id="score-count-<%= product.id %>">
+          <div class="score-count-number"><%= product.scores.length %> avis</div>
+        </div>
+
+        <div class="average-score-graph" id="score-graph-<%= product.id %>">
+          <div class="average-dyn-data" style="background-color: <%= score_color(average_score(product.scores)) %>;width: <%= (average_score(product.scores) * 10).to_i %>%;"></div>
+        </div>
+
+        <div id="score-text-<%= product.id %>"><div class="score-text"><%= average_score(product.scores) %></div></div>
+
+        <div class="separator-v2"></div>
+
+        <div class="score-form-trigger" id="score-form-trigger-<%= product.id %>" data-id="<%= product.id %>" style="display: flex;">
+          <div class="real-score-button">noter ce produit</div>
+          <i class="fa fa-bar-chart" aria-hidden="true" style="margin-left: 7px;padding-top: 4px;font-size: 12px;"></i>
+        </div>
+      </div>
+
+
+  </div>
 
 </div>
 
 
 
-</div>
 
-
-
-
-
-
-
-
-<% content_for :afterjstwo do %>
-<script>
-
-  $(document).ready(function() {
-        $('.button-close-create').click(function() {
-          $(".form-create-prospect-<%= product.id %>").addClass('hidden');
-        });
-  });
-
-
-</script>
-<% end %>

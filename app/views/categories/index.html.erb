@@ -1,59 +1,20 @@
 <%= render 'shared/fixed_navbar' %>
 
-
 <div class="fullpage-show">
-
-
   <%= render "navigator" %>
-
-
   <div class="fullpage-rightblock">
     <div class="tab-content">
 
-      <% @categories.each do |category| %>
-        <% if category == @categories.first %>
-
-        <div role="tabpanel" class="tab-pane active" id="<%= category.id %>">
-
-          <% if category.albums.any? %>
-            <div class="banner-on-index" style="background-image: url(<%=  cl_image_path category.albums.last.photos.sample.path if category.albums.last.photos.any? %>);">
-                <div class="banner-on-index-content-v2">
-                </div>
-            </div>
-          <% end %>
-
-          <%= render "product_header", category: category %>
-
-          <div class="index-new-container">
-            <% category.products.each do |product| %>
-              <%= render "custom_card", product: product, category: category %>
-            <% end %>
-          </div>
-
+      <div class="tab-pane active">
+        <div class="index-new-container">
+          <%= render "product_header", category: @category %>
+          <div class="custom-backdrop hidden"></div>
+          <%= render @category.products %>
         </div>
+      </div>
 
-        <% else %>
-
-        <div role="tabpanel" class="tab-pane" id="<%= category.id %>">
-
-          <% if category.albums.any? %>
-            <div class="banner-on-index" style="background-image: url(<%= cl_image_path category.albums.last.photos.sample.path if category.albums.last.photos.any?  %>);">
-              <div class="banner-on-index-content"></div>
-            </div>
-          <% end %>
-
-          <%= render "product_header", category: category %>
-
-          <div class="index-new-container">
-            <% category.products.each do |product| %>
-              <%= render "custom_card", product: product, category: category %>
-            <% end %>
-          </div>
-
-        </div>
-
-  <% end %>
-<% end %>
+    </div>
+  </div>
 </div>
 
 
@@ -61,7 +22,6 @@
   <div class="modal-content-custom">
   </div>
 </div>
-
 
 <%= render 'shared/custom_footer' %>
 

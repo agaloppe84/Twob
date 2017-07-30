@@ -1,6 +1,17 @@
+var randomColor = function(){
+  var test = "#2AC88E";
+  var rRgb = Math.floor(Math.random() * 210) + 50;
+  var gRgb = Math.floor(Math.random() * 210) + 50;
+  var bRgb = Math.floor(Math.random() * 210) + 50;
+  var result = "rgb" + "(" + rRgb + "," + gRgb + "," + bRgb + ")";
+  $( '.random-color' ).css( "background-color", result );
+  $( '.cc-flex.random-collection' ).append( $( ".random-color" ) );
+};
+
+
+
 $( "#picker-trigger" ).click(function() {
   $( ".picker" ).toggle();
-  console.log("test");
 });
 
 
@@ -219,13 +230,7 @@ $( ".random-color-link" ).click(function() {
 
 
 $( ".random-trigger" ).click(function() {
-    var test = "#2AC88E";
-    var rRgb = Math.floor(Math.random() * 210) + 50;
-    var gRgb = Math.floor(Math.random() * 210) + 50;
-    var bRgb = Math.floor(Math.random() * 210) + 50;
-    var result = "rgb" + "(" + rRgb + "," + gRgb + "," + bRgb + ")";
-    $( '.random-color' ).css( "background-color", result );
-    $( '.cc-flex.random-collection' ).append( $( ".random-color" ) );
+   randomColor();
 });
 
 

@@ -43,6 +43,7 @@ class ProductsController < ApplicationController
   end
 
 
+
   private
 
   def set_product
