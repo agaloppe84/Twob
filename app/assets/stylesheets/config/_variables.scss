@@ -1,8 +1,5 @@
-/* -------------------------------------
- * Fonts
- * ------------------------------------- */
-// Google fonts
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700");
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400");
 $base-font: "Open Sans", "Helvetica", "sans-serif";
 $header-font: "Open Sans", "Helvetica", "sans-serif";
 
@@ -48,24 +45,10 @@ $header-font: "Open Sans", "Helvetica", "sans-serif";
   font-style: normal;
 }
 
-// Local fonts (uncomment following lines)
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
-
-// Font-size and line-height
 $base-size: 16px;
 $base-height: 1.4;
 
-/* -------------------------------------
- * Colors
- * ------------------------------------- */
-// Scheme
+
 $brand-color: #D23333;
 $mycolor1: #4EC1D6;
 $mycolor2: #4ED69E;

@@ -12,7 +12,6 @@ var cardLogic = function() {
 
     $.ajax({
         url: "categories/" + typeId + "/products/" + productId + "/quotations/new",
-        complete: wizardLogic(),
         success: function(data){
           $(currentFormQuot).html(data);
         }
