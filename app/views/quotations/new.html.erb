@@ -1,4 +1,12 @@
 
+<div class="quot-container-v3">
+
+  <div class="qcv3-abs">
+    <%= link_to :back do %>
+      <div class="return-link">Retour aux produits</div>
+    <% end %>
+  </div>
+
 <div class="cct-asc-relative-column">
   <div class="icon-caret-up cct-asc-caret-up"></div>
 
@@ -152,7 +160,11 @@
 
 </div>
 
-<script async>
+</div>
+
+<% content_for :js_for_forms do %>
+
+<script>
 
  var wizardLogic = function() {
 
@@ -210,4 +222,6 @@
   });
 
 </script>
+
+<% end %>
 

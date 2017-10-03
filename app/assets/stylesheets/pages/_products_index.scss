@@ -863,9 +863,9 @@
   justify-content: center;
   position: fixed;
   top: 60px;
-  z-index: 5000;
   background-color: rgba(215,215,225,1);
   border-bottom: 1px solid rgba(185,185,189,0.3);
+  z-index: 3;
 }
 
 
@@ -915,6 +915,7 @@
   background-color: rgba(205,205,215,0.3);
   display: flex;
   flex-wrap: wrap;
+  z-index: 5;
 }
 
 .description-body {

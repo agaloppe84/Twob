@@ -19,8 +19,8 @@
       <div class="promo-index-reduction">
         <div class="promo-index-reduction-text">REDUCTION</div>
         <div class="promo-index-reduction-big-number"><%= "-#{promo.discount}" %></div>
-        <%= link_to categories_path(anchor: "tablink-#{promo.category.id}") do %>
-          <div>good Tab ?</div>
+        <%= link_to filtered_category_path(promo.category) do %>
+          <div><%= "Voir les #{composed_plurname(promo.category.name)}" %></div>
         <% end %>
       </div>
     </div>

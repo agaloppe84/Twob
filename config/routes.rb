@@ -15,15 +15,22 @@ Rails.application.routes.draw do
   get 'quotations_admin', to: 'pages#quotations_admin'
   get 'pathfilter', to: 'pages#pathfilter'
   get 'analytics', to: 'pages#analytics'
+  get 'confirmation', to: 'quotations#confirmation'
 
 
 
   resources :quotations, only: [:index, :edit, :update, :show]
   resources :promos, only: [:index]
 
+  resources :categories do
+
+  end
 
 
   resources :categories do
+    member do
+      get 'filtered'
+    end
     resources :albums
     resources :promos, only: [:new, :create, :edit, :update]
     resources :products do

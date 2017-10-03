@@ -77,5 +77,9 @@ module ApplicationHelper
     end
   end
 
+  def photos_for_carousel(collection)
+    @photos = collection.map {|photo| cl_image_path photo.path}
+  end
+
 
 end

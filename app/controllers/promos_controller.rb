@@ -1,6 +1,7 @@
 class PromosController < ApplicationController
   before_action :set_promo, only: [:show, :edit, :update, :destroy]
   before_action :find_category, only: [ :new, :create, :edit, :update, :destroy, :show ]
+  before_action :set_discounts, only: [ :new, :edit ]
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
@@ -26,7 +27,6 @@ class PromosController < ApplicationController
   end
 
   def edit
-    @discounts = ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%"]
     render layout: false
   end
 
@@ -46,6 +46,10 @@ class PromosController < ApplicationController
 
   def set_promo
     @promo = Promo.find(params[:id])
+  end
+
+  def set_discounts
+    @discounts = ["10%", "20%", "30%", "40%", "50%", "60%", "70%", "80%"]
   end
 
   def find_category

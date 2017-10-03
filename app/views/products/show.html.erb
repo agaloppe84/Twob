@@ -1,211 +1,119 @@
-<div class="modal-header-custom" style="height: 12%;justify-content: flex-start;padding-left: 10%;">
-    <div class="cct-title">
-      <%= @product.title %>
-      <div class="cct-copyright">®</div>
+
+<div class="modal-body-custom" style="height: 100%;padding-top: 0;padding-bottom: 0;">
+
+  <div class="modal-custom-absolute">
+
+    <div class="mca-item-start">
+      <div class="sb-photo-title hidden-xs"><%= @product.title %></div>
+      <div class="sb-photos-count hidden-xs"><%= @product.photos.length > 1 ? "#{@product.photos.length} photos" : "1 photo" %></div>
+      <div class="sb-step-circle <%= "hidden" if @product.photos.length <= 1 %> hidden-xs"></div>
     </div>
 
-    <% if @product.powers.any? %>
-      <div class="cct-powers">
-        <div class="<%= power_true(@product.powers.last.wind) %> <%= power_icon( @product.powers.last.wind, 'wind') %>"></div>
-        <div class="<%= power_true(@product.powers.last.sun) %> <%= power_icon( @product.powers.last.sun, 'sun-weather') %>"></div>
-        <div class="<%= power_true(@product.powers.last.rain) %> <%= power_icon( @product.powers.last.rain, 'droplet') %>"></div>
-        <div class="<%= power_true(@product.powers.last.energysaver) %> <%= power_icon( @product.powers.last.energysaver, 'plug') %>"></div>
-        <div class="<%= power_true(@product.powers.last.insects) %> <%= power_icon( @product.powers.last.insects, 'bug-1') %>"></div>
-        <div class="<%= power_true(@product.powers.last.security) %> <%= power_icon( @product.powers.last.security, 'lock-alt') %>"></div>
+    <div class="mca-item-center">
+      <div class="nav-photos-container">
+        <div class="sb-previous"> Précédente < </div>
+        <div class="sb-next"> > Suivante </div>
       </div>
-    <% else %>
-    <% end %>
-    <button class="close" data-dismiss="modal"><div class="icon-android-close"></div></button>
+    </div>
+
+    <div class="mca-item-end">
+      <div data-dismiss="modal"><div class="icon-android-close curs-point" style="font-size: 21px;"></div></div>
+    </div>
+
+  </div>
+
+
+
+
+
+      <div class="custom-dynamic-carousel" data-photos="<%= photos_for_carousel(@product.photos) %>"></div>
+
+
 </div>
 
 
+<script>
 
-<div class="modal-body-custom" style="height: 88%;padding-top: 0;padding-bottom: 0;">
-  <div class="modal-body-custom-container">
+  $( document).ready (function() {
+    var collection = $(".custom-dynamic-carousel").data("photos");
+    var collectionSize = collection.length - 1 ;
+    var circleContainer = $(".sb-step-circle");
+    var photoContainer = $(".custom-dynamic-carousel");
+    $(photoContainer).css("background-image", "url(" + collection[0] + ")");
+    var previousButton = $(".sb-previous");
+    var nextButton = $(".sb-next");
+    var step = 0;
 
-      <div class="modal-custom-product-headers">
-        <div class="modal-custom-product-headers-text">Caractéristiques</div>
-      </div>
-
-      <% if @product.infos.any? %>
-        <div class="modal-custom-product-infos">
-          <div class="infos-volets">
-            <% @product.infos.each do |info| %>
-
-              <div class="ccm-info-container" style="padding-left: 0;">
-                <div class="ccm-info-title"><%= info.title %></div>
-                <div class="ccm-info-content"><%= info.content %></div>
-              </div>
-
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+    for ( i = 1; i < (collectionSize + 2); i++ ) {
+        circleContainer.append($('<div class="sb-circle"' +  ' id="' + 'sbcircle-' + i + '"' + '>' + '</div>'));
+    }
 
 
-      <div class="modal-custom-product-headers">
-        <div class="icon-list-add icon-show-adjust"></div>
-        <div class="modal-custom-product-headers-text">Avantages</div>
-      </div>
+    var circleIdArray = new Array;
+    for ( i = 1; i < (collectionSize + 2); i++ ) {
+        circleIdArray.push($('#sbcircle-' + i));
+    }
+    $(circleIdArray[step]).addClass("active");
 
-       <% if @product.powers.any? %>
-                <div class="v3-prod-infos-v14">
-
-
-                  <% if @product.powers.last.sun == false %>
-                  <% else %>
-                    <div class="v3-power-item-cont" style="width: 12%;">
-                      <div class="icon-button-container">
-                        <div class="icon-sun pad-on-icons" style="font-size: 18px;"></div>
-                        <div class="v3-powers-text-on-hover-v2">Soleil</div>
-                      </div>
-                    </div>
-                  <% end %>
-
-                  <% if @product.powers.last.rain == false %>
-                  <% else %>
-                    <div class="v3-power-item-cont" style="width: 12%;">
-                      <div class="icon-button-container">
-                        <div class="icon-rain-2 pad-on-icons" style="font-size: 18px;"></div>
-                        <div class="v3-powers-text-on-hover-v2">Pluie</div>
-                      </div>
-                    </div>
-                  <% end %>
-
-                  <% if @product.powers.last.wind == false %>
-                  <% else %>
-                    <div class="v3-power-item-cont" style="width: 12%;">
-                      <div class="icon-button-container">
-                        <div class="icon-wind pad-on-icons" style="font-size: 18px;"></div>
-                        <div class="v3-powers-text-on-hover-v2">Vent</div>
-                      </div>
-                    </div>
-                  <% end %>
-
-                  <% if @product.powers.last.cold == false %>
-                  <% else %>
-                    <div class="v3-power-item-cont" style="width: 12%;">
-                      <div class="icon-button-container">
-                        <div class="icon-thermometer pad-on-icons" style="font-size: 18px;"></div>
-                        <div class="v3-powers-text-on-hover-v2">Froid</div>
-                      </div>
-                    </div>
-                  <% end %>
-
-                  <% if @product.powers.last.hot == false %>
-                  <% else %>
-                    <div class="v3-power-item-cont" style="width: 12%;">
-                      <div class="icon-button-container">
-                        <div class="icon-thermometer pad-on-icons" style="font-size: 18px;"></div>
-                        <div class="v3-powers-text-on-hover-v2">Chaleur</div>
-                      </div>
-                    </div>
-                  <% end %>
-
-                  <% if @product.powers.last.humidity == false %>
-                  <% else %>
-                    <div class="v3-power-item-cont" style="width: 12%;">
-                     <div class="icon-button-container">
-                        <div class="icon-droplet pad-on-icons" style="font-size: 18px;"></div>
-                        <div class="v3-powers-text-on-hover-v2">Humidité</div>
-                      </div>
-                    </div>
-                  <% end %>
-
-                  <% if @product.powers.last.energysaver == false %>
-                  <% else %>
-                    <div class="v3-power-item-cont" style="width: 12%;">
-                      <div class="icon-button-container">
-                        <div class="icon-battery pad-on-icons" style="font-size: 18px;"></div>
-                        <div class="v3-powers-text-on-hover-v2">Energie</div>
-                      </div>
-                    </div>
-                  <% end %>
-
-                  <% if @product.powers.last.taxsaver == false %>
-                  <% else %>
-                    <div class="v3-power-item-cont" style="width: 12%;">
-                     <div class="icon-button-container">
-                        <div class="icon-euro pad-on-icons" style="font-size: 18px;"></div>
-                        <div class="v3-powers-text-on-hover-v2">Impot</div>
-                      </div>
-                    </div>
-                  <% end %>
-
-                  <% if @product.powers.last.insects == false %>
-                  <% else %>
-                    <div class="v3-power-item-cont" style="width: 12%;">
-                      <div class="icon-button-container">
-                        <div class="icon-bug-1 pad-on-icons" style="font-size: 18px;"></div>
-                        <div class="v3-powers-text-on-hover-v2">Insectes</div>
-                      </div>
-                    </div>
-                  <% end %>
-
-                  <% if @product.powers.last.security == false %>
-                  <% else %>
-                    <div class="v3-power-item-cont" style="width: 12%;">
-                     <div class="icon-button-container">
-                        <div class="icon-lock-alt pad-on-icons" style="font-size: 18px;"></div>
-                        <div class="v3-powers-text-on-hover-v2">Sécurité</div>
-                      </div>
-                    </div>
-                  <% end %>
-
-                  <% if @product.powers.last.inside == false %>
-                  <% else %>
-                    <div class="v3-power-item-cont" style="width: 12%;">
-                      <div class="icon-button-container">
-                        <div class="icon-sun pad-on-icons" style="font-size: 18px;"></div>
-                        <div class="v3-powers-text-on-hover-v2">Intérieur</div>
-                      </div>
-                    </div>
-                  <% end %>
-
-                  <% if @product.powers.last.outside == false %>
-                  <% else %>
-                    <div class="v3-power-item-cont" style="width: 12%;">
-                      <div class="icon-button-container">
-                        <div class="icon-sun pad-on-icons" style="font-size: 18px;"></div>
-                        <div class="v3-powers-text-on-hover-v2">Exterieur</div>
-                      </div>
-                    </div>
-                  <% end %>
-
-                  <% if @product.powers.last.certification == false %>
-                  <% else %>
-                    <div class="v3-power-item-cont" style="width: 12%;">
-                      <div class="icon-button-container">
-                        <div class="icon-clipboard pad-on-icons" style="font-size: 18px;"></div>
-                        <div class="v3-powers-text-on-hover-v2">Certif</div>
-                      </div>
-                    </div>
-                  <% end %>
-
-                </div>
-              <% end %>
+    var filters = circleIdArray.filter(element => element != circleIdArray[step]);
+    $(filters).each(function() {
+      $(this).removeClass('active');
+    });
 
 
 
 
+    if (collectionSize < 2) {
+      $(nextButton).hide();
+      $(previousButton).hide();
+    }
+
+    $(nextButton).click(function() {
+      console.log(collectionSize);
+      step += 1;
+      if (step > collectionSize) {
+        step = 0
+        $(photoContainer).css("background-image", "url(" + collection[step] + ")");
+        $(circleIdArray[step]).addClass("active");
+        filters = circleIdArray.filter(element => element != circleIdArray[step]);
+        $(filters).each(function() {
+          $(this).removeClass('active');
+        });
+      } else {
+        $(photoContainer).css("background-image", "url(" + collection[step] + ")");
+        $(circleIdArray[step]).addClass("active");
+        filters = circleIdArray.filter(element => element != circleIdArray[step]);
+        $(filters).each(function() {
+          $(this).removeClass('active');
+        });
+      }
+    });
+
+    $(previousButton).click(function() {
+      if (step == 0) {
+        step = collectionSize;
+        $(photoContainer).css("background-image", "url(" + collection[step] + ")");
+        $(circleIdArray[step]).addClass("active");
+        filters = circleIdArray.filter(element => element != circleIdArray[step]);
+        $(filters).each(function() {
+          $(this).removeClass('active');
+        });
+      } else {
+        step -= 1;
+        $(photoContainer).css("background-image", "url(" + collection[step] + ")");
+        $(circleIdArray[step]).addClass("active");
+        filters = circleIdArray.filter(element => element != circleIdArray[step]);
+        $(filters).each(function() {
+          $(this).removeClass('active');
+        });
+      }
+      console.log(step);
+    });
 
 
-      <div class="modal-custom-product-headers">
-        <div class="icon-aperture icon-show-adjust"></div>
-        <div class="modal-custom-product-headers-text">Photos</div>
-      </div>
-
-      <div class="modal-custom-product-photo" style="background-image: url(<%=  cl_image_path @product.photos.first.path if @product.photos.any? %>)"></div>
 
 
-   </div>
-</div>
+  });
 
-
-
-
-
-
-
-
+</script>
 
