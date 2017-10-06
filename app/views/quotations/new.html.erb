@@ -1,11 +1,7 @@
 
 <div class="quot-container-v3">
 
-  <div class="qcv3-abs">
-    <%= link_to :back do %>
-      <div class="return-link">Retour aux produits</div>
-    <% end %>
-  </div>
+
 
 <div class="cct-asc-relative-column">
   <div class="icon-caret-up cct-asc-caret-up"></div>
@@ -22,18 +18,12 @@
 
     <div class="wiz-header-container">
 
-      <div class="wizard-header" id="wizard-header">
-          <div class="steps text-center">
-            <div id="ws-01" class="wizard-step active">
-              <div class="wizard-step-abs-text"><div class="wsat-font">1</div></div>
-            </div>
-            <div id="ws-02" class="wizard-step">
-              <div class="wizard-step-abs-text"><div class="wsat-font">2</div></div>
-            </div>
-            <div id="ws-03" class="wizard-step">
-              <div class="wizard-step-abs-text"><div class="wsat-font">3</div></div>
-            </div>
-          </div>
+      <div class="steps-dynamic">
+        <div class="item-dynamic active" id="step1">1</div>
+        <div class="line-1"></div>
+        <div class="item-dynamic" id="step2">2</div>
+        <div class="line-2"></div>
+        <div class="item-dynamic" id="step3">3</div>
       </div>
 
     </div>
@@ -77,8 +67,7 @@
 
 
                     <div class="score-form-button" id="wizard-step1-next">
-                      <div class="imp-red-button">suivant</div>
-                      <div class="sfbi-circle"><i class="fa fa-arrow-right" style="font-size: 9px;"></i></div>
+                      <div class="">suivant</div>
                     </div>
 
 
@@ -133,13 +122,13 @@
 
 
                     <div class="score-form-button" id="wizard-step2-prev">
-                      <div class="sfbi-circle"><i class="fa fa-arrow-left" style="font-size: 9px;"></i></div>
-                      <div class="imp-red-button">précèdent</div>
+                      <div class="">précèdent</div>
                     </div>
 
+                    <div class="nav-separator"></div>
+
                     <div class="score-form-button" id="wizard-step2-next">
-                      <div class="imp-red-button">suivant</div>
-                      <div class="sfbi-circle"><i class="fa fa-arrow-right" style="font-size: 9px;"></i></div>
+                      <div class="">suivant</div>
                     </div>
 
                 </div>
@@ -159,13 +148,13 @@
 
 
                     <div class="score-form-button" id="wizard-step3-prev">
-                      <div class="sfbi-circle"><i class="fa fa-arrow-left" style="font-size: 9px;"></i></div>
-                      <div class="imp-red-button">précèdent</div>
+                      <div class="">précèdent</div>
                     </div>
 
+                    <div class="nav-separator"></div>
+
                     <%= f.button :button, class: "score-form-button", id: "wizard-subm" do %>
-                      <div class="imp-green-button">Valider</div>
-                      <div class="sfbi-circle-green"><i class="icon-android-done score-form-big-icon-v3"></i></div>
+                      <div class="">Valider</div>
                     <% end %>
 
                 </div>
@@ -194,10 +183,6 @@
 
  var wizardLogic = function() {
 
-    var step1 = $(".wizard-header" + " #ws-01");
-    var step2 = $(".wizard-header" + " #ws-02");
-    var step3 = $(".wizard-header" + " #ws-03");
-
     var realStep1 = $(".wizard-body" + " #step-1");
     var realStep2 = $(".wizard-body" + " #step-2");
     var realStep3 = $(".wizard-body" + " #step-3");
@@ -207,54 +192,92 @@
     var step2Prev = $("#wizard-step2-prev");
     var step3Prev = $("#wizard-step3-prev");
 
+    var num = 1;
+
 
     $(step1Next).click(function() {
       $(realStep1).removeClass("active");
-      $(step1).removeClass("active");
       $(realStep2).addClass("active");
-      $(step2).addClass("active");
-      console.log("coucou");
+      if (num >= 3) {
+        num = 3;
+      }
+      num += 1;
+      if (num == 2) {
+        $('.line-1').css('border-color', "#6BC5D2");
+        $('#step2').addClass('active');
+      } else if (num == 3) {
+        $('.line-2').css('border-color', "#6BC5D2");
+        $('#step3').addClass('active');
+      } else if (num > 3) {
+        num -= 1;
+      }
     });
 
     $(step2Prev).click(function() {
       $(realStep2).removeClass("active");
-      $(step2).removeClass("active");
       $(realStep1).addClass("active");
-      $(step1).addClass("active");
+      if (num == 2) {
+        $('.line-1').css('border-color', "transparent");
+        $('#step2').removeClass('active');
+        num -= 1;
+      } else if (num > 2) {
+        num -= 1;
+        $('.line-2').css('border-color', "transparent");
+        $('#step3').removeClass('active');
+      } else if (num == 1) {
+        num = 1;
+      }
     });
 
     $(step2Next).click(function() {
       $(realStep2).removeClass("active");
-      $(step2).removeClass("active");
       $(realStep3).addClass("active");
-      $(step3).addClass("active");
+      if (num >= 3) {
+        num = 3;
+      }
+      num += 1;
+      if (num == 2) {
+        $('.line-1').css('border-color', "#6BC5D2");
+        $('#step2').addClass('active');
+      } else if (num == 3) {
+        $('.line-2').css('border-color', "#6BC5D2");
+        $('#step3').addClass('active');
+      } else if (num > 3) {
+        num -= 1;
+      }
     });
 
     $(step3Prev).click(function() {
       $(realStep3).removeClass("active");
-      $(step3).removeClass("active");
       $(realStep2).addClass("active");
-      $(step2).addClass("active");
+      if (num == 2) {
+        $('.line-1').css('border-color', "transparent");
+        $('#step2').removeClass('active');
+        num -= 1;
+      } else if (num > 2) {
+        num -= 1;
+        $('.line-2').css('border-color', "transparent");
+        $('#step3').removeClass('active');
+      } else if (num == 1) {
+        num = 1;
+      }
     });
 
   };
 
   wizardLogic();
 
-  $('.custom-backdrop').click(function() {
-    $(".cct-absolute-quotation-container").hide("slide",{direction:'up'},"fast");
-    $(".custom-card").removeClass('dynamic-bottom-margin-big');
-    $(this).addClass('hidden');
-  });
 
   $( ".ajax-form-flex .form-group input" ).focusin(function() {
     var test = $(this).parent().parent().parent();
     $(test).addClass("javascript-border");
+    console.log(test);
   });
 
   $( ".ajax-form-flex .form-group input" ).focusout(function() {
     var test = $(this).parent().parent().parent();
     $(test).removeClass("javascript-border");
+    console.log(test);
   });
 
 </script>
