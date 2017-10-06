@@ -8,5 +8,4 @@ class Quotation < ApplicationRecord
   validates :blindtype, presence: { message: "type de produit requis" }
   validates :message, presence: { message: "message requis" }
   validates :address, presence: { message: "adresse requise" }
-  belongs_to :product
 end

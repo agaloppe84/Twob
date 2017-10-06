@@ -2,7 +2,6 @@ class QuotationsController < ApplicationController
   before_action :set_quotation, only: [:edit, :update, :destroy, :confirmation, :show]
   skip_before_action :authenticate_user!, only: [:new, :create, :confirmation]
   before_action :set_category_name, only: [:new, :create]
-  before_action :find_product, only: [:new, :create]
 
 
   def index
@@ -15,10 +14,18 @@ class QuotationsController < ApplicationController
 
   def new
     @quotation = Quotation.new
+    if params[:product_name].nil? and params[:blindtype].nil?
+      @coming_from_product = false
+      @product_name = "SAV"
+    else
+      @coming_from_product = true
+      @product_name = params[:product_name]
+      @product_category_name = params[:blindtype]
+    end
   end
 
   def create
-    @quotation = @product.quotations.build(quotation_params)
+    @quotation = Quotation.new(quotation_params)
     if @quotation.save
       # QuotationMailer.success(@quotation).deliver_now
       redirect_to controller: 'quotations', action: 'confirmation', id: @quotation.id
@@ -55,12 +62,8 @@ class QuotationsController < ApplicationController
     @quotation = Quotation.find(params[:id])
   end
 
-  def find_product
-    @product = Product.find(params[:product_id])
-  end
-
   def quotation_params
-    params.require(:quotation).permit(:email, :lastname, :firstname, :city, :phone, :zipcode, :blindtype, :message, :address, :treated, :product_name, :product_id)
+    params.require(:quotation).permit(:email, :lastname, :firstname, :city, :phone, :zipcode, :blindtype, :message, :address, :treated, :product_name)
   end
 
   def set_category_name

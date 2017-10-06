@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :quotations, only: [:index, :edit, :update, :show]
+  resources :quotations, only: [:new, :create, :index, :edit, :update, :show]
   resources :promos, only: [:index]
 
   resources :categories do
@@ -38,7 +38,6 @@ Rails.application.routes.draw do
       resources :infos
       resources :powers
       resources :brands
-      resources :quotations, only: [:new, :create]
     end
   end
 

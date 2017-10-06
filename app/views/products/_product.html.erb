@@ -40,7 +40,7 @@
     <%= render 'scores/form', category: product.category, product: product, score: @score %>
 
     <div class="ccb-middle">
-      <%= link_to new_category_product_quotation_path(product.category, product) do %>
+      <%= link_to new_quotation_path(html_options = {product_name: product.title, blindtype: product.category.name }) do %>
         <div>devis gratuit</div>
       <% end %>
     </div>

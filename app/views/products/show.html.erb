@@ -22,11 +22,7 @@
 
   </div>
 
-
-
-
-
-      <div class="custom-dynamic-carousel" data-photos="<%= photos_for_carousel(@product.photos) %>"></div>
+  <div class="custom-dynamic-carousel" data-photos="<%= photos_for_carousel(@product.photos) %>"></div>
 
 
 </div>
@@ -34,7 +30,7 @@
 
 <script>
 
-  $( document).ready (function() {
+  $(document).ready (function() {
     var collection = $(".custom-dynamic-carousel").data("photos");
     var collectionSize = collection.length - 1 ;
     var circleContainer = $(".sb-step-circle");

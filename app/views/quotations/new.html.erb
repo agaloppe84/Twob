@@ -10,9 +10,9 @@
 <div class="cct-asc-relative-column">
   <div class="icon-caret-up cct-asc-caret-up"></div>
 
-    <%= simple_form_for [@product.category, @product, @quotation] do |f| %>
+    <%= simple_form_for (@quotation) do |f| %>
 
-    <div class="wizard" id="wizard-<%= @product.id %>">
+    <div class="wizard" id="wizard">
 
     <div class="cct-asc-rel-col-header">
         <div class="hcp-block-end-date"><%= "Devis en ligne" %></div>
@@ -22,7 +22,7 @@
 
     <div class="wiz-header-container">
 
-      <div class="wizard-header" id="wizard-header-<%= @product.id %>">
+      <div class="wizard-header" id="wizard-header">
           <div class="steps text-center">
             <div id="ws-01" class="wizard-step active">
               <div class="wizard-step-abs-text"><div class="wsat-font">1</div></div>
@@ -39,34 +39,40 @@
     </div>
 
       <div class="cct-asc-rel-col-footer">
-        <div class="wizard-body" id="wizard-body-<%= @product.id %>">
+        <div class="wizard-body" id="wizard-body">
 
           <div id="step-1" class="step active">
 
             <div class="ajax-form-flex">
-              <div class="ajax-form-flex-item-left">
+              <div class="ajax-form-flex-item-left" style="width: 100%;border: none;">
                 <div class="ajax-form-flex-icon"><div class="icon-mail"></div></div>
                 <%= f.input :email, label: false, placeholder: 'email' %>
               </div>
-              <div class="ajax-form-flex-item-right">
+            </div>
+
+            <div class="ajax-form-flex">
+              <div class="ajax-form-flex-item-left" style="width: 100%;border: none;">
                 <div class="ajax-form-flex-icon"><div class="icon-phone"></div></div>
                 <%= f.input :phone, label: false, placeholder: 'téléphone' %>
               </div>
             </div>
 
             <div class="ajax-form-flex">
-              <div class="ajax-form-flex-item-left">
+              <div class="ajax-form-flex-item-left" style="width: 100%;border: none;">
                 <div class="ajax-form-flex-icon"><div class="icon-user"></div></div>
                 <%= f.input :lastname, label: false, placeholder: 'nom' %>
               </div>
-              <div class="ajax-form-flex-item-right">
+            </div>
+
+            <div class="ajax-form-flex">
+              <div class="ajax-form-flex-item-left" style="width: 100%;border: none;">
                 <div class="ajax-form-flex-icon"><div class="icon-user"></div></div>
                 <%= f.input :firstname, label: false, placeholder: 'prénom' %>
               </div>
             </div>
 
             <div class="cct-real-footer">
-              <div class="wizard-footer" id="wizard-footer-<%= @product.id %>">
+              <div class="wizard-footer" id="wizard-footer">
                 <div class="exclusive-display-flex">
 
 
@@ -85,11 +91,14 @@
           <div id="step-2" class="step">
 
             <div class="ajax-form-flex">
-              <div class="ajax-form-flex-item-left">
+              <div class="ajax-form-flex-item-left" style="width: 100%;border: none;">
                 <div class="ajax-form-flex-icon"><div class="icon-target"></div></div>
                 <%= f.input :city, label: false, placeholder: 'ville' %>
               </div>
-              <div class="ajax-form-flex-item-right">
+            </div>
+
+            <div class="ajax-form-flex">
+              <div class="ajax-form-flex-item-left" style="width: 100%;border: none;">
                 <div class="ajax-form-flex-icon"><div class="icon-target"></div></div>
                 <%= f.input :zipcode, label: false, placeholder: 'code postal' %>
               </div>
@@ -102,8 +111,24 @@
               </div>
             </div>
 
+            <% if @coming_from_product == true %>
+
+               <%= f.input :blindtype, input_html: { value: @product_category_name }, as: :hidden %>
+
+            <% else %>
+
+              <div class="ajax-form-flex">
+                <div class="ajax-form-flex-item-left" style="width: 100%;border: none;">
+                  <div class="ajax-form-flex-icon"><div class="icon-target"></div></div>
+                  <%= f.input :blindtype, collection: @category_names, label: false, select: 'Type de produit' %>
+                </div>
+              </div>
+
+            <% end %>
+
+
             <div class="cct-real-footer">
-              <div class="wizard-footer" id="wizard-footer-<%= @product.id %>">
+              <div class="wizard-footer" id="wizard-footer">
                 <div class="exclusive-display-flex">
 
 
@@ -124,11 +149,12 @@
           </div>
 
           <div id="step-3" class="step">
-            <%= f.input :blindtype, input_html: { value: @product.category.name.capitalize }, as: :hidden %>
-            <%= f.input :product_name, input_html: { value: @product.title }, as: :hidden %>
+
+
+            <%= f.input :product_name, input_html: { value: @product_name }, as: :hidden %>
             <%= f.input :message, label: false, placeholder: 'message' %>
             <div class="cct-real-footer">
-              <div class="wizard-footer" id="wizard-footer-<%= @product.id %>">
+              <div class="wizard-footer" id="wizard-footer">
                 <div class="exclusive-display-flex">
 
 
@@ -219,6 +245,16 @@
     $(".cct-absolute-quotation-container").hide("slide",{direction:'up'},"fast");
     $(".custom-card").removeClass('dynamic-bottom-margin-big');
     $(this).addClass('hidden');
+  });
+
+  $( ".ajax-form-flex .form-group input" ).focusin(function() {
+    var test = $(this).parent().parent().parent();
+    $(test).addClass("javascript-border");
+  });
+
+  $( ".ajax-form-flex .form-group input" ).focusout(function() {
+    var test = $(this).parent().parent().parent();
+    $(test).removeClass("javascript-border");
   });
 
 </script>
