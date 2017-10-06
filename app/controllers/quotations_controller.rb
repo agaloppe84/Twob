@@ -68,6 +68,8 @@ class QuotationsController < ApplicationController
 
   def set_category_name
     @category_names = Category.all.map { |category| category.name.capitalize }
+    @category_names << "Catégorie de produit"
+    @category_names = @category_names.reverse
   end
 
 end

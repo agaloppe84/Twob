@@ -120,7 +120,7 @@
               <div class="ajax-form-flex">
                 <div class="ajax-form-flex-item-left" style="width: 100%;border: none;">
                   <div class="ajax-form-flex-icon"><div class="icon-target"></div></div>
-                  <%= f.input :blindtype, collection: @category_names, label: false, select: 'Type de produit' %>
+                  <%= f.input :blindtype, collection: @category_names, label: false, selected: @category_names.first %>
                 </div>
               </div>
 
