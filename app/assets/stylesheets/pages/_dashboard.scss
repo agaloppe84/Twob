@@ -2337,7 +2337,7 @@ textarea#quotation_message {
 }
 
 .conf-fullpage-item {
-  width: 40%;
+  width: 43%;
   background-color: white;
   border-radius: 3px;
   display: flex;
@@ -2346,6 +2346,12 @@ textarea#quotation_message {
   flex-direction: column;
   padding: 22px;
   position: relative;
+}
+
+@media (max-width: 768px) {
+  .conf-fullpage-item {
+    width: 84%;
+  }
 }
 
 .conf-text {
@@ -2372,6 +2378,12 @@ textarea#quotation_message {
   font-size: 15px;
   font-family: "Circular-Book";
   opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .conf-text-small-v2 {
+    font-size: 12px;
+  }
 }
 
 .conf-text-email {

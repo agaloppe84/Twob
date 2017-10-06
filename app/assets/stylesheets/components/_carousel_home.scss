@@ -75,6 +75,11 @@
   font-family: "Circular-Book";
 }
 
+@media (max-width: 768px) {
+  .sb-photo-title {
+    font-size: 10px;
+  }
+}
 
 
 
@@ -88,7 +93,6 @@
 }
 
 .nav-photos-container {
-  width: 200px;
   height: 100%;
   display: flex;
   align-items: center;
