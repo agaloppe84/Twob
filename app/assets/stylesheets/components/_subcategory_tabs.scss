@@ -9,6 +9,17 @@
   margin-bottom: 20px;
 }
 
+.subcategory-container-promo {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: -45px;
+}
+
 .subcategory-text {
   font-size: 14px;
   font-family: "Circular-Book";
@@ -61,3 +72,55 @@
 }
 
 
+
+
+
+
+
+
+
+
+.flex-form-step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  height: 75%;
+  font-size: 21px;
+}
+
+.left-form-step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid grey;
+  font-family: "Circular-Book";
+  color: grey;
+  cursor: pointer;
+  padding-bottom: 3px;
+}
+
+.right-form-step {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid grey;
+  font-family: "Circular-Book";
+  color: grey;
+  cursor: pointer;
+  padding-bottom: 3px;
+}
+
+
+.text-form-step {
+  font-family: "Circular-Book";
+  font-size: 20px;
+}

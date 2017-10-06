@@ -25,17 +25,17 @@
             <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
             <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;opacity: 0.5;"></i>
             <div class="subcategory-product-count"><%= "#{category.products.length} produits" %></div>
-            <% if category.promos.any? %>
-              <div class="subcategory-separator"></div>
-
-                <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
-                <div class="hcp-block">
-                  <div class="hcp-block-category"><%= "Promotions" %></div>
-                </div>
-                <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
-                <div class="hcp-title">voir les détails</div>
-                <i class="fa fa-caret-right" aria-hidden="true" style="color: #EE5F5B;"></i>
-
-            <% end %>
           </div>
+          <% if category.promos.any? %>
+            <div class="subcategory-container-promo">
+              <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
+              <div class="hcp-block">
+                <div class="hcp-block-category"><%= "Promotions" %></div>
+              </div>
+              <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
+              <div class="hcp-title">voir les détails</div>
+              <i class="fa fa-caret-right" aria-hidden="true" style="color: #EE5F5B;"></i>
+            </div>
+          <% end %>
+
 <% end %>

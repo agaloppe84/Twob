@@ -6,26 +6,29 @@
     <%= simple_form_for([ category, product, score ], remote: true) do |form| %>
 
 
-      <div class="range-slider">
-        <input class="range-slider__range" type="range" value="1" min="1" max="10" step="1" name="score[value]" id="score_value">
-        <span class="range-slider__value">1</span>
+      <div class="flex-form-step">
+        <div class="left-form-step">-</div>
+        <input type="number" value="5" name="score[value]" id="score_value" data-number="5" class="hidden" data-product="<%= product.id %>">
+        <div class="text-form-step">5</div>
+        <div class="right-form-step">+</div>
       </div>
+
+
 
 
       <div class="exclusive-display-flex">
 
-        <%= form.button :button, class: "score-form-validate-button", data: { id: product.id } do %>
-          <div class="sfbi-circle-green"><i class="icon-android-done score-form-big-icon-v3"></i></div>
-          <div class="imp-green-button">Valider</div>
-        <% end %>
-
         <div class="score-form-cancel-button" data-id="<%= product.id %>">
-          <div class="sfbi-circle"><i class="icon-android-close score-form-big-icon-v3"></i></div>
           <div class="imp-red-button">Annuler</div>
         </div>
+
+        <%= form.submit "Valider", class: "score-form-validate-button", data: { id: product.id } do %>
+          <div class="imp-green-button">Valider</div>
+        <% end %>
 
       </div>
 
     <% end %>
   </div>
 </div>
+
