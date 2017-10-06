@@ -4,7 +4,7 @@
   <div class="modal-custom-absolute">
 
     <div class="mca-item-start">
-      <div class="sb-photo-title hidden-xs"><%= @product.title %></div>
+      <div class="sb-photo-title"><%= @product.title %></div>
       <div class="sb-photos-count hidden-xs"><%= @product.photos.length > 1 ? "#{@product.photos.length} photos" : "1 photo" %></div>
       <div class="sb-step-circle <%= "hidden" if @product.photos.length <= 1 %> hidden-xs"></div>
     </div>
