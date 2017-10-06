@@ -201,7 +201,11 @@ form#new_score {
   transition: 0.3s ease;
 }
 
-
+#new_score input[type="submit"]{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
 
 
 
