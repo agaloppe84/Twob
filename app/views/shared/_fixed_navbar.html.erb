@@ -1,6 +1,6 @@
 <div class="navigation-v2-fixed">
 
-  <div class="logo-absolute-nav">
+  <div class="logo-absolute-nav hidden-xs">
    <%= image_tag("logo.png", size: "22x22", alt: "Logo") %>
    <!--  <div class="logo-in-text">les</div>
     <div class="logo-in-text-bold">artisans</div>
@@ -13,9 +13,11 @@
       <%= link_to root_path do %>
 
         <% if current_page?(root_path) %>
-          <div class="nav-small-link-design" style="color: #EE5F5B;">accueil</div>
+          <div class="nav-small-link-design hidden-xs" style="color: #EE5F5B;">accueil</div>
+          <div class="icon-home visible-xs" style="color: #EE5F5B;font-size: 22px;padding-top: 5px;"></div>
         <% else %>
-          <div class="nav-small-link-design">accueil</div>
+          <div class="nav-small-link-design hidden-xs">accueil</div>
+          <div class="icon-home visible-xs" style="font-size: 22px;padding-top: 5px;"></div>
         <% end %>
 
       <% end %>
@@ -27,9 +29,11 @@
       <%= link_to categories_path do %>
 
         <% if current_page?(categories_path) %>
-          <div class="nav-small-link-design" style="color: #EE5F5B;">produits</div>
+          <div class="nav-small-link-design hidden-xs" style="color: #EE5F5B;">produits</div>
+          <div class="icon-blinds visible-xs" style="color: #EE5F5B;font-size: 22px;padding-top: 5px;"></div>
         <% else %>
-          <div class="nav-small-link-design">produits</div>
+          <div class="nav-small-link-design hidden-xs">produits</div>
+          <div class="icon-blinds visible-xs" style="font-size: 22px;padding-top: 5px;"></div>
         <% end %>
 
       <% end %>
@@ -41,9 +45,11 @@
       <%= link_to promos_path do %>
 
         <% if current_page?(promos_path) %>
-          <div class="nav-small-link-design" style="color: #EE5F5B;">promos</div>
+          <div class="nav-small-link-design hidden-xs" style="color: #EE5F5B;">promos</div>
+          <div class="icon-flash visible-xs" style="color: #EE5F5B;font-size: 22px;padding-top: 5px;"></div>
         <% else %>
-          <div class="nav-small-link-design">promos</div>
+          <div class="nav-small-link-design hidden-xs">promos</div>
+          <div class="icon-flash visible-xs" style="font-size: 22px;padding-top: 5px;"></div>
         <% end %>
 
       <% end %>
@@ -55,9 +61,11 @@
       <%= link_to new_quotation_path do %>
 
         <% if current_page?(new_quotation_path) %>
-          <div class="nav-small-link-design" style="color: #EE5F5B;">devis</div>
+          <div class="nav-small-link-design hidden-xs" style="color: #EE5F5B;">devis</div>
+          <div class="icon-certification visible-xs" style="color: #EE5F5B;font-size: 22px;padding-top: 5px;"></div>
         <% else %>
-          <div class="nav-small-link-design">devis</div>
+          <div class="nav-small-link-design hidden-xs">devis</div>
+          <div class="icon-certification visible-xs" style="font-size: 22px;padding-top: 5px;"></div>
         <% end %>
 
       <% end %>
@@ -71,7 +79,7 @@
    </div>
 
    <div class="nav-small-top-link visible-xs">
-      <div class="nav-small-link-design" id="dgl-true-link-mobile">catégories</div>
+      <div class="icon-grid" id="dgl-true-link-mobile" style="font-size: 22px;padding-top: 5px;"></div>
    </div>
 
   <% end %>

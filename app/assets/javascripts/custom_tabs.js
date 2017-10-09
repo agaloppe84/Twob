@@ -39,6 +39,7 @@ $('#dgl-true-link-mobile').click(function() {
 $('#category-close-cross').click(function() {
     $('.type-index-v2-header-mobile').toggle();
     $(".custom-backdrop-v5").toggleClass('hidden');
+    $('#dgl-true-link-mobile').toggleClass('dynamic-green-link');
 });
 
 
