@@ -110,6 +110,7 @@
                 <div class="ajax-form-flex-item-left" style="width: 100%;border: none;">
                   <div class="ajax-form-flex-icon"><div class="icon-target"></div></div>
                   <%= f.input :blindtype, collection: @category_names, label: false, selected: @category_names.first %>
+                  <div class="ajax-form-flex-icon" style="cursor: pointer;" id="select_trigger"><div class="icon-angle-down"></div></div>
                 </div>
               </div>
 
@@ -271,16 +272,18 @@
   $( ".ajax-form-flex .form-group input" ).focusin(function() {
     var test = $(this).parent().parent().parent();
     $(test).addClass("javascript-border");
-    console.log(test);
   });
 
   $( ".ajax-form-flex .form-group input" ).focusout(function() {
     var test = $(this).parent().parent().parent();
     $(test).removeClass("javascript-border");
-    console.log(test);
   });
 
+
+
+
 </script>
+
 
 <% end %>
 
