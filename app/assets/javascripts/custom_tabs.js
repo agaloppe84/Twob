@@ -33,4 +33,5 @@ $('#dgl-true-link').click(function() {
 $('#dgl-true-link-mobile').click(function() {
     $('.type-index-v2-header-mobile').toggle();
     $(this).toggleClass('dynamic-green-link');
+    $(".custom-backdrop-v5").toggleClass('hidden');
 });

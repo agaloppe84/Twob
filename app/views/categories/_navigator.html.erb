@@ -24,23 +24,14 @@
 
 <div class="type-index-v2-header-mobile">
     <div class="header-container-mobile">
-      <ul class="nav nav-pills">
+
       <% @only_categories.each do |category| %>
-        <% if category == @only_categories.first %>
-            <div class="subcategory-separator"></div>
-            <li role="presentation" class="active active-link-class" id="active-link-ajax-<%= category.id %>">
-              <div class="menu-index-active"></div>
-              <a href="#" data-id="<%= category.id %>" class="custom-tablink"><%= composed_plurname(category.name) %></a>
-            </li>
-            <div class="subcategory-separator"></div>
-        <% else %>
-            <li role="presentation" id="active-link-ajax-<%= category.id %>" class="active-link-class">
-              <div class="menu-index-active"></div>
-              <a href="#" data-id="<%= category.id %>" class="custom-tablink"><%= composed_plurname(category.name) %></a>
-            </li>
-            <div class="subcategory-separator"></div>
-        <% end %>
+          <div class="custom-tablink-mobile <%= 'active' if category == @only_categories.first %>" data-id="<%= category.id %>">
+            <div><%= composed_plurname(category.name) %></div>
+            <div class="custom-tablink-mobile-count"><%= "#{category.products.length} produits" %></div>
+          </div>
       <% end %>
-      </ul>
+
     </div>
 </div>
+
