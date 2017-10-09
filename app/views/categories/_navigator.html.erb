@@ -1,5 +1,29 @@
-<div class="type-index-v2-header">
+<div class="type-index-v2-header hidden-xs">
     <div class="leftblock-content-show">
+      <ul class="nav nav-pills">
+      <% @only_categories.each do |category| %>
+        <% if category == @only_categories.first %>
+            <div class="subcategory-separator"></div>
+            <li role="presentation" class="active active-link-class" id="active-link-ajax-<%= category.id %>">
+              <div class="menu-index-active"></div>
+              <a href="#" data-id="<%= category.id %>" class="custom-tablink"><%= composed_plurname(category.name) %></a>
+            </li>
+            <div class="subcategory-separator"></div>
+        <% else %>
+            <li role="presentation" id="active-link-ajax-<%= category.id %>" class="active-link-class">
+              <div class="menu-index-active"></div>
+              <a href="#" data-id="<%= category.id %>" class="custom-tablink"><%= composed_plurname(category.name) %></a>
+            </li>
+            <div class="subcategory-separator"></div>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
+</div>
+
+
+<div class="type-index-v2-header-mobile">
+    <div class="header-container-mobile">
       <ul class="nav nav-pills">
       <% @only_categories.each do |category| %>
         <% if category == @only_categories.first %>

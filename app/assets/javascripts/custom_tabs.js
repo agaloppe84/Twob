@@ -29,3 +29,8 @@ $('#dgl-true-link').click(function() {
     $('.type-index-v2-header').toggle();
     $(this).toggleClass('dynamic-green-link');
 });
+
+$('#dgl-true-link-mobile').click(function() {
+    $('.type-index-v2-header-mobile').toggle();
+    $(this).toggleClass('dynamic-green-link');
+});

@@ -1,5 +1,5 @@
 <% if category.has_sub_category %>
-          <div class="subcategory-container">
+          <div class="subcategory-container" style="background-color: <%= category.color %>;">
             <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
              <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;opacity: 0.5;"></i>
             <div class="subcategory-product-count"><%= "#{category.products.length} produits" %></div>
@@ -21,7 +21,7 @@
             <% end %>
           </div>
         <% else %>
-          <div class="subcategory-container">
+          <div class="subcategory-container" style="background-color: <%= category.color %>;">
             <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
             <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;opacity: 0.5;"></i>
             <div class="subcategory-product-count"><%= "#{category.products.length} produits" %></div>

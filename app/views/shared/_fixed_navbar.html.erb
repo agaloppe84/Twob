@@ -66,8 +66,12 @@
   <% if current_page?(categories_path) %>
     <div class="subcategory-separator"></div>
 
-   <div class="nav-small-top-link">
+   <div class="nav-small-top-link hidden-xs">
       <div class="nav-small-link-design dynamic-green-link" id="dgl-true-link">catégories</div>
+   </div>
+
+   <div class="nav-small-top-link visible-xs">
+      <div class="nav-small-link-design" id="dgl-true-link-mobile">catégories</div>
    </div>
 
   <% end %>
