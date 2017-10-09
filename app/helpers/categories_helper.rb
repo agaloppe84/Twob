@@ -42,15 +42,44 @@ module CategoriesHelper
     end
   end
 
+  def power_in_french(power)
+    if power == "cold"
+      "Froid"
+    elsif power == "hot"
+      "Chaleur"
+    elsif power == "inside"
+      "Intérieur"
+    elsif power == "outside"
+      "Extérieur"
+    elsif power == "certification"
+      "Certification"
+    elsif power == "humidity"
+      "Humidité"
+    elsif power == "energysaver"
+      "Economie d'energie"
+    elsif power == "taxsaver"
+      "Remise d'impôt"
+    elsif power == "security"
+      "Sécurité"
+    elsif power == "sun"
+      "Soleil"
+    elsif power == "rain"
+      "Pluie"
+    else
+      "Not found"
+    end
+  end
+
   def active_powers(power_collection, full)
     @active_powers = (power_collection.last.attributes.map {|attr| attr[0] if attr[-1] == true}).compact
     if full == true
-      @active_powers_tags = @active_powers.map {|power| ("<div class='cct-asc-rel-item'><div class='product-guarantee-circle new-red-color'><div class='icon-#{power} cct-icon-size'></div></div><div class='cct-asc-bigtext'>#{power}</div></div>").html_safe}
+      @active_powers_tags = @active_powers.map {|power| ("<div class='cct-asc-rel-item'><div class='product-guarantee-circle new-red-color'><div class='icon-#{power} cct-icon-size'></div></div><div class='cct-asc-bigtext'>#{power_in_french(power)}</div></div>").html_safe}
     else
-      @active_powers_tags = @active_powers.last(3).map {|power| ("<div class='cct-asc-rel-item'><div class='product-guarantee-circle new-red-color'><div class='icon-#{power} cct-icon-size'></div></div><div class='cct-asc-bigtext'>#{power}</div></div>").html_safe}
+      @active_powers_tags = @active_powers.last(3).map {|power| ("<div class='cct-asc-rel-item'><div class='product-guarantee-circle new-red-color'><div class='icon-#{power} cct-icon-size'></div></div><div class='cct-asc-bigtext'>#{power_in_french(power)}</div></div>").html_safe}
     end
     @active_powers_tags
   end
+
 
   def infos_constructor(infos_collection, container_tag, content_tag)
     @infos = (infos_collection.map {|info| [info.attributes["title"], info.attributes["content"]]}).reverse
