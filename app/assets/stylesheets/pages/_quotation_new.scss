@@ -123,6 +123,9 @@ select {
   appearance: none !important;
 }
 
-button {
+input[type="submit"] {
   appearance: none !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
