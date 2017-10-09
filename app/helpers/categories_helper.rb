@@ -42,9 +42,13 @@ module CategoriesHelper
     end
   end
 
-  def active_powers(power_collection)
+  def active_powers(power_collection, full)
     @active_powers = (power_collection.last.attributes.map {|attr| attr[0] if attr[-1] == true}).compact
-    @active_powers_tags = @active_powers.map {|power| ("<div class='cct-icon icon-#{power}'></div>").html_safe}
+    if full == true
+      @active_powers_tags = @active_powers.map {|power| ("<div class='cct-asc-rel-item'><div class='product-guarantee-circle new-red-color'><div class='icon-#{power} cct-icon-size'></div></div><div class='cct-asc-bigtext'>#{power}</div></div>").html_safe}
+    else
+      @active_powers_tags = @active_powers.last(3).map {|power| ("<div class='cct-asc-rel-item'><div class='product-guarantee-circle new-red-color'><div class='icon-#{power} cct-icon-size'></div></div><div class='cct-asc-bigtext'>#{power}</div></div>").html_safe}
+    end
     @active_powers_tags
   end
 

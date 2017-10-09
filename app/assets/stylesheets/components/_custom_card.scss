@@ -21,7 +21,7 @@
 
 .cct-absolute-services-container {
   width: 100%;
-  height: 69px;
+  height: 147px;
   background-color: white;
   border-radius: 5px;
   position: absolute;
@@ -46,10 +46,29 @@
   width: 100%;
   height: 100%;
   border-radius: 5px;
+  padding-top: 20px;
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  .left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 20px;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  .right {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 20px;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
 }
 
 .cct-asc-relative-column {
@@ -108,7 +127,7 @@
 
 .cct-asc-rel-item {
   display: flex;
-  height: 100%;
+  height: 35px;
   justify-content: center;
   align-items: center;
   padding-right: 8px;
@@ -264,9 +283,12 @@
 
 
 .product-guarantee-circle {
-  width: 30px;
-  height: 30px;
-  font-size: 15px;
+  width: 27px;
+  height: 27px;
+  font-size: 13px;
+  border: 1px solid;
+  border-radius: 50%;
+  padding-top: 2px;
   font-family: "Circular-Black";
   display: flex;
   align-items: center;
@@ -274,6 +296,7 @@
   flex-direction: column;
   position: relative;
   opacity: 1;
+  margin-right: 10px;
 }
 
 .cct-guarantee {
@@ -340,7 +363,7 @@
 }
 
 .cct-icon-size {
-  font-size: 18px;
+  font-size: 13px;
   padding-top: 3px;
 }
 
@@ -384,7 +407,7 @@
 
 .dynamic-top-margin {
   transition: 0.3s ease;
-  margin-top: 100px;
+  margin-top: 200px;
 }
 
 
@@ -672,6 +695,10 @@
 
 .new-green-color {
   color: $green2;
+}
+
+.new-red-color {
+  color: $red;
 }
 
 .services-guarantee {

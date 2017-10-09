@@ -4,6 +4,44 @@
         <div class="icon-caret-down cct-asc-caret"></div>
 
 
+        <div class="left">
+
+          <div class="cct-asc-rel-item">
+            <div class="product-guarantee-circle new-green-color">
+              <div class="icon-lock-locker-streamline cct-icon-size"></div>
+            </div>
+            <div class="cct-asc-bigtext"><%= "#{product.category.guarantee} ans de garantie" %></div>
+          </div>
+
+          <div class="cct-asc-rel-item">
+              <div class="product-guarantee-circle new-green-color">
+                <div class="icon-settings-streamline-2 cct-icon-size"></div>
+              </div>
+              <div class="cct-asc-bigtext">Pose</div>
+          </div>
+
+          <div class="cct-asc-rel-item">
+              <div class="product-guarantee-circle new-green-color">
+                <div class="icon-design-pencil-rule-streamline cct-icon-size"></div>
+              </div>
+              <div class="cct-asc-bigtext">Sur mesure</div>
+          </div>
+
+        </div>
+
+        <div class="right">
+
+          <% if product.powers.length != 0 %>
+
+              <% active_powers(product.powers, false).each do |tag| %>
+                <%= tag %>
+              <% end %>
+
+          <% end %>
+
+        </div>
+
+
         <% if product.tradi? %>
             <div class="cct-asc-rel-item">
                 <div class="product-guarantee-circle new-green-color">
@@ -21,28 +59,6 @@
                 <div class="cct-asc-bigtext">rénovation</div>
             </div>
         <% end %>
-
-
-        <div class="cct-asc-rel-item">
-            <div class="product-guarantee-circle new-green-color">
-              <div class="icon-lock-locker-streamline cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
-            </div>
-            <div class="cct-asc-bigtext"><%= "#{product.category.guarantee} ans de garantie" %></div>
-        </div>
-
-        <div class="cct-asc-rel-item">
-            <div class="product-guarantee-circle new-green-color">
-              <div class="icon-settings-streamline-2 cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
-            </div>
-            <div class="cct-asc-bigtext">pose et fournitures</div>
-        </div>
-
-        <div class="cct-asc-rel-item">
-            <div class="product-guarantee-circle new-green-color">
-              <div class="icon-design-pencil-rule-streamline cct-icon-size" style="font-size: 19px;padding-top: 5px;"></div>
-            </div>
-            <div class="cct-asc-bigtext">dimensions sur mesure</div>
-        </div>
 
     </div>
 </div>

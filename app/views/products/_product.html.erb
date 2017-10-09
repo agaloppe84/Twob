@@ -10,14 +10,6 @@
       <div class="cct-copyright">®</div>
     </div>
 
-    <% if product.powers.length != 0 %>
-      <div class="cct-powers">
-        <% active_powers(product.powers).each do |tag| %>
-          <%= tag %>
-        <% end %>
-      </div>
-    <% end %>
-
     <div class="cct-guarantee" data-id="<%= product.id %>">
       <div class="services-guarantee">services</div>
       <div class="icon-setting-tools" aria-hidden="true" style="margin-right: 12px;font-size: 20px;"></div>
