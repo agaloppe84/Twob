@@ -25,6 +25,8 @@
 <div class="type-index-v2-header-mobile">
     <div class="header-container-mobile">
 
+      <div class="icon-android-close absolute-close-icon" id="category-close-cross"></div>
+
       <% @only_categories.each do |category| %>
           <div class="custom-tablink-mobile <%= 'active' if category == @only_categories.first %>" data-id="<%= category.id %>">
             <div><%= composed_plurname(category.name) %></div>

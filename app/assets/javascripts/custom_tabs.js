@@ -35,3 +35,11 @@ $('#dgl-true-link-mobile').click(function() {
     $(this).toggleClass('dynamic-green-link');
     $(".custom-backdrop-v5").toggleClass('hidden');
 });
+
+$('#category-close-cross').click(function() {
+    $('.type-index-v2-header-mobile').toggle();
+    $(".custom-backdrop-v5").toggleClass('hidden');
+});
+
+
+
