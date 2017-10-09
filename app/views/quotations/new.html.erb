@@ -154,8 +154,11 @@
 
                     <div class="nav-separator"></div>
 
-                    <%= f.submit "Valider", class: "score-form-button" %>
 
+
+                    <div class="score-form-button" id="quotation_submit_button">
+                      <div class="">Valider</div>
+                    </div>
 
                 </div>
               </div>
@@ -276,6 +279,10 @@
   $( ".ajax-form-flex .form-group input" ).focusout(function() {
     var test = $(this).parent().parent().parent();
     $(test).removeClass("javascript-border");
+  });
+
+  $("#quotation_submit_button").click(function() {
+    $("form#new_quotation").submit();
   });
 
 
