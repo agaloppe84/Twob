@@ -22,7 +22,11 @@ class QuotationsController < ApplicationController
       @product_name = params[:product_name]
       @product_category_name = params[:blindtype]
       @current_category = Category.all.where(name: params[:blindtype]).last
-      @current_category_current_promo = Category.all.where(name: params[:blindtype]).last.promos.where(current: true).last
+      if @current_category.promos.any?
+        @current_category_current_promo = @current_category.promos.where(current: true).last
+      else
+        @current_category_current_promo = "test"
+      end
     end
   end
 

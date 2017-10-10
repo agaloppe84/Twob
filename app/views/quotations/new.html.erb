@@ -12,11 +12,19 @@
 
   <% if @coming_from_product == true %>
     <div class="subcategory-container-promo-v5">
-      <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
-      <div class="hcp-block">
-        <div class="hcp-block-category"><%= "Promotions" %></div>
-      </div>
-      <div class="hcp-block-end-date"><%= "juqsqu'au #{l(@current_category_current_promo.end, format: '%d %B %Y')}" %></div>
+      <% if @current_category.promos.any? %>
+        <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
+        <div class="hcp-block">
+          <div class="hcp-block-category"><%= "Promotions" %></div>
+        </div>
+        <div class="hcp-block-end-date"><%= "juqsqu'au #{l(@current_category_current_promo.end, format: '%d %B %Y')}" %></div>
+      <% else %>
+        <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
+        <div class="hcp-block">
+          <div class="hcp-block-category"><%= "Réponse" %></div>
+        </div>
+        <div class="hcp-block-end-date"><%= "sous 48h" %></div>
+      <% end %>
     </div>
   <% else %>
     <div class="subcategory-container-promo-v5">
