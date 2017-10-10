@@ -1,5 +1,40 @@
+<%= render 'shared/fixed_navbar' %>
 
 <div class="quot-container-v3">
+
+  <div class="subcategory-container-on-mobile">
+    <div class="subcategory-big-title"><%= "Devis en ligne" %></div>
+    <% if @coming_from_product == true %>
+      <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;opacity: 0.5;"></i>
+      <div class="subcategory-product-count"><%= "#{@current_category.name}" %></div>
+    <% end %>
+  </div>
+
+  <% if @coming_from_product == true %>
+    <div class="subcategory-container-promo-v5">
+      <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
+      <div class="hcp-block">
+        <div class="hcp-block-category"><%= "Promotions" %></div>
+      </div>
+      <div class="hcp-block-end-date"><%= "juqsqu'au #{l(@current_category_current_promo.end, format: '%d %B %Y')}" %></div>
+    </div>
+  <% else %>
+    <div class="subcategory-container-promo-v5">
+      <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
+      <div class="hcp-block">
+        <div class="hcp-block-category"><%= "Réponse" %></div>
+      </div>
+      <div class="hcp-block-end-date"><%= "sous 48h" %></div>
+    </div>
+  <% end %>
+
+  <div class="steps-dynamic">
+    <div class="item-dynamic active" id="step1">1</div>
+    <div class="line-1"></div>
+    <div class="item-dynamic" id="step2">2</div>
+    <div class="line-2"></div>
+    <div class="item-dynamic" id="step3">3</div>
+  </div>
 
 
 
@@ -10,23 +45,9 @@
 
     <div class="wizard" id="wizard">
 
-    <div class="cct-asc-rel-col-header">
-        <div class="hcp-block-end-date"><%= "Devis en ligne" %></div>
-        <div class="hcp-title" style="color: #20b2aa;">réponse sous 48h</div>
-        <i class="fa fa-clock-o" aria-hidden="true" style="color: #20b2aa;"></i>
-    </div>
 
-    <div class="wiz-header-container">
 
-      <div class="steps-dynamic">
-        <div class="item-dynamic active" id="step1">1</div>
-        <div class="line-1"></div>
-        <div class="item-dynamic" id="step2">2</div>
-        <div class="line-2"></div>
-        <div class="item-dynamic" id="step3">3</div>
-      </div>
 
-    </div>
 
       <div class="cct-asc-rel-col-footer">
         <div class="wizard-body" id="wizard-body">

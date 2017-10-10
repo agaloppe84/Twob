@@ -21,6 +21,8 @@ class QuotationsController < ApplicationController
       @coming_from_product = true
       @product_name = params[:product_name]
       @product_category_name = params[:blindtype]
+      @current_category = Category.all.where(name: params[:blindtype]).last
+      @current_category_current_promo = Category.all.where(name: params[:blindtype]).last.promos.where(current: true).last
     end
   end
 
