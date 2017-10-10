@@ -11,8 +11,7 @@
     </div>
 
     <div class="cct-guarantee" data-id="<%= product.id %>">
-      <div class="services-guarantee">services</div>
-      <div class="icon-setting-tools" aria-hidden="true" style="margin-right: 12px;font-size: 20px;"></div>
+      <div class="icon-settings-streamline-2" aria-hidden="true" style="margin-right: 12px;font-size: 20px;opacity: 0.8;"></div>
     </div>
   </div>
 
@@ -34,7 +33,7 @@
     <div class="ccb-middle">
       <%= link_to new_quotation_path(html_options = {product_name: product.title, blindtype: product.category.name }) do %>
         <div class="custom-card-bottom-right-btn">
-          <div class="icon-certification" style="font-size: 24px;"></div>
+          <div class="icon-devis-v2" style="font-size: 20px;"></div>
         </div>
       <% end %>
     </div>
@@ -43,7 +42,7 @@
 
     <div class="ccb-right">
       <%= link_to "#productShowModalv2", class: "custom-card-bottom-right-btn", data: { toggle: "modal", typeid: "#{product.category.id}", productid: "#{product.id}" } do %>
-        <div class="icon-photo-round-v2" style="font-size: 24px;"></div>
+        <div class="icon-camera-v2" style="font-size: 20px;"></div>
       <% end %>
     </div>
 
@@ -65,7 +64,7 @@
         <div class="separator-v3"></div>
 
         <div class="score-form-trigger" id="score-form-trigger-<%= product.id %>" data-id="<%= product.id %>" style="display: flex;">
-          <div class="icon-like" aria-hidden="true" style="padding-top: 4px;font-size: 15px;"></div>
+          <div class="icon-like" aria-hidden="true" style="padding-top: 4px;font-size: 15px;opacity: 0.8;"></div>
         </div>
       </div>
 
