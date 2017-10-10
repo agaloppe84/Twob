@@ -1,23 +1,29 @@
 .steps-dynamic {
   width: 100%;
-  height: 30px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding-left: 80px;
+  padding-right: 80px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 
 .item-dynamic {
-  width: 66px;
-  height: 24px;
-  border-radius: 4px;
-  color: rgba(255,255,255,0.6);
-  background-color: rgba(20,20,20,0.5);
+  width: 22px;
+  height: 22px;
+  padding-top: 3px;
+  border-radius: 50%;
+  color: rgba(55,55,55,0.6);
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: 12px;
   font-family: "Circular-Medium";
 }
 
@@ -30,11 +36,15 @@
 .line-1 {
   flex: 4;
   border-bottom: 6px solid transparent;
+  margin-left: -2px;
+  margin-right: -2px;
 }
 
 .line-2 {
   flex: 4;
   border-bottom: 6px solid transparent;
+  margin-left: -2px;
+  margin-right: -2px;
 }
 
 
