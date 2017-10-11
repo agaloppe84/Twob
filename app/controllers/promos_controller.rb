@@ -8,7 +8,7 @@ class PromosController < ApplicationController
     @promos = Promo.all
     @active_promos = Promo.where(current: true)
     @promo_to_unckeck = @active_promos
-    @unckecked_promos = @promo_to_unckeck.map {|promo| promo if promo.end < Date.today}
+    @unckecked_promos = @promo_to_unckeck.map {|promo| promo if promo.end < Date.today}.compact
     if @unckecked_promos.empty?
     else
       @unckecked_promos.map {|promo| automatic_unckecked_current(promo)}

@@ -40,7 +40,7 @@ class PagesController < ApplicationController
     @albums = Album.all
     @infos = Info.all
     @promos = Promo.all
-    @categories = Category.all.order(:id)
+    @categories = Category.eager_load(:albums, :promos, products: [:infos, :powers, :scores, :photo_files, :brands])
     @brands = Brand.all
     @photos = @albums.all.map { |album| album.photos.count }
   end
