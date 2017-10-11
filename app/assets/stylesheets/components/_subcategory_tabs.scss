@@ -34,6 +34,35 @@
   justify-content: center;
 }
 
+.subcategory-container-promo-empty-v2 {
+  width: 100%;
+  height: 35px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.subcategory-container-promo-empty-top {
+  width: 100%;
+  height: 20%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.subcategory-container-promo-empty-center {
+  width: 100%;
+  height: 62%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .subcategory-container-promo-v5 {
   width: 100%;
   height: 20px;

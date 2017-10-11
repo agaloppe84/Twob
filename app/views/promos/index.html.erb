@@ -7,38 +7,53 @@
       <div class="subcategory-container">
         <div class="subcategory-big-title">Promotions en cours</div>
       </div>
-      <div class="subcategory-container-promo">
-        <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
-        <div class="hcp-block">
-          <div class="hcp-block-category"><%= "Promotions" %></div>
-        </div>
-        <div class="hcp-block-end-date"><%= "juqsqu'au #{l(@real_active_promos.first.end, format: '%d %B %Y')}" %></div>
-      </div>
 
       <% @real_active_promos.each do |promo| %>
 
         <div class="promo-index-title">
-          <div class="promo-index-title-text"><%= promo.title.capitalize %></div>
-        </div>
 
-        <div class="promo-index-photo" style="background-image: url(<%= if promo.photos.any? then cl_image_path promo.photos.last.path end %>);">
-          <div class="promo-index-reduction">
-            <div class="promo-index-reduction-big-number"><%= "#{promo.discount}" %></div>
+          <div class="new-promo-photo-container" style="background-image: url(<%= if promo.photos.any? then cl_image_path promo.photos.last.path end %>);"></div>
+
+          <div class="new-promo-photo-container-bottom">
+            <div class="subcategory-container-promo-empty-top">
+              <div class="promo-index-title-text"><%= promo.title.capitalize %></div>
+            </div>
+
+            <div class="subcategory-container-promo-empty-center">
+
+              <div class="subcategory-container-promo-empty-v2">
+                <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
+                <div class="hcp-block">
+                  <div class="hcp-block-category"><%= "Promotions" %></div>
+                </div>
+                <div class="hcp-block-end-date"><%= "juqsqu'au #{l(promo.end, format: '%d %B %Y')}" %></div>
+              </div>
+
+              <div class="subcategory-container-promo-empty-v2">
+                <div class="icon-clock" style="padding-top: 3px;color: #FFD464;"></div>
+                <div class="hcp-block">
+                  <div class="hcp-block-category"><%= "Fin dans " %></div>
+                </div>
+                <div class="hcp-block-end-date"><%= "#{(promo.end.to_date - Date.today).to_i} jours" %></div>
+              </div>
+
+              <div class="subcategory-container-promo-empty-v2">
+                <div class="icon-euro" style="padding-top: 3px;color: #FFD464;"></div>
+                <div class="hcp-block">
+                  <div class="hcp-block-category"><%= "Reduction de " %></div>
+                </div>
+                <div class="hcp-block-end-date"><%= "#{promo.discount}" %></div>
+              </div>
+
+            </div>
+
+            <div class="promo-index-link">
+              <%= link_to filtered_category_path(promo.category) do %>
+                <div><%= "Voir les produits" %></div>
+              <% end %>
+            </div>
           </div>
-        </div>
 
-        <div class="promo-index-timer">
-          <div class="promo-end-timer">Du </div>
-          <div class="promo-index-timer-text"><%= "#{l(promo.start, format: '%d %B %Y')}" %></div>
-          <div class="promo-end-timer"> au </div>
-          <div class="promo-index-timer-text"><%= "#{l(promo.end, format: '%d %B %Y')}" %></div>
-          <div class="promo-end-timer"><%= "Fin dans #{(promo.end.to_date - Date.today).to_i} jours" %></div>
-        </div>
-
-        <div class="promo-index-link">
-          <%= link_to filtered_category_path(promo.category) do %>
-            <div><%= "Voir les produits" %></div>
-          <% end %>
         </div>
 
       <% end %>
