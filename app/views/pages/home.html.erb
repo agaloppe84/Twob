@@ -73,18 +73,49 @@
         <div class="home-content-text-color-2"><%= item[:content] %></div>
       </div>
 
-      <div class="home-each-links">
+      <div class="home-links-cont">
         <% item[:options].each do |option| %>
-          <div class="partners-link"><%= option %></div>
-          <% if option == item[:options].last %>
-          <% else %>
-            <div class="separator"></div>
-          <% end %>
+          <div class="subcategory-container-promo-empty-v4" style="justify-content: center;">
+            <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
+            <div class="hcp-block">
+              <div class="hcp-block-category"><%= "Les" %></div>
+            </div>
+             <div class="hcp-block-end-date"><%= option %></div>
+          </div>
         <% end %>
       </div>
 
     </div>
   <% end %>
+
+
+  <div class="home-content-container-transparent hcct-color">
+
+      <div class="home-content-item-left">
+        <div class="header-on-home-2">Les horaires</div>
+      </div>
+
+
+        <div class="subcategory-container-promo-empty-v2" style="justify-content: center;">
+          <div class="icon-clock" style="padding-top: 3px;color: #FFD464;"></div>
+          <div class="hcp-block">
+            <div class="hcp-block-category">Du lundi au vendredi</div>
+          </div>
+           <div class="hcp-block-end-date">de 9h à 18h</div>
+        </div>
+
+        <div class="subcategory-container-promo-empty-v2" style="justify-content: center;">
+          <div class="icon-clock" style="padding-top: 3px;color: #FFD464;"></div>
+          <div class="hcp-block">
+            <div class="hcp-block-category">Le samedi</div>
+          </div>
+           <div class="hcp-block-end-date">de 9h à 12h</div>
+        </div>
+
+  </div>
+
+
+
 </div>
 
 

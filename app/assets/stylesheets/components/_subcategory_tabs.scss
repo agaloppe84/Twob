@@ -43,6 +43,24 @@
   justify-content: flex-start;
 }
 
+.subcategory-container-promo-empty-v4 {
+  width: 35%;
+  height: 45px;
+  border: 1px solid rgba(20,20,20,0.4);
+  border-radius: 4px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+  .subcategory-container-promo-empty-v4 {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+
 .subcategory-container-promo-empty-top {
   width: 100%;
   height: 20%;

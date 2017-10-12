@@ -108,8 +108,8 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  padding-top: 3%;
-  padding-bottom: 3%;
+  padding-top: 25px;
+  padding-bottom: 25px;
   background-color: rgba(35,35,39,1);
   margin-bottom: 30px;
   margin-top: 16px;
@@ -164,7 +164,7 @@
 }
 
 .header-on-home-2 {
-  font-family: "Circular-Bold";
+  font-family: "Circular-light";
   font-size: 20px;
   color: rgba(45,45,55,1);
 }
@@ -181,7 +181,7 @@
 .home-content-item-left {
   height: 40px;
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   align-items: center;
   justify-content: center;
   width: 80%;
@@ -221,7 +221,7 @@
   font-weight: 200;
   color: rgba(45,45,55,0.8);
   line-height: 22px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 
@@ -678,6 +678,7 @@ a {
   .form-control {
     margin-bottom: 0;
     border: none;
+    background-color: transparent;
   }
   .form-group {
     margin-bottom: 0;
@@ -688,7 +689,7 @@ a {
 
 .home-form-flex {
   width: 100%;
-  height: 50px;
+  height: 40px;
   display: flex;
   padding-left: 8px;
   padding-right: 12px;
@@ -718,7 +719,7 @@ form.simple_form.home_choice {
   width: 38%;
   font-family: "Circular-Medium";
   font-size: 14px;
-  height: 50px;
+  height: 40px;
   border: none;
   display: flex;
   align-items: center;
@@ -730,9 +731,18 @@ form.simple_form.home_choice {
 }
 
 
+.home-links-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+}
 
-
-
+@media (max-width: 768px) {
+  .home-links-cont {
+    flex-direction: column;
+  }
+}
 
 
 
