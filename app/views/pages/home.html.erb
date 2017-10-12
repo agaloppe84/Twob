@@ -16,26 +16,53 @@
     </div>
 </div>
 
-
-<% if @current_promos.empty? %>
-<% else %>
-  <div class="home-current-promo">
-      <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
-
-      <div class="hcp-block">
-        <div class="hcp-block-category"><%= "Promotions sur les #{(composed_plurname(@current_promos.first.category.name)).downcase}" %></div>
+<%= simple_form_for :home_choice, method: "GET" do |f| %>
+  <div class="search-form-on-home">
+    <div class="home-form-flex">
+      <div class="ajax-form-flex-item-left" style="width: 100%;border: none;">
+        <div class="ajax-form-flex-icon"><div class="icon-search"></div></div>
+        <%= f.input :product_choice, collection: @category_names, label: false, selected: @category_names.first %>
+        <div class="ajax-form-flex-icon" style="cursor: pointer;" id="select_trigger"><div class="icon-angle-down"></div></div>
       </div>
-
-      <div class="hcp-block-end-date"><%= "juqsqu'au #{l(@current_promos.first.end, format: '%d %B %Y')}" %></div>
-
-    <div class="hcp-title">voir les détails</div>
-    <i class="fa fa-caret-right" aria-hidden="true" style="color: #EE5F5B;"></i>
+    </div>
   </div>
+
+  <div id="home-search-form-submit">rechercher</div>
+
 <% end %>
 
 
-
 <div class="home-content-column">
+
+  <% if @current_promos.any? %>
+    <div class="home-current-promo hidden-xs">
+        <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
+
+        <div class="hcp-block">
+          <div class="hcp-block-category"><%= "Promotions sur les #{(composed_plurname(@current_promos.first.category.name)).downcase}" %></div>
+        </div>
+
+        <div class="hcp-block-end-date"><%= "juqsqu'au #{l(@current_promos.first.end, format: '%d %B %Y')}" %></div>
+
+      <div class="hcp-title">voir les détails</div>
+    </div>
+
+    <div class="container-with-visible visible-xs">
+      <div class="home-current-promo-mobile">
+
+        <div class="promo-mobile-flex">
+          <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
+          <div class="hcp-block">
+            <div class="hcp-block-category"><%= "Promotions sur les #{(composed_plurname(@current_promos.first.category.name)).downcase}" %></div>
+          </div>
+        </div>
+        <div class="hcp-block-end-date-mobile"><%= "juqsqu'au #{l(@current_promos.first.end, format: '%d %B %Y')}" %></div>
+        <div class="hcp-title-mobile">voir les détails</div>
+
+      </div>
+    </div>
+  <% end %>
+
   <% @home_content.each do |item| %>
     <div class="home-content-container-transparent hcct-color">
 
@@ -63,4 +90,15 @@
 
 
 <%= render 'shared/custom_footer' %>
+
+
+
+
+
+
+
+
+
+
+
 

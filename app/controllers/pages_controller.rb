@@ -1,12 +1,21 @@
 class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :services, :devis, :contact, :promotions, :photos, :ajaxform]
+  before_action :set_category_name, only: [:home]
 
   def home
     @fontastic_icons = Info.iconsarray
-
     @albums = Album.all
     @current_promos = Promo.where(current: true)
 
+    if params[:home_choice] != nil
+      if params[:home_choice][:product_choice] == "Produits"
+        redirect_to categories_path
+      else
+        @user_choice = params[:home_choice][:product_choice]
+        @current_category = Category.all.where(name: @user_choice).last
+        redirect_to filtered_category_path(@current_category)
+      end
+    end
 
     @random_album = []
     @albums.each do |album|
@@ -64,6 +73,14 @@ class PagesController < ApplicationController
     @types_full_names = Category.all.map { |category| category.name.capitalize }
     @sql_test = sql_query(2017, "quotation", :blindtype, @types_full_names)
     @full_years = year_in_string
+  end
+
+  private
+
+  def set_category_name
+    @category_names = Category.all.map { |category| category.name.downcase }
+    @category_names << "Produits"
+    @category_names = @category_names.reverse
   end
 
 end
