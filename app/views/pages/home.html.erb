@@ -35,31 +35,30 @@
 <div class="home-content-column">
 
   <% if @current_promos.any? %>
-    <div class="home-current-promo hidden-xs">
+
+    <%= link_to promos_path do %>
+      <div class="home-current-promo hidden-xs">
         <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
-
         <div class="hcp-block">
-          <div class="hcp-block-category"><%= "Promotions sur les #{(composed_plurname(@current_promos.first.category.name)).downcase}" %></div>
+          <div class="hcp-block-category-mobile-thin"><%= "Promotions sur les #{(composed_plurname(@current_promos.first.category.name)).downcase}" %></div>
         </div>
-
-        <div class="hcp-block-end-date"><%= "juqsqu'au #{l(@current_promos.first.end, format: '%d %B %Y')}" %></div>
-
-      <div class="hcp-title">voir les détails</div>
-    </div>
+        <div class="hcp-block-category-mobile-bold"><%= "juqsqu'au #{l(@current_promos.first.end, format: '%d %B %Y')}" %></div>
+      </div>
+    <% end %>
 
     <div class="container-with-visible visible-xs">
-      <div class="home-current-promo-mobile">
 
-        <div class="promo-mobile-flex">
-          <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
-          <div class="hcp-block">
-            <div class="hcp-block-category"><%= "Promotions sur les #{(composed_plurname(@current_promos.first.category.name)).downcase}" %></div>
+      <%= link_to promos_path do %>
+        <div class="home-current-promo-mobile">
+          <div class="promo-mobile-flex">
+            <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
+            <div class="hcp-block">
+              <div class="hcp-block-category-mobile"><%= "Promotions sur les #{(composed_plurname(@current_promos.first.category.name)).downcase}" %></div>
+            </div>
           </div>
         </div>
-        <div class="hcp-block-end-date-mobile"><%= "juqsqu'au #{l(@current_promos.first.end, format: '%d %B %Y')}" %></div>
-        <div class="hcp-title-mobile">voir les détails</div>
+      <% end %>
 
-      </div>
     </div>
   <% end %>
 

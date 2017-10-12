@@ -111,7 +111,8 @@
   padding-top: 3%;
   padding-bottom: 3%;
   background-color: rgba(35,35,39,1);
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  margin-top: 16px;
   border-radius: 5px;
 }
 
@@ -539,25 +540,23 @@ a {
 }
 
 .home-current-promo {
-  width: 65%;
-  height: 90px;
+  width: 100%;
+  height: 60px;
   padding: 25px 25px;
   display: flex;
   align-items: center;
-  margin-bottom: 50px;
-  background-color: white;
+  background-color: $red;
   border-radius: 4px;
   justify-content: center;
 }
 
 .home-current-promo-mobile {
   width: 100%;
-  height: 130px;
+  height: 45px;
   padding: 18px 18px;
   display: flex;
   align-items: center;
-  margin-bottom: 50px;
-  background-color: white;
+  background-color: $red;
   border-radius: 4px;
   justify-content: space-between;
   flex-direction: column;
@@ -618,6 +617,27 @@ a {
   letter-spacing: -0.2px;
 }
 
+.hcp-block-category-mobile {
+  font-size: 14px;
+  font-family: "Circular-Medium";
+  color: rgba(255,255,255,0.92);
+  letter-spacing: -0.2px;
+}
+
+.hcp-block-category-mobile-thin {
+  font-size: 14px;
+  font-family: "Circular-Book";
+  color: rgba(255,255,255,0.92);
+  letter-spacing: -0.2px;
+}
+
+.hcp-block-category-mobile-bold {
+  font-size: 14px;
+  font-family: "Circular-Medium";
+  color: rgba(255,255,255,0.92);
+  letter-spacing: -0.2px;
+}
+
 .hcp-block-end-date {
   font-size: 14px;
   font-family: "Circular-Medium";
@@ -640,7 +660,10 @@ a {
   flex-direction: column;
   background-color: rgba(205,205,215,0.3);
   align-items: center;
-  padding-top: 50px;
+  padding-top: 16px;
+  a {
+    width: 65%;
+  }
 }
 
 
