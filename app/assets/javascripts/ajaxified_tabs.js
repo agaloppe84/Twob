@@ -3,6 +3,29 @@ var allAjaxMethods = function(){
   rangeSlider();
 };
 
+var ajaxCallTriggerFunction = function(){
+  var categoryId = $('#link-attributes').data("category");
+  var liActive = $('#active-link-ajax-' + categoryId);
+  if (categoryId == "empty") {
+    console.log("empty");
+  } else {
+    $(liActive).addClass('active');
+    $('li').not(liActive).removeClass('active');
+    $('.tab-pane').html("<div class='await-ajax-tabs'>loading<div class='fa fa-circle-o-notch fa-spin ajax-waiting'></div></div>");
+    $.ajax({
+      url: "categories/" + categoryId,
+      complete: allAjaxMethods,
+      success: function(data){
+        $('.tab-pane').html(data);
+      }
+    });
+  }
+};
+
+
+ajaxCallTriggerFunction();
+
+
 
 $('.custom-tablink').click(function() {
   var categoryId = $(this).data("id");

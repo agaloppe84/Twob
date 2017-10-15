@@ -48,7 +48,7 @@
             </div>
 
             <div class="promo-index-link">
-              <%= link_to filtered_category_path(promo.category) do %>
+              <%= link_to categories_path(category_id: promo.category.id) do %>
                 <div><%= "Voir les produits" %></div>
               <% end %>
             </div>

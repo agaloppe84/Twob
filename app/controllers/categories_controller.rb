@@ -9,6 +9,7 @@ class CategoriesController < ApplicationController
     @categories = Category.eager_load(:albums, :promos, products: [:infos, :powers, :scores, :photo_files])
     @only_categories = Category.all
     @category = @categories.first
+    @query_category = (params[:category_id]).nil? ? "empty" : params[:category_id].to_i
   end
 
   def show

@@ -12,8 +12,8 @@ class PagesController < ApplicationController
         redirect_to categories_path
       else
         @user_choice = params[:home_choice][:product_choice]
-        @current_category = Category.all.where(name: @user_choice).last
-        redirect_to filtered_category_path(@current_category)
+        @current_category = Category.all.where(name: @user_choice).last.id
+        redirect_to categories_path(category_id: @current_category)
       end
     end
 
