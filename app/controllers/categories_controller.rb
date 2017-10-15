@@ -1,13 +1,13 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:edit, :update, :destroy]
-  skip_before_action :authenticate_user!, only: [:show, :index, :filtered]
+  skip_before_action :authenticate_user!, only: [:show, :index]
   before_action :categories_names, only: [:new, :create]
-  before_action :set_quotation, only: [:show, :index, :filtered]
-  before_action :set_score, only: [:show, :index, :filtered]
+  before_action :set_quotation, only: [:show, :index]
+  before_action :set_score, only: [:show, :index]
 
   def index
     @categories = Category.eager_load(:albums, :promos, products: [:infos, :powers, :scores, :photo_files])
-    @only_categories = Category.all
+    @only_categories = Category.eager_load(:products)
     @category = @categories.first
     @query_category = (params[:category_id]).nil? ? "empty" : params[:category_id].to_i
   end
@@ -16,12 +16,6 @@ class CategoriesController < ApplicationController
     @categories = Category.eager_load(:albums, :promos, products: [:infos, :powers, :scores, :photo_files])
     @category = @categories.find(params[:id])
     render layout: false
-  end
-
-  def filtered
-    @only_categories = Category.all
-    @categories = Category.eager_load(:albums, :promos, products: [:infos, :powers, :scores, :photo_files])
-    @category = @categories.find(params[:id])
   end
 
   def new

@@ -4,7 +4,7 @@
     <title>TODO</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
@@ -13,5 +13,6 @@
     <%= javascript_include_tag 'application' %>
     <%= cloudinary_js_config %>
     <%= content_for :js_for_forms %>
+    <%= content_for :ajax_links %>
   </body>
 </html>

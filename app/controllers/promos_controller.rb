@@ -5,15 +5,7 @@ class PromosController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
-    @promos = Promo.all
-    @active_promos = Promo.where(current: true)
-    @promo_to_unckeck = @active_promos
-    @unckecked_promos = @promo_to_unckeck.map {|promo| promo if promo.end < Date.today}.compact
-    if @unckecked_promos.empty?
-    else
-      @unckecked_promos.map {|promo| automatic_unckecked_current(promo)}
-    end
-    @real_active_promos = Promo.where(current: true)
+    @real_active_promos = Promo.where("promos.start < ?", Time.current).where("promos.end > ?", Time.current)
   end
 
   def show
@@ -61,11 +53,6 @@ class PromosController < ApplicationController
 
   def find_category
     @category = Category.find(params[:category_id])
-  end
-
-  def automatic_unckecked_current(promo)
-    promo.current = false
-    promo.save
   end
 
   def promo_params
