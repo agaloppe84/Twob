@@ -33,11 +33,14 @@
     var ajaxCallTriggerFunction = function(){
     var categoryId = $('#link-attributes').data("category");
     var liActive = $('#active-link-ajax-' + categoryId);
+    var mobileLink = $('#custom-tablink-mobile-' + categoryId);
     if (categoryId == "empty") {
       console.log("empty");
     } else {
       $(liActive).addClass('active');
+      $(mobileLink).addClass('active');
       $('li').not(liActive).removeClass('active');
+      $('.custom-tablink-mobile').not(mobileLink).removeClass('active');
       $('.tab-pane').html("<div class='await-ajax-tabs'>loading<div class='fa fa-circle-o-notch fa-spin ajax-waiting'></div></div>");
       $.ajax({
         url: "categories/" + categoryId,
