@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   def home
     @fontastic_icons = Info.iconsarray
     @albums = Album.all
-    @current_promos = Promo.where(current: true)
+    @current_promos = Promo.where("promos.start < ?", Time.current).where("promos.end > ?", Time.current)
 
     if params[:home_choice] != nil
       if params[:home_choice][:product_choice] == "Produits"
