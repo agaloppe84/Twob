@@ -2,7 +2,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
 
-
+  def random_photos_collection
+    Album.all.map {|album| album.photos.sample(2)}
+  end
 
   def string_as_keys(integer)
     if integer == 1

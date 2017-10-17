@@ -7,7 +7,7 @@
             <div class="subcategory-text">Rénovation</div>
             <div class="subcategory-separator"></div>
             <div class="subcategory-text">Traditionnel</div>
-            <% if category.promos.any? %>
+            <% if category.promos.where("promos.start < ?", Time.current).where("promos.end > ?", Time.current).any? %>
               <div class="subcategory-separator"></div>
 
                 <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
@@ -26,7 +26,7 @@
             <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;opacity: 0.5;"></i>
             <div class="subcategory-product-count"><%= "#{category.products.length} produits" %></div>
           </div>
-          <% if category.promos.any? %>
+          <% if category.promos.where("promos.start < ?", Time.current).where("promos.end > ?", Time.current).any? %>
             <div class="subcategory-container-promo">
               <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
               <div class="hcp-block">
