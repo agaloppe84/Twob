@@ -21,8 +21,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
-  margin-top: -25px;
   border-radius: 30px;
   border: 1px solid rgba(55,55,58,0.2);
 }
@@ -253,3 +251,30 @@
   top: 17px;
   right: 19px;
 }
+
+
+.sub-active {
+  color: $red !important;
+  border-color: $red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

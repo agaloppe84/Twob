@@ -1,0 +1,115 @@
+
+<div class="modal-body-custom" style="height: 100%;padding-top: 0;padding-bottom: 0;">
+
+  <div class="modal-custom-absolute">
+
+    <div class="mca-item-start">
+      <div class="sb-photo-title"><%= @product.title %></div>
+      <div class="sb-photos-count hidden-xs"><%= @product.photos.length > 1 ? "#{@product.photos.length} photos" : "1 photo" %></div>
+      <div class="sb-step-circle <%= "hidden" if @product.photos.length <= 1 %> hidden-xs"></div>
+    </div>
+
+    <div class="mca-item-center">
+      <div class="nav-photos-container">
+        <div class="sb-previous"> Précédente < </div>
+        <div class="sb-next"> > Suivante </div>
+      </div>
+    </div>
+
+    <div class="mca-item-end">
+      <div data-dismiss="modal"><div class="icon-android-close curs-point" style="font-size: 21px;"></div></div>
+    </div>
+
+  </div>
+
+  <div class="custom-dynamic-carousel" data-photos="<%= photos_for_carousel(@product.photos) %>"></div>
+
+
+</div>
+
+
+<script>
+
+  $(document).ready (function() {
+    var collection = $(".custom-dynamic-carousel").data("photos");
+    var collectionSize = collection.length - 1 ;
+    var circleContainer = $(".sb-step-circle");
+    var photoContainer = $(".custom-dynamic-carousel");
+    $(photoContainer).css("background-image", "url(" + collection[0] + ")");
+    var previousButton = $(".sb-previous");
+    var nextButton = $(".sb-next");
+    var step = 0;
+
+    for ( i = 1; i < (collectionSize + 2); i++ ) {
+        circleContainer.append($('<div class="sb-circle"' +  ' id="' + 'sbcircle-' + i + '"' + '>' + '</div>'));
+    }
+
+
+    var circleIdArray = new Array;
+    for ( i = 1; i < (collectionSize + 2); i++ ) {
+        circleIdArray.push($('#sbcircle-' + i));
+    }
+    $(circleIdArray[step]).addClass("active");
+
+    var filters = circleIdArray.filter(element => element != circleIdArray[step]);
+    $(filters).each(function() {
+      $(this).removeClass('active');
+    });
+
+
+
+
+    if (collectionSize < 2) {
+      $(nextButton).hide();
+      $(previousButton).hide();
+    }
+
+    $(nextButton).click(function() {
+      console.log(collectionSize);
+      step += 1;
+      if (step > collectionSize) {
+        step = 0
+        $(photoContainer).css("background-image", "url(" + collection[step] + ")");
+        $(circleIdArray[step]).addClass("active");
+        filters = circleIdArray.filter(element => element != circleIdArray[step]);
+        $(filters).each(function() {
+          $(this).removeClass('active');
+        });
+      } else {
+        $(photoContainer).css("background-image", "url(" + collection[step] + ")");
+        $(circleIdArray[step]).addClass("active");
+        filters = circleIdArray.filter(element => element != circleIdArray[step]);
+        $(filters).each(function() {
+          $(this).removeClass('active');
+        });
+      }
+    });
+
+    $(previousButton).click(function() {
+      if (step == 0) {
+        step = collectionSize;
+        $(photoContainer).css("background-image", "url(" + collection[step] + ")");
+        $(circleIdArray[step]).addClass("active");
+        filters = circleIdArray.filter(element => element != circleIdArray[step]);
+        $(filters).each(function() {
+          $(this).removeClass('active');
+        });
+      } else {
+        step -= 1;
+        $(photoContainer).css("background-image", "url(" + collection[step] + ")");
+        $(circleIdArray[step]).addClass("active");
+        filters = circleIdArray.filter(element => element != circleIdArray[step]);
+        $(filters).each(function() {
+          $(this).removeClass('active');
+        });
+      }
+      console.log(step);
+    });
+
+
+
+
+  });
+
+</script>
+

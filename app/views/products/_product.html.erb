@@ -1,6 +1,6 @@
-<div class="col-xs-12 col-md-6 col-lg-4">
+<div class="col-xs-12 col-md-6 col-lg-4 dyn-col <%= product.sub_category.capitalize if product.sub_category != nil %>">
 
-  <div class="custom-card" id="custom-card-<%= product.id %>">
+  <div class="custom-card <%= product.sub_category.capitalize if product.sub_category != nil %>" id="custom-card-<%= product.id %>">
 
     <div class="custom-card-top">
       <div class="cct-absolute-quotation-container" id="form-steps-<%= product.id %>"></div>
@@ -18,7 +18,7 @@
 
     <div class="custom-card-middle">
       <div class="ccm-left">
-        <% infos_constructor(product.infos, "ccm-info-container", "ccm-info-content").each do |info_tag| %>
+        <% infos_constructor(product.infos, "ccm-info-container", "ccm-info-content", "ccm-info-title").each do |info_tag| %>
           <%= info_tag %>
         <% end %>
       </div>
@@ -37,6 +37,14 @@
         <% end %>
       </div>
 
+
+       <div class="ccb-middle">
+        <%= link_to category_product_path(product.category, product) do %>
+          <div class="custom-card-bottom-right-btn">
+            <div>Voir</div>
+          </div>
+        <% end %>
+      </div>
 
 
       <div class="ccb-right">

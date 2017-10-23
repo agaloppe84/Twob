@@ -8,7 +8,6 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    render layout: false
   end
 
   def new

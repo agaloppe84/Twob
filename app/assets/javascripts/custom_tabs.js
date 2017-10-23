@@ -47,5 +47,3 @@ $('#category-close-cross').click(function() {
     $('#dgl-true-link-mobile').toggleClass('dynamic-green-link');
 });
 
-
-

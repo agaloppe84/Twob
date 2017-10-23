@@ -747,6 +747,174 @@ a:hover {
 
 
 
+.product-show-container {
+  width: 100%;
+  .banner {
+    width: 100%;
+    height: 50vh;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .product-infos-wrapper {
+    width: 100%;
+    padding: 30px 18%;
+    .piw-header {
+      width: 100%;
+      padding-left: 3px;
+      height: 30px;
+      font-family: "Circular-Medium";
+      font-size: 17px;
+      color: rgba(55,55,69,0.75);
+      border-bottom: 1px solid rgba(55,55,69,0.20);
+    }
+    .piw-infos-container {
+      width: 100%;
+      padding: 30px 0;
+      .piw-info-wrapper {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        height: 35px;
+      }
+      .piw-info-content {
+        font-family: "Circular-Book";
+        font-size: 15px;
+        color: rgba(55,55,69,0.75);
+      }
+      .piw-info-title {
+        font-family: "Circular-Bold";
+        font-size: 15px;
+        color: rgba(55,55,69,0.88);
+        margin-right: 8px;
+      }
+    }
+  }
+  .product-title-container-v5 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 30px 18%;
+    a {
+      order: 4;
+    }
+    .product-title-text {
+      font-family: "Circular-light";
+      font-size: 24px;
+    }
+    .product-category-tooltip {
+      border-radius: 30px;
+      padding: 5px 15px;
+      text-align: center;
+      font-family: "Circular-Medium";
+      font-size: 14px;
+      margin-left: 18px;
+      order: 2;
+    }
+  }
+}
+
+.piw-active-power-flex {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.piw-icon-tag {
+  margin-right: 12px;
+  font-size: 20px;
+  width: 20px;
+  color: rgba(55,55,69,0.88);
+  padding-top: 3px;
+}
+
+.piw-text-tag {
+  font-family: "Circular-Book";
+  font-size: 15px;
+  color: rgba(55,55,69,0.88);
+}
+
+.piw-scores-container {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: $red;
+  padding: 0 15px;
+  height: 31px;
+  border: 1px solid $red;
+  border-radius: 30px;
+  margin-left: 15px;
+  order: 3;
+}
+
+.piw-scores-count {
+  font-family: "Circular-Book";
+  font-size: 16px;
+  margin-left: 5px;
+  padding-bottom: 2px;
+}
+
+.piw-quot-link {
+  order: 4;
+  padding: 0 15px;
+  height: 31px;
+  background-color: $red;
+  border: 1px solid $red;
+  color: white;
+  font-family: "Circular-Medium";
+  font-size: 14px;
+  border-radius: 30px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.piw-header-items-mobile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  a {
+    order: 4;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-title-container-v5 {
+    justify-content: center;
+    padding: 30px 0 !important;
+    flex-direction: column;
+  }
+  .product-title-text {
+    font-family: "Circular-light";
+    font-size: 22px !important;
+  }
+  .product-category-tooltip {
+    margin-left: 0 !important;
+    margin-top: 14px;
+    order: 2;
+  }
+  .product-infos-wrapper {
+    padding: 30px 7% !important;
+  }
+  .piw-scores-container {
+    margin-left: 0 !important;
+    margin-top: 14px;
+  }
+  .piw-quot-link {
+    margin-left: 0 !important;
+    margin-top: 14px;
+  }
+  .piw-header-items-mobile {
+    padding: 0 7%;
+  }
+}
+
+
+
+
+
 
 
 

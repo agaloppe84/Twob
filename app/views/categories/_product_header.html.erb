@@ -1,9 +1,38 @@
 <% if category.has_sub_category %>
+
           <div class="subcategory-container">
             <div class="subcategory-product-count"><%= "Catégorie" %></div>
              <div class="icon-chevron-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;opacity: 0.5;font-size: 12px;padding-top: 4px;"></div>
             <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
+
+
+            <div class="scp-wrapper hidden-xs">
+              <div class="subcategory-container-promo hcp-subcategory-link" style="margin-top: 0;" data-sub="<%= category.products.where(sub_category: 0).last.sub_category.capitalize %>">
+                <div class="hcp-block">
+                  <div class="hcp-block-category"><%= "Gamme" %></div>
+                </div>
+                <div class="hcp-block-end-date"><%= category.products.where(sub_category: 0).last.sub_category.capitalize %></div>
+              </div>
+
+              <div class="subcategory-container-promo hcp-subcategory-link" style="margin-left: 15px;margin-top: 0;" data-sub="<%= category.products.where(sub_category: 1).last.sub_category.capitalize %>">
+                <div class="hcp-block">
+                  <div class="hcp-block-category"><%= "Gamme" %></div>
+                </div>
+                <div class="hcp-block-end-date"><%= category.products.where(sub_category: 1).last.sub_category.capitalize %></div>
+              </div>
+            </div>
+
+            <% if category.promos.where("promos.start < ?", Time.current).where("promos.end > ?", Time.current).any? %>
+              <div class="subcategory-container-promo">
+                <div class="hcp-block">
+                  <div class="hcp-block-category"><%= "Promotions" %></div>
+                </div>
+                <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
+              </div>
+            <% end %>
+
           </div>
+
           <% if category.promos.where("promos.start < ?", Time.current).where("promos.end > ?", Time.current).any? %>
             <div class="subcategory-container-promo">
               <div class="hcp-block">
@@ -13,15 +42,15 @@
             </div>
           <% end %>
 
-          <div class="scp-wrapper">
-            <div class="subcategory-container-promo" style="margin-top: 0;">
+          <div class="scp-wrapper-2 hidden-sm hidden-md hidden-lg">
+            <div class="subcategory-container-promo hcp-subcategory-link" style="margin-top: 0;" data-sub="<%= category.products.where(sub_category: 0).last.sub_category.capitalize %>">
               <div class="hcp-block">
                 <div class="hcp-block-category"><%= "Gamme" %></div>
               </div>
               <div class="hcp-block-end-date"><%= category.products.where(sub_category: 0).last.sub_category.capitalize %></div>
             </div>
 
-            <div class="subcategory-container-promo" style="margin-left: 15px;margin-top: 0;">
+            <div class="subcategory-container-promo hcp-subcategory-link" style="margin-left: 15px;margin-top: 0;" data-sub="<%= category.products.where(sub_category: 1).last.sub_category.capitalize %>">
               <div class="hcp-block">
                 <div class="hcp-block-category"><%= "Gamme" %></div>
               </div>
@@ -34,14 +63,59 @@
             <div class="subcategory-product-count"><%= "Catégorie" %></div>
              <div class="icon-chevron-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;opacity: 0.5;font-size: 12px;padding-top: 4px;"></div>
             <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
+
+            <% if category.promos.where("promos.start < ?", Time.current).where("promos.end > ?", Time.current).any? %>
+              <div class="scp-wrapper hidden-xs">
+                <div class="subcategory-container-promo">
+                  <div class="hcp-block">
+                    <div class="hcp-block-category"><%= "Promotions" %></div>
+                  </div>
+                  <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
+                </div>
+              </div>
+            <% end %>
+
           </div>
           <% if category.promos.where("promos.start < ?", Time.current).where("promos.end > ?", Time.current).any? %>
-            <div class="subcategory-container-promo">
-              <div class="hcp-block">
-                <div class="hcp-block-category"><%= "Promotions" %></div>
+            <div class="scp-wrapper-2 hidden-sm hidden-md hidden-lg">
+              <div class="subcategory-container-promo">
+                <div class="hcp-block">
+                  <div class="hcp-block-category"><%= "Promotions" %></div>
+                </div>
+                <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
               </div>
-              <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
             </div>
           <% end %>
 
 <% end %>
+
+<script>
+
+$('.hcp-subcategory-link').click(function() {
+    var subcategory = $(this).data("sub");
+    var text1 = $(this).find('.hcp-block-category');
+    var text2 = $(this).find('.hcp-block-end-date');
+
+    if ($(this).hasClass('sub-active')) {
+      $(this).removeClass('sub-active');
+      $(text1).removeClass('sub-active');
+      $(text2).removeClass('sub-active');
+      $('.custom-card').show();
+      $('.dyn-col').show();
+    } else {
+      $(this).addClass('sub-active');
+      $(text1).addClass('sub-active');
+      $(text2).addClass('sub-active');
+      $('.custom-card').show();
+      $('.dyn-col').show();
+      $('.hcp-subcategory-link').not(this).removeClass('sub-active');
+      $('.hcp-block-category').not(text1).removeClass('sub-active');
+      $('.hcp-block-end-date').not(text2).removeClass('sub-active');
+      $('.custom-card').not('.' + subcategory).hide();
+      $('.dyn-col').not('.' + subcategory).hide();
+    }
+
+});
+
+
+</script>

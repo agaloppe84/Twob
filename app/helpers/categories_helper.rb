@@ -70,24 +70,24 @@ module CategoriesHelper
     end
   end
 
-  def active_powers(power_collection, full)
+  def active_powers(power_collection, full, icon_tag, text_tag, product)
     @active_powers = (power_collection.last.attributes.map {|attr| attr[0] if attr[-1] == true}).compact
     if full == true
-      @active_powers_tags = @active_powers.map {|power| ("<div class='cct-asc-rel-item'><div class='product-guarantee-circle new-red-color'><div class='icon-#{power} cct-icon-size'></div></div><div class='cct-asc-bigtext'>#{power_in_french(power)}</div></div>").html_safe}
+      @active_powers_tags = @active_powers.map {|power| ("<div class='icon-#{power} #{icon_tag}' style='color: #{product.category.color};'></div><div class='#{text_tag}'>#{power_in_french(power)}</div>").html_safe}
     else
-      @active_powers_tags = @active_powers.last(3).map {|power| ("<div class='cct-asc-rel-item'><div class='product-guarantee-circle new-red-color'><div class='icon-#{power} cct-icon-size'></div></div><div class='cct-asc-bigtext'>#{power_in_french(power)}</div></div>").html_safe}
+      @active_powers_tags = @active_powers.last(3).map {|power| ("<div class='icon-#{power} #{icon_tag}' style='color: #{product.category.color};'></div><div class='#{text_tag}'>#{power_in_french(power)}</div>").html_safe}
     end
     @active_powers_tags
   end
 
 
-  def infos_constructor(infos_collection, container_tag, content_tag)
+  def infos_constructor(infos_collection, container_tag, content_tag, title_tag)
     @infos = (infos_collection.map {|info| [info.attributes["title"], info.attributes["content"]]}).reverse
     @infos_tags = @infos.map do |info|
       if info[0].nil?
         ("<div class='#{container_tag}'><div class='little-dot'></div><div class='#{content_tag}'>#{info[-1]}</div></div>").html_safe
       else
-        ("<div class='#{container_tag}'><div class='little-dot'></div><div class='ccm-info-title'>#{info[0]}:</div><div class='#{content_tag}'>#{info[-1]}</div></div>").html_safe
+        ("<div class='#{container_tag}'><div class='little-dot'></div><div class='#{title_tag}'>#{info[0]} :</div><div class='#{content_tag}'>#{info[-1]}</div></div>").html_safe
       end
     end
     @infos_tags
