@@ -1,20 +1,36 @@
 <%= render 'shared/fixed_navbar'  %>
 
+    <div class="home-banner-v2" style="background-image: url('<%= cl_image_path @random_album.sample.path %>');">
 
-<div class="carousel slide carousel-fade" data-ride="carousel">
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-        <% @random_album.each_with_index do |photo, index| %>
-          <% if index == 0 %>
-            <div class="item active" style="background-image: linear-gradient(90deg, rgba(255,255,255,0.1)30%, rgba(0,0,0,0.1)), url(<%= cl_image_path photo.path %>);">
+      <% if @current_promos.any? %>
+
+        <%= link_to promos_path do %>
+          <div class="home-current-promo hidden-xs">
+            <div class="icon-info" style="padding-top: 3px;color: rgba(255,255,255,0.75);font-size: 22px;"></div>
+            <div class="hcp-block">
+              <div class="hcp-block-category-mobile-thin"><%= "Promotions sur les #{(composed_plurname(@current_promos.first.category.name)).downcase}" %></div>
             </div>
-          <% else %>
-            <div class="item" style="background-image: linear-gradient(90deg, rgba(255,255,255,0.1)30%, rgba(0,0,0,0.1)), url(<%= cl_image_path photo.path %>);">
-            </div>
-          <% end %>
+            <div class="hcp-block-category-mobile-bold"><%= "juqsqu'au #{l(@current_promos.first.end, format: '%d %B %Y')}" %></div>
+          </div>
         <% end %>
+
+        <div class="container-with-visible visible-xs">
+
+          <%= link_to promos_path do %>
+          <div class="home-current-promo">
+            <div class="icon-info" style="padding-top: 3px;color: rgba(255,255,255,0.75);font-size: 22px;"></div>
+            <div class="hcp-block">
+              <div class="hcp-block-category-mobile-thin"><%= "Promotions " %></div>
+            </div>
+            <div class="hcp-block-category-mobile-bold"><%= "juqsqu'au #{l(@current_promos.first.end, format: '%d %B %Y')}" %></div>
+          </div>
+        <% end %>
+
+        </div>
+      <% end %>
+
     </div>
-</div>
+
 
 <%= simple_form_for :home_choice, method: "GET" do |f| %>
   <div class="search-form-on-home">
@@ -27,40 +43,12 @@
     </div>
   </div>
 
-  <div id="home-search-form-submit">rechercher</div>
+  <div id="home-search-form-submit">chercher</div>
 
 <% end %>
 
 
 <div class="home-content-column">
-
-  <% if @current_promos.any? %>
-
-    <%= link_to promos_path do %>
-      <div class="home-current-promo hidden-xs">
-        <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
-        <div class="hcp-block">
-          <div class="hcp-block-category-mobile-thin"><%= "Promotions sur les #{(composed_plurname(@current_promos.first.category.name)).downcase}" %></div>
-        </div>
-        <div class="hcp-block-category-mobile-bold"><%= "juqsqu'au #{l(@current_promos.first.end, format: '%d %B %Y')}" %></div>
-      </div>
-    <% end %>
-
-    <div class="container-with-visible visible-xs">
-
-      <%= link_to promos_path do %>
-        <div class="home-current-promo-mobile">
-          <div class="promo-mobile-flex">
-            <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
-            <div class="hcp-block">
-              <div class="hcp-block-category-mobile"><%= "Promotions sur les #{(composed_plurname(@current_promos.first.category.name)).downcase}" %></div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-
-    </div>
-  <% end %>
 
   <% @home_content.each do |item| %>
     <div class="home-content-container-transparent hcct-color">

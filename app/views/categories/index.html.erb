@@ -2,16 +2,12 @@
 <div id="link-attributes" data-category="<%= @query_category %>"></div>
 
 <div class="fullpage-show">
-  <%= render "navigator" %>
+
   <div class="fullpage-rightblock">
     <div class="tab-content">
 
       <div class="tab-pane active">
-        <div class="index-new-container">
-          <%= render "product_header", category: @category %>
-          <div class="custom-backdrop hidden"></div>
-          <%= render @category.products %>
-        </div>
+
       </div>
 
     </div>
@@ -35,7 +31,13 @@
     var liActive = $('#active-link-ajax-' + categoryId);
     var mobileLink = $('#custom-tablink-mobile-' + categoryId);
     if (categoryId == "empty") {
-      console.log("empty");
+      $.ajax({
+        url: "categories/1",
+        complete: allAjaxMethods,
+        success: function(data){
+          $('.tab-pane').html(data);
+        }
+      });
     } else {
       $(liActive).addClass('active');
       $(mobileLink).addClass('active');

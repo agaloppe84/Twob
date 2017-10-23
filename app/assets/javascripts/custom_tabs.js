@@ -25,13 +25,18 @@ $( ".qad-treated-button" ).click(function() {
   $( ".quot-admin-treated-container" ).show();
 });
 
-$('#dgl-true-link').click(function() {
-    $('.type-index-v2-header').toggle();
+$('#dgl-true-link').click(function(event) {
+    event.stopPropagation();
     $(this).toggleClass('dynamic-green-link');
+    $('.nsld-abs').toggle();
+    $('.nsld-container-abs').toggle();
 });
 
+$('.nsld-container-abs').on("click",function(e){e.stopPropagation()});
+
 $('#dgl-true-link-mobile').click(function() {
-    $('.type-index-v2-header-mobile').toggle();
+    var container = $('.type-index-v2-header-mobile');
+    $(container).toggle();
     $(this).toggleClass('dynamic-green-link');
     $(".custom-backdrop-v5").toggleClass('hidden');
 });

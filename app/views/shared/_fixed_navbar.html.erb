@@ -75,12 +75,53 @@
     <div class="subcategory-separator"></div>
 
    <div class="nav-small-top-link hidden-xs">
-      <div class="nav-small-link-design dynamic-green-link" id="dgl-true-link">catégories</div>
+      <div class="nav-small-link-design" id="dgl-true-link">
+        catégories
+        <div class="nsld-abs"><i class="fa fa-caret-up"></i></div>
+        <div class="nsld-container-abs">
+          <div class="nsld-technic-flex">
+            <div class="nsld-row-flex">
+              <div class="icon-grid blinds-color"></div>
+              <div class="nsld-header">catégories</div>
+            </div>
+            <% @only_categories.each do |cat| %>
+              <% if @query_category == "empty" %>
+                <div class="nsld-link <%= 'active-link' if cat == @only_categories.first %>" id="active-link-ajax-<%= cat.id %>" data-id="<%= cat.id %>">
+                  <div class="<%= cat == @only_categories.first ? 'icon-circle' : 'icon-circle-o' %> nsld-icon" id="icon-dynamic-<%= cat.id %>"></div>
+                  <%= composed_plurname(cat.name) %>
+                </div>
+              <% else %>
+                <div class="nsld-link <%= 'active-link' if cat.id == @query_category %>" id="active-link-ajax-<%= cat.id %>" data-id="<%= cat.id %>">
+                  <div class="<%= cat.id == @query_category ? 'icon-circle' : 'icon-circle-o' %> nsld-icon" id="icon-dynamic-<%= cat.id %>"></div>
+                  <%= composed_plurname(cat.name) %>
+                </div>
+              <% end %>
+            <% end %>
+            <div class="nsld-count"><%= "#{@only_categories.length} catégories" %></div>
+          </div>
+        </div>
+      </div>
    </div>
 
    <div class="nav-small-top-link visible-xs">
       <div class="icon-grid" id="dgl-true-link-mobile" style="font-size: 22px;padding-top: 5px;"></div>
    </div>
+
+    <div class="type-index-v2-header-mobile">
+      <div class="wrapper">
+        <div class="nsld-row-flex">
+          <div class="icon-grid blinds-color"></div>
+          <div class="nsld-header">catégories</div>
+        </div>
+        <% @only_categories.each do |cat| %>
+          <% if @query_category == "empty" %>
+            <div class="custom-tablink-mobile <%= 'active-link' if cat == @only_categories.first %>" data-id="<%= cat.id %>"><%= composed_plurname(cat.name) %></div>
+          <% else %>
+            <div class="custom-tablink-mobile <%= 'active-link' if cat.id == @query_category %>" data-id="<%= cat.id %>"><%= composed_plurname(cat.name) %></div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
 
   <% end %>
 
@@ -124,4 +165,22 @@
     </div>
   <% end %>
 
+
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

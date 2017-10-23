@@ -1,40 +1,46 @@
 <% if category.has_sub_category %>
           <div class="subcategory-container">
+            <div class="subcategory-product-count"><%= "Catégorie" %></div>
+             <div class="icon-chevron-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;opacity: 0.5;font-size: 12px;padding-top: 4px;"></div>
             <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
-             <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;opacity: 0.5;"></i>
-            <div class="subcategory-product-count"><%= "#{category.products.length} produits" %></div>
-            <div class="subcategory-separator"></div>
-            <div class="subcategory-text">Rénovation</div>
-            <div class="subcategory-separator"></div>
-            <div class="subcategory-text">Traditionnel</div>
-            <% if category.promos.where("promos.start < ?", Time.current).where("promos.end > ?", Time.current).any? %>
-              <div class="subcategory-separator"></div>
-
-                <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
-                <div class="hcp-block">
-                  <div class="hcp-block-category"><%= "Promotions" %></div>
-                </div>
-                <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
-                <div class="hcp-title hidden-xs">voir les détails</div>
-                <i class="fa fa-caret-right hidden-xs" aria-hidden="true" style="color: #EE5F5B;"></i>
-
-            <% end %>
-          </div>
-        <% else %>
-          <div class="subcategory-container">
-            <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
-            <i class="fa fa-caret-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;opacity: 0.5;"></i>
-            <div class="subcategory-product-count"><%= "#{category.products.length} produits" %></div>
           </div>
           <% if category.promos.where("promos.start < ?", Time.current).where("promos.end > ?", Time.current).any? %>
             <div class="subcategory-container-promo">
-              <div class="icon-flash-1" style="padding-top: 3px;color: #FFD464;"></div>
               <div class="hcp-block">
                 <div class="hcp-block-category"><%= "Promotions" %></div>
               </div>
               <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
-              <div class="hcp-title hidden-xs">voir les détails</div>
-              <i class="fa fa-caret-right hidden-xs" aria-hidden="true" style="color: #EE5F5B;"></i>
+            </div>
+          <% end %>
+
+          <div class="scp-wrapper">
+            <div class="subcategory-container-promo" style="margin-top: 0;">
+              <div class="hcp-block">
+                <div class="hcp-block-category"><%= "Gamme" %></div>
+              </div>
+              <div class="hcp-block-end-date"><%= category.products.where(sub_category: 0).last.sub_category.capitalize %></div>
+            </div>
+
+            <div class="subcategory-container-promo" style="margin-left: 15px;margin-top: 0;">
+              <div class="hcp-block">
+                <div class="hcp-block-category"><%= "Gamme" %></div>
+              </div>
+              <div class="hcp-block-end-date"><%= category.products.where(sub_category: 1).last.sub_category.capitalize %></div>
+            </div>
+          </div>
+
+        <% else %>
+          <div class="subcategory-container">
+            <div class="subcategory-product-count"><%= "Catégorie" %></div>
+             <div class="icon-chevron-right" aria-hidden="true" style="margin-left: 8px;margin-right: 8px;opacity: 0.5;font-size: 12px;padding-top: 4px;"></div>
+            <div class="subcategory-big-title"><%= composed_plurname(category.name) %></div>
+          </div>
+          <% if category.promos.where("promos.start < ?", Time.current).where("promos.end > ?", Time.current).any? %>
+            <div class="subcategory-container-promo">
+              <div class="hcp-block">
+                <div class="hcp-block-category"><%= "Promotions" %></div>
+              </div>
+              <div class="hcp-block-end-date"><%= "juqsqu'au #{l(category.promos.first.end, format: '%d %B %Y')}" %></div>
             </div>
           <% end %>
 

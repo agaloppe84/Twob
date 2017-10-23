@@ -9,6 +9,6 @@ class Product < ApplicationRecord
   has_many :brands, dependent: :destroy
   has_many :scores, dependent: :destroy
 
-  enum sub_category: [ :tradi, :reno ]
+  enum sub_category: [ :traditionnel, :renovation ]
 
 end

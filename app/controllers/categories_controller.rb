@@ -6,15 +6,13 @@ class CategoriesController < ApplicationController
   before_action :set_score, only: [:show, :index]
 
   def index
-    @categories = Category.eager_load(:albums, :promos, products: [:infos, :powers, :scores, :photo_files])
     @only_categories = Category.eager_load(:products)
-    @category = @categories.first
     @query_category = (params[:category_id]).nil? ? "empty" : params[:category_id].to_i
   end
 
   def show
-    @categories = Category.eager_load(:albums, :promos, products: [:infos, :powers, :scores, :photo_files])
-    @category = @categories.find(params[:id])
+    @category = Category.find(params[:id])
+    @products = @category.products.eager_load(:category, :infos, :powers, :scores, :photo_files)
     render layout: false
   end
 

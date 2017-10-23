@@ -7,11 +7,16 @@ var allAjaxMethods = function(){
 
 
 
-$('.custom-tablink').click(function() {
+$('.nsld-link').click(function() {
   var categoryId = $(this).data("id");
   var liActive = $('#active-link-ajax-' + categoryId);
-  $(liActive).addClass('active');
-  $('li').not(liActive).removeClass('active');
+  var iconActive = $("#icon-dynamic-" + categoryId);
+  $(iconActive).removeClass('icon-circle-o');
+  $(iconActive).addClass('icon-circle');
+  $(liActive).addClass('active-link');
+  $('.nsld-link').not(liActive).removeClass('active-link');
+  $('.nsld-icon').not(iconActive).removeClass('icon-circle');
+  $('.nsld-icon').not(iconActive).addClass('icon-circle-o');
   $('.tab-pane').html("<div class='await-ajax-tabs'>loading<div class='fa fa-circle-o-notch fa-spin ajax-waiting'></div></div>");
 
   $.ajax({
@@ -26,8 +31,8 @@ $('.custom-tablink').click(function() {
 
 $('.custom-tablink-mobile').click(function() {
   var categoryId = $(this).data("id");
-  $(this).addClass('active');
-  $('.custom-tablink-mobile').not(this).removeClass('active');
+  $(this).addClass('active-link');
+  $('.custom-tablink-mobile').not(this).removeClass('active-link');
   $('.tab-pane').html("<div class='await-ajax-tabs'>loading<div class='fa fa-circle-o-notch fa-spin ajax-waiting'></div></div>");
 
   $.ajax({
