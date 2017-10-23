@@ -75,7 +75,7 @@
   <div class="subcategory-separator hidden-xs"></div>
   <div class="nav-small-top-link hidden-xs">
     <% if current_page?(category_product_path(@product.category, @product)) %>
-      <div class="nav-small-link-design" style="color: #EE5F5B;"><%= @product.title %></div>
+      <div class="nav-small-link-design" style="color: <%= @product.category.color %>;"><%= @product.title %></div>
     <% end %>
   </div>
 <% end %>

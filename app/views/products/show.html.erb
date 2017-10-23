@@ -2,69 +2,96 @@
 <div class="product-show-container">
   <div class="banner" style="background-image: url('<%= cl_image_path @product.photos.last.path %>')"></div>
   <div class="product-title-container-v5">
-    <div class="product-category-tooltip hidden-xs" style="border: 1px solid <%= @product.category.color %>;color: <%= @product.category.color %>;"><%= @product.category.name %></div>
+    <div class="product-category-tooltip" style="border: 1px solid <%= @product.category.color %>;color: <%= @product.category.color %>;"><%= @product.category.name %></div>
     <div class="product-title-text"><%= @product.title %></div>
     <div class="piw-scores-container hidden-xs">
-      <i class="fa fa-heart-o"></i>
-      <div class="piw-scores-count"><%= average_score(@product.scores) %></div>
+      <i class="fa fa-heart" style="color: <%= @product.category.color %>;"></i>
+      <div class="piw-scores-count" style="color: <%= @product.category.color %>;"><%= average_score(@product.scores) %></div>
     </div>
     <%= link_to new_quotation_path(html_options = {product_name: @product.title, blindtype: @product.category.name }) do %>
-      <div class="piw-quot-link hidden-xs">
+      <div class="piw-quot-link hidden">
         <div>devis gratuit</div>
       </div>
     <% end %>
+  </div>
 
-    <div class="piw-header-items-mobile hidden-sm hidden-md hidden-lg">
-      <div class="product-category-tooltip" style="border: 1px solid <%= @product.category.color %>;color: <%= @product.category.color %>;"><%= @product.category.name %></div>
-      <div class="piw-scores-container">
-        <i class="fa fa-heart-o"></i>
-        <div class="piw-scores-count"><%= average_score(@product.scores) %></div>
-      </div>
-      <%= link_to new_quotation_path(html_options = {product_name: @product.title, blindtype: @product.category.name }) do %>
-        <div class="piw-quot-link">
-          <div>devis gratuit</div>
+  <div class="piw-description"><%= @product.description %></div>
+
+  <div class="test-wrapper">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+
+      <div class="product-infos-wrapper">
+        <div class="piw-header" style="color: <%= @product.category.color %>;">
+          Caracteristiques
+          <i class="icon-chevron-right" style="font-size: 10px;margin-left: 5px;"></i>
         </div>
-      <% end %>
+        <div class="piw-infos-container">
+          <% infos_constructor(@product.infos, "piw-info-wrapper", "piw-info-content", "piw-info-title").each do |info_tag| %>
+            <%= info_tag %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-xs-12 col-sm-3">
+
+    <div class="product-infos-wrapper">
+      <div class="piw-header" style="color: <%= @product.category.color %>;">
+        Services
+        <i class="icon-chevron-right" style="font-size: 10px;margin-left: 5px;"></i>
+      </div>
+      <div class="piw-infos-container">
+
+        <div class="piw-active-power-flex">
+          <div class="icon-lock-locker-streamline piw-icon-tag" style="color: <%= @product.category.color %>;"></div>
+          <div class="piw-text-tag"><%= "#{@product.category.guarantee} ans de garantie" %></div>
+        </div>
+        <div class="piw-active-power-flex">
+          <div class="icon-settings-streamline-2 piw-icon-tag" style="color: <%= @product.category.color %>;"></div>
+          <div class="piw-text-tag">Pose</div>
+        </div>
+        <div class="piw-active-power-flex">
+          <div class="icon-design-pencil-rule-streamline piw-icon-tag" style="color: <%= @product.category.color %>;"></div>
+          <div class="piw-text-tag">Sur mesure</div>
+        </div>
+
+      </div>
     </div>
 
   </div>
 
-  <div class="product-infos-wrapper">
-    <div class="piw-header">Caracteristiques</div>
-    <div class="piw-infos-container">
-      <% infos_constructor(@product.infos, "piw-info-wrapper", "piw-info-content", "piw-info-title").each do |info_tag| %>
-        <%= info_tag %>
-      <% end %>
-    </div>
-  </div>
 
-  <div class="product-infos-wrapper">
-    <div class="piw-header">Avantages</div>
-    <div class="piw-infos-container">
 
-      <div class="piw-active-power-flex">
-        <div class="icon-lock-locker-streamline piw-icon-tag" style="color: <%= @product.category.color %>;"></div>
-        <div class="piw-text-tag"><%= "#{@product.category.guarantee} ans de garantie" %></div>
+
+  <div class="col-xs-12 col-sm-3">
+
+    <div class="product-infos-wrapper">
+      <div class="piw-header" style="color: <%= @product.category.color %>;">
+        Avantages
+        <i class="icon-chevron-right" style="font-size: 10px;margin-left: 5px;"></i>
       </div>
-      <div class="piw-active-power-flex">
-        <div class="icon-settings-streamline-2 piw-icon-tag" style="color: <%= @product.category.color %>;"></div>
-        <div class="piw-text-tag">Pose</div>
-      </div>
-      <div class="piw-active-power-flex">
-        <div class="icon-design-pencil-rule-streamline piw-icon-tag" style="color: <%= @product.category.color %>;"></div>
-        <div class="piw-text-tag">Sur mesure</div>
-      </div>
+      <div class="piw-infos-container">
 
-
-      <% if @product.powers.length != 0 %>
-        <% active_powers(@product.powers, true, "piw-icon-tag", "piw-text-tag", @product).each do |tag| %>
-          <div class="piw-active-power-flex">
-            <%= tag %>
-          </div>
+        <% if @product.powers.length != 0 %>
+          <% active_powers(@product.powers, true, "piw-icon-tag", "piw-text-tag", @product).each do |tag| %>
+            <div class="piw-active-power-flex">
+              <%= tag %>
+            </div>
+          <% end %>
         <% end %>
-      <% end %>
 
+      </div>
     </div>
+
   </div>
+
+
+
+
+
+  </div>
+</div>
 
 </div>
