@@ -446,7 +446,6 @@
   font-size: 15px;
   font-family: "Circular-Medium";
   color: $red;
-  opacity: 0.9;
   margin-bottom: 25px;
 }
 
@@ -695,7 +694,6 @@ a {
   padding-right: 12px;
   border: 1px solid $red;
   border-radius: 70px;
-  margin-left: 20px;
 }
 
 
@@ -710,7 +708,7 @@ form.simple_form.home_choice {
 
 
 #home-search-form-submit {
-  width: 100px;
+  width: 60px;
   font-family: "Circular-Medium";
   font-size: 20px;
   height: 52px;
