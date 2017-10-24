@@ -31,21 +31,24 @@
 
     </div>
 
+<div class="product-title-container-v15">
+  <div class="product-title-text-home">Rechercher</div>
 
-<%= simple_form_for :home_choice, method: "GET" do |f| %>
-  <div class="search-form-on-home">
-    <div class="home-form-flex">
-      <div class="ajax-form-flex-item-left" style="width: 100%;border: none;">
-        <div class="ajax-form-flex-icon"><div class="icon-search"></div></div>
-        <%= f.input :product_choice, collection: @category_names, label: false, selected: @category_names.first %>
-        <div class="ajax-form-flex-icon" style="cursor: pointer;" id="select_trigger"><div class="icon-angle-down"></div></div>
+  <%= simple_form_for :home_choice, method: "GET" do |f| %>
+    <div class="search-form-on-home">
+      <div class="home-form-flex">
+        <div class="ajax-form-flex-item-left" style="width: 100%;border: none;">
+          <%= f.input :product_choice, collection: @category_names, label: false, selected: @category_names.first %>
+          <div class="ajax-form-flex-icon-home" style="cursor: pointer;" id="select_trigger"><div class="icon-angle-down"></div></div>
+        </div>
       </div>
     </div>
-  </div>
+    <div id="home-search-form-submit">
+       <i class="fa fa-search"></i>
+    </div>
+  <% end %>
 
-  <div id="home-search-form-submit">chercher</div>
-
-<% end %>
+</div>
 
 
 <div class="home-content-column">

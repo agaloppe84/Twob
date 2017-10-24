@@ -11,71 +11,19 @@
       </div>
 
       <div class="cct-guarantee" data-id="<%= product.id %>">
-        <div class="icon-settings-streamline-2" aria-hidden="true" style="margin-right: 12px;font-size: 20px;opacity: 0.8;"></div>
+
+        <%= link_to category_product_path(product.category, product) do %>
+          <div class="new-link-product" style="color: <%= product.category.color %>;border: 1px solid <%= product.category.color %>;">
+            <div>Détails</div>
+          </div>
+        <% end %>
+
       </div>
     </div>
 
 
     <div class="custom-card-middle">
-      <div class="ccm-left">
-        <% infos_constructor(product.infos, "ccm-info-container", "ccm-info-content", "ccm-info-title").each do |info_tag| %>
-          <%= info_tag %>
-        <% end %>
-      </div>
       <div class="ccm-right" style="background-image: url(<%= cl_image_path product.photos.last.path  %>);"></div>
-    </div>
-
-
-
-    <div class="custom-card-bottom">
-
-      <div class="ccb-middle">
-        <%= link_to new_quotation_path(html_options = {product_name: product.title, blindtype: product.category.name }) do %>
-          <div class="custom-card-bottom-right-btn">
-            <div class="icon-devis-v2" style="font-size: 20px;"></div>
-          </div>
-        <% end %>
-      </div>
-
-
-       <div class="ccb-middle">
-        <%= link_to category_product_path(product.category, product) do %>
-          <div class="custom-card-bottom-right-btn">
-            <div>Voir</div>
-          </div>
-        <% end %>
-      </div>
-
-
-      <div class="ccb-right">
-        <%= link_to "#productShowModalv2", class: "custom-card-bottom-right-btn", data: { toggle: "modal", typeid: "#{product.category.id}", productid: "#{product.id}" } do %>
-          <div class="icon-camera-v2" style="font-size: 20px;"></div>
-        <% end %>
-      </div>
-
-      <div class="separator-v2"></div>
-
-
-
-        <div class="custom-card-bottom-right-absolute">
-          <div id="score-count-<%= product.id %>" class="hidden-xs">
-            <div class="score-count-number"><%= product.scores.length %> avis</div>
-          </div>
-
-          <div class="average-score-graph" id="score-graph-<%= product.id %>">
-            <div class="average-dyn-data" style="background-color: <%= score_color(average_score(product.scores)) %>;width: <%= (average_score(product.scores) * 10).to_i %>%;"></div>
-          </div>
-
-          <div id="score-text-<%= product.id %>"><div class="score-text"><%= average_score(product.scores) %></div></div>
-
-          <div class="separator-v3"></div>
-
-          <div class="score-form-trigger" id="score-form-trigger-<%= product.id %>" data-id="<%= product.id %>" style="display: flex;">
-            <div class="icon-like" aria-hidden="true" style="padding-top: 4px;font-size: 15px;opacity: 0.8;"></div>
-          </div>
-        </div>
-
-
     </div>
 
   </div>

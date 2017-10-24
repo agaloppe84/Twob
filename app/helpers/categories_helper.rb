@@ -85,9 +85,9 @@ module CategoriesHelper
     @infos = (infos_collection.map {|info| [info.attributes["title"], info.attributes["content"]]}).reverse
     @infos_tags = @infos.map do |info|
       if info[0].nil?
-        ("<div class='#{container_tag}'><div class='little-dot'></div><div class='#{content_tag}'>#{info[-1]}</div></div>").html_safe
+        ("<div class='#{container_tag}'><div class='#{content_tag}'>#{info[-1]}</div></div>").html_safe
       else
-        ("<div class='#{container_tag}'><div class='little-dot'></div><div class='#{title_tag}'>#{info[0]} :</div><div class='#{content_tag}'>#{info[-1]}</div></div>").html_safe
+        ("<div class='#{container_tag}'><div class='#{title_tag}'>#{info[0]} :</div><div class='#{content_tag}'>#{info[-1]}</div></div>").html_safe
       end
     end
     @infos_tags
