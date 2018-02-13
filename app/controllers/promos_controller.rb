@@ -6,7 +6,9 @@ class PromosController < ApplicationController
 
   def index
     @promos = Promo.all
+    @better_promos = Promo.where("promos.start < ?", Time.current).where("promos.end > ?", Time.current)
     @active_promos = Promo.where(current: true)
+    raise
     @promo_to_unckeck = @active_promos
     @unckecked_promos = @promo_to_unckeck.map {|promo| promo if promo.end < Date.today}.compact
     if @unckecked_promos.empty?
